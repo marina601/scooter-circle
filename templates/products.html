@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scooter Circle</title>
+</head>
+<body>
+    {% for p in product %}
+        {{ p.product_model }}<br>
+        {{ p.product_brand }}<br>
+        {{ p.product_price }}<br>
+        {{ p.product_max_speed }}<br>
+        {{ p.product_range }}<br>
+        {{ p.product_motor_power }}<br>
+        {{ p.product_max_load }}<br>
+        {{ p.product_wheel_size }}<br>
+        {{ p.product_battery_charge }}<br>
+        {{ p.product_water_resistant }}<br>
+        {{ p.product_weight }}<br>
+        {{ p.product_image }}<br>
+        {{ p.product_description }}<br>
+    {% endfor %}
+
+</body>
+</html>
