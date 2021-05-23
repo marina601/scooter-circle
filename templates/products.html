@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scooter Circle</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
+    <h2>View All the Products Here</h2>
+
     {% for p in product %}
         {{ p.product_model }}<br>
         {{ p.product_brand }}<br>
@@ -23,5 +19,4 @@
         {{ p.product_description }}<br>
     {% endfor %}
 
-</body>
-</html>
+{% endblock %}
