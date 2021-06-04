@@ -1,13 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
-         <div class="container">
-             <div class="row">
-                 <div class="col">
-                     <img src="{{ url_for('static', filename='images/man-on-the-scooter.jpg') }}" alt="Man on the electric scooter with helmet"/>
-                 </div>
-             </div>
-         </div>
-
-    <h1>Welcome to the Scooter Circle</h1>
-
+   <section class="main-content">
+       <div class="row background-img">
+           <div class="col s5 offset-s7">
+               <p class="testimony text-shadow">
+                   Electric scooters are offering people a way to travel five times quicker than walking while being
+                   environmentally friendly, fun and very low cost. Unlike a bicycle, you’re not sweaty when you
+                   arrive!
+               </p>
+           </div>
+       </div>
+       <div class="row">
+           <div class="col 10 offset-2 text-center intro">
+               <h1>Welcome to the Scooter Circle</h1>
+               <p class="testimonial-2">
+                   Speed, size, weight, range, reliability and cost are just a few of the factors you need to take into
+                   account
+                   before you buy an e-scooter. At Scooter Circle we have tried to help you understand what’s important
+                   to ensure that
+                   you pick the best electric scooter for you.
+                   <br><span>Share your reviews to help others make the right choice!</span>
+               </p>
+           </div>
+       </div>
+       <div class="row col l3 m12">
+        <div class="carousel">
+            {% for p in product %}
+                <a class="carousel-item" href="{{ url_for('login')}}"><img src="{{ p.product_image }}"></a>
+            {% endfor %}
+          </div>
+       </div>
+    </section>
+    
 {% endblock%}

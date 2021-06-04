@@ -22,7 +22,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/index")
 def index():
-    return render_template("index.html")
+    product = mongo.db.product.find()
+    return render_template("index.html", product=product)
 
 
 @app.route("/login")
