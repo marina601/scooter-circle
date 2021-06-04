@@ -22,8 +22,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/index")
 def index():
-    product = mongo.db.product.find()
-    return render_template("index.html", product=product)
+    products = mongo.db.products.find()
+    return render_template("index.html", products=products)
 
 
 @app.route("/login")
@@ -38,8 +38,8 @@ def register():
 
 @app.route("/products")
 def products():
-    product = mongo.db.product.find()
-    return render_template("products.html", product=product)
+    products = mongo.db.products.find()
+    return render_template("products.html", products=products)
 
 
 if __name__ == "__main__":
