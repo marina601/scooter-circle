@@ -21,7 +21,7 @@
   <header>
     <!--Main Navigation-->
     <div class="navbar-fixed">
-      <nav>
+      <nav class="nav-extended navbar-fixed">
         <div class="nav-wrapper">
           <a href="{{ url_for('index') }}" class="brand-logo text-shadow">
             <h3 class="logo">Scooter Circle</h3>
@@ -38,17 +38,18 @@
           </ul>
         </div>
       </nav>
+    </div>
       <!--Mobile Navigation-->
       <ul class="sidenav" id="mobile-demo">
-        <li><a href="{{ url_for('index') }}"><i class="fas fa-home">Home</i></a></li>
-        <li><a href="{{ url_for('login') }}"><i class="fas fa-door-open">Login</i></a></li>
+        <li><h4 class="center-align text-darken-4">Scooter Circle</h4></li>
+        <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i>Home</a></li>
+        <li><a href="{{ url_for('login') }}"><i class="fas fa-door-open"></i>Login</a></li>
         <li><a href="{{ url_for('register') }}"><i class="fas fa-user-plus"></i>Register</a></li>
         <li><a href="{{ url_for('products') }}"><i class="fas fa-list-ul"></i>Products</a></li>
         <li><a href="#"><i class="fas fa-user-alt"></i></a></li>
         <li><a href="#"><i class="fas fa-folder-plus"></i></a></li>
         <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>
       </ul>
-    </div>
   </header>
   {% block content %}
   {% endblock %}
