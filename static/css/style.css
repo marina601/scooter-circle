@@ -49,6 +49,13 @@ nav, .page-footer {
    letter-spacing: 0.2rem;
 }
 
+/****************Flash Messages*************************/
+
+.flash-messages {
+   background-color: #fafafa;
+   padding: 1rem;
+}
+
 /*************Index.html*******************/
 
 /*************Background Image*******************/
@@ -125,13 +132,13 @@ form {
  }
  /* valid color */
  .input-field input[type=text].valid {
-   border-bottom: 1px solid purple;
-   box-shadow: 0 1px 0 0 purple;
+   border-bottom: 1px solid #e1403d;
+   box-shadow: 0 1px 0 0 #e1403d;
  }
  /* invalid color */
  .input-field input[type=text].invalid {
-   border-bottom: 1px solid yellow;
-   box-shadow: 0 1px 0 0 yellow;
+   border-bottom: 1px solid #e1403d;
+   box-shadow: 0 1px 0 0 #e1403d;
  }
  /* icon prefix focus color */
  .input-field .prefix.active {
