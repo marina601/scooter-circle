@@ -1,6 +1,50 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h1>Register Page</h1>
+    <section class="main-content">
+        <h3 class="text-center">Register</h3>
+
+        <div class="row">
+            <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+                <div class="card-panel">
+                    <!--Username-->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-user-plus prefix"></i>
+                            <input id="username" name="username" type="text" class="validate">
+                            <label for="username">Username</label>
+                        </div>
+                    </div>
+                    <!--Password-->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-user-lock prefix"></i>
+                            <input id="password" name="password" type="password" class="validate">
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                    <!--Repeat Password-->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-user-lock prefix"></i>
+                          <input id="password1" name="password1" type="password" class="validate">
+                          <label for="password1">Repeat Password</label>
+                        </div>
+                    </div>
+                    <!--Register Button-->
+                    <div class="row">
+                        <button type="submit" class="col s12 btn-large submit-btn text-shadow">
+                            Register <i class="fas fa-sign-in-alt"></i>
+                        </button>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 login-link">
+                            <p>Already Registered? <a href="{{ url_for('login') }}">Login Here</a></p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
 
 {% endblock%}

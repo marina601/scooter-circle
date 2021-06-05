@@ -72,6 +72,7 @@ nav, .page-footer {
 
 .main-content {
    background-color: #dcdfe5;
+   margin-top: -2rem;
 }
 
 .intro {
@@ -83,6 +84,75 @@ nav, .page-footer {
    font-weight: 700;
 }
 
+/***************Registration Form*****************/
+
+form {
+   height: 65vh;
+}
+
+.submit-btn {
+   background-color: #2fc669;
+}
+
+.submit-btn:hover {
+   background-color: #889faa;
+}
+
+.main-content h3 {
+   padding-top: 3rem;
+}
+
+.validate {
+   border-bottom: 1px solid #2fc669;
+   -webkit-box-shadow: 0 1px 0 0 #2fc669;
+   box-shadow: 1px solid #2fc669;
+}
+
+/* label color */
+.input-field label {
+   color: #383843;
+   font-family: 'Montserrat', sans-serif;
+   font-size: 1.2rem;
+ }
+ /* label focus color */
+ .input-field input[type=text]:focus + label {
+   color: red;
+ }
+ /* label underline focus color */
+ .input-field input[type=text]:focus {
+   border-bottom: 1px solid orange;
+   box-shadow: 0 1px 0 0 orange;
+ }
+ /* valid color */
+ .input-field input[type=text].valid {
+   border-bottom: 1px solid purple;
+   box-shadow: 0 1px 0 0 purple;
+ }
+ /* invalid color */
+ .input-field input[type=text].invalid {
+   border-bottom: 1px solid yellow;
+   box-shadow: 0 1px 0 0 yellow;
+ }
+ /* icon prefix focus color */
+ .input-field .prefix.active {
+   color: #2fc669;
+ }
+
+ .login-link {
+    text-align: right;
+ }
+
+ .login-link a {
+    color: #889faa
+ }
+
+ .login-link a:hover {
+    background-color: #889faa;
+    color: #fafafa;
+    padding: 5px;
+    border-radius: 5px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+ }
 /*****************Footer*************************/
 
 footer {
@@ -110,3 +180,12 @@ footer {
    padding: 1rem;
    text-align: center;
  }
+
+/*****************Media Queries*************************/
+
+@media screen and (max-width: 575.98px) {
+   .logo {
+      letter-spacing: 0px;
+      font-size: 2.9rem;
+   }
+}
