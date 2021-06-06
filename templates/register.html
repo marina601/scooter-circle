@@ -11,8 +11,10 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-user-plus prefix"></i>
-                            <input id="username" name="username" minlength="5" 
-                            maxlength="10" pattern="^[a-zA-Z0-9!?]{5,10}$" type="text" class="validate" required>
+                            <input id="username" name="username" minlength="5" maxlength="10"
+                                pattern="^[a-zA-Z0-9!?]{5,10}$" type="text" class="validate" required
+                                oninput="this.setCustomValidity('')"
+                                oninvalid="this.setCustomValidity('Please enter a username which is 5 to 10 characters long')" />
                             <label for="username">Username</label>
                         </div>
                     </div>
@@ -20,8 +22,10 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-user-lock prefix"></i>
-                            <input id="password" name="password" type="password" minlength="5"
-                            maxlength="10" pattern="^[a-zA-Z0-9!?]{5,10}$" class="validate" required>
+                            <input id="password" name="password" type="password" minlength="5" maxlength="10"
+                                pattern="^[a-zA-Z0-9!?]{5,10}$" class="validate" required
+                                oninput="this.setCustomValidity('')"
+                                oninvalid="this.setCustomValidity('Please enter password which is 5 to 10 characters long')">
                             <label for="password">Password</label>
                         </div>
                     </div>
@@ -29,9 +33,11 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-user-lock prefix"></i>
-                          <input id="password_2" name="password_2" type="password" minlength="5"
-                          maxlength="10" pattern="^[a-zA-Z0-9!?]{5,10}$" class="validate" required>
-                          <label for="password_2">Repeat Password</label>
+                            <input id="password_2" name="password_2" type="password" minlength="5" maxlength="10"
+                                pattern="^[a-zA-Z0-9!?]{5,10}$" class="validate" required
+                                oninput="this.setCustomValidity('')"
+                                oninvalid="this.setCustomValidity('Please repeat your password')">
+                            <label for="password_2">Repeat Password</label>
                         </div>
                     </div>
                     <!--Register Button-->
