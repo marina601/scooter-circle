@@ -58,7 +58,6 @@ nav, .page-footer {
 
 /*************Index.html*******************/
 
-/*************Background Image*******************/
 
 .background-img {
    background: url("../images/man-on-the-scooter.jpg") no-repeat center center fixed; 
@@ -89,6 +88,12 @@ nav, .page-footer {
 
 .intro span {
    font-weight: 700;
+}
+
+.carousel 
+.carousel-item {
+   width: 400px;
+   height: 400px;
 }
 
 /***************Registration Form*****************/
