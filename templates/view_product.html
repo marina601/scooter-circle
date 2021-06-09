@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
     <section class="main-content">
-    <h2 class="text-center heading">All the Scooters</h2>
+    <h2 class="text-center heading">Your Scooter {{ product.product_model }}</h2>
     <div class="row">
-        {% for product in products %}
+        
         <div class="col l4 m6 s12">
           <div class="card">
             <div class="card-image">
@@ -31,11 +31,11 @@
               </p>
             </div>
             <div class="card-action">
-              <a href="{{ url_for('view_product', product_id=product._id) }}">View Full Details</a>
+              <a href="#">View Full Details</a>
             </div>
           </div>
         </div>
-        {% endfor %}
+      
       </div>
       </section>
      

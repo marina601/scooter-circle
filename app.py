@@ -111,10 +111,22 @@ def logout():
     return redirect(url_for("login"))
 
 
+# all products
 @app.route("/products")
 def products():
     products = mongo.db.products.find()
     return render_template("products.html", products=products)
+
+
+# view product by id
+@app.route("/view_product/<product_id>")
+def view_product(product_id):
+    product = mongo.db.products.find_one({"_id": ObjectId(product_id)})
+
+    if 'user' not in session:
+        return redirect(url_for("login"))
+
+    return render_template("view_product.html", product=product)
 
 
 if __name__ == "__main__":
