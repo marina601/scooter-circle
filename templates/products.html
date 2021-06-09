@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     <section class="main-content">
-    <h2 class="text-center">View All the Products Here</h2>
+    <h2 class="text-center heading">All the Scooters</h2>
     <div class="row">
         {% for p in products %}
         <div class="col l4 m6 s12">
@@ -11,11 +11,27 @@
               <h4 class="card-title">{{ p.product_model }}</h4>
             </div>
             <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
+              <div class="col s6">
+              <p>
+                <i class="fas fa-tachometer-alt"></i>
+                {{ p.product_max_speed }}mph
+              </p>
+              <p>
+                <i class="fas fa-charging-station"></i>
+                {{ p.product_battery_charge }}hrs
+              </p>
+              </div>
+              <p>
+                <i class="fas fa-pound-sign"></i>
+                {{ p.product_price }}
+              </p>
+              <p>
+                <i class="fas fa-route"></i>
+                {{ p.product_max_range }}miles
+              </p>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
+              <a href="#">View Full Details</a>
             </div>
           </div>
         </div>

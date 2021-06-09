@@ -35,6 +35,12 @@ h1, h2, h3, h4, h5, h6 {
    padding: 0px
 }
 
+.heading {
+   padding: 2rem;
+   margin: 2rem;
+   line-height: 2;
+}
+
 /*******Background Colors********/
 
 nav, .page-footer {
@@ -154,16 +160,18 @@ form {
     text-align: right;
  }
 
- .login-link a {
-    color: #889faa
+ .login-link a,
+ .card-action a {
+    color: #889faa !important;
  }
 
- .login-link a:hover {
-    background-color: #889faa;
-    color: #fafafa;
-    padding: 5px;
-    border-radius: 5px;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+ .login-link a:hover,
+ .card-action a:hover {
+    background-color: #889faa !important;
+    color: #fafafa !important;
+    padding: 5px !important;
+    border-radius: 5px !important;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5) !important;
  }
 
  /*****************Products *************************/
@@ -171,6 +179,26 @@ form {
 .card-title {
    position: relative !important;
    color: #383843 !important;
+   padding: 1rem !important;
+   margin: 1rem;
+}
+
+.card,
+.card-content,
+.card-content p {
+   padding: 1rem !important;
+}
+
+.card-action {
+ font-weight: 600;
+ margin-left: 7rem;
+ margin-right: 0;
+ text-align: end;
+ padding: 1rem !important;
+}
+
+.card-action:hover {
+   background-color: #889FAA;
 }
 /*****************Footer*************************/
 
