@@ -200,6 +200,14 @@ form {
 .card-action:hover {
    background-color: #889FAA;
 }
+
+/*****************View Product*************************/
+.scooter-img{
+   width: 45rem;
+   height: 45rem;
+   padding: 1rem;
+   margin: 1rem;
+}
 /*****************Footer*************************/
 
 footer {

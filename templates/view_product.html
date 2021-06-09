@@ -1,43 +1,49 @@
 {% extends "base.html" %}
 {% block content %}
     <section class="main-content">
-    <h2 class="text-center heading">Your Scooter {{ product.product_model }}</h2>
-    <div class="row">
-        
-        <div class="col l4 m6 s12">
-          <div class="card">
-            <div class="card-image">
-              <img src="{{ product.product_image }}">
-              <h4 class="card-title">{{ product.product_model }}</h4>
-            </div>
-            <div class="card-content">
-              <div class="col s6">
-              <p>
-                <i class="fas fa-tachometer-alt"></i>
-                {{ product.product_max_speed }}mph
-              </p>
-              <p>
-                <i class="fas fa-charging-station"></i>
-                {{ product.product_battery_charge }}hrs
-              </p>
-              </div>
-              <p>
-                <i class="fas fa-pound-sign"></i>
-                {{ product.product_price }}
-              </p>
-              <p>
-                <i class="fas fa-route"></i>
-                {{ product.product_max_range }}miles
-              </p>
-            </div>
-            <div class="card-action">
-              <a href="#">View Full Details</a>
-            </div>
+      <h2 class="text-center heading">{{ product.product_model }}</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col m6">
+          <div>
+            <img src="{{ product.product_image }}" class="scooter-img">
+          </div>
+          <div class="col m6">
+            <p>
+              <i class="fas fa-tachometer-alt"></i>
+              {{ product.product_max_speed }}mph
+            </p>
+            <p>
+              <i class="fas fa-charging-station"></i>
+              {{ product.product_battery_charge }}hrs
+            </p>
+            <p>
+              <i class="fas fa-pound-sign"></i>
+              {{ product.product_price }}
+            </p>
+            <p>
+              <i class="fas fa-route"></i>
+              {{ product.product_max_range }}miles
+            </p>
+          </div>
+        </div>
+      </div>
+</div>
+
+
+
+          <div>
+            <h4 class="card-title">{{ product.product_brand }}</h4>
+          </div>
+
+          <div class="card-action">
+            <a href="#">View Full Details</a>
           </div>
         </div>
       
+
       </div>
-      </section>
+    </section>
      
     {% for p in products %}
         {{ p.product_model }}<br>
