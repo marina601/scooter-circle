@@ -1,64 +1,88 @@
 {% extends "base.html" %}
 {% block content %}
     <section class="main-content">
-      <h2 class="text-center heading">{{ product.product_model }}</h2>
-    <div class="container">
+      <!--Product Specifications-->
       <div class="row">
-        <div class="col m6">
-          <div>
-            <img src="{{ product.product_image }}" class="scooter-img">
-          </div>
-          <div class="col m6">
-            <p>
-              <i class="fas fa-tachometer-alt"></i>
-              {{ product.product_max_speed }}mph
-            </p>
-            <p>
-              <i class="fas fa-charging-station"></i>
-              {{ product.product_battery_charge }}hrs
-            </p>
-            <p>
-              <i class="fas fa-pound-sign"></i>
-              {{ product.product_price }}
-            </p>
-            <p>
-              <i class="fas fa-route"></i>
-              {{ product.product_max_range }}miles
-            </p>
-          </div>
+        <div class="col s12">
+          <h2 class="text-center heading">{{ product.product_model }}
+        </div>
+        <div class="col m6 s12">
+          <img src="{{ product.product_image }}" class="scooter-img">
+        </div>
+        <div class="col l6 m4 offset-m2 s12 product-spec">
+          <p>
+            <i class="fas fa-tag"></i>
+            {{ product.product_brand }}
+          </p>
+          <p>
+            <i class="fas fa-tachometer-alt"></i>
+            {{ product.product_max_speed }}mph
+          </p>
+          <p>
+            <i class="fas fa-charging-station"></i>
+            {{ product.product_battery_charge }}hrs
+          </p>
+          <p>
+            <i class="fas fa-pound-sign"></i>
+            {{ product.product_price }}
+          </p>
+          <p>
+            <i class="fas fa-route"></i>
+            {{ product.product_max_range }}miles
+          </p>
+          <p>
+            <i class="fas fa-power-off"></i>
+            {{ product.product_motor_power }}watts
+          </p>
+          <p>
+            <i class="fas fa-truck-loading"></i>
+            {{ product.product_load }}kg
+          </p>
+          <p>
+            <i class="fas fa-dharmachakra"></i>
+            {{ product.product_wheel_size }}cm
+          </p>
+          <p>
+            <i class="fas fa-water"></i>
+            {{ product.product_water_resistant }}
+          </p>
+          <p>
+            <i class="fas fa-weight-hanging"></i>
+            {{ product.product_weight }}kg
+          </p>
         </div>
       </div>
-</div>
-
-
-
-          <div>
-            <h4 class="card-title">{{ product.product_brand }}</h4>
-          </div>
-
-          <div class="card-action">
-            <a href="#">View Full Details</a>
-          </div>
-        </div>
-      
-
+      <div class="col s12 p-description">
+        <p>{{ product.product_description }}</p>
+      </div>
+      <!--Affiliate Link for Product-->
+      <div class="col m4 offset-m7 s6 card-action">
+        <a href="{{ product.product_affiliate_link }}" target="_blank" alt="{{ product.product_model }}">Buy This Scooter</a>
       </div>
     </section>
-     
-    {% for p in products %}
-        {{ p.product_model }}<br>
-        {{ p.product_brand }}<br>
-        {{ p.product_price }}<br>
-        {{ p.product_max_speed }}<br>
-        {{ p.product_range }}<br>
-        {{ p.product_motor_power }}<br>
-        {{ p.product_max_load }}<br>
-        {{ p.product_wheel_size }}<br>
-        {{ p.product_battery_charge }}<br>
-        {{ p.product_water_resistant }}<br>
-        {{ p.product_weight }}<br>
-        {{ p.product_image }}<br>
-        {{ p.product_description }}<br>
-    {% endfor %}
+    <!--Add Review-->
+    <section class="main-content add_review">
+      <div class="row">
+        <form class="col s12">
+          <fieldset>
+            <legend>Review This Product</legend>
+            <div class="row">
+              <div class="input-field col s8">
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1"></label>
+              </div>
+          </fieldset>
+        </form>
+      </div>
+      <div class="row">
+        <button type="reset" class="col s4 btn-large submit-btn text-shadow">
+          Reset<i class="fas fa-redo-alt"></i>
+      </button>
+        <button type="submit" class="col s4 btn-large submit-btn text-shadow">
+            Submit<i class="fas fa-sign-in-alt"></i>
+        </button>
+    </div>
+    </section>
+    
 
 {% endblock %}
