@@ -4,7 +4,7 @@
       <!--Product Specifications-->
       <div class="row">
         <div class="col s12">
-          <h2 class="text-center heading">{{ product.product_model }}
+          <h2 class="text-center heading">{{ product.product_model }}</h2>
         </div>
         <div class="col m6 s12">
           <img src="{{ product.product_image }}" class="scooter-img">
@@ -63,30 +63,40 @@
     <!--Add Review-->
     <section class="main-content add_review">
       <div class="row card-panel grey lighten-5">
-        <form class="col m7 s12 add-review-form" method="POST" action="">
+        <form class="col m7 s12 add-review-form" method="POST" action="{{ url_for('view_product', product_id=product._id) }}">
           <fieldset>
             <legend><i class="fas fa-pencil-alt prefix"></i>Review This Product</legend>
-            
-              <div class="input-field col s8">
-                <textarea id="product_review" name="product_review" minlength="10" maxlength="200" type="text"
-                  class="materialize-textarea validate" required></textarea>
-                <label for="product_review"></label>
-            
+
+            <div class="input-field col s8">
+              <textarea id="product_review" name="product_review" minlength="10" maxlength="200" type="text"
+                class="materialize-textarea validate" required></textarea>
+              <label for="product_review"></label>
           </fieldset>
-          
-            <!--Submit Button-->
-            <div class="col s6 btn-div card-action">
-              <button class="btn-large light-blue darken-1 text-shadow btn-reset" type="reset">
-                Clear <i class="fas fa-redo-alt right"></i>
-              </button>
-            </div>
-            <div class="col s6 btn-div card-action">
-              <!--Reset Button-->
-              <button type="submit" class="btn-large submit-btn text-shadow btn-submit" type="submit">
-                Submit<i class="fas fa-sign-in-alt"></i>
-              </button>
-            </div>
+          <!--Submit Button-->
+          <div class="col s6 btn-div card-action">
+            <button class="btn-large light-blue darken-1 text-shadow btn-reset" type="reset">
+              Clear <i class="fas fa-redo-alt right"></i>
+            </button>
+          </div>
+          <div class="col s6 btn-div card-action">
+            <!--Reset Button-->
+            <button type="submit" class="btn-large submit-btn text-shadow btn-submit" type="submit">
+              Submit<i class="fas fa-sign-in-alt"></i>
+            </button>
+          </div>
         </form>
+      </div>
+      <!--Carousell to show reviews-->
+      <div class="carousel carousel-slider center">
+        {% for review in reviews%}
+        <div class="carousel-fixed-item center"></div>
+          {% if product.product_model == review.product_model %}
+              <h5>{{ review.product_model }}</h5>
+              <p>{{ review.product_review }}</p>
+              <span>{{ review.created_by }}</span>
+          {% endif %}
+        </div>
+      {% endfor %}
       </div>
     </section>
     
