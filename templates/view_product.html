@@ -62,26 +62,32 @@
     </section>
     <!--Add Review-->
     <section class="main-content add_review">
-      <div class="row">
-        <form class="col s12">
+      <div class="row card-panel grey lighten-5">
+        <form class="col m7 s12 add-review-form" method="POST" action="">
           <fieldset>
-            <legend>Review This Product</legend>
-            <div class="row">
+            <legend><i class="fas fa-pencil-alt prefix"></i>Review This Product</legend>
+            
               <div class="input-field col s8">
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                <label for="textarea1"></label>
-              </div>
+                <textarea id="product_review" name="product_review" minlength="10" maxlength="200" type="text"
+                  class="materialize-textarea validate" required></textarea>
+                <label for="product_review"></label>
+            
           </fieldset>
+          
+            <!--Submit Button-->
+            <div class="col s6 btn-div card-action">
+              <button class="btn-large light-blue darken-1 text-shadow btn-reset" type="reset">
+                Clear <i class="fas fa-redo-alt right"></i>
+              </button>
+            </div>
+            <div class="col s6 btn-div card-action">
+              <!--Reset Button-->
+              <button type="submit" class="btn-large submit-btn text-shadow btn-submit" type="submit">
+                Submit<i class="fas fa-sign-in-alt"></i>
+              </button>
+            </div>
         </form>
       </div>
-      <div class="row">
-        <button type="reset" class="col s4 btn-large submit-btn text-shadow">
-          Reset<i class="fas fa-redo-alt"></i>
-      </button>
-        <button type="submit" class="col s4 btn-large submit-btn text-shadow">
-            Submit<i class="fas fa-sign-in-alt"></i>
-        </button>
-    </div>
     </section>
     
 

@@ -214,8 +214,39 @@ form {
    margin-bottom: 0rem;
 }
 
+.add_review {
+  padding: 1rem;
+}
 
+.card-panel {
+   width: 70%;
+   margin: 2rem auto;
+   height: 32rem;
+}
 
+fieldset {
+   width: 100%;
+   height: 23rem;
+}
+
+.btn-div {
+   padding: 1rem;
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+}
+
+.btn-reset{
+   float: left;
+   color: #e1403d;
+}
+
+.btn-submit {
+   float: right;
+}
+
+.add-review-form{
+   width: 100% !important;
+}
 /*****************Footer*************************/
 
 footer {
