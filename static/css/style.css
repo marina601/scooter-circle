@@ -234,15 +234,20 @@ fieldset {
    padding: 1rem;
    margin-top: 1rem;
    margin-bottom: 1rem;
+   background-color: #dcdfe5;
 }
 
 .btn-reset{
    float: left;
-   color: #e1403d;
+   background-color: #e1403d !important;
 }
 
 .btn-submit {
    float: right;
+}
+
+.btn-reset:hover {
+   background-color: #889FAA;
 }
 
 .add-review-form{
@@ -251,10 +256,11 @@ fieldset {
 
 /*****************Add Product*************************/
 
-.add-product-form {
-   min-height: min-content !important;
-   padding: 2rem !important;
-    margin: 1rem !important;
+.add-product {
+   padding: 5px;
+   min-height: vh;
+   width: 100%;
+   min-height: 90rem;
 }
 
 /*****************Footer*************************/
