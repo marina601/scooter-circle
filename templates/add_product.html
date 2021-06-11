@@ -9,13 +9,13 @@
     </div>
     <!--Form to Add a new Product-->
     <div class="row add-product">
-      <form class="col s12 m8 offset-m2" method="POST" action="">
+      <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_product') }}">
         <div class="row">
           <!--Scooter Model-->
           <div class="input-field col s12">
             <i class="fas fa-motorcycle prefix"></i>
-            <input id="product_model" type="text" name="product_model" minlength="5" maxlength="20"
-              pattern="^[a-zA-Z 0-9!?]{5,20}$" class="validate" required oninput="this.setCustomValidity('')"
+            <input id="product_model" type="text" name="product_model" minlength="5" maxlength="50"
+              pattern="^[a-zA-Z 0-9!?]{5,50}$" class="validate" required oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a scooter model name')">
             <label for="product_model">Scooter Model</label>
           </div>
@@ -47,8 +47,7 @@
           <div class="input-field col s12">
             <i class="fas fa-route prefix"></i>
             <input id="product_max_range" name="product_max_range" class="validate"
-              type="text" required minlength="1" maxlength="3"
-              pattern="^[1-300.]{1,3}$"
+              type="text" required minlength="1" maxlength="5"
               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a scooter range using numerical value only!')">
             <label for="product_max_range">Scooter Range in miles</label>
@@ -77,13 +76,23 @@
           </div>
         </div>
         <div class="row">
+          <!--Scooter  Max Load-->
+          <div class="input-field col s12">
+            <i class="fas fa-truck-loading prefix"></i>
+            <input id="product_load" name="product_load" minlength="1" maxlength="5" class="validate"
+              pattern="^[0-50.]{1,5}$" type="number"
+              oninput="this.setCustomValidity('')"
+              oninvalid="this.setCustomValidity('Please enter a scooter maximum load capacity in kn using numeric value!')" required >
+            <label for="product_load">Scooter Max Load in kg</label>
+          </div>
+        </div>
+        <div class="row">
           <!--Scooter Wheel Size-->
           <div class="input-field col s12">
             <i class="fas fa-dharmachakra prefix"></i>
             <input id="product_wheel_size" name="product_wheel_size" minlength="1" maxlength="5" class="validate"
-              pattern="^[0-50.]{1,5}$" type="number" required 
-              oninput="this.setCustomValidity('')"
-              oninvalid="this.setCustomValidity('Please enter a scooter  wheel size using numerical value only!')">
+               type="text" oninput="this.setCustomValidity('')"
+              oninvalid="this.setCustomValidity('Please enter a scooter  wheel size using numerical value only!')" required >
             <label for="product_wheel_size">Scooter Wheel Size in cm</label>
           </div>
         </div>
@@ -117,9 +126,8 @@
           <div class="input-field col s12">
             <i class="fas fa-weight-hanging prefix"></i>
             <input id="product_weight" name="product_weight" minlength="1" maxlength="5" class="validate"
-              pattern="^[0-20.]{1,5}$" type="number" required 
-              oninput="this.setCustomValidity('')"
-              oninvalid="this.setCustomValidity('Please enter the weight of the scooter using only numerical values!')">
+               type="text" oninput="this.setCustomValidity('')"
+              oninvalid="this.setCustomValidity('Please enter the weight of the scooter using only numerical values!')" required>
             <label for="product_weight">How heavy is this scooter in kg?</label>
           </div>
         </div>
@@ -148,7 +156,7 @@
           <div class="input-field col s12">
             <i class="fas fa-file-alt prefix"></i>
             <textarea id="product_description" class="materialize-textarea validate" type="text"
-              name="product_description" minlength="5" maxlength="250" pattern="^[a-z A-Z0-9!?.,(){}[]>]{5,250}$"
+              name="product_description" minlength="5" maxlength="500" pattern="^[a-z A-Z0-9!?.,(){}[]>]{5,500}$"
               required oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a scooter description')"></textarea>
             <label for="product_description">Scooter Description</label>

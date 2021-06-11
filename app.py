@@ -143,6 +143,12 @@ def view_product(product_id):
 # add product to the db only by Admin user
 @app.route("/add_product")
 def add_product():
+    if request.method == "POST":
+    
+        mongo.db.products.insert_one(request.form.to_dict())
+        flash("A New Product Has Been Succsefully Added")
+        return redirect(url_for('view_product'))
+
     return render_template("add_product.html")
 
 
