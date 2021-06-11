@@ -33,7 +33,7 @@
                 <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-user-alt">Profile</i></a>
                 </li>
                 {% if session.user|lower == "admin"|lower %}
-                    <li><a href="#"><i class="fas fa-folder-plus">Add Product</i></a></li>
+                    <li><a href="{{ url_for('add_product') }}"><i class="fas fa-folder-plus">Add Product</i></a></li>
                 {% endif %}
                 <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt">Logout</i></a></li>
             {% else %}
@@ -53,7 +53,7 @@
                 <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-user-alt"></i>Profile</a>
                 </li>
                 {% if session.user|lower == "admin"|lower %}
-                    <li><a href="#"><i class="fas fa-folder-plus"></i>Add Product</a></li>
+                    <li><a href="{{ url_for('add_product') }}"><i class="fas fa-folder-plus"></i>Add Product</a></li>
                 {% endif %}
                 <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
             {% else %}

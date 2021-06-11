@@ -140,6 +140,12 @@ def view_product(product_id):
                            product=product, reviews=reviews)
 
 
+# add product to the db only by Admin user
+@app.route("/add_product")
+def add_product():
+    return render_template("add_product.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
