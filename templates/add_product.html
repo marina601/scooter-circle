@@ -2,8 +2,24 @@
 {% block content %}
 
     <section class="main-content">
-        <h3 class="text-center">Add Product</h3>
-
+        <h2 class="text-center heading text-shadow">Add Product</h2>
+        <!--Form to Add a new Product-->
+        <div class="row">
+            <form class="col s8 offset-m2" method="POST" action="">
+              <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-motorcycle prefix"></i>
+                  <input id="product_model" type="text" class="validate">
+                  <label for="product_model">Scooter Model</label>
+                </div>
+                <div class="input-field col s12">
+                    <i class="fas fa-tag prefix"></i>
+                  <input id="product_brand" type="tel" class="validate">
+                  <label for="product_brand">Scooter Brand</label>
+                </div>
+              </div>
+            </form>
+          </div>
         
                    
                     <!--Login Button-->
