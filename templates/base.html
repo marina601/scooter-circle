@@ -63,7 +63,6 @@
             {% endif %}
       </ul>
   </header>
-  <section>
     <!-- Flash Messages-->
     {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -74,8 +73,6 @@
             {% endfor %}
         {% endif %}
     {% endwith %}
-</section>
-
 
   {% block content %}
   {% endblock %}

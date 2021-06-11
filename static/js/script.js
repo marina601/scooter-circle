@@ -7,5 +7,6 @@ $(document).ready(function(){
     fullWidth: true,
     indicators: true
   });
-    
+  // select option for add product page
+  $('select').formSelect();
   });

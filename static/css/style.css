@@ -85,6 +85,7 @@ nav, .page-footer {
 .main-content {
    background-color: #dcdfe5;
    margin-top: -2rem;
+   min-height: fit-content;
 }
 
 .intro {
@@ -247,6 +248,15 @@ fieldset {
 .add-review-form{
    width: 100% !important;
 }
+
+/*****************Add Product*************************/
+
+.add-product-form {
+   min-height: min-content !important;
+   padding: 2rem !important;
+    margin: 1rem !important;
+}
+
 /*****************Footer*************************/
 
 footer {
