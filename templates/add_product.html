@@ -101,7 +101,7 @@
           <div class="input-field col s12">
             <i class="fas fa-charging-station prefix"></i>
             <input id="product_battery_charge" name="product_battery_charge" minlength="1" maxlength="5"
-              class="validate" pattern="^[0-20.]{1,5}$" type="number" required 
+              class="validate" pattern="^[0-20.]{1,5}$" type="text" required 
               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a number of hours required for battery to charge using only numerical values!')">
             <label for="product_battery_charge">Scooter Battery Charge in hr</label>
@@ -145,7 +145,7 @@
            <!--Scooter Image Link-->
            <div class="input-field col s12">
             <i class="fas fa-camera prefix"></i>
-            <input id="product_image" name="product_image" minlength="5" maxlength="50" class="validate"
+            <input id="product_image" name="product_image" minlength="5" maxlength="200" class="validate"
                type="url" required oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter url for your Scooter Image')">
             <label for="product_image">URL for Scooter Image</label>
@@ -165,9 +165,9 @@
         <div class="row">
           <!--Submit Button-->
           <div class="col s6 btn-div card-action">
-            <button class="btn-large text-shadow btn-reset" type="reset">
+            <a href="{{ url_for('add_product') }}" class="btn-large text-shadow btn-reset">
               Clear <i class="fas fa-redo-alt right"></i>
-            </button>
+          </a>
           </div>
           <div class="col s6 btn-div card-action">
             <!--Reset Button-->
