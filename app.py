@@ -141,13 +141,31 @@ def view_product(product_id):
 
 
 # add product to the db only by Admin user
-@app.route("/add_product")
+@app.route("/add_product", methods=["GET", "POST"])
 def add_product():
     if request.method == "POST":
-    
-        mongo.db.products.insert_one(request.form.to_dict())
+        product = {
+            "product_model": request.form.get("product_model"),
+            "product_brand": request.form.get("product_brand"),
+            "product_price": request.form.get("product_price"),
+            "product_max_range": request.form.get("product_max_range"),
+            "product_max_speed": request.form.get("product_max_speed"),
+            "product_motor_power": request.form.get("product_motor_power"),
+            "product_load": request.form.get("product_load"),
+            "product_wheel_size": request.form.get("product_wheel_size"),
+            "product_battery_charge": request.form.get
+            ("product_bettery_charge"),
+            "product_water_resistant": request.form.get
+            ("product_water_resistant"),
+            "product_weight": request.form.get("product_weight"),
+            "product_affiliate_link": request.form.get
+            ("product_affilite_link"),
+            "product_image": request.form.get("product_image"),
+            "product_description": request.form.get("product_description")
+        }
+        mongo.db.products.insert_one(product)
         flash("A New Product Has Been Succsefully Added")
-        return redirect(url_for('view_product'))
+        return redirect(url_for('products'))
 
     return render_template("add_product.html")
 
