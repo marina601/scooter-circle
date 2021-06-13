@@ -58,7 +58,7 @@
           <div class="input-field col s12">
             <i class="fas fa-tachometer-alt prefix"></i>
             <input id="product_max_speed" name="product_max_speed" minlength="1" maxlength="5" class="validate"
-              pattern="^[0-150.]{1,5}$" type="number" required 
+              pattern="^[0-150.]{1,5}$" type="text" required 
               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a scooter max Speed using numerical value only!')">
             <label for="product_max_speed">Scooter Speed in mph</label>
@@ -101,9 +101,9 @@
           <div class="input-field col s12">
             <i class="fas fa-charging-station prefix"></i>
             <input id="product_battery_charge" name="product_battery_charge" minlength="1" maxlength="5"
-              class="validate" pattern="^[0-20.]{1,5}$" type="text" required 
+              class="validate" type="text" 
               oninput="this.setCustomValidity('')"
-              oninvalid="this.setCustomValidity('Please enter a number of hours required for battery to charge using only numerical values!')">
+              oninvalid="this.setCustomValidity('Please enter a number of hours required for battery to charge using only numerical values!')" required>
             <label for="product_battery_charge">Scooter Battery Charge in hr</label>
           </div>
         </div>
@@ -135,7 +135,7 @@
            <!--Scooter Affiliate Link-->
            <div class="input-field col s12">
             <i class="fas fa-shopping-cart prefix"></i>
-            <input id="product_affiliate_link" name="product_affiliate_link" minlength="5" maxlength="50" class="validate"
+            <input id="product_affiliate_link" name="product_affiliate_link" minlength="5" maxlength="400" class="validate"
                type="url" required oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter url for your Affiliate Link')">
             <label for="product_affiliate_link">URL for Affiliate Link</label>

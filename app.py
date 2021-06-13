@@ -153,13 +153,13 @@ def add_product():
             "product_motor_power": request.form.get("product_motor_power"),
             "product_load": request.form.get("product_load"),
             "product_wheel_size": request.form.get("product_wheel_size"),
-            "product_battery_charge": request.form.get
-            ("product_bettery_charge"),
-            "product_water_resistant": request.form.get
-            ("product_water_resistant"),
+            "product_battery_charge":
+                request.form.get("product_battery_charge"),
+            "product_water_resistant":
+                request.form.get("product_water_resistant"),
             "product_weight": request.form.get("product_weight"),
-            "product_affiliate_link": request.form.get
-            ("product_affilite_link"),
+            "product_affiliate_link":
+                request.form.get("product_affiliate_link"),
             "product_image": request.form.get("product_image"),
             "product_description": request.form.get("product_description")
         }
