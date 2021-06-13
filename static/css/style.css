@@ -7,7 +7,9 @@ html {
    scroll-behavior: smooth;
 }
 
-body {
+body,
+label,
+button {
    margin: 0;
    padding: 0;
    font-size: 1.8rem;
@@ -139,8 +141,8 @@ form {
  }
  /* label underline focus color */
  .input-field input[type=text]:focus {
-   border-bottom: 1px solid orange;
-   box-shadow: 0 1px 0 0 orange;
+   border-bottom: 1px solid #2fc669;
+   box-shadow: 0 1px 0 0 #2fc669;
  }
  /* valid color */
  .input-field input[type=text].valid {
@@ -240,6 +242,7 @@ fieldset {
 .btn-reset{
    float: left;
    background-color: #e1403d !important;
+   color: #fafafa !important;
 }
 
 .btn-submit {
@@ -261,6 +264,11 @@ fieldset {
    max-height: fit-content;
    width: 100%;
    min-height: 110rem;
+}
+
+.btn-reset:hover {
+   background-color: #889faa !important;
+   color: #fafafa !important;
 }
 
 /*****************Footer*************************/
