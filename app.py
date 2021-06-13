@@ -121,8 +121,10 @@ def products():
 # view product by id and add review to the product
 @app.route("/view_product/<product_id>", methods=["GET", "POST"])
 def view_product(product_id):
+    product = mongo.db.products.find_one({"_id": ObjectId(product_id)})
     if request.method == "POST":
         review = {
+            "prduct_model": request.form.get("product_model"),
             "product_review": request.form.get("product_review"),
             "created_by": session["user"]
         }
@@ -130,7 +132,6 @@ def view_product(product_id):
         flash("Your Review Has Been Added")
         return redirect(url_for('products'))
 
-    product = mongo.db.products.find_one({"_id": ObjectId(product_id)})
     reviews = mongo.db.reviews.find().sort("product_review", 1)
 
     if 'user' not in session:

@@ -66,11 +66,18 @@
         <form class="col m7 s12 add-review-form" method="POST" action="{{ url_for('view_product', product_id=product._id) }}">
           <fieldset>
             <legend><i class="fas fa-pencil-alt prefix"></i>Review This Product</legend>
-
-            <div class="input-field col s8">
-              <textarea id="product_review" name="product_review" minlength="10" maxlength="200" type="text"
+            <div class="row">
+            <div class="input-field col s12">
+              <input id="product_model" type="text" name="product_model">
+              <label for="product_model">{{ product.product_model }}</label>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="product_review" name="product_review" minlength="10" maxlength="200" type="text"
                 class="materialize-textarea validate" required></textarea>
               <label for="product_review"></label>
+              </div>
+            </div>
           </fieldset>
           <!--Submit Button-->
           <div class="col s6 btn-div card-action">
@@ -87,14 +94,14 @@
         </form>
       </div>
       <!--Carousell to show reviews-->
-      <div class="carousel carousel-slider center">
-        {% for review in reviews%}
-        <div class="carousel-fixed-item center"></div>
-          {% if product.product_model == review.product_model %}
-              <h5>{{ review.product_model }}</h5>
+      <div class="card-panel center">
+        {% for review in reviews %}
+        <div class="col s4"></div>
+            
+              <h2>{{ review.prduct_model }}</h2>
               <p>{{ review.product_review }}</p>
               <span>{{ review.created_by }}</span>
-          {% endif %}
+          
         </div>
       {% endfor %}
       </div>
