@@ -120,7 +120,7 @@
               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please choose one of the options')" required>
               <option value="{{ product.product_water_resistant }}" selected>{{ product.product_water_resistant }}</option>
-              {% if product.product_water_resistant == "yes" %}
+              {% if product.product_water_resistant == "Yes" %}
                   <option value="No">No</option>
               {% else %}
                   <option value="Yes">Yes</option>
