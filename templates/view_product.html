@@ -93,16 +93,13 @@
           </div>
         </form>
       </div>
-      <!--Carousell to show reviews-->
+      <!--show reviews-->
       <div class="card-panel center">
         {% for review in reviews %}
-        <div class="col s4"></div>
-            
-              <h2>{{ review.product_model }}</h2>
+             {% if review.product_model == product.product_model %} 
               <p>{{ review.product_review }}</p>
               <span>{{ review.created_by }}</span>
-            
-        </div>
+            {% endif %}
       {% endfor %}
       </div>
     </section>
