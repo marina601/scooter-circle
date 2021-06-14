@@ -15,6 +15,7 @@
           <div class="input-field col s12">
             <i class="fas fa-motorcycle prefix"></i>
             <input id="product_model" type="text" name="product_model" minlength="5" maxlength="50"
+              value="{{ product.product_model }}"
               pattern="^[a-zA-Z 0-9!?]{5,50}$" class="validate" required oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a scooter model name')">
             <label for="product_model">Scooter Model</label>
@@ -25,7 +26,7 @@
           <div class="input-field col s12">
             <i class="fas fa-tag prefix"></i>
             <input id="product_brand" name="product_brand" minlength="3" maxlength="20" class="validate"
-              pattern="^[a-zA-Z 0-9!?]{3,20}$" type="text" required 
+              pattern="^[a-zA-Z 0-9!?]{3,20}$" type="text" value="{{ product.product_brand }}" required 
               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a scooter brand name')">
             <label for="product_brand">Scooter Brand</label>
@@ -36,6 +37,7 @@
           <div class="input-field col s12">
             <i class="fas fa-pound-sign prefix"></i>
             <input id="product_price" name="product_price" type="number" step="any" minlength="2" maxlength="7" class="validate"
+              value="{{ product.product_price }}"
               required pattern="^[1-10000.]{2,7}$"
               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a scooter price using numerical value only!')">
@@ -48,7 +50,7 @@
             <i class="fas fa-route prefix"></i>
             <input id="product_max_range" name="product_max_range" class="validate"
               type="number" step="any" required pattern="^[1-10000.]{1,5}$"
-               minlength="1" maxlength="5"
+               minlength="1" maxlength="5" value="{{ product.product_max_range }}"
               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a scooter range using numerical value only!')">
             <label for="product_max_range">Scooter Range in miles</label>
@@ -59,8 +61,8 @@
           <div class="input-field col s12">
             <i class="fas fa-tachometer-alt prefix"></i>
             <input id="product_max_speed" name="product_max_speed" minlength="1" maxlength="5" class="validate"
-              pattern="^[0-150.]{1,5}$" type="number" step="any" required 
-              oninput="this.setCustomValidity('')"
+              pattern="^[0-150.]{1,5}$" type="number" step="any" required value="{{ product.product_max_speed }}"
+              oninput="this.setCustomValidity('')" 
               oninvalid="this.setCustomValidity('Please enter a scooter max Speed using numerical value only!')">
             <label for="product_max_speed">Scooter Speed in mph</label>
           </div>
@@ -70,7 +72,7 @@
           <div class="input-field col s12">
             <i class="fas fa-power-off prefix"></i>
             <input id="product_motor_power" name="product_motor_power" minlength="1" maxlength="5" class="validate"
-              pattern="^[0-150.]{1,5}$" type="number" step="any" required 
+              pattern="^[0-150.]{1,5}$" type="number" step="any" required value="{{ product.product_motor_power }}"
               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a scooter motor power using numerical value only!')">
             <label for="product_motor_power">Scooter Motor Power in Watts</label>
@@ -81,7 +83,7 @@
           <div class="input-field col s12">
             <i class="fas fa-truck-loading prefix"></i>
             <input id="product_load" name="product_load" minlength="1" maxlength="5" class="validate"
-              pattern="^[0-50.]{1,5}$" type="number" step="any"
+              pattern="^[0-50.]{1,5}$" type="number" step="any" value="{{ product.product_load }}"
               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a scooter maximum load capacity in kn using numeric value!')" required >
             <label for="product_load">Scooter Max Load in kg</label>
@@ -92,7 +94,7 @@
           <div class="input-field col s12">
             <i class="fas fa-dharmachakra prefix"></i>
             <input id="product_wheel_size" name="product_wheel_size" minlength="1" maxlength="5" class="validate"
-               type="number" step="any" pattern="^[0-50.]{1,5}$"
+               type="number" step="any" pattern="^[0-50.]{1,5}$" value="{{ product.product_wheel_size }}"
               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a scooter  wheel size using numerical value only!')" required >
             <label for="product_wheel_size">Scooter Wheel Size in cm</label>
@@ -103,7 +105,7 @@
           <div class="input-field col s12">
             <i class="fas fa-charging-station prefix"></i>
             <input id="product_battery_charge" name="product_battery_charge" minlength="1" maxlength="5"
-              class="validate" type="number" step="any"
+              class="validate" type="number" step="any" value="{{ product.product_battery_charge }}"
               pattern="^[0-50.]{1,5}$"
               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a number of hours required for battery to charge using only numerical values!')" required>
@@ -117,9 +119,12 @@
             <select id="product_water_resistant" name="product_water_resistant" class="validate"
               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please choose one of the options')" required>
-              <option value="" disabled selected>Select an option</option>
-              <option value="Yes">Yes</option>
-              <option value="No">No</option>
+              <option value="{{ product.product_water_resistant }}" selected>{{ product.product_water_resistant }}</option>
+              {% if product.product_water_resistant == "yes" %}
+                  <option value="No">No</option>
+              {% else %}
+                  <option value="Yes">Yes</option>
+              {% endif %}
             </select>
             <label for="product_water_resistant">Is this scooter water resistant?</label>
           </div>
@@ -129,7 +134,7 @@
           <div class="input-field col s12">
             <i class="fas fa-weight-hanging prefix"></i>
             <input id="product_weight" name="product_weight" minlength="1" maxlength="5" class="validate"
-               type="number" step="any"
+               type="number" step="any" value="{{ product.product_weight}}"
                pattern="^[0-50.]{1,5}$"
                oninput="this.setCustomValidity('')"
                oninvalid="this.setCustomValidity('Please enter the weight of the scooter using only numerical values!')" required>
@@ -141,7 +146,8 @@
            <div class="input-field col s12">
             <i class="fas fa-shopping-cart prefix"></i>
             <input id="product_affiliate_link" name="product_affiliate_link" minlength="5" maxlength="400" class="validate"
-               type="url" required oninput="this.setCustomValidity('')"
+               type="url" required value="{{ product.product_affiliate_link }}"
+               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter url for your Affiliate Link')">
             <label for="product_affiliate_link">URL for Affiliate Link</label>
           </div>
@@ -151,7 +157,8 @@
            <div class="input-field col s12">
             <i class="fas fa-camera prefix"></i>
             <input id="product_image" name="product_image" minlength="5" maxlength="200" class="validate"
-               type="url" required oninput="this.setCustomValidity('')"
+               type="url" required value="{{ product.product_image }}"
+               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter url for your Scooter Image')">
             <label for="product_image">URL for Scooter Image</label>
           </div>
@@ -162,16 +169,17 @@
             <i class="fas fa-file-alt prefix"></i>
             <textarea id="product_description" class="materialize-textarea validate" type="text"
               name="product_description" minlength="5" maxlength="500" pattern="^[a-z A-Z0-9!?.,(){}[]>]{5,500}$"
-              required oninput="this.setCustomValidity('')"
-              oninvalid="this.setCustomValidity('Please enter a scooter description')"></textarea>
+              required 
+              oninput="this.setCustomValidity('')"
+              oninvalid="this.setCustomValidity('Please enter a scooter description')">{{ product.product_description }}</textarea>
             <label for="product_description">Scooter Description</label>
           </div>
         </div>
         <div class="row">
           <!--Submit Button-->
           <div class="col s6 btn-div">
-            <a href="{{ url_for('add_product') }}" class="btn-large text-shadow btn-reset">
-              Clear <i class="fas fa-redo-alt right"></i>
+            <a href="{{ url_for('products') }}" class="btn-large text-shadow btn-reset">
+              Cancel <i class="fas fa-times-circle right"></i>
           </a>
           </div>
           <div class="col s6 btn-div">

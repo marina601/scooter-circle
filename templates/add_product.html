@@ -15,7 +15,7 @@
           <div class="input-field col s12">
             <i class="fas fa-motorcycle prefix"></i>
             <input id="product_model" type="text" name="product_model" minlength="5" maxlength="50"
-              pattern="^[a-zA-Z 0-9!?]{5,50}$" class="validate" required oninput="this.setCustomValidity('')"
+              pattern="^[a-zA-Z 0-9!?-]{5,50}$" class="validate" required oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a scooter model name')">
             <label for="product_model">Scooter Model</label>
           </div>
