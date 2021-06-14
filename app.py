@@ -201,6 +201,14 @@ def edit_product(product_id):
     return render_template("edit_product.html", product=product)
 
 
+# Delete Product
+@app.route("/delete_product/<product_id>")
+def delete_product(product_id):
+    mongo.db.products.remove({"_id": ObjectId(product_id)})
+    flash("Product Has Been Deleted")
+    return redirect(url_for('products'))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
