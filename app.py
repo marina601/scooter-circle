@@ -124,7 +124,7 @@ def view_product(product_id):
     product = mongo.db.products.find_one({"_id": ObjectId(product_id)})
     if request.method == "POST":
         review = {
-            "prduct_model": request.form.get("product_model"),
+            "product_model": request.form.get("product_model"),
             "product_review": request.form.get("product_review"),
             "created_by": session["user"]
         }
