@@ -132,7 +132,7 @@ def view_product(product_id):
         flash("Your Review Has Been Added")
         return redirect(url_for('products'))
 
-    reviews = mongo.db.reviews.find().sort("product_review", 1)
+    reviews = mongo.db.reviews.find().sort("product_model", 1)
 
     if 'user' not in session:
         return redirect(url_for("login"))
@@ -169,6 +169,15 @@ def add_product():
         return redirect(url_for('products'))
 
     return render_template("add_product.html")
+
+
+# edit product for admit user only
+@app.route("/edit_product/<product_id>", methods=["GET", "POST"])
+def edit_product(product_id):
+    product = mongo.db.products.find_one({"_id": ObjectId(product_id)})
+
+    reviews = mongo.db.reviews.find().sort("product_model", 1)
+    return render_template("edit_product.html", product=product, reviews=reviews)
 
 
 if __name__ == "__main__":
