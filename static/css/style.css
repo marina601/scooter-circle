@@ -163,10 +163,6 @@ form {
     text-align: right;
  }
 
- /**.login-link a,
- .card-action a {
-    color: #889faa !important;
- }*/
    
  .product-details,
  .btn-flat {
@@ -270,6 +266,36 @@ fieldset {
    width: 100%;
    margin-right: 0px;
    margin-left: 0px;
+}
+
+.affiliate-link {
+   background-color: #889faa;
+   height: 5rem;
+   width: 18rem;
+   display: flex;
+   float: right;
+   margin: 2rem;
+   border-radius: 0.5rem;
+}
+
+.affiliate-link a {
+   color: #fafafa;
+}
+
+.affiliate-link a:hover {
+   color: #383843
+}
+
+.affiliate-link:hover {
+   background-color: #dcdfe5;
+}
+
+.add_review {
+   padding-top: 10rem;
+}
+
+.review-card {
+   height: fit-content;
 }
 /*****************Add Product*************************/
 
