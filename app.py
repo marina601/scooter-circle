@@ -121,15 +121,6 @@ def products():
 # view product by id and add review to the product
 @app.route("/view_product/<product_id>", methods=["GET", "POST"])
 def view_product(product_id):
-    if request.method == "POST":
-        review = {
-            "product_model": request.form.get("product_model"),
-            "product_review": request.form.get("product_review"),
-            "created_by": session["user"]
-        }
-        mongo.db.reviews.insert_one(review)
-        flash("Your Review Has Been Added")
-        return redirect(url_for('products'))
 
     product = mongo.db.products.find_one({"_id": ObjectId(product_id)})
     reviews = mongo.db.reviews.find().sort("product_model", 1)
@@ -139,6 +130,22 @@ def view_product(product_id):
 
     return render_template("view_product.html",
                            product=product, reviews=reviews)
+
+
+@app.route("/add_review", methods=["GET", "POST"])
+def add_review():
+    if request.method == "POST":
+        review = {
+            "product_model": request.form.get("product_model"),
+            "product_review": request.form.get("product_review"),
+            "created_by": session["user"]
+        }
+        mongo.db.reviews.insert_one(review)
+        flash("Your Review Has Been Added")
+        return redirect(url_for('products'))
+    
+    if 'user' not in session:
+        return redirect(url_for("login"))
 
 
 # add product to the db only by Admin user
@@ -206,6 +213,14 @@ def edit_product(product_id):
 def delete_product(product_id):
     mongo.db.products.remove({"_id": ObjectId(product_id)})
     flash("Product Has Been Deleted")
+    return redirect(url_for('products'))
+
+
+# Delete Review
+@app.route("/delete_review/<review_id>")
+def delete_review(review_id):
+    mongo.db.reviews.remove({"_id": ObjectId(review_id)})
+    flash("You review has been Deleted")
     return redirect(url_for('products'))
 
 

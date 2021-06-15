@@ -64,13 +64,13 @@
     <section class="main-content add_review">
       <div class="row card-panel grey lighten-5">
         <form class="col m7 s12 add-review-form" method="POST"
-          action="{{ url_for('view_product', product_id=product._id) }}">
+          action="{{ url_for('add_review') }}">
           <fieldset>
             <legend><i class="fas fa-pencil-alt prefix"></i>Review This Product</legend>
             <div class="row">
-              <div class="input-field col s12">
+              <div class="input-field col s12">                                         
                 <input id="product_model" type="text" name="product_model">
-                <label for="product_model">{{ product.product_model }}</label>
+                <label for="product_model"></label>
               </div>
               <div class="row">
                 <div class="input-field col s12">
@@ -112,16 +112,16 @@
                   {% if session.user|lower == review.created_by|lower %}
                   <div class="card-action card-btn">
                     <!-- Modal Trigger -->
-                    <button data-target="{{ product._id }}" class="btn-small modal-trigger text-shadow btn-reset">
+                    <button data-target="{{ review._id }}" class="btn-small modal-trigger text-shadow btn-reset">
                       Delete <i class="fas fa-trash-alt prefix"></i></button>
                     <!-- Modal Structure -->
-                    <div id="{{ product._id }}" class="modal">
+                    <div id="{{ review._id }}" class="modal">
                       <div class="modal-content">
                         <h4>Are you sure you want to delete this product?</h4>
                       </div>
                       <div class="modal-footer">
-                        <a href="{{ url_for('products') }}" class="modal-close waves-effect waves-green btn-flat">No</a>
-                        <a href="{{ url_for('delete_product', product_id=product._id)}}"
+                        <a href="{{ url_for('view_product', product_id=product._id) }}" class="modal-close waves-effect waves-green btn-flat">No</a>
+                        <a href="{{ url_for('delete_review', review_id=review._id)}}"
                           class="modal-close waves-effect waves-green btn-flat">Yes</a>
                       </div>
                     </div>
