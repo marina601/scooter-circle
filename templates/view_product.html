@@ -63,21 +63,22 @@
     <!--Add Review-->
     <section class="main-content add_review">
       <div class="row card-panel grey lighten-5">
-        <form class="col m7 s12 add-review-form" method="POST" action="{{ url_for('view_product', product_id=product._id) }}">
+        <form class="col m7 s12 add-review-form" method="POST"
+          action="{{ url_for('view_product', product_id=product._id) }}">
           <fieldset>
             <legend><i class="fas fa-pencil-alt prefix"></i>Review This Product</legend>
             <div class="row">
-            <div class="input-field col s12">
-              <input id="product_model" type="text" name="product_model">
-              <label for="product_model">{{ product.product_model }}</label>
-            </div>
-            <div class="row">
               <div class="input-field col s12">
-                <textarea id="product_review" name="product_review" minlength="10" maxlength="200" type="text"
-                class="materialize-textarea validate" required></textarea>
-              <label for="product_review"></label>
+                <input id="product_model" type="text" name="product_model">
+                <label for="product_model">{{ product.product_model }}</label>
               </div>
-            </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea id="product_review" name="product_review" minlength="10" maxlength="200" type="text"
+                    class="materialize-textarea validate" required></textarea>
+                  <label for="product_review"></label>
+                </div>
+              </div>
           </fieldset>
           <!--Submit Button-->
           <div class="col s6 card-action card-btn">
@@ -93,20 +94,20 @@
           </div>
         </form>
       </div>
-      </section>
-      <section class="main-content row">
-        <div class="col s12">
-          <h3 class="text-center">User Reviews</h3>
-        </div>
+    </section>
+    <section class="main-content">
       <!--show reviews-->
       {% for review in reviews %}
       <div class="row">
-        
             {% if review.product_model == product.product_model %}
-              <div class="col s12 m4">
-                <div class="card-panel review-card">
-                  <p>{{ review.product_review }}</p>
-                  <h5>Reviewed by: {{ review.created_by }}</h5>
+            <div class="col s12">
+              <h3 class="text-center">User Reviews</h3>
+            </div>
+            <div class="col s12 m4">
+              <div class="card-panel review-card">
+                <p>{{ review.product_review }}</p>
+                <h5>Reviewed by: {{ review.created_by }}</h5>
+                <div class="row">
                   <!--Edit and Delete Product Buttons-->
                   {% if session.user|lower == review.created_by|lower %}
                   <div class="card-action card-btn">
@@ -128,18 +129,18 @@
                     <a href="{{ url_for('edit_product', product_id=product._id)}}"
                       class="btn-small submit-btn text-shadow">
                       Edit <i class="fas fa-edit prefix"></i></a>
+                    {% else %}
                     {% endif %}
-
-                  </div>
-                </div>
-              {% else %}
-              <div class="col s12">
-              <h5>No results</h5>
+                    </div>
               </div>
-              {% endif %}
-              </div>
-          {% endfor %}
-        
+            </div>
+            {% else %}
+            <div class="col s12">
+              <h3>No reviews Yet</h3>
+            </div>
+            {% endif %}
+      </div>
+      {% endfor %}
     </section>
     
 
