@@ -163,13 +163,18 @@ form {
     text-align: right;
  }
 
- .login-link a,
+ /**.login-link a,
  .card-action a {
     color: #889faa !important;
+ }*/
+   
+ .product-details,
+ .btn-flat {
+   color: #889faa !important;
  }
 
  .login-link a:hover,
- .card-action a:hover {
+ .product-details:hover {
     background-color: #889faa !important;
     color: #fafafa !important;
     padding: 5px !important;
@@ -200,7 +205,7 @@ form {
  padding: 1rem !important;
 }
 
-.card-action:hover {
+.details-link:hover {
    background-color: #889FAA;
 }
 
@@ -249,6 +254,10 @@ fieldset {
    float: right;
 }
 
+.btn-small {
+   color: #fafafa;
+}
+
 .btn-reset:hover {
    background-color: #889FAA;
 }
@@ -257,6 +266,11 @@ fieldset {
    width: 100% !important;
 }
 
+.card-btn {
+   width: 100%;
+   margin-right: 0px;
+   margin-left: 0px;
+}
 /*****************Add Product*************************/
 
 .add-product {
