@@ -171,7 +171,13 @@ def add_product():
             "product_image": request.form.get("product_image"),
             "product_description": request.form.get("product_description")
         }
+
+        product_name = {
+            "product_model": request.form.get("product_model"),
+        }
+
         mongo.db.products.insert_one(product)
+        mongo.db.reviews.insert_one(product_name)
         flash("A New Product Has Been Succsefully Added")
         return redirect(url_for('products'))
 
