@@ -7,6 +7,9 @@ $(document).ready(function(){
   // select option for add product page
   $('select').formSelect();
 
+  //modal
+  $('.modal').modal();
+
   //validate select element from Materialize class
   validateMaterializeSelect();
   function validateMaterializeSelect() {
