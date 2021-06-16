@@ -1,81 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
-    <section class="main-content">
-      <!--Product Specifications-->
-      <div class="row">
-        <div class="col s12">
-          <h2 class="text-center heading">{{ product.product_model }}</h2>
-        </div>
-        <div class="col m6 s12">
-          <img src="{{ product.product_image }}" class="scooter-img">
-        </div>
-        <div class="col l6 m4 offset-m2 s12 product-spec">
-          <p>
-            <i class="fas fa-tag"></i>
-            {{ product.product_brand }}
-          </p>
-          <p>
-            <i class="fas fa-tachometer-alt"></i>
-            {{ product.product_max_speed }}mph
-          </p>
-          <p>
-            <i class="fas fa-charging-station"></i>
-            {{ product.product_battery_charge }}hrs
-          </p>
-          <p>
-            <i class="fas fa-pound-sign"></i>
-            {{ product.product_price }}
-          </p>
-          <p>
-            <i class="fas fa-route"></i>
-            {{ product.product_max_range }}miles
-          </p>
-          <p>
-            <i class="fas fa-power-off"></i>
-            {{ product.product_motor_power }}watts
-          </p>
-          <p>
-            <i class="fas fa-truck-loading"></i>
-            {{ product.product_load }}kg
-          </p>
-          <p>
-            <i class="fas fa-dharmachakra"></i>
-            {{ product.product_wheel_size }}cm
-          </p>
-          <p>
-            <i class="fas fa-water"></i>
-            {{ product.product_water_resistant }}
-          </p>
-          <p>
-            <i class="fas fa-weight-hanging"></i>
-            {{ product.product_weight }}kg
-          </p>
-        </div>
-      </div>
-      <div class="col s12 p-description">
-        <p>{{ product.product_description }}</p>
-      </div>
-      <!--Affiliate Link for Product-->
-      <div class="col m4 offset-m7 s6 card-action affiliate-link">
-        <a href="{{ product.product_affiliate_link }}" class="text-shadow" target="_blank" alt="{{ product.product_model }}">Buy This Scooter</a>
-      </div>
-    </section>
+    
     <!--Add Review-->
     <section class="main-content add_review">
       <div class="row card-panel grey lighten-5">
         <form class="col m7 s12 add-review-form" method="POST"
-          action="{{ url_for('add_review') }}">
+          action="{{ url_for('edit_review', review_id=review._id) }}">
           <fieldset>
-            <legend><i class="fas fa-pencil-alt prefix"></i>Review This Product</legend>
+            <legend><i class="fas fa-pencil-alt prefix"></i>Update Your Review</legend>
             <div class="row">
               <div class="input-field col s12">                                         
-                <input id="product_model" type="text" name="product_model" value="{{ product.product_model }}">
+                <input id="product_model" type="text" name="product_model" value="{{ review.product_model }}">
                 <label for="product_model"></label>
               </div>
               <div class="row">
                 <div class="input-field col s12">
                   <textarea id="product_review" name="product_review" minlength="10" maxlength="200" type="text"
-                    class="materialize-textarea validate" required></textarea>
+                    class="materialize-textarea validate" required>{{ review.product_review }}</textarea>
                   <label for="product_review"></label>
                 </div>
               </div>
@@ -131,7 +72,7 @@
                           </div>
                         </div>
                         <!--Edit Button-->
-                        <a href="{{ url_for('edit_review', review_id=review._id)}}"
+                        <a href="{{ url_for('edit_product', product_id=product._id)}}"
                           class="btn-small submit-btn text-shadow">
                           Edit <i class="fas fa-edit prefix"></i></a>
                       </div>

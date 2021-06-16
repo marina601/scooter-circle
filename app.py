@@ -132,6 +132,7 @@ def view_product(product_id):
                            product=product, reviews=reviews)
 
 
+# add review
 @app.route("/add_review", methods=["GET", "POST"])
 def add_review():
     if request.method == "POST":
@@ -143,7 +144,7 @@ def add_review():
         mongo.db.reviews.insert_one(review)
         flash("Your Review Has Been Added")
         return redirect(url_for('products'))
-    
+
     if 'user' not in session:
         return redirect(url_for("login"))
 
@@ -228,6 +229,22 @@ def delete_review(review_id):
     mongo.db.reviews.remove({"_id": ObjectId(review_id)})
     flash("You review has been Deleted")
     return redirect(url_for('products'))
+
+
+# Edit Review
+@app.route("/add_review/<review_id>", methods=["GET", "POST"])
+def edit_review(review_id):
+    if request.method == "POST":
+        update_review = {
+            "product_model": request.form.get("product_model"),
+            "product_review": request.form.get("product_review"),
+            "created_by": session["user"]
+        }
+        mongo.db.reviews.update({"_id": ObjectId(review_id)}, update_review)
+        flash("Product Has Been Succsefully Edited")
+ 
+    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+    return render_template("edit_review.html", review=review)
 
 
 if __name__ == "__main__":
