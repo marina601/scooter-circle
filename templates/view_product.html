@@ -112,31 +112,6 @@
                         <p>{{ review.product_review }}</p>
                         <p><em>Reviewed by: {{ review.created_by|capitalize }}</em></p>
                       </div>
-                      <!--Edit and Delete Review Buttons-->
-                      {% if session.user|lower == review.created_by|lower %}
-                      <div class="card-action card-btn">
-                        <!-- Modal Trigger -->
-                        <button data-target="{{ review._id }}" class="btn-small modal-trigger text-shadow btn-reset">
-                          Delete <i class="fas fa-trash-alt prefix"></i></button>
-                        <!-- Modal Structure -->
-                        <div id="{{ review._id }}" class="modal">
-                          <div class="modal-content">
-                            <h4>Are you sure you want to delete this review?</h4>
-                          </div>
-                          <div class="modal-footer">
-                            <a href="{{ url_for('view_product', product_id=product._id) }}"
-                              class="modal-close waves-effect waves-green btn-flat">No</a>
-                            <a href="{{ url_for('delete_review', review_id=review._id)}}"
-                              class="modal-close waves-effect waves-green btn-flat">Yes</a>
-                          </div>
-                        </div>
-                        <!--Edit Button-->
-                        <a href="{{ url_for('edit_review', review_id=review._id)}}"
-                          class="btn-small submit-btn text-shadow">
-                          Edit <i class="fas fa-edit prefix"></i></a>
-                      </div>
-                      {% endif %}
-                      </div>
                   </div>
                 {% endif %}
             {% endif %}
