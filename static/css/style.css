@@ -84,7 +84,8 @@ nav, .page-footer {
    letter-spacing: 0.3rem;
 }
 
-.main-content {
+.main-content,
+.reviews {
    background-color: #dcdfe5;
    margin-top: -2rem;
    min-height: fit-content;
@@ -137,7 +138,7 @@ form {
  }
  /* label focus color */
  .input-field input[type=text]:focus + label {
-   color: red;
+   color: #e1403d;
  }
  /* label underline focus color */
  .input-field input[type=text]:focus {
@@ -258,8 +259,9 @@ fieldset {
    background-color: #889FAA;
 }
 
-.add-review-form{
+.add-review-form {
    width: 100% !important;
+   height: auto;
 }
 
 .card-btn {
@@ -294,9 +296,12 @@ fieldset {
    padding-top: 10rem;
 }
 
-.review-card {
-   height: fit-content;
+.user-review {
+   background-color: #889faa;
 }
+/*.review-card {
+   height: fit-content;
+}*/
 /*****************Add Product*************************/
 
 .add-product {
