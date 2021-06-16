@@ -242,6 +242,7 @@ def edit_review(review_id):
         }
         mongo.db.reviews.update({"_id": ObjectId(review_id)}, update_review)
         flash("Product Has Been Succsefully Edited")
+        return redirect(url_for('products'))
  
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     return render_template("edit_review.html", review=review)
