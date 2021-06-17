@@ -1,29 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
     <section class="main-content">
-    <h2 class="text-center heading">All the Scooters</h2>
-
-     <div class="row card-panel grey lighten-5">
-       <form action="{{ url_for('search') }}" method="POST" class="col s12">
-         <div class="row valign-wrapper center-align">
-           <div class="input-field col s12 m8">
-               <i class="fas fa-search prefix"></i>
-               <input type="text" name="query" id="query" class="validate" minlength="3" required>
-               <label for="query">Search Scooters by Brand or Model</label>
-           </div>
-           <div class="col s12 m4">
-             <a href="{{ url_for('products') }}" class="btn text-shadow"></a>
-             <button type="submit" class="text-shadow">
-               <i class="fas fa-search left"></i> Search
-             </button>
-           </div>
-         </div>
-       </form>
-     </div>
-
-  {% if product|length > 0 %}
+      <!--Page Heading-->
     <div class="row">
-      
+      <div class="col s12">
+        <h2 class="text-center heading">All the Scooters</h2>
+      </div>
+    </div>
+    <!--Search Form-->
+    <div class="row card-panel search-panel">
+      <form action="{{ url_for('search') }}" method="POST" class="col s12 seach-form">
+        <div class="row valign-wrapper center-align">
+          <div class="input-field col s12 m8">
+            <i class="fas fa-search prefix"></i>
+            <input type="text" name="query" id="query" class="validate" minlength="3"  maxlength="50"
+            pattern="^[a-zA-Z 0-9!?-]{5,50}$" class="validate" required oninput="this.setCustomValidity('')"
+            oninvalid="this.setCustomValidity('You may search by Scooter Model or Brand')">
+            <label for="query">Scooters by Brand or Model</label>
+          </div>
+          <div class="col s12 m4">
+            <a href="{{ url_for('products') }}" class="btn-small btn-reset text-shadow">Reset</a>
+            <button type="submit" class="text-shadow btn-small submit-btn">
+              <i class="fas fa-search left"></i> Search
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    {% if products|length > 0 %}
+      <div class="row">
         {% for product in products %}
         <div class="col l4 m6 s12">
           <div class="card">
@@ -33,14 +39,14 @@
             </div>
             <div class="card-content">
               <div class="col s6">
-              <p>
-                <i class="fas fa-tachometer-alt"></i>
-                {{ product.product_max_speed }}mph
-              </p>
-              <p>
-                <i class="fas fa-charging-station"></i>
-                {{ product.product_battery_charge }}hrs
-              </p>
+                <p>
+                  <i class="fas fa-tachometer-alt"></i>
+                  {{ product.product_max_speed }}mph
+                </p>
+                <p>
+                  <i class="fas fa-charging-station"></i>
+                  {{ product.product_battery_charge }}hrs
+                </p>
               </div>
               <p>
                 <i class="fas fa-pound-sign"></i>
@@ -50,15 +56,17 @@
                 <i class="fas fa-route"></i>
                 {{ product.product_max_range }}miles
               </p>
-              </div>
-              <div class="card-action details-link">
-                <a href="{{ url_for('view_product', product_id=product._id) }}" class="product-details">View Full Details</a>
-              </div>
+            </div>
+            <div class="card-action details-link">
+              <a href="{{ url_for('view_product', product_id=product._id) }}" class="product-details">View Full
+                Details</a>
+            </div>
             <!--Edit and Delete Product Buttons-->
-               {% if session.user|lower == "admin"|lower %}
-               <div class="card-action details-link">
-                <a href="{{ url_for('view_product', product_id=product._id) }}" class="product-details">View Full Details</a>
-              </div>
+            {% if session.user|lower == "admin"|lower %}
+            <div class="card-action details-link">
+              <a href="{{ url_for('view_product', product_id=product._id) }}" class="product-details">View Full
+                Details</a>
+            </div>
             <div class="card-action card-btn">
               <!-- Modal Trigger -->
               <button data-target="{{ product._id }}" class="btn-small modal-trigger text-shadow btn-reset">
@@ -78,20 +86,20 @@
               <a href="{{ url_for('edit_product', product_id=product._id)}}" class="btn-small submit-btn text-shadow">
                 Edit <i class="fas fa-edit prefix"></i></a>
             </div>
-               {% endif %}
+            {% endif %}
           </div>
         </div>
         {% endfor %}
-     
       </div>
-  {% else %}
-  <div class="row">
-    <div class="col s12">
-      <h2 class="text-center heading">No Results Found</h2>
-    </div>
-  </div>
+      {% else %}
+      <div class="row">
+        <div class="col s12">
+          <h2 class="text-center heading">No Results Found</h2>
+        </div>
+      </div>
+     {% endif %}
       
-  {% endif %}
+
       </section>
      
 

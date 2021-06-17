@@ -316,6 +316,14 @@ fieldset {
    margin: 2rem 0.5rem;
 }
 
+.search-panel {
+  height: 8rem !important;
+}
+
+.seach-form {
+   height: 25vh;
+}
+
 /*****************Add Product*************************/
 
 .add-product {

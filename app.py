@@ -116,7 +116,7 @@ def logout():
 # all products
 @app.route("/products")
 def products():
-    products = mongo.db.products.find()
+    products = list(mongo.db.products.find())
     return render_template("products.html", products=products)
 
 
