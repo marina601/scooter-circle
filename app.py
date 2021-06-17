@@ -120,6 +120,14 @@ def products():
     return render_template("products.html", products=products)
 
 
+# search function
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    products = list(mongo.db.products.find({"$text": {"$search": query}}))
+    return render_template("products.html", products=products)
+
+
 # view product by id and add review to the product
 @app.route("/view_product/<product_id>", methods=["GET", "POST"])
 def view_product(product_id):
