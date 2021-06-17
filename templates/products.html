@@ -29,12 +29,15 @@
                 <i class="fas fa-route"></i>
                 {{ product.product_max_range }}miles
               </p>
-            </div>
-            <div class="card-action details-link">
-              <a href="{{ url_for('view_product', product_id=product._id) }}" class="product-details">View Full Details</a>
-            </div>
+              </div>
+              <div class="card-action details-link">
+                <a href="{{ url_for('view_product', product_id=product._id) }}" class="product-details">View Full Details</a>
+              </div>
             <!--Edit and Delete Product Buttons-->
-            {% if session.user|lower == "admin"|lower %}
+               {% if session.user|lower == "admin"|lower %}
+               <div class="card-action details-link">
+                <a href="{{ url_for('view_product', product_id=product._id) }}" class="product-details">View Full Details</a>
+              </div>
             <div class="card-action card-btn">
               <!-- Modal Trigger -->
               <button data-target="{{ product._id }}" class="btn-small modal-trigger text-shadow btn-reset">
@@ -54,7 +57,7 @@
               <a href="{{ url_for('edit_product', product_id=product._id)}}" class="btn-small submit-btn text-shadow">
                 Edit <i class="fas fa-edit prefix"></i></a>
             </div>
-            {% endif %}
+               {% endif %}
           </div>
         </div>
         {% endfor %}

@@ -230,7 +230,7 @@ def delete_product(product_id):
 def delete_review(review_id):
     mongo.db.reviews.remove({"_id": ObjectId(review_id)})
     flash("You review has been Deleted")
-    return redirect(url_for('products'))
+    return redirect(url_for('profile', username=session['user']))
 
 
 # Edit Review
