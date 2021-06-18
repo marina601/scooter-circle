@@ -2,6 +2,7 @@
 {% block content %}
    <section class="main-content">
        <div class="row background-img">
+           <!--Quote-->
            <div class="col m5 s7 right">
                <p class="testimony text-shadow">
                    Electric scooters are offering people a way to travel five times quicker than walking while being
@@ -10,6 +11,7 @@
                </p>
            </div>
        </div>
+       <!--Welcome-->
        <div class="row">
            <div class="col 10 offset-2 text-center intro">
                <h1>Welcome to the Scooter Circle</h1>
@@ -23,10 +25,11 @@
                </p>
            </div>
        </div>
+       <!--Carousel-->
        <div class="row col s12">
         <div class="carousel">
             {% for p in products %}
-                <a class="carousel-item" href="{{ url_for('login')}}"><img src="{{ p.product_image }}"></a>
+                <a class="carousel-item" href="{{ url_for('login')}}"><img src="{{ p.product_image }}" alt="{{ p.product_model }}"></a>
             {% endfor %}
           </div>
        </div>
