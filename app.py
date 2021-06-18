@@ -97,7 +97,7 @@ def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"].capitalize()
 
-    reviews = mongo.db.reviews.find()
+    reviews = list(mongo.db.reviews.find())
     # checking if the user exists
     if session["user"]:
         return render_template("profile.html", username=username, reviews=reviews)
@@ -251,7 +251,7 @@ def edit_review(review_id):
             "created_by": session["user"]
         }
         mongo.db.reviews.update({"_id": ObjectId(review_id)}, update_review)
-        flash("Product Has Been Succsefully Edited")
+        flash("Your Review Has Been Succsefully Updated")
         return redirect(url_for('profile', username=session["user"]))
 
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})

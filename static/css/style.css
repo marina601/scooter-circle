@@ -41,6 +41,7 @@ h1, h2, h3, h4, h5, h6 {
    padding: 2rem;
    margin: 2rem;
    line-height: 2;
+   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 /*******Background Colors********/
@@ -60,8 +61,9 @@ nav, .page-footer {
 /****************Flash Messages*************************/
 
 .flash-messages {
-   background-color: #fafafa;
-   padding: 1rem;
+   background-color: rgba(51,51,51,0.1);
+   padding: 2rem;
+   margin: 0;
 }
 
 /*************Index.html*******************/
@@ -180,7 +182,7 @@ form {
  }
 
 
- /***************Registration Form*****************/
+ /***************Profile*****************/
 
  .profile-section {
     margin-top: 0px;
@@ -188,7 +190,11 @@ form {
 
  .card-profile {
     height: fit-content !important;
+    background-color: #889faa;
+    color: #fafafa;
  }
+
+ /***************Registration Form*****************/
 
  .login-card {
     height: 35rem !important;
@@ -311,12 +317,13 @@ fieldset {
 
 .add_review {
    padding-top: 10rem;
+   height: 85vh;
 }
 
 .user-review {
    background-color: #889faa;
    height: 38rem;
-   width: 32rem;
+  /* width: 32rem; */
    margin: 2rem 0.5rem;
 }
 
@@ -393,4 +400,7 @@ footer {
       text-align: left;
    }
    
+   .edit-review-panel {
+      width: 90%;
+   }
 }

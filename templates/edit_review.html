@@ -1,42 +1,50 @@
 {% extends "base.html" %}
 {% block content %}
     
-    <!--Add Review-->
+    <!--Edit Review-->
     <section class="main-content add_review">
-      <div class="row card-panel grey lighten-5">
+      <div class="row">
+        <div class="col s12">
+          <h2 class="text-center heading text-shadow">Edit Your Review</h2>
+        </div>
+      </div>
+      <div class="row card-panel edit-review-panel grey lighten-5">
         <form class="col m7 s12 add-review-form" method="POST"
           action="{{ url_for('edit_review', review_id=review._id) }}">
           <fieldset>
             <legend><i class="fas fa-pencil-alt prefix"></i>Update Your Review</legend>
+            <!--Product Model Name-->
             <div class="row">
-              <div class="input-field col s12">                                         
+              <div class="input-field col s12">
                 <input id="product_model" type="text" name="product_model" value="{{ review.product_model }}">
                 <label for="product_model"></label>
               </div>
-              <div class="row">
-                <div class="input-field col s12">
-                  <textarea id="product_review" name="product_review" minlength="10" maxlength="200" type="text"
-                    class="materialize-textarea validate" required>{{ review.product_review }}</textarea>
-                  <label for="product_review"></label>
-                </div>
+            </div>
+            <!--Original User Review-->
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="product_review" name="product_review" minlength="10" maxlength="200"
+                  class="materialize-textarea validate" required>{{ review.product_review }}</textarea>
+                <label for="product_review"></label>
               </div>
+            </div>
           </fieldset>
-          <!--Reset Button-->
-          <div class="col s6 card-action card-btn">
-            <a href="{{ url_for('products') }}" class="btn-large text-shadow btn-reset">
-              Cancel <i class="fas fa-times-circle right"></i>
-          </a>
-          </div>
-          <div class="col s6 card-action card-btn">
-            <!--Submit Button-->
-            <button type="submit" class="btn-large submit-btn text-shadow" type="submit">
-              Submit <i class="fas fa-sign-in-alt"></i>
-            </button>
+          <div class="row">
+            <div class="col s6 card-action">
+              <!--Cancel Button-->
+              <a href="{{ url_for('profile', username=session['user']) }}" class="btn-large text-shadow btn-reset"
+                type="reset">
+                Cancel<i class="fas fa-times-circle"></i>
+              </a>
+            </div>
+            <div class="col s6 card-action">
+              <!--Submit Button-->
+              <button type="submit" class="btn-large submit-btn text-shadow btn-submit" type="submit">
+                Submit<i class="fas fa-sign-in-alt"></i>
+              </button>
+            </div>
           </div>
         </form>
       </div>
     </section>
-
-    
-
 {% endblock %}
