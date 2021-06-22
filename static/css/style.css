@@ -377,6 +377,43 @@ footer {
    text-align: center;
  }
 
+/*****************404.html*************************/
+
+.error {
+   background: url("../images/404-page.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 90vh;
+}
+
+.fa-battery-empty{
+   color: #e1403d;
+   font-size: 8rem;
+}
+
+.error-message {
+   background-color: rgba(136, 159, 170, 0.8);
+   margin-top: 5rem;
+   padding-bottom: 1rem !important;
+   box-shadow:  15px 5px 8px rgba(0, 0, 0, 0.7);
+}
+
+em {
+   font-size: 8rem;
+   letter-spacing: 1rem;
+}
+
+.btn-back {
+   background-color: #2fc669;
+   font-weight: 600;
+}
+
+.btn-back:hover {
+   background-color: #383843;
+}
+
 /*****************Media Queries*************************/
 
 @media screen and (max-width: 575.98px) {
@@ -402,5 +439,9 @@ footer {
    
    .edit-review-panel {
       width: 90%;
+   }
+
+   .error {
+      min-height: 90rem;
    }
 }
