@@ -75,8 +75,7 @@
           <!--Scooter  Max Load-->
           <div class="input-field col s12">
             <i class="fas fa-truck-loading prefix"></i>
-            <input id="product_load" name="product_load" minlength="1" maxlength="5" class="validate"
-              pattern="^[0-50.]{1,5}$" type="number" step="any"
+            <input id="product_load" name="product_load" class="validate" type="number" step="any"
               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a scooter maximum load capacity in kn using numeric value!')" required >
             <label for="product_load">Scooter Max Load in kg</label>
@@ -150,7 +149,7 @@
           <!--Scooter Description-->
           <div class="input-field col s12">
             <i class="fas fa-file-alt prefix"></i>
-            <textarea id="product_description" class="materialize-textarea validate" type="text"
+            <textarea id="product_description" class="materialize-textarea validate"
               name="product_description" minlength="5" maxlength="500"
               required oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a scooter description')"></textarea>
