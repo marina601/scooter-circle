@@ -263,6 +263,13 @@ def edit_review(review_id):
 def page_not_found(e):
     return render_template('404.html'), 404
 
+
+# 500 error Page
+@app.errorhandler(500)
+def no_connection(e):
+    return render_template("500.html", e=e), 500
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
