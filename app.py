@@ -261,7 +261,7 @@ def edit_review(review_id):
 # 404 Page
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('404.html'), 404
+    return render_template('404.html', e=e), 404
 
 
 # 500 error Page
