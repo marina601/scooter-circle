@@ -96,16 +96,17 @@ def profile(username):
     # grab the session user's username from the database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"].capitalize()
-
+    # if the user is Admin, display all the reviews
     if username == "Admin":
         reviews = list(mongo.db.reviews.find())
-        
+    # Display reviews only created by session user
     else:
         reviews = list(mongo.db.reviews.find({"created_by": session["user"]}))
 
     # checking if the user exists
     if session["user"]:
-        return render_template("profile.html", username=username, reviews=reviews)
+        return render_template(
+                "profile.html", username=username, reviews=reviews)
 
     return redirect(url_for('login'))
 
