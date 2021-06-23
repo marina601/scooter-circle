@@ -52,6 +52,7 @@
                    </div>
                </div>
                {% endfor %}
+        <!--If the user does not have any reviews display the following-->
         {% else %}
             <div class="col s12 text-center">
                 <h3 class="heading">Your have not reviewed any products yet!</h3>
@@ -60,7 +61,7 @@
                     <a href="{{ url_for('products') }}" class="text-shadow">View All Scooter</a>
                 </div>
             </div>
-           </div>
+        </div>
         {% endif %}
         </div>
     </section>
