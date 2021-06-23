@@ -12,14 +12,18 @@
         </div>
         <!--User Reviews-->
         <div class="row">
+        {% if reviews|length > 0 %}
+            
             <div class="col s12 text-center">
                 <h3 class="heading">Your Scooter Reviews</h3>
             </div>
-        </div>
+        
            <div class="row">
+            
             {% for review in reviews %}
-               {% if session.user|lower == review.created_by|lower or session.user|lower == "admin"|lower %}
-                    {% if review.product_review|length > 0 %}
+               
+                   
+                    
                         
                     <!--User Reviews-->
                         <div class="col s12 m6 l4">
@@ -27,7 +31,7 @@
                                 <div class="card-content white-text">
                                     <h4 class="card-title">{{ review.product_model }}</h4>
                                     <p>{{ review.product_review }}</p>
-                                    <p><em>Reviewed by: {{ review.created_by|capitalize }}</em></p>
+                                    <p><span>Reviewed by: {{ review.created_by|capitalize }}</span></p>
                                 </div>
                                 <!--Edit and Delete Review Buttons-->
                                 <div class="card-action card-btn">
@@ -55,11 +59,17 @@
                                 </div>
                             </div>
                         </div>
-                    {% endif %}
-                {% endif %}
+                
             {% endfor %}
-       
+            {% else %}
+               <h3>No Reviews</h3>  
+            
+            
+            </div>
+           
         
+        {% endif %}
+        </div>
     </section>
 
 {% endblock%}

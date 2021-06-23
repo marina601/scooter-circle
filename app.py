@@ -97,11 +97,18 @@ def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"].capitalize()
 
-    reviews = list(mongo.db.reviews.find())
     # checking if the user exists
     if session["user"]:
+
+        if username == "admin":
+            reviews = list(mongo.db.reviews.find())
+
+        else:
+            reviews = list(mongo.db.reviews.find({"created_by": session["user"]}))
+
         return render_template("profile.html", username=username, reviews=reviews)
 
+    
     return redirect(url_for('login'))
 
 
@@ -133,7 +140,7 @@ def search():
 def view_product(product_id):
 
     product = mongo.db.products.find_one({"_id": ObjectId(product_id)})
-    reviews = mongo.db.reviews.find().sort("product_model", 1)
+    reviews = list(mongo.db.reviews.find().sort("product_model", 1))
 
     if 'user' not in session:
         return redirect(url_for("login"))
