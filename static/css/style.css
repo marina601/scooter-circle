@@ -377,6 +377,32 @@ footer {
    text-align: center;
  }
 
+ .conditions li {
+   list-style-type: circle !important;
+   color: #383843;
+ }
+
+ .conditions-ordered li {
+    list-style-type: lower-alpha !important;
+ }
+
+ .agree {
+   font-size: 2rem;
+   letter-spacing: inherit;
+   font-weight: 600;
+ }
+
+ .btn-footer {
+    background-color: #889FAA;
+ }
+
+ .btn-footer:hover {
+    background-color: #2fc669;
+ }
+
+ .terms h3, h4, h5, ul, li, ol, p {
+    color: #383843;
+ }
 /*****************404.html*************************/
 
 .error {
