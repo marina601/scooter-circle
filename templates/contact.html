@@ -11,54 +11,64 @@
         </div>
     <!--Contact Form-->
         <div class="row">
-            <form class="col s12 m10 offset-m1" method="POST" action="{{ url_for('contact') }}">
+            <form class="col s12 m10 offset-m1" id="contact-form">
                 <div class="card-panel">
                     <!--Name-->
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-user prefix"></i>
-                            <input id="username" name="username" minlength="3" maxlength="10"
-                                pattern="^[a-zA-Z0-9!?]{3,10}$" type="text" class="validate" required
+                            <input id="from_name" name="from_name" minlength="3" maxlength="20"
+                                pattern="^[a-z A-Z]{3,20}$" type="text" class="validate" required
                                 oninput="this.setCustomValidity('')"
                                 oninvalid="this.setCustomValidity('Please enter your name')" />
-                            <label for="username">Name</label>
+                            <label for="from_name">Name</label>
                         </div>
                     </div>
                     <!--Email-->
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-at prefix"></i>
-                            <input id="password" name="password" type="email" minlength="5" maxlength="20"
-                                pattern="^[a-zA-Z0-9!?@]{5,20}$" class="validate" required
+                            <input id="from_email" name="from_email" type="email" minlength="5" maxlength="20"
+                                pattern="^[a-zA-Z0-9!?.@]{5,20}$" class="validate" required
                                 oninput="this.setCustomValidity('')"
                                 oninvalid="this.setCustomValidity('Please enter a valid email address')">
-                            <label for="password">Email</label>
+                            <label for="from_email">Email</label>
                         </div>
                     </div>
                     <!--Message-->
                     <div class="row">
                         <div class="input-field col s12">
                           <i class="fas fa-pencil-alt prefix"></i>
-                          <textarea id="product_review" name="product_review" minlength="10" maxlength="200" type="text"
-                            class="materialize-textarea validate" required></textarea>
-                          <label for="product_review">Your Message</label>
+                          <textarea id="message" name="message" minlength="10" maxlength="200" type="text"
+                            class="materialize-textarea validate" pattern="^[a-z A-Z0-9.!?,]{10,200}$"
+                            oninput="this.setCustomValidity('')"
+                            oninvalid="this.setCustomValidity('Please enter at least 10 characters')" required></textarea>
+                          <label for="message">Your Message</label>
                         </div>
                     </div>
                     <!--Reset Button-->
                     <div class="col s6 card-action">
-                        <button class="btn-large text-shadow btn-reset" type="reset">
-                          Reset <i class="fas fa-redo-alt right"></i>
+                        <button class="btn-small text-shadow btn-reset" type="reset">
+                          Reset <i class="fas fa-redo-alt right prefix"></i>
                         </button>
                       </div>
                       <div class="col s6 card-action">
                         <!--Submit Button-->
-                        <button type="submit" class="btn-large submit-btn text-shadow btn-submit" type="submit">
-                          Submit<i class="fas fa-sign-in-alt"></i>
+                        
+                        <button type="submit" id="button" value="Submit" class="btn-small submit-btn text-shadow btn-submit">Submit
+                            <i class="fas fa-sign-in-alt prefix"></i>
                         </button>
+
                       </div>
                     </div>
             </form>
         </div>
     </section>
+    {% block scripts %}
+    <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    <script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+    {% endblock %}
 
 {% endblock%}
