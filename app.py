@@ -264,6 +264,13 @@ def edit_review(review_id):
     return render_template("edit_review.html", review=review)
 
 
+# Contact Page
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+
+
+
 # 404 Page
 @app.errorhandler(404)
 def page_not_found(e):
