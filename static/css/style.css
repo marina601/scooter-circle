@@ -349,6 +349,11 @@ fieldset {
    color: #fafafa !important;
 }
 
+/*****************Contact Page*************************/
+
+.contact-txt {
+   padding: 2rem;
+}
 /*****************Footer*************************/
 
 footer {
@@ -469,5 +474,11 @@ em {
 
    .error {
       min-height: 90rem;
+   }
+
+   .submit-btn-contact,
+   .reset-btn-contact {
+      padding-left: 8px;
+      padding-right: 8px;
    }
 }
