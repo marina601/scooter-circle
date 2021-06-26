@@ -214,16 +214,30 @@ form {
    padding: 1rem !important;
 }
 
+.product-card {
+   max-height: 66rem;
+   min-height: 66rem;
+}
+
 .card-action {
  font-weight: 600;
  margin-left: 7rem;
  margin-right: 0;
  text-align: end;
- padding: 1rem !important;
+ padding: 2rem !important;
+}
+
+.details-link{
+    
 }
 
 .details-link:hover {
    background-color: #889FAA;
+}
+
+.admin-btn {
+
+   
 }
 
 /*****************View Product*************************/
