@@ -7,24 +7,27 @@
         <h2 class="text-center heading">All the Scooters</h2>
       </div>
     </div>
-    <!--Search Form-->
+    <!--My Search Form -->
     <div class="row card-panel search-panel">
-      <form action="{{ url_for('search') }}" method="POST" class="col s12 seach-form">
+      <form action="{{ url_for('search') }}" method="POST" class="col s12 search-form">
         <div class="row valign-wrapper center-align">
-          <div class="input-field col s12 m8">
+          <div class="input-field col s12">
             <i class="fas fa-search prefix"></i>
             <input type="text" name="query" id="query" class="validate" minlength="3"  maxlength="50"
-            pattern="^[a-zA-Z 0-9!?-]{5,50}$" required oninput="this.setCustomValidity('')"
+            pattern="^[a-zA-Z 0-9!?-]{3,50}$" required oninput="this.setCustomValidity('')"
             oninvalid="this.setCustomValidity('You may search by Scooter Model or Brand')">
             <label for="query">Scooters by Brand or Model</label>
           </div>
-          <div class="col s12 m4">
-            <a href="{{ url_for('products') }}" class="btn-small btn-reset text-shadow">Reset</a>
+        </div>
+        <div class="row">
+          <div class="col s12 card-action">
+            <a href="{{ url_for('products') }}" class="btn-small btn-reset text-shadow"><i class="fas fa-redo-alt prefix"></i>Reset</a>
             <button type="submit" class="text-shadow btn-small submit-btn">
               <i class="fas fa-search left"></i> Search
             </button>
           </div>
         </div>
+     
       </form>
     </div>
     
