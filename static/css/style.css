@@ -116,7 +116,7 @@ form {
 
 .submit-btn {
    background-color: #2fc669;
-   font-weight: 600;
+   font-weight: 700;
 }
 
 .submit-btn:hover {
@@ -240,7 +240,7 @@ bottom:   0;
 }
 
 /*****************View Product*************************/
-.scooter-img{
+.scooter-img {
    width: 45rem;
    height: 45rem;
    padding: 1rem;
@@ -252,9 +252,9 @@ bottom:   0;
    margin-bottom: 0rem;
 }
 
-.add_review {
+/*.add_review {
   padding: 1rem;
-}
+}*/
 
 .card-panel {
    width: 70%;
@@ -308,29 +308,31 @@ fieldset {
 
 .affiliate-link {
    background-color: #889faa;
-   height: 5rem;
    width: 18rem;
-   display: flex;
-   float: right;
    margin: 2rem;
    border-radius: 0.5rem;
+   font-weight: 700;
 }
 
 .affiliate-link a {
    color: #fafafa;
 }
 
-.affiliate-link a:hover {
+.affiliate-link:hover {
    color: #383843
 }
 
 .affiliate-link:hover {
-   background-color: #dcdfe5;
+   background-color: #fafafa;
 }
 
-.add_review {
-   
+/*.add_review {
+   padding-top: 10rem;
    height: 85vh;
+}*/
+
+.review-btn {
+   margin: 2rem auto;
 }
 
 .user-review {
@@ -413,6 +415,7 @@ footer {
 
  .btn-footer {
     background-color: #889FAA;
+    font-weight: 600;
  }
 
  .btn-footer:hover {

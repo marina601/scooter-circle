@@ -6,6 +6,8 @@
         <div class="col s12">
           <h2 class="text-center heading">{{ product.product_model }}</h2>
         </div>
+      </div>
+      <div class="row">
         <div class="col m6 s12">
           <img src="{{ product.product_image }}" class="scooter-img">
         </div>
@@ -55,9 +57,13 @@
       <div class="col s12 p-description">
         <p>{{ product.product_description }}</p>
       </div>
+      </div>
       <!--Affiliate Link for Product-->
-      <div class="col m4 offset-m7 s6 card-action affiliate-link">
-        <a href="{{ product.product_affiliate_link }}" class="text-shadow" target="_blank" alt="{{ product.product_model }}">Buy This Scooter</a>
+      <div class="row">
+        <div class="col m4 offset-m7 s6 offset-s4 card-action">
+          <a href="{{ product.product_affiliate_link }}" class="text-shadow btn-small affiliate-link" target="_blank"
+            alt="{{ product.product_model }}">Buy This Scooter</a>
+        </div>
       </div>
     </section>
     <!--Add Review-->
@@ -66,7 +72,7 @@
         <form class="col m7 s12 add-review-form" method="POST"
           action="{{ url_for('add_review') }}">
           <fieldset>
-            <legend><i class="fas fa-pencil-alt prefix"></i>Review This Product</legend>
+            <legend>Review This Product</legend>
             <div class="row">
               <div class="input-field col s12">                                         
                 <input id="product_model" type="text" name="product_model" value="{{ product.product_model }}">
@@ -74,6 +80,7 @@
               </div>
               <div class="row">
                 <div class="input-field col s12">
+                  <i class="fas fa-pencil-alt prefix"></i>
                   <textarea id="product_review" name="product_review" minlength="10" maxlength="200" type="text"
                     class="materialize-textarea validate" required></textarea>
                   <label for="product_review"></label>
@@ -81,16 +88,18 @@
               </div>
           </fieldset>
           <!--Reset Button-->
-          <div class="col s6 card-action">
-            <button class="btn-large text-shadow btn-reset" type="reset">
-              Clear <i class="fas fa-redo-alt right"></i>
-            </button>
-          </div>
-          <div class="col s6 card-action">
-            <!--Submit Button-->
-            <button type="submit" class="btn-large submit-btn text-shadow btn-submit" type="submit">
-              Submit<i class="fas fa-sign-in-alt"></i>
-            </button>
+          <div class="row card-action review-btn">
+            <div class="col s6">
+              <button class="btn-large text-shadow btn-reset submit-btn-contact" type="reset">
+                Clear <i class="fas fa-redo-alt right"></i>
+              </button>
+            </div>
+            <div class="col s6">
+              <!--Submit Button-->
+              <button type="submit" class="btn-large submit-btn text-shadow btn-submit submit-btn-contact" type="submit">
+                Submit <i class="fas fa-sign-in-alt"></i>
+              </button>
+            </div>
           </div>
         </form>
       </div>
