@@ -116,6 +116,7 @@ form {
 
 .submit-btn {
    background-color: #2fc669;
+   font-weight: 600;
 }
 
 .submit-btn:hover {
@@ -340,11 +341,12 @@ fieldset {
 }
 
 .search-panel {
-  height: 8rem !important;
+  height: 10rem !important;
 }
 
-.seach-form {
-   height: 25vh;
+
+.search-form {
+   height: 10vh;
 }
 
 /*****************Add Product*************************/
@@ -443,7 +445,7 @@ footer {
    box-shadow:  15px 5px 8px rgba(0, 0, 0, 0.7);
 }
 
-em {
+.agree {
    font-size: 8rem;
    letter-spacing: 1rem;
 }
