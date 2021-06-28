@@ -72,7 +72,7 @@
         <form class="col m7 s12 add-review-form" method="POST"
           action="{{ url_for('add_review') }}">
           <fieldset>
-            <legend><i class="fas fa-pencil-alt prefix"></i>Review This Product</legend>
+            <legend>Review This Product</legend>
             <div class="row">
               <div class="input-field col s12">                                         
                 <input id="product_model" type="text" name="product_model" value="{{ product.product_model }}">
@@ -86,15 +86,15 @@
                 </div>
               </div>
           </fieldset>
-          <!--Submit Button-->
-          <div class="row review-btn card-action">
+          <!--Reset Button-->
+          <div class="row card-action review-btn">
             <div class="col s6">
-              <button class="btn-large text-shadow btn-reset reset-btn-contact" type="reset">
+              <button class="btn-large text-shadow btn-reset submit-btn-contact" type="reset">
                 Clear <i class="fas fa-redo-alt right"></i>
               </button>
             </div>
             <div class="col s6">
-              <!--Reset Button-->
+              <!--Submit Button-->
               <button type="submit" class="btn-large submit-btn text-shadow btn-submit submit-btn-contact" type="submit">
                 Submit <i class="fas fa-sign-in-alt"></i>
               </button>
