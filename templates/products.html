@@ -67,14 +67,14 @@
             </div>
             </div>
 
-            <div class="row admin-btn card-action details-link">
+            <div class="admin-btn card-action details-link">
               
 
               <!--Edit and Delete Product Buttons-->
               {% if session.user|lower == "admin"|lower %}
-              <div class="col s6">
+              <div class="col s6 left">
                 <!-- Modal Trigger -->
-                <button data-target="{{ product._id }}" class="btn-small modal-trigger text-shadow btn-reset">
+                <button data-target="{{ product._id }}" class="delete-admin btn-small modal-trigger text-shadow btn-reset">
                   Delete <i class="fas fa-trash-alt prefix"></i></button>
                 <!-- Modal Structure -->
                 <div id="{{ product._id }}" class="modal">
@@ -88,7 +88,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col s6">
+              <div class="col s6 right">
                 <!--Edit Button-->
                 <a href="{{ url_for('edit_product', product_id=product._id)}}" class="btn-small submit-btn text-shadow">
                   Edit <i class="fas fa-edit prefix"></i></a>

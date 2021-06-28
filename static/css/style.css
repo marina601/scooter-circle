@@ -208,36 +208,34 @@ form {
    margin: 1rem;
 }
 
-.card,
+.product-card {
+   min-height: 72rem;
+}
+/**.card,
 .card-content,
 .card-content p {
    padding: 1rem !important;
-}
+}**/
 
-.product-card {
-   max-height: 66rem;
-   min-height: 66rem;
-}
+
 
 .card-action {
  font-weight: 600;
  margin-left: 7rem;
  margin-right: 0;
  text-align: end;
- padding: 2rem !important;
+ padding-bottom: 0.5rem;
 }
 
-.details-link{
-    
-}
-
-.details-link:hover {
-   background-color: #889FAA;
+.delete-admin {
+   width: 10rem;
+   padding-right: 0;
 }
 
 .admin-btn {
-
-   
+position: absolute !important;
+right:    0;
+bottom:   0;
 }
 
 /*****************View Product*************************/
