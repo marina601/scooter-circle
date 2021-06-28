@@ -27,10 +27,47 @@
             </button>
           </div>
         </div>
-     
       </form>
     </div>
-    
+    <!--Sort Products-->
+    <div class="row card-panel search-panel">
+      <form action="{{ url_for('sort') }}" method="GET" class="col s12 search-form">
+        <!--Sort by Price-->
+        <div class="input-field col s3">
+          <select id="product_price" name="product_price">
+            <option value="" disabled selected>Sort by Price</option>
+            <option value="low">Low</option>
+            <option value="high">High</option>
+          </select>
+          <label id="product_price"></label>
+        </div>
+        <div class="input-field col s3">
+          <select id="product_max_range" name="product_max_range">
+            <option value="" disabled selected>Sort by Range</option>
+            <option value="low">Low</option>
+            <option value="high">High</option>
+          </select>
+          <label is="product_max_range"></label>
+        </div>
+        <div class="input-field col s3">
+          <select name="product_battery_charge">
+            <option value="" disabled selected>Charging Time</option>
+            <option value="slow">Slow</option>
+            <option value="fast">Fast</option>
+          </select>
+          <label></label>
+        </div>
+        <div class="input-field col s3">
+          <select name="product_max_speed">
+            <option value="" disabled selected>Sort by Speed</option>
+            <option value="slow">Slow</option>
+            <option value="fast">Fast</option>
+          </select>
+          <label></label>
+          <button type="submit">Apply filter</button>
+        </div>
+      </form>
+    </div>
     {% if products|length > 0 %}
       <div class="row">
         {% for product in products %}
