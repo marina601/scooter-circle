@@ -40,7 +40,7 @@
             <i class="fas fa-truck-loading"></i>
             {{ product.product_load }}kg
           </p>
-          <p>
+          <p id="add_review">
             <i class="fas fa-dharmachakra"></i>
             {{ product.product_wheel_size }}cm
           </p>
@@ -69,12 +69,11 @@
     <!--Add Review-->
     <section class="main-content add_review">
       <div class="row card-panel grey lighten-5">
-        <form class="col m7 s12 add-review-form" method="POST"
-          action="{{ url_for('add_review') }}">
+        <form class="col m7 s12 add-review-form" method="POST" action="{{ url_for('add_review') }}">
           <fieldset>
             <legend>Review This Product</legend>
             <div class="row">
-              <div class="input-field col s12">                                         
+              <div class="input-field col s12">
                 <input id="product_model" type="text" name="product_model" value="{{ product.product_model }}">
                 <label for="product_model"></label>
               </div>
@@ -110,21 +109,24 @@
           <h3 class="text-center">User Reviews</h3>
         </div>
         <div class="row">
-        {% for review in reviews %}
-            {% if review.product_model == product.product_model %}
-                {% if review.product_review|length > 0 %}
-                  <div class="col s12 m4">
-                    <div class="card user-review">
-                      <div class="card-content white-text">
-                        <h4 class="card-title">{{ review.product_model }}</h4>
-                        <p>{{ review.product_review }}</p>
-                        <p><em>Reviewed by: {{ review.created_by|capitalize }}</em></p>
-                      </div>
-                  </div>
-                {% endif %}
-            {% endif %}
-        {% endfor %}
-      </div>
+          {% for review in reviews if review.product_model == product.product_model %}
+          <div class="col s12 m4">
+            <div class="card user-review">
+              <div class="card-content white-text">
+                <h4 class="card-title">{{ review.product_model }}</h4>
+                <p>{{ review.product_review }}</p>
+                <p><em>Reviewed by: {{ review.created_by|capitalize }}</em></p>
+              </div>
+            </div>
+            {% else %}
+            <div class="col s12">
+              <h4 class="text-center">No Reviews Added Yet!</h3>
+                <p class="text-center">If you have used this scooter, why not add your own review
+                  <a href="#add_review" class="text-shadow btn-small affiliate-link">Here</a>
+                </p>
+              </div>
+            {% endfor %}
+          </div>
     </section>
     
 
