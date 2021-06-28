@@ -159,7 +159,7 @@ def add_review():
         }
         mongo.db.reviews.insert_one(review)
         flash("Your Review Has Been Added")
-        return redirect(url_for('products'))
+        return redirect(url_for('profile', username=session['user']))
 
     if 'user' not in session:
         return redirect(url_for("login"))
@@ -268,7 +268,6 @@ def edit_review(review_id):
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
-
 
 
 # 404 Page
