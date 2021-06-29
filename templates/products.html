@@ -7,7 +7,7 @@
         <h2 class="text-center heading">All the Scooters</h2>
       </div>
     </div>
-    <!--My Search Form -->
+    <!--Search Form -->
     <div class="row card-panel search-panel">
       <form action="{{ url_for('search') }}" method="POST" class="col s12 search-form">
         <div class="row valign-wrapper center-align">
@@ -30,44 +30,58 @@
       </form>
     </div>
     <!--Sort Products-->
-    <div class="row card-panel search-panel">
+    <div class="row card-panel filter-panel">
       <form action="{{ url_for('sort') }}" method="GET" class="col s12 search-form">
-        <!--Sort by Price-->
-        <div class="input-field col s3">
-          <select id="product_price" name="product_price">
-            <option value="" disabled selected>Sort by Price</option>
-            <option value="low">Low</option>
-            <option value="high">High</option>
-          </select>
-          <label id="product_price"></label>
-        </div>
-        <div class="input-field col s3">
+        <!--Sort by Range-->
+        <div class="row">
+        <div class="input-field col l3 m6 s6">
           <select id="product_max_range" name="product_max_range">
-            <option value="" disabled selected>Sort by Range</option>
+            <option value="" disabled selected>Range</option>
             <option value="low">Low</option>
             <option value="high">High</option>
           </select>
-          <label is="product_max_range"></label>
+          <label for="product_max_range"></label>
         </div>
-        <div class="input-field col s3">
+        <!--Sort by Charging Time-->
+        <div class="input-field col l3 m6 s6" id="product_battery_charge">
           <select name="product_battery_charge">
             <option value="" disabled selected>Charging Time</option>
             <option value="slow">Slow</option>
             <option value="fast">Fast</option>
           </select>
-          <label></label>
+          <label for="product_battery_charge"></label>
         </div>
-        <div class="input-field col s3">
-          <select name="product_max_speed">
-            <option value="" disabled selected>Sort by Speed</option>
+        <!--Sort by Speed-->
+        <div class="input-field col l3 m6 s6">
+          <select name="product_max_speed" id="poduct_max_speed">
+            <option value="" disabled selected>Speed</option>
             <option value="slow">Slow</option>
             <option value="fast">Fast</option>
           </select>
-          <label></label>
-          <button type="submit">Apply filter</button>
+          <label for="poduct_max_speed"></label>
+        </div>
+        <!--Sort by Price-->
+        <div class="input-field col l3 m6 s6">
+          <select id="product_price" name="product_price">
+            <option value="" disabled selected>Price</option>
+            <option value="low">Low</option>
+            <option value="high">High</option>
+          </select>
+          <label for="product_price"></label>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col s12 card-action filter-btn">
+              <button type="submit" class="text-shadow btn-small submit-btn">
+                 Apply Filters
+              </button>
+            </div>
+         </div>
         </div>
       </form>
     </div>
+
+    <!--Display Products-->
     {% if products|length > 0 %}
       <div class="row">
         {% for product in products %}
