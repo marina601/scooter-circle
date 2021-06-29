@@ -240,13 +240,10 @@ bottom:   0;
 }
 
 .filter-panel {
-   height: 10rem !important;
+   height: 21rem !important;
+   padding-top: 1rem;
 }
 
-.filter-btn {
-   display: flex;
-   justify-content: center;
-}
 
 /*****************View Product*************************/
 .scooter-img {
@@ -511,6 +508,6 @@ footer {
 
 @media screen and (max-width: 992px) {
    .filter-panel {
-      height: 18rem !important;
+      height: 27rem !important;
    }
 }
