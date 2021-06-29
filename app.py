@@ -122,52 +122,39 @@ def logout():
 # all products
 @app.route("/products")
 def products():
-    products = list(mongo.db.products.find())
-    return render_template("products.html", products=products)
-
-
-# search function
-@app.route("/search", methods=["GET", "POST"])
-def search():
-    query = request.form.get("query")
-    products = list(mongo.db.products.find({"$text": {"$search": query}}))
-    return render_template("products.html", products=products)
-
-
-# sort function
-@app.route("/sort", methods=["GET", "POST"])
-def sort():
     # Getting input values from the select element to sort the db
     price = request.args.get("product_price")
     range = request.args.get("product_max_range")
     charge = request.args.get("product_battery_charge")
     speed = request.args.get("product_max_speed")
+    query = request.args.get("query")
+
+    if query:
+        products = mongo.db.products.find({"$text": {"$search": query}})
+    else:
+        products = mongo.db.products.find()
 
     # Checking with conditional statement if the value is high or low
     # and sorting accordingly
-    if range == "high":
-        products = list(mongo.db.products.find().sort("product_max_range", -1))
-    elif range == "low":
-        products = list(mongo.db.products.find().sort("product_max_range", 1))
-    elif speed == "fast":
-        products = list(mongo.db.products.find().sort("product_max_speed", -1))
-    elif speed == "slow":
-        products = list(mongo.db.products.find().sort("product_max_speed", 1))
-    elif charge == "slow":
-        products = list(mongo.db.products.find().sort
-                        ("product_battery_charge", -1))
-    elif charge == "fast":
-        products = list(mongo.db.products.find().sort
-                        ("product_battery_charge", 1))
-    elif price == "high":
-        products = list(mongo.db.products.find().sort("product_price", 1)) 
-    elif price == "low":
-        products = list(mongo.db.products.find().sort("product_price", -1))
-    # if no filter is selected show all the database
-    else:
-        products = list(mongo.db.products.find())
 
-    return render_template("products.html", products=products)
+    if range == "high":
+        products = products.sort("product_max_range", -1)
+    elif range == "low":
+        products = products.sort("product_max_range", 1)
+    elif speed == "fast":
+        products = products.sort("product_max_speed", -1)
+    elif speed == "slow":
+        products = products.sort("product_max_speed", 1)
+    elif charge == "slow":
+        products = products.sort("product_battery_charge", -1)
+    elif charge == "fast":
+        products = products.sort("product_battery_charge", 1)
+    elif price == "high":
+        products = products.sort("product_price", -1)
+    elif price == "low":
+        products = products.sort("product_price", 1)
+
+    return render_template("products.html", products=list(products))
 
 
 # view product by id and add review to the product
