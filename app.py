@@ -142,7 +142,7 @@ def sort():
     range = request.args.get("product_max_range")
     charge = request.args.get("product_battery_charge")
     speed = request.args.get("product_max_speed")
- 
+
     # Checking with conditional statement if the value is high or low
     # and sorting accordingly
     if range == "high":
@@ -159,10 +159,10 @@ def sort():
     elif charge == "fast":
         products = list(mongo.db.products.find().sort
                         ("product_battery_charge", 1))
+    elif price == "high":
+        products = list(mongo.db.products.find().sort("product_price", 1)) 
     elif price == "low":
         products = list(mongo.db.products.find().sort("product_price", -1))
-    elif price == "high":
-        products = list(mongo.db.products.find().sort("product_price", 1))
     # if no filter is selected show all the database
     else:
         products = list(mongo.db.products.find())
