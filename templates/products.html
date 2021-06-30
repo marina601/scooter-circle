@@ -2,81 +2,82 @@
 {% block content %}
     <section class="main-content">
       <!--Page Heading-->
-    <div class="row">
-      <div class="col s12">
-        <h2 class="text-center heading">All the Scooters</h2>
+      <div class="row">
+        <div class="col s12">
+          <h2 class="text-center heading">All the Scooters</h2>
+        </div>
       </div>
-    </div>
-    <!--Search Form -->
-    <div class="row card-panel filter-panel">
-      <form action="{{ url_for('products') }}" method="GET" class="col s12 search-form">
-        <div class="row valign-wrapper center-align">
-          <div class="input-field col s12">
-            <i class="fas fa-search prefix"></i>
-            <input type="text" name="query" id="query" class="validate" minlength="3" maxlength="50"
-              pattern="^[a-zA-Z 0-9!?-]{3,50}$" oninput="this.setCustomValidity('')"
-              oninvalid="this.setCustomValidity('Please enter a minimum of 3 charcters to search the scooter by brand or model')">
-            <label for="query">Scooters by Brand or Model</label>
+      <!--Search Form -->
+      <div class="row card-panel filter-panel">
+        <form action="{{ url_for('products') }}" method="GET" class="col s12 search-form">
+          <div class="row valign-wrapper center-align">
+            <div class="input-field col s12">
+              <i class="fas fa-search prefix"></i>
+              <input type="text" name="query" id="query" class="validate" minlength="3" maxlength="50"
+                pattern="^[a-zA-Z 0-9!?-]{3,50}$" oninput="this.setCustomValidity('')"
+                oninvalid="this.setCustomValidity('Please enter a minimum of 3 charcters to search the scooter by brand or model')">
+              <label for="query">Scooters by Brand or Model</label>
+            </div>
           </div>
-        </div>
-        <!--Sort Heading-->
-        <div class="row">
-          <div class="col s12 text-center">
-            <h5><i class="fas fa-sort-amount-down"></i> Filter Scooters by:</h5>
+          <!--Sort Heading-->
+          <div class="row">
+            <div class="col s12 text-center">
+              <h5><i class="fas fa-sort-amount-down"></i> Filter Scooters by:</h5>
+            </div>
           </div>
-        </div>
-        <!--Sort by Range-->
-        <div class="row">
-          <div class="input-field col l3 m6 s6">
-            <select id="product_max_range" name="product_max_range">
-              <option value="" disabled selected>Range</option>
-              <option value="low">Low</option>
-              <option value="high">High</option>
-            </select>
-            <label for="product_max_range"></label>
+          <!--Sort by Range-->
+          <div class="row">
+            <div class="input-field col l3 m6 s6">
+              <select id="product_max_range" name="product_max_range">
+                <option value="" disabled selected>Range</option>
+                <option value="low">Low</option>
+                <option value="high">High</option>
+              </select>
+              <label for="product_max_range"></label>
+            </div>
+            <!--Sort by Charging Time-->
+            <div class="input-field col l3 m6 s6">
+              <select name="product_battery_charge" id="product_battery_charge">
+                <option value="" disabled selected>Charging Time</option>
+                <option value="slow">Slow</option>
+                <option value="fast">Fast</option>
+              </select>
+              <label for="product_battery_charge"></label>
+            </div>
+            <!--Sort by Speed-->
+            <div class="input-field col l3 m6 s6">
+              <select name="product_max_speed" id="poduct_max_speed">
+                <option value="" disabled selected>Speed</option>
+                <option value="slow">Slow</option>
+                <option value="fast">Fast</option>
+              </select>
+              <label for="poduct_max_speed"></label>
+            </div>
+            <!--Sort by Price-->
+            <div class="input-field col l3 m6 s6">
+              <select id="product_price" name="product_price">
+                <option value="" disabled selected>Price</option>
+                <option value="low">Low</option>
+                <option value="high">High</option>
+              </select>
+              <label for="product_price"></label>
+            </div>
           </div>
-          <!--Sort by Charging Time-->
-          <div class="input-field col l3 m6 s6" id="product_battery_charge">
-            <select name="product_battery_charge">
-              <option value="" disabled selected>Charging Time</option>
-              <option value="slow">Slow</option>
-              <option value="fast">Fast</option>
-            </select>
-            <label for="product_battery_charge"></label>
+          <!--Reset/Submit buttons-->
+          <div class="row">
+            <div class="col s12 card-action">
+              <a href="{{ url_for('products') }}" class="btn-small btn-reset text-shadow">
+                <i class="fas fa-redo-alt prefix"></i> Reset</a>
+              <button type="submit" class="text-shadow btn-small submit-btn">
+                Search <i class="fas fa-search prefix"></i>
+              </button>
+            </div>
           </div>
-          <!--Sort by Speed-->
-          <div class="input-field col l3 m6 s6">
-            <select name="product_max_speed" id="poduct_max_speed">
-              <option value="" disabled selected>Speed</option>
-              <option value="slow">Slow</option>
-              <option value="fast">Fast</option>
-            </select>
-            <label for="poduct_max_speed"></label>
-          </div>
-          <!--Sort by Price-->
-          <div class="input-field col l3 m6 s6">
-            <select id="product_price" name="product_price">
-              <option value="" disabled selected>Price</option>
-              <option value="low">Low</option>
-              <option value="high">High</option>
-            </select>
-            <label for="product_price"></label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s12 card-action">
-            <a href="{{ url_for('products') }}" class="btn-small btn-reset text-shadow">
-              <i class="fas fa-redo-alt prefix"></i> Reset</a>
-            <button type="submit" class="text-shadow btn-small submit-btn">
-              Search <i class="fas fa-search prefix"></i>
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
-
-    <!--Display Products-->
-    {% if products|length > 0 %}
+        </form>
+      </div>
+    
+      <!--Display Products-->
+      {% if products|length > 0 %}
       <div class="row">
         {% for product in products %}
         <div class="col l4 m6 s12">
@@ -105,20 +106,17 @@
                 {{ product.product_max_range }}miles
               </p>
             </div>
+            <!--Link to full product details-->
             <div class="row">
-            <div class="card-action details-link">
-              <div class="col s12">
-                
-                <a href="{{ url_for('view_product', product_id=product._id) }}" class="product-details">View Full
-                Details</a>
+              <div class="card-action details-link">
+                <div class="col s12">
+                  <a href="{{ url_for('view_product', product_id=product._id) }}" class="product-details">View Full
+                    Details</a>
+                </div>
               </div>
             </div>
-            </div>
-
             <div class="admin-btn card-action details-link">
-              
-
-              <!--Edit and Delete Product Buttons-->
+              <!--Edit and Delete Product Buttons for Admin User-->
               {% if session.user|lower == "admin"|lower %}
               <div class="col s6 left">
                 <!-- Modal Trigger -->
@@ -141,22 +139,19 @@
                 <a href="{{ url_for('edit_product', product_id=product._id)}}" class="btn-small submit-btn text-shadow">
                   Edit <i class="fas fa-edit prefix"></i></a>
               </div>
-            {% endif %}
-          </div>
+              {% endif %}
+            </div>
           </div>
         </div>
-      {% endfor %}
+        {% endfor %}
       </div>
+      <!--Message to appear if no results are found-->
       {% else %}
       <div class="row">
         <div class="col s12">
           <h2 class="text-center heading">No Results Found</h2>
         </div>
       </div>
-     {% endif %}
-      
-
-      </section>
-     
-
+      {% endif %}
+    </section>
 {% endblock %}
