@@ -25,40 +25,41 @@
           </a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
           <ul class="right hide-on-med-and-down text-shadow">
+              <li><a href="{{ url_for('index') }}"><i class="fas fa-home"> Home</i></a></li>
             {% if session.user %}
-                <li><a href="{{ url_for('products') }}"><i class="fas fa-list-ul">Products</i></a></li>
-                <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-user-alt">Profile</i></a>
-                </li>
-                {% if session.user|lower == "admin"|lower %}
-                    <li><a href="{{ url_for('add_product') }}"><i class="fas fa-folder-plus">Add Product</i></a></li>
-                {% endif %}
-                <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt">Logout</i></a></li>
+              <li><a href="{{ url_for('products') }}"><i class="fas fa-list-ul">Products</i></a></li>
+              <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-user-alt">Profile</i></a></li>
+              {% if session.user|lower == "admin"|lower %}
+              <li><a href="{{ url_for('add_product') }}"><i class="fas fa-folder-plus">Add Product</i></a></li>
+              {% endif %}
+              <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt">Logout</i></a></li>
             {% else %}
-                <li><a href="{{ url_for('index') }}"><i class="fas fa-home"> Home</i></a></li>
-                <li><a href="{{ url_for('login') }}"><i class="fas fa-door-open"> Login</i></a></li>
-                <li><a href="{{ url_for('register') }}"><i class="fas fa-user-plus"> Register</i></a></li>
+              <li><a href="{{ url_for('login') }}"><i class="fas fa-door-open"> Login</i></a></li>
+              <li><a href="{{ url_for('register') }}"><i class="fas fa-user-plus"> Register</i></a></li>
             {% endif %}
           </ul>
         </div>
       </nav>
     </div>
-      <!--Mobile Navigation-->
-      <ul class="sidenav" id="mobile-demo">
-        <li><h4 class="center-align text-darken-4">Scooter Circle</h4></li>
-        {% if session.user %}
-                <li><a href="{{ url_for('products') }}"><i class="fas fa-list-ul"></i>Products</a></li>
-                <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-user-alt"></i>Profile</a>
-                </li>
-                {% if session.user|lower == "admin"|lower %}
-                    <li><a href="{{ url_for('add_product') }}"><i class="fas fa-folder-plus"></i>Add Product</a></li>
-                {% endif %}
-                <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
-            {% else %}
-                <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i>Home</a></li>
-                <li><a href="{{ url_for('login') }}"><i class="fas fa-door-open"></i>Login</a></li>
-                <li><a href="{{ url_for('register') }}"><i class="fas fa-user-plus"></i>Register</a></li>
-            {% endif %}
-      </ul>
+    <!--Mobile Navigation-->
+    <ul class="sidenav" id="mobile-demo">
+      <li>
+        <h4 class="center-align text-darken-4">Scooter Circle</h4>
+      </li>
+      <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i>Home</a></li>
+      {% if session.user %}
+        <li><a href="{{ url_for('products') }}"><i class="fas fa-list-ul"></i>Products</a></li>
+        <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-user-alt"></i>Profile</a>
+        </li>
+        {% if session.user|lower == "admin"|lower %}
+          <li><a href="{{ url_for('add_product') }}"><i class="fas fa-folder-plus"></i>Add Product</a></li>
+        {% endif %}
+        <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>  
+      {% else %}
+        <li><a href="{{ url_for('login') }}"><i class="fas fa-door-open"></i>Login</a></li>
+        <li><a href="{{ url_for('register') }}"><i class="fas fa-user-plus"></i>Register</a></li>
+      {% endif %}
+    </ul>
   </header>
     <!-- Flash Messages-->
     {% with messages = get_flashed_messages() %}
@@ -79,127 +80,157 @@
     <div class="row">
       <div class="col s12">
         <ul class="text-shadow footer-links text-center">
-          <li><a class="waves-effect waves-light btn  btn-footer modal-trigger grey-text text-lighten-3" href="{{ url_for('contact') }}">Contact</a></li>
-          <!--Modal Trigger-->
-          <li><a class="waves-effect waves-light btn  btn-footer modal-trigger grey-text text-lighten-3" href="#modal1">Terms and Conditions</a></li>
+          <!--Contact Page Link-->
+          <li><a class="waves-effect waves-light btn  btn-footer modal-trigger grey-text text-lighten-3"
+              href="{{ url_for('contact') }}">Contact</a></li>
+          <!--Modal Trigger for Terms and Conditions-->
+          <li><a class="waves-effect waves-light btn  btn-footer modal-trigger grey-text text-lighten-3"
+              href="#modal1">Terms and Conditions</a></li>
         </ul>
       </div>
     </div>
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal modal-fixed-footer">
-    <div class="modal-content terms">
-      <h3 class="heading text-center">Terms and Conditions of Use</h3>
-      <div>
-      <h4>Introduction </h4>
-        <ul class="conditions">
-          <li>These terms and conditions shall govern your use of our website</li>
-          <li>By using our website, you accept these terms and conditions in full; accordingly. If you disagree with these 
-            terms and conditions or any part of these terms and conditions, you must not use our website. </li>
-        </ul>
+    <!-- Modal Structure -->
+    <!--Terms and Conditions-->
+    <div id="modal1" class="modal modal-fixed-footer">
+      <div class="modal-content terms">
+        <h3 class="heading text-center">Terms and Conditions of Use</h3>
+        <div>
+          <h4>Introduction </h4>
+          <ul class="conditions">
+            <li>These terms and conditions shall govern your use of our website</li>
+            <li>By using our website, you accept these terms and conditions in full; accordingly. If you disagree with
+              these
+              terms and conditions or any part of these terms and conditions, you must not use our website. </li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company Notice</h4>
+          <ul class="conditions">
+            <li>Copyright 2021 @ Scooter Circle </li>
+            <li>Subject to the express provisions of these terms and conditions </li>
+            <li>Scooter Circle owns and controls all the copyright and other intellectual property rights in our website
+              and the material on our website; and </li>
+            <li>All the copyrights and other intellectual properties rights on our website and the material on our website
+              are reserved.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Permission to use website</h4>
+          <h5>You may:</h5>
+          <ul class="conditions">
+            <li>View pages from our website</li>
+            <li>Download pages from our website for caching in the web browser</li>
+            <li>Print pages from our website for your own personal and non-commercial use. Providing that such printing is
+              not systematic or excessive</li>
+            <li>You may only use our website to view products information, reviews and add your reviews based on your
+              experience</li>
+            <li>Except as expressly permitted by these terms and conditions, you must not edit or otherwise modify any
+              material on our website</li>
+            <li>You may publish product reviews based on your personal experience</li>
+            <li>You may edit or delete your product reviews on your profile page</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Misuse of website </h4>
+          <h5>You may not:</h5>
+          <ul class="conditions">
+            <li>Use our website in any way or take any action that causes, or may cause, damage to the website or
+              impairment of the performance, availability, accessibility, integrity, or security of the website.</li>
+            <li>Use our website in any way that is unlawful, illegal, fraudulent, or harmful</li>
+            <li>Hack or otherwise tamper with our website</li>
+            <li>Use data collected from our website for any direct marketing activity</li>
+            <li>You must not use data collected from our website to contact individuals, companies or other persons or
+              entities</li>
+            <li>You must not use language which is offensive, discriminative, or abusive to other users or products</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Registration of the accounts</h4>
+          <ul class="conditions">
+            <li>You may register for an account with our website by completing and submitting the account registration
+              form on our website</li>
+            <li>You must not allow any other person to use your account to access the website</li>
+            <li>You must notify us in writing immediately if you become aware of any unauthorised use of your account</li>
+          </ul>
+        </div>
+        <div>
+          <h4>User Login Details</h4>
+          <ul class="conditions">
+            <li>If you register for an account with our website you will be asked to choose your user ID and password</li>
+            <li>You must keep your password confidential</li>
+            <li>You must notify us in writing immediately if you become aware of any disclosure of your password</li>
+            <li>We keep your password and login details secure and do not share them with any third party products or
+              services
+              Reviews</li>
+            <li>Reviews are or may be independent of us; accordingly, reviews published on our website do not necessarily
+              reflect our views and opinions</li>
+            <li>You acknowledge that reviews published on our website may be out of date, biased, partial, misleading
+              and/or inaccurate</li>
+            <li>You should not rely upon reviews published on our website to make decisions or determine courses of
+              action, and you should conduct your research before making a decision or embarking upon a course of action
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4>User Reviews</h4>
+          <ul class="conditions">
+            <li>We publish user reviews by users on our website</li>
+            <li>If you have registered with our website, you may submit reviews of products on our website.</li>
+            <li>You may not post a review if it is irrelevant to the product or abusive to other users</li>
+            <li>The review you have submitted, if found inappropriate or irrelevant the Company reserves the right to
+              delete the review without notification</li>
+            <li>We do not edit user reviews</li>
+            <li>You agree by submitting your review it will be published on our website and available to view by other
+              users</li>
+          </ul>
+        </div>
+        <div>
+          <h4>External Links on other Website and Resources</h4>
+          <ul class="conditions">
+            <li>We do not use affiliate links on our site</li>
+            <li>The links provided to other site is for user experience and we do not take any responsibility or
+              commission from users making a purchase</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Cookie Policy</h4>
+          <p>We use cookies to enhance the experience on the website. A cookie is a small data file stored by websites to
+            make use of a web page faster. This is done through the web, through the saved data file, can recognize your
+            computer when you visit the site next time. A cookie is not harmful to your computer</p>
+          <h4>What is a Cookie?</h4>
+          <ul class="conditions">
+            <li> A cookie is a file that identifies your browser. The cookie file contains no contact information such as
+              name, address, etc. Cookies are saved in the device you use to access the site (eg computer, mobile,
+              tablet), for a website to recognize your device the next time you visit the site. Every time you visit a
+              website where you once had a cookie, your browser sends to it automatically. A cookie allows your device is
+              recognized. This way you save time while browsing.</li>
+          </ul>
+          <h4>How are cookies used?</h4>
+          <ul class="conditions">
+            <li>Scooter Circle uses Session cookies, collecting cookies, functionality cookies and flash cookies.</li>
+            <li>Session cookies will be deleted if you have been inactive for a certain period.</li>
+          </ul>
+        </div>
+        <div>
+          <p>By pressing you <em class="agree">“Agree”</em> you therefore agree and acknowledge your consent to the Terms
+            and Conditions of our site
+            Please do not hesitate to contact us for any further information or concerns</p>
+        </div>
       </div>
-      <div>
-      <h4>Company Notice</h4>
-        <ul class="conditions">
-          <li>Copyright 2021 @ Scooter Circle </li>
-          <li>Subject to the express provisions of these terms and conditions </li>
-          <li>Scooter Circle owns and controls all the copyright and other intellectual property rights in our website and the material on our website; and </li>
-          <li>All the copyrights and other intellectual properties rights on our website and the material on our website are reserved.</li>
-        </ul>
-      </div>
-      <div>
-        <h4>Permission to use website</h4>
-        <h5>You may:</h5>
-        <ul class="conditions">
-          <li>View pages from our website</li>
-          <li>Download pages from our website for caching in the web browser</li>
-          <li>Print pages from our website for your own personal and non-commercial use. Providing that such printing is not systematic or excessive</li>
-          <li>You may only use our website to view products information, reviews and add your reviews based on your experience</li>
-          <li>Except as expressly permitted by these terms and conditions, you must not edit or otherwise modify any material on our website</li>
-          <li>You may publish product reviews based on your personal experience</li>
-          <li>You may edit or delete your product reviews on your profile page</li>
-        </ul>
-      </div>
-      <div>
-        <h4>Misuse of website </h4>
-        <h5>You may not:</h5>
-        <ul class="conditions">
-          <li>Use our website in any way or take any action that causes, or may cause, damage to the website or impairment of the performance, availability, accessibility, integrity, or security of the website.</li>
-          <li>Use our website in any way that is unlawful, illegal, fraudulent, or harmful</li>
-          <li>Hack or otherwise tamper with our website</li>
-          <li>Use data collected from our website for any direct marketing activity</li>
-          <li>You must not use data collected from our website to contact individuals, companies or other persons or entities</li>
-          <li>You must not use language which is offensive, discriminative, or abusive to other users or products</li>
-        </ul>
-      </div>
-      <div>
-        <h4>Registration of the accounts</h4>
-        <ul class="conditions">
-          <li>You may register for an account with our website by completing and submitting the account registration form on our website</li>
-          <li>You must not allow any other person to use your account to access the website</li>
-          <li>You must notify us in writing immediately if you become aware of any unauthorised use of your account</li>
-        </ul>
-      </div>
-      <div>
-        <h4>User Login Details</h4>
-        <ul class="conditions">
-          <li>If you register for an account with our website you will be asked to choose your user ID and password</li>
-          <li>You must keep your password confidential</li>
-          <li>You must notify us in writing immediately if you become aware of any disclosure of your password</li>
-          <li>We keep your password and login details secure and do not share them with any third party products or services 
-            Reviews</li>
-          <li>Reviews are or may be independent of us; accordingly, reviews published on our website do not necessarily reflect our views and opinions</li>
-          <li>You acknowledge that reviews published on our website may be out of date, biased, partial, misleading and/or inaccurate</li>
-          <li>You should not rely upon reviews published on our website to make decisions or determine courses of action, and you should conduct your research before making a decision or embarking upon a course of action</li>
-        </ul>
-      </div>
-      <div>
-        <h4>User Reviews</h4>
-        <ul class="conditions">
-          <li>We publish user reviews by users on our website</li>
-          <li>If you have registered with our website, you may submit reviews of products on our website.</li>
-          <li>You may not post a review if it is irrelevant to the product or abusive to other users</li>
-          <li>The review you have submitted, if found inappropriate or irrelevant the Company reserves the right to delete the review without notification</li>
-          <li>We do not edit user reviews</li>
-          <li>You agree by submitting your review it will be published on our website and available to view by other users</li>
-        </ul>
-      </div>
-      <div>
-        <h4>External Links on other Website and Resources</h4>
-        <ul class="conditions">
-          <li>We do not use affiliate links on our site</li>
-          <li>The links provided to other site is for user experience and we do not take any responsibility or commission from users making a purchase</li>
-        </ul>
-      </div>
-      <div>
-        <h4>Cookie Policy</h4>
-        <p>We use cookies to enhance the experience on the website. A cookie is a small data file stored by websites to make use of a web page faster. This is done through the web, through the saved data file, can recognize your computer when you visit the site next time. A cookie is not harmful to your computer</p>
-        <h4>What is a Cookie?</h4>
-        <ul class="conditions">
-          <li> A cookie is a file that identifies your browser. The cookie file contains no contact information such as name, address, etc. Cookies are saved in the device you use to access the site (eg computer, mobile, tablet), for a website to recognize your device the next time you visit the site. Every time you visit a website where you once had a cookie, your browser sends to it automatically. A cookie allows your device is recognized. This way you save time while browsing.</li>
-        </ul>
-        <h4>How are cookies used?</h4>
-        <ul class="conditions">
-          <li>Scooter Circle uses Session cookies, collecting cookies, functionality cookies and flash cookies.</li>
-          <li>Session cookies will be deleted if you have been inactive for a certain period.</li>
-        </ul>
-      </div>
-      <div>
-        <p>By pressing you <em class="agree">“Agree”</em> you therefore agree and acknowledge your consent to the Terms and Conditions of our site
-          Please do not hesitate to contact us for any further information or concerns</p>
+      <!--Link to Contact Page-->
+      <div class="modal-footer">
+        <a href="{{ url_for('contact') }}" class="modal-close waves-effect waves-green btn-flat">Contact</a>
+        <button class="modal-close waves-effect waves-green btn-flat">Agree</button>
       </div>
     </div>
-    <div class="modal-footer">
-      <a href="{{ url_for('contact') }}" class="modal-close waves-effect waves-green btn-flat">Contact</a>
-      <button class="modal-close waves-effect waves-green btn-flat">Agree</button>
-    </div>
-  </div>
+    <!--Copyrights-->
     <div class="row footer-copyright">
       <div class="col s12 text-center">
         <p>&copy; 2021 Scooter Circle</p>
       </div>
     </div>
   </footer>
-
+  <!--Script-->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
