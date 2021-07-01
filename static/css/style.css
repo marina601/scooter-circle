@@ -59,6 +59,11 @@ nav,
    letter-spacing: 0.2rem;
 }
 
+.nav-link {
+   font-weight: 900;
+   font-size: 22px;
+}
+
 .sidenav {
    background-color: #889FAA;
 }

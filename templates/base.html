@@ -25,17 +25,17 @@
           </a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
           <ul class="right hide-on-med-and-down text-shadow">
-              <li><a href="{{ url_for('index') }}"><i class="fas fa-home"> Home</i></a></li>
+              <li><a href="{{ url_for('index') }}" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
             {% if session.user %}
-              <li><a href="{{ url_for('products') }}"><i class="fas fa-list-ul">Products</i></a></li>
-              <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-user-alt">Profile</i></a></li>
+              <li><a href="{{ url_for('products') }}" class="nav-link"><i class="fas fa-list-ul"></i> Products</a></li>
+              <li><a href="{{ url_for('profile', username=session['user']) }}" class="nav-link"><i class="fas fa-user-alt"></i> Profile</a></li>
               {% if session.user|lower == "admin"|lower %}
-              <li><a href="{{ url_for('add_product') }}"><i class="fas fa-folder-plus">Add Product</i></a></li>
+              <li><a href="{{ url_for('add_product') }}" class="nav-link"><i class="fas fa-folder-plus"></i> Add Product</a></li>
               {% endif %}
-              <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt">Logout</i></a></li>
+              <li><a href="{{ url_for('logout') }}" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
             {% else %}
-              <li><a href="{{ url_for('login') }}"><i class="fas fa-door-open"> Login</i></a></li>
-              <li><a href="{{ url_for('register') }}"><i class="fas fa-user-plus"> Register</i></a></li>
+              <li><a href="{{ url_for('login') }}" class="nav-link"><i class="fas fa-door-open"></i> Login</a></li>
+              <li><a href="{{ url_for('register') }}" class="nav-link"><i class="fas fa-user-plus"></i> Register</a></li>
             {% endif %}
           </ul>
         </div>
