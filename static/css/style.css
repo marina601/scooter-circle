@@ -60,8 +60,8 @@ nav,
 }
 
 .nav-link {
-   font-weight: 900;
-   font-size: 22px;
+ font-weight: 900;
+ font-size: 22px;
 }
 
 .sidenav {
@@ -242,13 +242,6 @@ form {
 .product-card {
    min-height: 72rem;
 }
-/**.card,
-.card-content,
-.card-content p {
-   padding: 1rem !important;
-}**/
-
-
 
 .card-action {
  font-weight: 600;
@@ -287,10 +280,6 @@ bottom:   0;
    padding: 0rem 2rem;
    margin-bottom: 0rem;
 }
-
-/*.add_review {
-  padding: 1rem;
-}*/
 
 .card-panel {
    width: 70%;
@@ -362,11 +351,6 @@ fieldset {
    background-color: #fafafa;
 }
 
-/*.add_review {
-   padding-top: 10rem;
-   height: 85vh;
-}*/
-
 .review-btn {
    margin: 2rem auto;
 }
@@ -374,7 +358,6 @@ fieldset {
 .user-review {
    background-color: #889faa;
    height: 38rem;
-  /* width: 32rem; */
    margin: 2rem 0.5rem;
 }
 
