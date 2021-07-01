@@ -1,8 +1,8 @@
 $(document).ready(function(){
     $('.sidenav').sidenav({edge: 'right'});
     $('.carousel').carousel();
-    $('#textarea1').val('Write Your Review Here..');
-  M.textareaAutoResize($('#textarea1'));
+   // $('#textarea1').val('Write Your Review Here..');
+  //M.textareaAutoResize($('#textarea1'));
   
   // select option for add product page
   $('select').formSelect();
