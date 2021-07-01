@@ -9,6 +9,9 @@ $(document).ready(function(){
 
   //modal
   $('.modal').modal();
+  
+  // tooltip
+  $('.tooltipped').tooltip();
 
   //validate select element from Materialize class
   validateMaterializeSelect();

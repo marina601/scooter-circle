@@ -267,6 +267,16 @@ bottom:   0;
    padding-top: 1rem;
 }
 
+.tooltipped {
+   border-radius: 50%;
+   color: #fafafa;
+   font-size: 2rem;
+   background-color: #889faa;
+}
+
+.tooltipped:hover {
+   background-color: #2fc669;
+}
 
 /*****************View Product*************************/
 .scooter-img {
