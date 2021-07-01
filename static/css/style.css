@@ -46,7 +46,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /*******Background Colors********/
 
-nav, .page-footer {
+nav, 
+.page-footer {
    background-color: #889FAA;
 }
 
@@ -102,10 +103,15 @@ nav, .page-footer {
    font-weight: 700;
 }
 
+.carousel-div {
+   padding: 1rem 1rem 2rem 1rem;
+}
+
 .carousel 
 .carousel-item {
    width: 400px;
    height: 400px;
+   padding-bottom: 1rem;
 }
 
 /***************Registration Form*****************/
