@@ -58,7 +58,9 @@ def register():
         flash("You have successfully Registered!")
         return redirect(url_for('profile', username=session["user"]))
 
-    return render_template("register.html")
+    # Page Title
+    title = 'Register'
+    return render_template("register.html", title=title)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -88,7 +90,9 @@ def login():
             flash("You have enetered incorrect Username and/or Password")
             return redirect(url_for('login'))
 
-    return render_template("login.html")
+    # Page Title
+    title = 'Login'
+    return render_template("login.html", title=title)
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
@@ -103,10 +107,14 @@ def profile(username):
     else:
         reviews = list(mongo.db.reviews.find({"created_by": session["user"]}))
 
+    # Page Title
+    title = 'Profile'
+
     # checking if the user exists
     if session["user"]:
         return render_template(
-                "profile.html", username=username, reviews=reviews)
+                "profile.html", username=username,
+                reviews=reviews, title=title)
 
     return redirect(url_for('login'))
 
@@ -154,7 +162,10 @@ def products():
     elif price == "low":
         products = products.sort("product_price", 1)
 
-    return render_template("products.html", products=list(products))
+    # Page Title
+    title = 'Products'
+    return render_template("products.html",
+                           products=list(products), title=title)
 
 
 # view product by id and add review to the product
@@ -213,11 +224,13 @@ def add_product():
         }
 
         mongo.db.products.insert_one(product)
-        
+
         flash("A New Product Has Been Succsefully Added")
         return redirect(url_for('products'))
 
-    return render_template("add_product.html")
+    # Page Title
+    title = 'Add-Product'
+    return render_template("add_product.html", title=title)
 
 
 # edit product for admit user only
@@ -247,7 +260,9 @@ def edit_product(product_id):
         flash("Product Has Been Succsefully Edited")
 
     product = mongo.db.products.find_one({"_id": ObjectId(product_id)})
-    return render_template("edit_product.html", product=product)
+    # Page Title
+    title = 'Edit-Product'
+    return render_template("edit_product.html", product=product, title=title)
 
 
 # Delete Product
@@ -280,13 +295,17 @@ def edit_review(review_id):
         return redirect(url_for('profile', username=session["user"]))
 
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
-    return render_template("edit_review.html", review=review)
+    # Page Title
+    title = 'Edit-Review'
+    return render_template("edit_review.html", review=review, title=title)
 
 
 # Contact Page
 @app.route("/contact")
 def contact():
-    return render_template("contact.html")
+    # Page Title
+    title = 'Contact'
+    return render_template("contact.html", title=title)
 
 
 # 404 Page
