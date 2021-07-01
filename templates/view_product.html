@@ -4,53 +4,53 @@
       <!--Product Specifications-->
       <div class="row">
         <div class="col s12">
-          <h2 class="text-center heading">{{ product.product_model }}</h2>
+          <h1 class="text-center heading">{{ product.product_model }}</h1>
         </div>
       </div>
       <div class="row">
         <div class="col m6 s12">
-          <img src="{{ product.product_image }}" class="scooter-img">
+          <img src="{{ product.product_image }}" class="scooter-img" alt="{{ product.product_model }}">
         </div>
         <div class="col l6 m4 offset-m2 s12 product-spec">
           <p>
-            <i class="fas fa-tag"></i>
+            <i class="fas fa-tag" aria-hidden="true"></i><span class="sr-only">tag</span>
             {{ product.product_brand }}
           </p>
           <p>
-            <i class="fas fa-tachometer-alt"></i>
+            <i class="fas fa-tachometer-alt" aria-hidden="true"></i><span class="sr-only">speedometer</span>
             {{ product.product_max_speed }}mph
           </p>
           <p>
-            <i class="fas fa-charging-station"></i>
+            <i class="fas fa-charging-station" aria-hidden="true"></i><span class="sr-only">battery charging time</span>
             {{ product.product_battery_charge }}hrs
           </p>
           <p>
-            <i class="fas fa-pound-sign"></i>
+            <i class="fas fa-pound-sign" aria-hidden="true"></i><span class="sr-only">pound sign</span>
             {{ product.product_price }}
-            <a class="btn tooltipped text-shadow" data-position="top" data-tooltip="Price may vary">!</a>
+            <button class="btn tooltipped text-shadow" data-position="top" data-tooltip="Price may vary">!</button>
           </p>
           <p>
-            <i class="fas fa-route"></i>
+            <i class="fas fa-route" aria-hidden="true"></i><span class="sr-only">route</span>
             {{ product.product_max_range }}miles
           </p>
           <p>
-            <i class="fas fa-power-off"></i>
+            <i class="fas fa-power-off" aria-hidden="true"></i><span class="sr-only">motor power</span>
             {{ product.product_motor_power }}watts
           </p>
           <p>
-            <i class="fas fa-truck-loading"></i>
+            <i class="fas fa-truck-loading" aria-hidden="true"></i><span class="sr-only">loading capacity</span>
             {{ product.product_load }}kg
           </p>
           <p id="add_review">
-            <i class="fas fa-dharmachakra"></i>
+            <i class="fas fa-dharmachakra" aria-hidden="true"></i><span class="sr-only">wheel size</span>
             {{ product.product_wheel_size }}cm
           </p>
           <p>
-            <i class="fas fa-water"></i>
+            <i class="fas fa-water" aria-hidden="true"></i><span class="sr-only">water resistant</span>
             {{ product.product_water_resistant }}
           </p>
           <p>
-            <i class="fas fa-weight-hanging"></i>
+            <i class="fas fa-weight-hanging" aria-hidden="true"></i><span class="sr-only">capacity</span>
             {{ product.product_weight }}kg
           </p>
         </div>
@@ -63,7 +63,7 @@
       <div class="row">
         <div class="col m4 offset-m7 s6 offset-s4 card-action">
           <a href="{{ product.product_affiliate_link }}" class="text-shadow btn-small affiliate-link" target="_blank"
-            alt="{{ product.product_model }}">Buy This Scooter</a>
+            alt="{{ product.product_model }}" rel="noreferrer">Buy This Scooter</a>
         </div>
       </div>
     </section>
@@ -104,10 +104,10 @@
       </div>
     </section>
     <section class="reviews">
-      <!--show reviews-->
+      <!--show product reviews-->
       <div class="row">
         <div class="col s12">
-          <h3 class="text-center">User Reviews</h3>
+          <h2 class="text-center">User Reviews</h2>
         </div>
         <div class="row">
           {% for review in reviews if review.product_model == product.product_model %}
@@ -120,8 +120,9 @@
               </div>
             </div>
             {% else %}
+            <!--If no reviews-->
             <div class="col s12">
-              <h4 class="text-center">No Reviews Added Yet!</h3>
+              <h2 class="text-center">No Reviews Added Yet!</h2>
                 <p class="text-center">If you have used this scooter, why not add your own review
                   <a href="#add_review" class="text-shadow btn-small affiliate-link">Here</a>
                 </p>
