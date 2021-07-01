@@ -44,20 +44,20 @@
     <!--Mobile Navigation-->
     <ul class="sidenav" id="mobile-demo">
       <li>
-        <h4 class="center-align text-darken-4">Scooter Circle</h4>
+        <h3 class="center-align text-shadow">Scooter Circle</h3>
       </li>
-      <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i>Home</a></li>
+      <li><a href="{{ url_for('index') }}" class="mobile-nav"><i class="fas fa-home"></i>Home</a></li>
       {% if session.user %}
-        <li><a href="{{ url_for('products') }}"><i class="fas fa-list-ul"></i>Products</a></li>
-        <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-user-alt"></i>Profile</a>
+        <li><a href="{{ url_for('products') }}" class="mobile-nav"><i class="fas fa-list-ul"></i>Products</a></li>
+        <li><a href="{{ url_for('profile', username=session['user']) }}" class="mobile-nav"><i class="fas fa-user-alt"></i>Profile</a>
         </li>
         {% if session.user|lower == "admin"|lower %}
-          <li><a href="{{ url_for('add_product') }}"><i class="fas fa-folder-plus"></i>Add Product</a></li>
+          <li><a href="{{ url_for('add_product') }}" class="mobile-nav"><i class="fas fa-folder-plus"></i>Add Product</a></li>
         {% endif %}
-        <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>  
+        <li><a href="{{ url_for('logout') }}" class="mobile-nav"><i class="fas fa-sign-out-alt"></i>Logout</a></li>  
       {% else %}
-        <li><a href="{{ url_for('login') }}"><i class="fas fa-door-open"></i>Login</a></li>
-        <li><a href="{{ url_for('register') }}"><i class="fas fa-user-plus"></i>Register</a></li>
+        <li><a href="{{ url_for('login') }}" class="mobile-nav"><i class="fas fa-door-open"></i>Login</a></li>
+        <li><a href="{{ url_for('register') }}" class="mobile-nav"><i class="fas fa-user-plus"></i>Register</a></li>
       {% endif %}
     </ul>
   </header>

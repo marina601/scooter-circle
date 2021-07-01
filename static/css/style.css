@@ -59,6 +59,25 @@ nav,
    letter-spacing: 0.2rem;
 }
 
+.sidenav {
+   background-color: #889FAA;
+}
+
+.sidenav h3 {
+   color: #fafafa !important;
+}
+
+
+.mobile-nav {
+   color: #fafafa !important; 
+   font-size: 18px !important;
+   font-weight: 600 !important;
+}
+
+.mobile-nav i {
+   color: inherit !important;
+}
+
 /****************Flash Messages*************************/
 
 .flash-messages {
