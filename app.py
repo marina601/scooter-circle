@@ -19,21 +19,20 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
+"""
 @app.before_request
 def before_request():
-    """
+
     Forcing the url if run on http
     to redirect to https secure server
     help found on
     https://stackoverflow.com/questions/15116312/redirect-http-to-https-on-flaskheroku
-    """
     if 'DYNO' in os.environ:
         if request.url.startswith('http://'):
             url = request.url.replace('http://', 'https://', 1)
             code = 301
             return redirect(url, code=code)
-
+"""
 
 @app.route("/")
 @app.route("/index")
