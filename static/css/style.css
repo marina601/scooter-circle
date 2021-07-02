@@ -377,6 +377,10 @@ fieldset {
    margin: 2rem auto;
 }
 
+.back-link {
+   width: auto;
+}
+
 .user-review {
    background-color: #889faa;
    height: 38rem;
