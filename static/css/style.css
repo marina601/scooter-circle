@@ -66,6 +66,11 @@ nav,
  font-size: 22px;
 }
 
+.brand-logo:hover {
+   background-color: #718d9a;
+   height: 6.3rem;
+}
+
 .sidenav {
    background-color: #889FAA;
 }
@@ -480,8 +485,7 @@ footer {
 }
 
 .agree {
-   font-size: 8rem;
-   letter-spacing: 1rem;
+   letter-spacing: 0.3rem;
 }
 
 .btn-back {
