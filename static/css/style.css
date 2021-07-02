@@ -276,13 +276,14 @@ bottom:   0;
 
 .tooltipped {
    border-radius: 50%;
-   color: #fafafa;
+   color: #383843;
    font-size: 2rem;
-   background-color: #889faa;
+   background-color: #dcdfe5;
 }
 
 .tooltipped:hover {
-   background-color: #2fc669;
+   background-color: #889faa;
+   color: #fafafa;
 }
 
 /*****************View Product*************************/
