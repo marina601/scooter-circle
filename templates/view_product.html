@@ -4,7 +4,7 @@
       <!--Product Specifications-->
       <div class="row">
         <div class="col s12">
-          <h1 class="text-center heading">{{ product.product_model }}</h1>
+          <h2 class="text-center heading">{{ product.product_model }}</h2>
         </div>
       </div>
       <div class="row">
@@ -41,7 +41,7 @@
             <i class="fas fa-truck-loading" aria-hidden="true"></i><span class="sr-only">loading capacity</span>
             {{ product.product_load }}kg
           </p>
-          <p id="add_review">
+          <p>
             <i class="fas fa-dharmachakra" aria-hidden="true"></i><span class="sr-only">wheel size</span>
             {{ product.product_wheel_size }}cm
           </p>
@@ -61,7 +61,7 @@
       </div>
       <!--Affiliate Link for Product-->
       <div class="row">
-        <div class="col m4 offset-m7 s6 offset-s4 card-action">
+        <div class="col m4 offset-m7 s6 offset-s4 card-action" id="add_review">
           <a href="{{ product.product_affiliate_link }}" class="text-shadow btn-small affiliate-link" target="_blank"
             alt="{{ product.product_model }}" rel="noreferrer">Buy This Scooter</a>
         </div>
@@ -107,7 +107,7 @@
       <!--show product reviews-->
       <div class="row">
         <div class="col s12">
-          <h2 class="text-center">User Reviews</h2>
+          <h3 class="text-center">User Reviews</h3>
         </div>
         <div class="row">
           {% for review in reviews if review.product_model == product.product_model %}
@@ -122,7 +122,7 @@
             {% else %}
             <!--If no reviews-->
             <div class="col s12">
-              <h2 class="text-center">No Reviews Added Yet!</h2>
+              <h3 class="text-center">No Reviews Added Yet!</h3>
                 <p class="text-center">If you have used this scooter, why not add your own review
                   <a href="#add_review" class="text-shadow btn-small affiliate-link">Here</a>
                 </p>

@@ -369,6 +369,10 @@ fieldset {
    background-color: #fafafa;
 }
 
+.add_review {
+   padding-top: 3rem;
+}
+
 .review-btn {
    margin: 2rem auto;
 }
