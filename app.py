@@ -38,37 +38,45 @@ def before_request():
 @app.route("/")
 @app.route("/index")
 def index():
+    """
+    Find Products from Mongo db collection
+    """
     products = mongo.db.products.find()
     return render_template("index.html", products=products)
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """
+    Checking if the user already exists,
+    If not, then checking if username exists
+    Checking if password_1 = password_2
+    Creating a dictionary to insert user into db
+    Insert the new user into db
+    Put the user into 'session' cookie
+    Redirect the user to their profile page
+    """
     if request.method == "POST":
-        # check if the user exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-        password_1 = request.form.get("password")
-        password_2 = request.form.get("password_2")
 
-        # check if the username already exists
         if existing_user:
             flash("Username in use, try alternative")
             return redirect(url_for("register"))
+       
+        password_1 = request.form.get("password")
+        password_2 = request.form.get("password_2")
 
-        # check if the password_1 matches to password_2
         if password_1 != password_2:
             flash("Your passwords do not match")
             return redirect(url_for("register"))
 
-        # create a dictionary to be inserted in the db
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
 
-        # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("You have successfully Registered!")
         return redirect(url_for('profile', username=session["user"]))
@@ -80,13 +88,18 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    """
+    Login function checks if the method is POST
+    If user exists in the database
+    If password matches user input
+    Redirects user to profile page
+    Otherwise error message displayed
+    """
     if request.method == "POST":
-        # check if the user already exists
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            # check if the hashed password matches the user input
             if check_password_hash(existing_user
                                    ["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
@@ -112,13 +125,17 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # grab the session user's username from the database
+    """
+    Profile function grabs the session user's username
+    from database and displays user's reviews
+    If session user is Admin display all the reviews
+    in the database
+    """
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"].capitalize()
-    # if the user is Admin, display all the reviews
+
     if username == "Admin":
         reviews = list(mongo.db.reviews.find())
-    # Display reviews only created by session user
     else:
         reviews = list(mongo.db.reviews.find({"created_by": session["user"]}))
 
@@ -145,7 +162,13 @@ def logout():
 # all products
 @app.route("/products")
 def products():
-    # Getting input values from the select element to sort the db
+    """
+    Getting input field values from the select element
+    Search function checks allows users to search products
+    by product_model or product_brand
+    If query is empty displays all products from the database
+    """
+
     price = request.args.get("product_price")
     range = request.args.get("product_max_range")
     charge = request.args.get("product_battery_charge")
@@ -157,8 +180,10 @@ def products():
     else:
         products = mongo.db.products.find()
 
-    # Checking with conditional statement if the value is high or low
-    # and sorting accordingly
+    """
+    Sorting database by accessending or dissending order
+    to allow filter function
+    """
 
     if range == "high":
         products = products.sort("product_max_range", -1)
@@ -183,13 +208,16 @@ def products():
                            products=list(products), title=title)
 
 
-# view product by id and add review to the product
 @app.route("/view_product/<product_id>", methods=["GET", "POST"])
 def view_product(product_id):
-
+    """
+    View products by product id and
+    display reviews for the specific product
+    """
     product = mongo.db.products.find_one({"_id": ObjectId(product_id)})
     reviews = list(mongo.db.reviews.find().sort("product_model", 1))
 
+    # if user is not in session return the user to login page
     if 'user' not in session:
         return redirect(url_for("login"))
 
@@ -200,6 +228,12 @@ def view_product(product_id):
 # add review
 @app.route("/add_review", methods=["GET", "POST"])
 def add_review():
+    """
+    Add review function checks if the method="POST"
+    Creating a dictionary to be inserted in the database
+    Insert user review to the database
+    Redirect the user to their profile page
+    """
     if request.method == "POST":
         review = {
             "product_model": request.form.get("product_model"),
@@ -217,6 +251,18 @@ def add_review():
 # add product to the db only by Admin user
 @app.route("/add_product", methods=["GET", "POST"])
 def add_product():
+
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"].capitalize()
+
+    if 'user' not in session:
+        flash("You must be logged in with Admin account to access this page!")
+        return redirect(url_for("login"))
+    if username != "Admin":
+        flash("You do not have access to this page")
+        return redirect(url_for('index'))
+
+
     if request.method == "POST":
         product = {
             "product_model": request.form.get("product_model"),
@@ -251,6 +297,7 @@ def add_product():
 # edit product for admit user only
 @app.route("/edit_product/<product_id>", methods=["GET", "POST"])
 def edit_product(product_id):
+    
     if request.method == "POST":
         edit_scooter = {
             "product_model": request.form.get("product_model"),
