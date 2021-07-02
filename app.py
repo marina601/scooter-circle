@@ -63,7 +63,7 @@ def register():
         if existing_user:
             flash("Username in use, try alternative")
             return redirect(url_for("register"))
-       
+
         password_1 = request.form.get("password")
         password_2 = request.form.get("password_2")
 
@@ -159,7 +159,6 @@ def logout():
     return redirect(url_for("login"))
 
 
-# all products
 @app.route("/products")
 def products():
     """
@@ -204,6 +203,12 @@ def products():
 
     # Page Title
     title = 'Products'
+
+    # Checking if the user is in session
+    if 'user' not in session:
+        flash("You must be logged in to view this page!")
+        return redirect(url_for("login"))
+
     return render_template("products.html",
                            products=list(products), title=title)
 
@@ -213,11 +218,11 @@ def view_product(product_id):
     """
     View products by product id and
     display reviews for the specific product
+    If user is not in session return the user to login page
     """
     product = mongo.db.products.find_one({"_id": ObjectId(product_id)})
     reviews = list(mongo.db.reviews.find().sort("product_model", 1))
 
-    # if user is not in session return the user to login page
     if 'user' not in session:
         return redirect(url_for("login"))
 
@@ -225,7 +230,6 @@ def view_product(product_id):
                            product=product, reviews=reviews)
 
 
-# add review
 @app.route("/add_review", methods=["GET", "POST"])
 def add_review():
     """
@@ -244,13 +248,19 @@ def add_review():
         flash("Your Review Has Been Added")
         return redirect(url_for('profile', username=session['user']))
 
+    # if user is not in session return the user to login page
     if 'user' not in session:
         return redirect(url_for("login"))
 
 
-# add product to the db only by Admin user
 @app.route("/add_product", methods=["GET", "POST"])
 def add_product():
+    """
+    Add product to the database by Admin user only
+    Checking if the user is in session
+    and if the username is "Admin"
+    Otherwise redirect to login page
+    """
 
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"].capitalize()
@@ -260,8 +270,14 @@ def add_product():
         return redirect(url_for("login"))
     if username != "Admin":
         flash("You do not have access to this page")
-        return redirect(url_for('index'))
+        return redirect(url_for("login"))
 
+    """
+    Adding product to the databae
+    Creating a dictionary to add to the database
+    Insert a dictionary to the database
+    Redirect Admin user to the products.html
+    """
 
     if request.method == "POST":
         product = {
@@ -294,10 +310,29 @@ def add_product():
     return render_template("add_product.html", title=title)
 
 
-# edit product for admit user only
 @app.route("/edit_product/<product_id>", methods=["GET", "POST"])
 def edit_product(product_id):
-    
+    """
+    Checking if the user is in session
+    and if the username is "Admin"
+    Otherwise redirect to login page
+    """
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"].capitalize()
+
+    if 'user' not in session:
+        flash("You must be logged in with Admin account to access this page!")
+        return redirect(url_for("login"))
+    if username != "Admin":
+        flash("You do not have access to this page")
+        return redirect(url_for("login"))
+
+    """
+    Editing existing product if the method is post
+    Create a dictionary getting the values from the form input fields
+    Update product based on product id
+    """
+
     if request.method == "POST":
         edit_scooter = {
             "product_model": request.form.get("product_model"),
@@ -322,22 +357,27 @@ def edit_product(product_id):
         flash("Product Has Been Succsefully Edited")
 
     product = mongo.db.products.find_one({"_id": ObjectId(product_id)})
+
     # Page Title
     title = 'Edit-Product'
     return render_template("edit_product.html", product=product, title=title)
 
 
-# Delete Product
 @app.route("/delete_product/<product_id>")
 def delete_product(product_id):
+    """
+    Delete product from the database
+    """
     mongo.db.products.remove({"_id": ObjectId(product_id)})
     flash("Product Has Been Deleted")
     return redirect(url_for('products'))
 
 
-# Delete Review
 @app.route("/delete_review/<review_id>")
 def delete_review(review_id):
+    """
+    Delete review from the database
+    """
     mongo.db.reviews.remove({"_id": ObjectId(review_id)})
     flash("You review has been Deleted")
     return redirect(url_for('profile', username=session['user']))
@@ -346,6 +386,13 @@ def delete_review(review_id):
 # Edit Review
 @app.route("/add_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
+    """
+    Edit review function checks if
+    the reques method = "POST"
+    creating a dictionary getting all the input values from
+    the input field elements
+    Update the user review based on review_id
+    """
     if request.method == "POST":
         update_review = {
             "product_model": request.form.get("product_model"),
@@ -357,28 +404,34 @@ def edit_review(review_id):
         return redirect(url_for('profile', username=session["user"]))
 
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+
     # Page Title
     title = 'Edit-Review'
     return render_template("edit_review.html", review=review, title=title)
 
 
-# Contact Page
 @app.route("/contact")
 def contact():
-    # Page Title
+    """
+    Contact Page
+    """
     title = 'Contact'
     return render_template("contact.html", title=title)
 
 
-# 404 Page
 @app.errorhandler(404)
 def page_not_found(e):
+    """
+    Custome 404 error page
+    """
     return render_template('404.html', e=e), 404
 
 
-# 500 error Page
 @app.errorhandler(500)
 def no_connection(e):
+    """
+    Custom 500 error page
+    """
     return render_template("500.html", e=e), 500
 
 
