@@ -113,10 +113,17 @@ nav,
   height: 90vh;
 }
 
+.testimony-div {
+    width: 35rem !important;
+    height: 28rem;
+    padding: 1rem !important;
+    margin: 5rem 2rem 2rem 2rem;
+    background-color: rgba(136, 159, 170, 0.8);
+    box-shadow:  15px 5px 8px rgba(0, 0, 0, 0.8);
+}
+
 .testimony {
-   color: #ffffff;
-   padding-top: 4rem;
-   margin-right: 1rem;
+   color: #fafafa;
    font-weight: 600;
    letter-spacing: 0.3rem;
 }
@@ -124,8 +131,10 @@ nav,
 .main-content,
 .reviews {
    background-color: #dcdfe5;
-   margin-top: -2rem;
-   min-height: fit-content;
+   padding-top: 2rem;
+   padding-bottom: 2rem;
+   min-height: 80vh;
+   max-height: fit-content;
 }
 
 .intro {
@@ -149,10 +158,6 @@ nav,
 }
 
 /***************Registration Form*****************/
-
-form {
-   height: 65vh;
-}
 
 .submit-btn {
    background-color: #2fc669;
