@@ -76,6 +76,7 @@
       {% endif %}
     </ul>
   </header>
+  <main class="container">
     <!-- Flash Messages-->
     {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -89,7 +90,7 @@
 
   {% block content %}
   {% endblock %}
-
+</main>
   <!--Footer-->
   <footer class="page-footer">
     <div class="row">

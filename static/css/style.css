@@ -31,10 +31,13 @@ h1, h2, h3, h4, h5, h6 {
    text-align: center;
 }
 
-.row, 
-.container {
+.row {
    margin: 0px;
    padding: 0px
+}
+
+.container {
+   width: 100%;
 }
 
 .heading {
