@@ -5,6 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_talisman import Talisman
 if os.path.exists("env.py"):
     import env
 
@@ -18,6 +19,26 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 
 mongo = PyMongo(app)
+
+
+csp = {
+    'default-src': [
+        '\'self\'',
+        'cdnjs.cloudflare.com',
+        'google-analytics.com',
+        'fonts.googleapis.com',
+        'fonts.google.com',
+        'fonts.gstatic.com',
+        'fonts.googleapis.com'
+    ],
+    'img-src': '*',
+    'script-src': [
+        'cdnjs.cloudflare.com',
+        'code.jquery.com',
+        'cdn.jsdelivr.net'
+    ]
+}
+talisman = Talisman(app, content_security_policy=csp)
 
 """
 @app.before_request
@@ -33,6 +54,7 @@ def before_request():
             code = 301
             return redirect(url, code=code)
 """
+
 
 @app.route("/")
 @app.route("/index")
