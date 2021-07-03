@@ -391,8 +391,14 @@ fieldset {
 
 .user-review {
    background-color: #889faa;
-   height: 38rem;
+   min-height: 38rem;
+   max-height: fit-content;
    margin: 2rem 0.5rem;
+}
+
+.review-by {
+   padding: 1rem;
+   margin-top: 2rem;
 }
 
 .search-panel {
@@ -555,5 +561,10 @@ footer {
 @media screen and (max-width: 992px) {
    .filter-panel {
       height: 27rem !important;
+   }
+
+   .user-review {
+      min-height: 34rem;
+      max-height: fit-content;
    }
 }

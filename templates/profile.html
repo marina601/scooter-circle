@@ -24,7 +24,7 @@
                        <div class="card-content white-text">
                            <h4 class="card-title">{{ review.product_model }}</h4>
                            <p>{{ review.product_review }}</p>
-                           <p><span>Reviewed by: {{ review.created_by|capitalize }}</span></p>
+                           <span class="right review-by"><em>Review by: {{ review.created_by|capitalize }}</em></span>
                        </div>
                        <!--Edit and Delete Review Buttons-->
                        <div class="card-action card-btn">
