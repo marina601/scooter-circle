@@ -279,12 +279,6 @@ nav,
    padding-right: 0;
 }
 
-.admin-btn {
-position: absolute !important;
-right:    0;
-bottom:   0;
-}
-
 .filter-panel {
    height: 21rem !important;
    padding-top: 1rem;
