@@ -5,9 +5,8 @@
         <div class="row">
             <div class="col s12 text-center">
                 <h2 class="heading">Contact Us</h2>
-                <p class="contact-txt">Please fill in the form and get in touch with us, somebody from our friendly team
-                    will get back to you very
-                    soon
+                <p class="contact-txt">Please feel free to get in touch with us by simply filling in the form with your details and your query.
+                    <br>Somebody from our friendly team will get back to you very soon!
                 </p>
             </div>
         </div>
@@ -18,7 +17,7 @@
                     <!--Name-->
                     <div class="row">
                         <div class="input-field col s12">
-                            <i class="fas fa-user prefix"></i>
+                            <i class="fas fa-user prefix" aria-hidden="true"></i>
                             <input id="from_name" name="from_name" minlength="3" maxlength="20" pattern="^[a-z A-Z]{3,20}$"
                                 type="text" class="validate" required oninput="this.setCustomValidity('')"
                                 oninvalid="this.setCustomValidity('Please enter your name')" />
@@ -28,7 +27,7 @@
                     <!--Email-->
                     <div class="row">
                         <div class="input-field col s12">
-                            <i class="fas fa-at prefix"></i>
+                            <i class="fas fa-at prefix" aria-hidden="true"></i>
                             <input id="from_email" name="from_email" type="email" minlength="5" maxlength="20"
                                 pattern="^[a-zA-Z0-9!?.@]{5,20}$" class="validate" required
                                 oninput="this.setCustomValidity('')"
@@ -39,7 +38,7 @@
                     <!--Message-->
                     <div class="row">
                         <div class="input-field col s12">
-                            <i class="fas fa-pencil-alt prefix"></i>
+                            <i class="fas fa-pencil-alt prefix" aria-hidden="true"></i>
                             <textarea id="message" name="message" minlength="10" maxlength="200"
                                 class="materialize-textarea validate" oninput="this.setCustomValidity('')"
                                 oninvalid="this.setCustomValidity('Please enter at least 10 characters')"
@@ -50,22 +49,27 @@
                     <!--Reset Button-->
                     <div class="row">
                         <div class="col s6 m6 card-action">
-                            <button class="btn-small text-shadow btn-reset reset-btn-contact" type="reset">
-                                Reset <i class="fas fa-redo-alt right prefix"></i>
+                            <button class="btn-large text-shadow btn-reset reset-btn-contact" type="reset">
+                               <i class="fas fa-redo-alt prefix" aria-hidden="true"></i> Reset
                             </button>
                         </div>
                         <div class="col s6 m6 card-action submit-btn-contact">
                             <!--Submit Button-->
                             <button type="submit" id="button" value="Submit"
-                                class="btn-small submit-btn text-shadow btn-submit submit-btn-contact">Submit
-                                <i class="fas fa-sign-in-alt prefix"></i>
+                                class="btn-large submit-btn text-shadow btn-submit submit-btn-contact">Submit
+                                <i class="fas fa-sign-in-alt prefix" aria-hidden="true"></i>
                             </button>
-    
                         </div>
                     </div>
                 </div>
             </form>
         </div>
+        <!--home link-->
+        <div class="row">
+            <div class="col s12 center-align">
+              <a href="{{ url_for('index') }}" class="text-shadow btn-small btn affiliate-link back-link">Go Back to Home Page</a>
+            </div>
+          </div>
     </section>
     {% block scripts %}
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
