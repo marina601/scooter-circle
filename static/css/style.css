@@ -319,9 +319,11 @@ nav,
  }
 
  .card-profile {
-    height: fit-content !important;
     background-color: #889faa;
     color: #fafafa;
+    border-radius: 50%;
+    width: 25rem !important;
+    height: 25rem !important;
  }
 
  .card-action-btn {
