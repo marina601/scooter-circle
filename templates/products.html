@@ -12,10 +12,9 @@
         <form action="{{ url_for('products') }}" method="GET" class="col s12 search-form">
           <div class="row valign-wrapper center-align">
             <div class="input-field col s12">
-              <i class="fas fa-search prefix"></i>
-              <input type="text" name="query" id="query" class="validate" minlength="3" maxlength="50"
-                pattern="^[a-zA-Z 0-9!?-]{3,50}$" oninput="this.setCustomValidity('')"
-                oninvalid="this.setCustomValidity('Please enter a minimum of 3 charcters to search the scooter by brand or model')">
+              <i class="fas fa-search prefix" aria-hidden="true"></i>
+              <span class="sr-only">Search</span>
+              <input type="text" name="query" id="query" class="validate" minlength="3" maxlength="50">
               <label for="query">Scooters by Brand or Model</label>
             </div>
           </div>
@@ -89,21 +88,24 @@
             <div class="card-content">
               <div class="col s6">
                 <p>
-                  <i class="fas fa-tachometer-alt" aria-hidden="true"><span class="sr-only">mobile menu</span>></i>
+                  <i class="fas fa-tachometer-alt" aria-hidden="true"><span class="sr-only">speed</span>></i>
                   {{ product.product_max_speed }}mph
                 </p>
                 <p>
-                  <i class="fas fa-charging-station"></i>
+                  <i class="fas fa-charging-station" aria-hidden="true"></i>
+                  <span class="sr-only">battery charging time</span>
                   {{ product.product_battery_charge }}hrs
                 </p>
               </div>
               <p>
-                <i class="fas fa-pound-sign"></i>
+                <i class="fas fa-pound-sign" aria-hidden="true"></i>
+                <span class="sr-only">price in pounds</span>
                 {{ product.product_price }}
                 <button class="btn tooltipped text-shadow" data-position="top" data-tooltip="Price may vary">!</button>
               </p>
               <p>
-                <i class="fas fa-route"></i>
+                <i class="fas fa-route" aria-hidden="true"></i>
+                <span class="sr-only">distance</span>
                 {{ product.product_max_range }}miles
               </p>
             </div>
