@@ -118,7 +118,7 @@
               <div class="card-content white-text">
                 <h4 class="card-title">{{ review.product_model }}</h4>
                 <p>{{ review.product_review }}</p>
-                <p><em>Reviewed by: {{ review.created_by|capitalize }}</em></p>
+                <span class="right review-by"><em>Reviewed by: {{ review.created_by|capitalize }}</em></span>
               </div>
             </div>
             {% else %}
