@@ -18,6 +18,11 @@ html {
    align-items: center;
 }
 
+/*.hide-loader {
+   opacity: 0;
+   display: none;
+}*/
+
 /*Preloader
 Code taken from https://projects.lukehaas.me/css-loaders/*/
 .loader {

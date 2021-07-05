@@ -1,9 +1,10 @@
+$(window).on('load', function() {
+  $(".preloader").fadeOut('slow');
+});
 
 $(document).ready(function(){
   //Preloader, once the document loads hide the loader 
-  $(window).on('load', function() {
-    $(".preloader").fadeOut("slow");
-  });
+ 
 
     $('.sidenav').sidenav({edge: 'right'});
     $('.carousel').carousel();
