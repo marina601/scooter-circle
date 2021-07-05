@@ -173,17 +173,18 @@
           </div>
         </div>
         <div class="row">
-          <!--Submit Button-->
+          <!--Cancel Button-->
           <div class="col s6 btn-div">
             <a href="{{ url_for('products') }}" class="btn-large text-shadow btn-reset">
              <i class="fas fa-times-circle prefix" aria-hidden="true"></i> Cancel
           </a>
           </div>
           <div class="col s6 btn-div">
-            <!--Reset Button-->
-            <button type="submit" class="btn-large submit-btn text-shadow btn-submit">
+            <!--Edit Button-->
+            <a href="{{ url_for('view_product', product_id=product._id) }}"
+            type="submit" class="btn-large submit-btn text-shadow btn-submit">
               Edit <i class="fas fa-edit prefix" aria-hidden="true"></i>
-            </button>
+            </a>
           </div>
         </div>
       </form>
