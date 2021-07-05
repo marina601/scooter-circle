@@ -4,8 +4,11 @@
 <section class="error">
     <div class="row">
         <div class="col m8 offset-m2 s10 offset-s1 error-message">
-            <h1 class="heading">Oh No! Looks like your something has gone wrong, check your connection<i class="fas fa-signal-slash"></i> <em>!</em>
+            <h1 class="heading">Oh No! Looks like your something has gone wrong, check your connection
+                <i class="fas fa-signal-slash" aria-hidden="true"></i><span class="sr-only">no signal</span>
+                 <em>!</em>
             </h1>
+            <!--Button to go back-->
             {% if session.user %}
             <a href="{{ url_for('products') }}" class="btn-back btn-large right">Go Back!</a>
             {% else %}
