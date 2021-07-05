@@ -13,7 +13,7 @@
         <div class="row">
           <!--Scooter Model-->
           <div class="input-field col s12">
-            <i class="fas fa-motorcycle prefix"></i>
+            <i class="fas fa-motorcycle prefix" aria-hidden="true"></i>
             <input id="product_model" type="text" name="product_model" minlength="5" maxlength="50"
               value="{{ product.product_model }}"
               pattern="^[a-zA-Z 0-9!?]{5,50}$" class="validate" required oninput="this.setCustomValidity('')"
@@ -24,7 +24,7 @@
         <div class="row">
           <!--Scooter Brand-->
           <div class="input-field col s12">
-            <i class="fas fa-tag prefix"></i>
+            <i class="fas fa-tag prefix" aria-hidden="true"></i>
             <input id="product_brand" name="product_brand" minlength="3" maxlength="20" class="validate"
               pattern="^[a-zA-Z 0-9!?]{3,20}$" type="text" value="{{ product.product_brand }}" required 
               oninput="this.setCustomValidity('')"
@@ -35,7 +35,7 @@
         <div>
           <!--Scooter Price-->
           <div class="input-field col s12">
-            <i class="fas fa-pound-sign prefix"></i>
+            <i class="fas fa-pound-sign prefix" aria-hidden="true"></i>
             <input id="product_price" name="product_price" type="number" step="any" class="validate"
               value="{{ product.product_price }}" required 
               oninput="this.setCustomValidity('')"
@@ -46,7 +46,7 @@
         <div class="row">
           <!--Scooter Max Range-->
           <div class="input-field col s12">
-            <i class="fas fa-route prefix"></i>
+            <i class="fas fa-route prefix" aria-hidden="true"></i>
             <input id="product_max_range" name="product_max_range" class="validate"
               type="number" step="any" required 
               value="{{ product.product_max_range }}"
@@ -58,7 +58,7 @@
         <div class="row">
           <!--Scooter Max Speed-->
           <div class="input-field col s12">
-            <i class="fas fa-tachometer-alt prefix"></i>
+            <i class="fas fa-tachometer-alt prefix" aria-hidden="true"></i>
             <input id="product_max_speed" name="product_max_speed" class="validate"
                type="number" step="any" required value="{{ product.product_max_speed }}"
               oninput="this.setCustomValidity('')" 
@@ -69,7 +69,7 @@
         <div class="row">
           <!--Scooter Motor Power-->
           <div class="input-field col s12">
-            <i class="fas fa-power-off prefix"></i>
+            <i class="fas fa-power-off prefix" aria-hidden="true"></i>
             <input id="product_motor_power" name="product_motor_power" class="validate"
               type="number" step="any" required value="{{ product.product_motor_power }}"
               oninput="this.setCustomValidity('')"
@@ -80,7 +80,7 @@
         <div class="row">
           <!--Scooter  Max Load-->
           <div class="input-field col s12">
-            <i class="fas fa-truck-loading prefix"></i>
+            <i class="fas fa-truck-loading prefix" aria-hidden="true"></i>
             <input id="product_load" name="product_load" class="validate"
               type="number" step="any" value="{{ product.product_load }}"
               oninput="this.setCustomValidity('')"
@@ -91,7 +91,7 @@
         <div class="row">
           <!--Scooter Wheel Size-->
           <div class="input-field col s12">
-            <i class="fas fa-dharmachakra prefix"></i>
+            <i class="fas fa-dharmachakra prefix" aria-hidden="true"></i>
             <input id="product_wheel_size" name="product_wheel_size" class="validate"
                type="number" step="any" value="{{ product.product_wheel_size }}"
               oninput="this.setCustomValidity('')"
@@ -102,7 +102,7 @@
         <div class="row">
           <!--Scooter Battery Charge-->
           <div class="input-field col s12">
-            <i class="fas fa-charging-station prefix"></i>
+            <i class="fas fa-charging-station prefix" aria-hidden="true"></i>
             <input id="product_battery_charge" name="product_battery_charge"
               class="validate" type="number" step="any" value="{{ product.product_battery_charge }}"
               oninput="this.setCustomValidity('')"
@@ -113,7 +113,7 @@
         <div class="row">
           <!--Scooter Water Resistant-->
           <div class="input-field col s12">
-            <i class="fas fa-water prefix"></i>
+            <i class="fas fa-water prefix" aria-hidden="true"></i>
             <select id="product_water_resistant" name="product_water_resistant" class="validate"
               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please choose one of the options')" required>
@@ -131,7 +131,7 @@
         <div class="row">
           <!--Scooter Weight-->
           <div class="input-field col s12">
-            <i class="fas fa-weight-hanging prefix"></i>
+            <i class="fas fa-weight-hanging prefix" aria-hidden="true"></i>
             <input id="product_weight" name="product_weight" class="validate"
                type="number" step="any" value="{{ product.product_weight}}"
                oninput="this.setCustomValidity('')"
@@ -142,7 +142,7 @@
         <div class="row">
            <!--Scooter Affiliate Link-->
            <div class="input-field col s12">
-            <i class="fas fa-shopping-cart prefix"></i>
+            <i class="fas fa-shopping-cart prefix" aria-hidden="true"></i>
             <input id="product_affiliate_link" name="product_affiliate_link" minlength="5" maxlength="400" class="validate"
                type="url" required value="{{ product.product_affiliate_link }}"
                oninput="this.setCustomValidity('')"
@@ -153,7 +153,7 @@
         <div class="row">
            <!--Scooter Image Link-->
            <div class="input-field col s12">
-            <i class="fas fa-camera prefix"></i>
+            <i class="fas fa-camera prefix" aria-hidden="true"></i>
             <input id="product_image" name="product_image" minlength="5" maxlength="200" class="validate"
                type="url" required value="{{ product.product_image }}"
                oninput="this.setCustomValidity('')"
@@ -164,7 +164,7 @@
         <div class="row">
           <!--Scooter Description-->
           <div class="input-field col s12">
-            <i class="fas fa-file-alt prefix"></i>
+            <i class="fas fa-file-alt prefix" aria-hidden="true"></i>
             <textarea id="product_description" class="materialize-textarea validate"
               name="product_description" minlength="5" maxlength="500" required 
               oninput="this.setCustomValidity('')"
@@ -176,13 +176,13 @@
           <!--Submit Button-->
           <div class="col s6 btn-div">
             <a href="{{ url_for('products') }}" class="btn-large text-shadow btn-reset">
-              Cancel <i class="fas fa-times-circle right"></i>
+             <i class="fas fa-times-circle prefix" aria-hidden="true"></i> Cancel
           </a>
           </div>
           <div class="col s6 btn-div">
             <!--Reset Button-->
             <button type="submit" class="btn-large submit-btn text-shadow btn-submit">
-              Edit Product <i class="fas fa-edit"></i>
+              Edit <i class="fas fa-edit prefix" aria-hidden="true"></i>
             </button>
           </div>
         </div>
