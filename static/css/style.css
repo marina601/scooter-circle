@@ -502,11 +502,6 @@ footer {
   height: 90vh;
 }
 
-.fa-battery-empty{
-   color: #e1403d;
-   font-size: 8rem;
-}
-
 .error-message {
    background-color: rgba(136, 159, 170, 0.8);
    margin-top: 5rem;
@@ -566,6 +561,10 @@ footer {
 
    .add-review-card {
       width: 90%;
+   }
+
+   .error {
+      min-height: 120rem;
    }
 }
 

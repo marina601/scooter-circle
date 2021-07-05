@@ -4,12 +4,16 @@
 <section class="error">
     <div class="row">
         <div class="col m8 offset-m2 s10 offset-s1 error-message">
-            <h1 class="heading">Oh No! Looks like your scooter run out of battery <i class="fas fa-battery-empty"></i> <em>!?</em>
-            </h1>
+            <h2 class="heading">Oh No! Looks like something has gone wrong!
+            <br>The page you are looking for does not exist!</h2> 
+            <h3 class="heading">Use the link below to go back</h3>               
+
             {% if session.user %}
-            <a href="{{ url_for('products') }}" class="btn-back btn-large right">Go Back!</a>
+            <a href="{{ url_for('products') }}" class="btn-back btn-large right text-shadow">
+                <i class="fas fa-backward" aria-hidden="true"></i> Go Back!</a>
             {% else %}
-            <a href="{{ url_for('index') }}" class="btn-back btn-large right">Go Back!</a>
+            <a href="{{ url_for('index') }}" class="btn-back btn-large right text-shadow">
+                <i class="fas fa-backward" aria-hidden="true"></i> Go Back!</a>
             {% endif %}
         </div>
     </div>
