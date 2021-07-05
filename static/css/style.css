@@ -292,14 +292,13 @@ bottom:   0;
 
 .tooltipped {
    border-radius: 50%;
-   color: #383843;
+   color: #fafafa;
    font-size: 2rem;
-   background-color: #dcdfe5;
+   background-color: #889faa;
 }
 
 .tooltipped:hover {
-   background-color: #889faa;
-   color: #fafafa;
+   background-color: #383843;
 }
 
 /*****************View Product*************************/
@@ -313,6 +312,12 @@ bottom:   0;
 .p-description {
    padding: 0rem 2rem;
    margin-bottom: 0rem;
+}
+
+.view-product,
+.add_review,
+.reviews {
+   min-height: auto !important;
 }
 
 .card-panel {
@@ -368,6 +373,7 @@ fieldset {
 .affiliate-link {
    background-color: #889faa;
    width: 18rem !important;
+   height: 4rem;
    margin: 2rem;
    padding-top: 0.5rem !important;
    padding-bottom: 0.5rem !important;
@@ -386,6 +392,7 @@ fieldset {
 
 .add_review {
    padding-top: 3rem;
+   margin-bottom: -0.1rem;
 }
 
 .review-btn {
@@ -393,7 +400,7 @@ fieldset {
 }
 
 .back-link {
-   width: auto;
+   width: auto !important;
 }
 
 .user-review {
@@ -562,6 +569,10 @@ footer {
    .reset-btn-contact {
       padding-left: 8px;
       padding-right: 8px;
+   }
+
+   .add-review-card {
+      width: 90%;
    }
 }
 
