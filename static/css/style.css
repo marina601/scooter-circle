@@ -244,6 +244,10 @@ nav,
     margin-top: 1.5rem;
  }
 
+ .view-products-btn {
+    text-align: center !important;
+ }
+
  /***************Registration Form*****************/
 
  .login-card {
@@ -363,8 +367,10 @@ fieldset {
 
 .affiliate-link {
    background-color: #889faa;
-   width: 18rem;
+   width: 18rem !important;
    margin: 2rem;
+   padding-top: 0.5rem !important;
+   padding-bottom: 0.5rem !important;
    border-radius: 0.5rem;
    font-weight: 700;
 }
@@ -373,12 +379,9 @@ fieldset {
    color: #fafafa;
 }
 
-.affiliate-link:hover {
-   color: #383843
-}
 
 .affiliate-link:hover {
-   background-color: #fafafa;
+   background-color: #383843;
 }
 
 .add_review {
@@ -482,7 +485,7 @@ footer {
  }
 
  .btn-footer:hover {
-    background-color: #2fc669;
+    background-color: #383843;
  }
 
  .terms h3, h4, h5, ul, li, ol, p {
