@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <section class="main-content">
+    <section class="main-content view-product">
       <!--Product Specifications-->
       <div class="row">
         <div class="col s12">
@@ -69,7 +69,7 @@
     </section>
     <!--Add Review-->
     <section class="main-content add_review">
-      <div class="row card-panel grey lighten-5">
+      <div class="row card-panel grey lighten-5 add-review-card">
         <form class="col m7 s12 add-review-form" method="POST" action="{{ url_for('add_review') }}">
           <fieldset>
             <legend>Review This Product</legend>
@@ -80,6 +80,8 @@
               </div>
               <div class="row">
                 <div class="input-field col s12">
+                  <i class="fas fa-edit prefix" aria-label="true"></i>
+                  <span class="sr-only">Edit</span>
                   <textarea id="product_review" name="product_review" minlength="10" maxlength="200" type="text"
                     class="materialize-textarea validate" required></textarea>
                   <label for="product_review"></label>
@@ -90,13 +92,13 @@
           <div class="row card-action review-btn">
             <div class="col s6">
               <button class="btn-large text-shadow btn-reset submit-btn-contact" type="reset">
-                Clear <i class="fas fa-redo-alt right"></i>
+               <i class="fas fa-redo-alt prefix"></i> Clear
               </button>
             </div>
             <div class="col s6">
               <!--Submit Button-->
               <button type="submit" class="btn-large submit-btn text-shadow btn-submit submit-btn-contact" type="submit">
-                Submit <i class="fas fa-sign-in-alt"></i>
+                Submit <i class="fas fa-sign-in-alt prefix"></i>
               </button>
             </div>
           </div>
