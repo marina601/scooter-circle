@@ -13,7 +13,7 @@
         <div class="row">
           <!--Scooter Model-->
           <div class="input-field col s12">
-            <i class="fas fa-motorcycle prefix"></i>
+            <i class="fas fa-motorcycle prefix" aria-hidden="true"></i>
             <input id="product_model" type="text" name="product_model" minlength="5" maxlength="50"
               pattern="^[a-zA-Z 0-9!?-]{5,50}$" class="validate" required oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a scooter model name')">
@@ -23,9 +23,9 @@
         <div class="row">
           <!--Scooter Brand-->
           <div class="input-field col s12">
-            <i class="fas fa-tag prefix"></i>
-            <input id="product_brand" name="product_brand" minlength="3" maxlength="20" class="validate"
-              pattern="^[a-zA-Z 0-9!?]{3,20}$" type="text" required 
+            <i class="fas fa-tag prefix" aria-hidden="true"></i>
+            <input id="product_brand" name="product_brand" minlength="3" maxlength="50" class="validate"
+              pattern="^[a-zA-Z 0-9!?]{3,50}$" type="text" required 
               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a scooter brand name')">
             <label for="product_brand">Scooter Brand</label>
@@ -34,7 +34,7 @@
         <div>
           <!--Scooter Price-->
           <div class="input-field col s12">
-            <i class="fas fa-pound-sign prefix"></i>
+            <i class="fas fa-pound-sign prefix" aria-hidden="true"></i>
             <input id="product_price" name="product_price" type="number" step="any" class="validate" required
               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a scooter price using numerical value only!')">
@@ -44,7 +44,7 @@
         <div class="row">
           <!--Scooter Max Range-->
           <div class="input-field col s12">
-            <i class="fas fa-route prefix"></i>
+            <i class="fas fa-route prefix" aria-hidden="true"></i>
             <input id="product_max_range" name="product_max_range" class="validate" type="number" step="any" required 
               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a scooter range using numerical value only!')">
@@ -54,7 +54,7 @@
         <div class="row">
           <!--Scooter Max Speed-->
           <div class="input-field col s12">
-            <i class="fas fa-tachometer-alt prefix"></i>
+            <i class="fas fa-tachometer-alt prefix" aria-hidden="true"></i>
             <input id="product_max_speed" name="product_max_speed"  class="validate" type="number" step="any" required 
               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a scooter max Speed using numerical value only!')">
@@ -64,7 +64,7 @@
         <div class="row">
           <!--Scooter Motor Power-->
           <div class="input-field col s12">
-            <i class="fas fa-power-off prefix"></i>
+            <i class="fas fa-power-off prefix" aria-hidden="true"></i>
             <input id="product_motor_power" name="product_motor_power" class="validate" type="number" step="any" required 
               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a scooter motor power using numerical value only!')">
@@ -74,7 +74,7 @@
         <div class="row">
           <!--Scooter  Max Load-->
           <div class="input-field col s12">
-            <i class="fas fa-truck-loading prefix"></i>
+            <i class="fas fa-truck-loading prefix" aria-hidden="true"></i>
             <input id="product_load" name="product_load" class="validate" type="number" step="any"
               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a scooter maximum load capacity in kn using numeric value!')" required >
@@ -84,7 +84,7 @@
         <div class="row">
           <!--Scooter Wheel Size-->
           <div class="input-field col s12">
-            <i class="fas fa-dharmachakra prefix"></i>
+            <i class="fas fa-dharmachakra prefix" aria-hidden="true"></i>
             <input id="product_wheel_size" name="product_wheel_size" class="validate" type="number" step="any"
               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a scooter  wheel size using numerical value only!')" required >
@@ -94,7 +94,7 @@
         <div class="row">
           <!--Scooter Battery Charge-->
           <div class="input-field col s12">
-            <i class="fas fa-charging-station prefix"></i>
+            <i class="fas fa-charging-station prefix" aria-hidden="true"></i>
             <input id="product_battery_charge" name="product_battery_charge" class="validate" type="number" step="any"
               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter a number of hours required for battery to charge using only numerical values!')" required>
@@ -104,7 +104,7 @@
         <div class="row">
           <!--Scooter Water Resistant-->
           <div class="input-field col s12">
-            <i class="fas fa-water prefix"></i>
+            <i class="fas fa-water prefix" aria-hidden="true"></i>
             <select id="product_water_resistant" name="product_water_resistant" class="validate"
               oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please choose one of the options')" required>
@@ -118,7 +118,7 @@
         <div class="row">
           <!--Scooter Weight-->
           <div class="input-field col s12">
-            <i class="fas fa-weight-hanging prefix"></i>
+            <i class="fas fa-weight-hanging prefix" aria-hidden="true"></i>
             <input id="product_weight" name="product_weight" class="validate" type="number" step="any"
                oninput="this.setCustomValidity('')"
                oninvalid="this.setCustomValidity('Please enter the weight of the scooter using only numerical values!')" required>
@@ -128,7 +128,7 @@
         <div class="row">
            <!--Scooter Affiliate Link-->
            <div class="input-field col s12">
-            <i class="fas fa-shopping-cart prefix"></i>
+            <i class="fas fa-shopping-cart prefix" aria-hidden="true"></i>
             <input id="product_affiliate_link" name="product_affiliate_link" minlength="5" maxlength="400" class="validate"
                type="url" required oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter url for your Affiliate Link')">
@@ -138,7 +138,7 @@
         <div class="row">
            <!--Scooter Image Link-->
            <div class="input-field col s12">
-            <i class="fas fa-camera prefix"></i>
+            <i class="fas fa-camera prefix" aria-hidden="true"></i>
             <input id="product_image" name="product_image" minlength="5" maxlength="200" class="validate"
                type="url" required oninput="this.setCustomValidity('')"
               oninvalid="this.setCustomValidity('Please enter url for your Scooter Image')">
@@ -148,7 +148,7 @@
         <div class="row">
           <!--Scooter Description-->
           <div class="input-field col s12">
-            <i class="fas fa-file-alt prefix"></i>
+            <i class="fas fa-file-alt prefix" aria-hidden="true"></i>
             <textarea id="product_description" class="materialize-textarea validate"
               name="product_description" minlength="5" maxlength="500"
               required oninput="this.setCustomValidity('')"
@@ -157,16 +157,16 @@
           </div>
         </div>
         <div class="row">
-          <!--Submit Button-->
+          <!--Reset Button-->
           <div class="col s6 btn-div">
             <a href="{{ url_for('add_product') }}" class="btn-large text-shadow btn-reset">
-              Clear <i class="fas fa-redo-alt right"></i>
+             <i class="fas fa-redo-alt prefix" aria-hidden="true"></i> Clear
           </a>
           </div>
           <div class="col s6 btn-div">
-            <!--Reset Button-->
+            <!--Submit Button-->
             <button type="submit" class="btn-large submit-btn text-shadow btn-submit">
-              Submit<i class="fas fa-sign-in-alt"></i>
+              Submit <i class="fas fa-sign-in-alt prefix" aria-hidden="true"></i>
             </button>
           </div>
         </div>
