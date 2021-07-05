@@ -240,6 +240,10 @@ nav,
     color: #fafafa;
  }
 
+ .card-action-btn {
+    margin-top: 1.5rem;
+ }
+
  /***************Registration Form*****************/
 
  .login-card {
