@@ -5,7 +5,7 @@
 [View the deployed project here](https://scooter-circle.herokuapp.com/)
 
 I have created this site as part of my Milestone 3 project for Code Institute, 
-focusing on Fulls Stack Frameworks using Python, Flask and Mongo DB.
+focusing on Fulls Stack Frameworks using Python, Flask and Mongo DB, whilst performing a complete CRUD operation.
 
 This app is for young adults between the age of 25-34, who are focused on environmentally friendly, easy to use and cost effective personal tranportation.
 
@@ -75,9 +75,9 @@ This website will enable the user to share their own reviews, view other users r
 ## Project Goals 
 
 Following the market research, the demand for electrical and affordable transportation has risen in April 2021 by 3.8% from LY in the UK.
-At the end of 202, and electric scooters were at the top of many Christmas lists, with sales trebling within a year and Halfords reporting that October alone saw sales of the zippy personal transport gadgets up a massive 450% on the previous year.
+At the end of 2020, electric scooters were at the top of many Christmas lists, with sales trebling within a year and Halfords reporting that October alone saw sales of the zippy personal transport gadgets up a massive 450% on the previous year.
 
-This app will provide a user with the possibility to view the scooters on the market, check out customer reviews of the product and add their personal experience. 
+This app will provide a user with the possibility to view the different scooters on the market, check out customer reviews of the product and add their personal review. 
 
 ##### back to [content](#table-of-content)
 
@@ -99,11 +99,11 @@ This app will provide a user with the possibility to view the scooters on the ma
 ### Scope
 
 - An easy to navigate and responsive website that allows users to perform CRUD operations. 
-- Users can register and once log in can view full product details, other users reviews and share their own experience by adding a review to an appropriate product. 
-- These users manage their reviews, meaning they can update or delete them when they want. 
-- In the user profile, they will be able to see the collection of products they have reviewed. 
-- The user may contact the site owner and suggest adding new products to the site. 
-- The site owner in a form of an Admin user will be able to complete this operation directly on the website. 
+- Users can register and once loged in, can view full product details, other users reviews and share their own experience by adding a review to an appropriate product. 
+- The users can manage their reviews, meaning they can update or delete them when they want. 
+- In the user profile, they will be able to see all their reviews.
+- The user may contact the site owner and suggest adding new products to the site or if the user has any other queries.
+- The site owner in a form of an Admin user will be able to complete CRUD operation directly on the website. The Admin user will be able to add new product, edit product, delete product and view product, without entering the database.
 
 ##### back to [content](#table-of-content)
 
@@ -112,9 +112,9 @@ This app will provide a user with the possibility to view the scooters on the ma
 ### View for a guest User:
 
 -	A user which is not logged in and/or registered will be greeted with a hero image of the electric scooters and a couple of quotes about why electrical transportation is a better way to travel. 
--	A guest user can view the recent products at the bottom of the page which with the minimum specification. 
+-	A guest user can view the recent products at the bottom of the page which in the carousel format.
 -	A guest user will only have 3 option visible to them in terms of navigation (Home, Login, Register)
--	A guest user will have a call to action button at the bottom of the page "View all Scooters” which will take them to the Login Page.
+-	A guest user, once clicked on the image of any scooter will be directed to the login page.
 -	If a guest user did not register yet, they will be able to click on the "Register" button at the bottom of the form to go to the registration page. 
 -	A guest user will be able to complete the form and register to access the full side. 
 
@@ -123,7 +123,7 @@ This app will provide a user with the possibility to view the scooters on the ma
 ### View for logged in User:
 
 -	A logged-in user will benefit from the full functionality of the site. 
--	The navigation links will contain (Products, Profile, Add Review, Logout)
+-	The navigation links will contain (Home, Products, Profile, Add Review, Logout)
 -	Logged in user can view the full range of products available on the site
 -	Logged in user can add a review by clicking on the product, where an empty text field will be provided for them
 -	Logged in user can view other users reviews for the selected product 
