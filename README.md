@@ -1,8 +1,8 @@
 # Scooter Circle
 
-![Scooter Circle](/assets/images/responsive-design.png "Am I Responsive Image") 
+![Scooter Circle](/static/images/responsive-img.png "Am I Responsive Image") 
 
-[View the website on GitHub Pages](https://mar)
+[View the deployed project here](https://scooter-circle.herokuapp.com/)
 
 I have created this site as part of my Milestone 3 project for Code Institute, 
 focusing on Fulls Stack Frameworks using Python, Flask and Mongo DB.
@@ -10,7 +10,7 @@ focusing on Fulls Stack Frameworks using Python, Flask and Mongo DB.
 This app is for young adults between the age of 25-34, who are focused on environmentally friendly, easy to use and cost effective personal tranportation.
 
 
-This website will enable the user to share their own experience, view other users experience and find the best scooter based on their everyday needs.
+This website will enable the user to share their own reviews, view other users reviews and find the best scooter based on their everyday needs.
 
 
 # Table of Content
