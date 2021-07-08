@@ -1,15 +1,19 @@
+//Preloader, once the document loads hide the loader 
 $(window).on('load', function() {
   $(".preloader").delay(1000).fadeOut('slow');
 });
 
 $(document).ready(function(){
-  //Preloader, once the document loads hide the loader 
- 
-
+  // Initilize sidenav
     $('.sidenav').sidenav({edge: 'right'});
-    $('.carousel').carousel();
   
-  // select option for add product page
+  //Initilize carousel and slide the items every 2sec
+    $('.carousel').carousel();
+    setInterval(function () {
+      $('.carousel').carousel('next');
+    }, 2000);
+  
+  // select option for add_product.html
   $('select').formSelect();
 
   //modal
