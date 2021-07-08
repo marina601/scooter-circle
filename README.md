@@ -280,7 +280,7 @@ This app will provide a user with the possibility to view the different scooters
 ### Wireframes 
 
 - I have use [Balsamiq](https://balsamiq.com/) to create wireframes for Scooter Circle.
-- You can view my wireframes [here](https://github.com/marina601/scooter-circle/tree/master/wireframes/wireframes-ScooterCircle.pdf)
+- You can view my wireframes [here](https://github.com/marina601/scooter-circle/tree/master/wireframes)
 
 - I have diverted from my wireframes during the development process to create a better user experience: 
 
