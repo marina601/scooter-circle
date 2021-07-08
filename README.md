@@ -265,7 +265,13 @@ This app will provide a user with the possibility to view the different scooters
 
 - A <em>loading spinner</em> has been added to the Scooter Circle, to appear whilst the page or data is loading. The spinner was chosen in the form of the circle to resemple the brand and brand colours have been implemented to the spinner.
 
-- 
+- Materialize <em>carousel</em> was used on the Home page to display the selection of products, I have also implemented autoplay function to slide the items every two seconds and added custome size to the carousel items 
+
+- Materialize <em>card</em> was utilized on Scooter Circle to display a short description of each scooter with a link to display full details of the scooter. The card displayed short a few product catergories using forntawesome icons which are repeated on the product page. Card has been also used to display product reviews with custome sizing of the card.
+
+- Materialize <em>modal</em> has been used to display terms and conditions page, also for defensive programing when the user is trying to delete a review or a product to alert the user of their action and ask to confirm their choice.
+
+- Materialize <em>form</em> elements have been used for Login and Profile page, also to add reviews and add products to the database.
     
 ##### back to [content](#table-of-content)
 
