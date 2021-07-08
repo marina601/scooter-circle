@@ -279,6 +279,24 @@ This app will provide a user with the possibility to view the different scooters
 
 ### Wireframes 
 
+- I have use [Balsamiq](https://balsamiq.com/) to create wireframes for Scooter Circle.
+- You can view my wireframes [here](https://github.com/marina601/scooter-circle/tree/master/wireframes/wireframes-ScooterCircle.pdf)
+
+- I have diverted from my wireframes during the development process to create a better user experience: 
+
+   -  Home Page: 
+   -  Quote on top of the hero image is split in two in the original design, however due to the image composition, I have created a square div with box shadows to make the quote stand out to the user. The quote is position to the left to give the use ability to see the image.
+   -  At the bottom of the page I have used a carousel to display the products to the user with automated slide to the next item to enhance the user experience. 
+
+   - Footer:
+   - Removed affiliate disclamer link, this could possible implemented in the future once the affiliate is secured. Also added a note in the terms and conditions about affiliate links
+   
+   - View Product Page:
+   - Removed the link 'Shop' from the card and added the link to view_product.html to encourage the user to view the full details of the product together with user reviews before making a desicion of purchase. 
+
+   - Header: 
+   - Did not like the look of the logo in the header, due to its design the logo was giving too much padding to the bottom of the nav-bar. When resizing the logo, the text was too small and would not stand out and have poor contrast. Therefore desided to use the name of the site and logo for favicon icon only.
+
 ##### back to [content](#table-of-content)
 
 ### Database model
