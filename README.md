@@ -33,6 +33,11 @@ This website will enable the user to share their own reviews, view other users r
    - [**Expectations**](#expectations)
 
 5 [**Design**](#design)
+   - [**Colour Scheme**](#colour-scheme)
+   - [**Typography**](#typography)
+   - [**Imagery**](#imagery)
+   - [**Icons**](#icons)
+   - [**Style**](#style)
 
 6 [**Wireframes Flowchart and Data Model**](#wireframes-flowchart-and-data-model)
    - [**Wireframes**](#wireframes)
@@ -123,20 +128,24 @@ This app will provide a user with the possibility to view the different scooters
 ### View for logged in User:
 
 -	A logged-in user will benefit from the full functionality of the site. 
--	The navigation links will contain (Home, Products, Profile, Add Review, Logout)
+-	The navigation links will contain (Home, Products, Profile, Logout)
 -	Logged in user can view the full range of products available on the site
--	Logged in user can add a review by clicking on the product, where an empty text field will be provided for them
+-	Logged in user can add a review by once full product details are viewed, where an empty text field will be provided for them to add their review.
 -	Logged in user can view other users reviews for the selected product 
 -	Logged in user can Edit or Delete their review 
--	Logged in user can see all the products which they have reviewed on their profile page 
+-	Logged in user can see all the reviews which they have created on their profile page and manage them acordingly
 
 ##### back to [content](#table-of-content)
 
 ### View for Admin: 
 
--	The navigation links for Admin user will contain (Products, Profile, Add Product, Add Review, Logout)
+-	The navigation links for Admin user will contain (Home, Products, Profile, Add Product, Logout)
 -	Admin user will be able to add the product to the database by clicking on the link "Add Product" and fill in the pre-populated form 
 -	Admin user will reserve the right to delete any inappropriate or offensive reviews from users if they breach the term and conditions of the site.
+-   Admin user will be able to view all the reviews created in their profile page
+-   Admin user will be able to edit or delete their own reviews 
+-   Admin user will be able to create a new review for a specific product
+-   Admin user will be able to edit or delete a product
 
 ##### back to [content](#table-of-content)
 
@@ -144,9 +153,10 @@ This app will provide a user with the possibility to view the different scooters
 
 #### First Time User
 
-1.	As the first time user, I want to understand what this site is about
-2.	As the first time user, I want to view the most recent products 
+1.	As the first time user, I want to understand what this site is about.
+2.	As the first time user, I want to view a collection of product available on site.
 3.	As a first-time user, I want to be able to see more products and user reviews.
+4.  As a first-time user, I want to view terms and conditions of the site.
 
 #### Second Time User 
 
@@ -156,25 +166,30 @@ This app will provide a user with the possibility to view the different scooters
 4.	As the second time user, I want to be able to filter the product by category 
 5.	As a second-time user, I want to be able to search product by brand or model.
 
+
 #### Frequent User
 
-1.	As a frequent user, I want to be able to view the products which I have reviewed.
+1.	As a frequent user, I want to be able to view my reviews.
 2.	As a frequent user, I want to be able to update my review. 
 3.	As a frequent user, I want to be able to delete my review. 
 4.	As a frequent user, I want to read other user’s review.
 5.	As a frequent user, I want to be able to contact the site and request other scooter models to be added to the list.
 6.	As a frequent user, I want to know where I can purchase the product.
+7.  As a frequesnt user, I want to be able to search products by brand or model.
 
 ##### back to [content](#table-of-content)
 
 ### Business goals
 
-1.	As a business owner, I want to provide a platform for users where they can view and add reviews on electric scooters
+1.	As a business owner, I want to provide a platform for users where they can view and add reviews for electric scooters.
 2.	As a business owner, I want the user to be able to register with secure login details.
 3.	As a business owner, I want the client to be able to use the site easily on any device.
 4.	As a business owner, I want to provide useful links to users where they can purchase products and earn an affiliate commission.
-5.	As a business owner, I want to be able to delete any reviews which I consider to be inappropriate or out of content 
-6.	As a business owner, I want to be able to add additional products to the site. 
+5.	As a business owner, I want to be able to delete any reviews which I consider to be inappropriate or out of content.
+6.	As a business owner, I want to be able to add additional new products to the site. 
+7.  As a business owner, I want to be able to edit or delete products.
+8.  As a business owner, I want to provide user with search and filter functionality for products to unable an easy access to the database.
+
 
 ##### back to [content](#table-of-content)
 
@@ -185,7 +200,7 @@ This app will provide a user with the possibility to view the different scooters
 -	Easy to navigate the site by using buttons
 -	Appealing profile page with a functional overview
 -	Easy way to view other users reviews 
--	Easy way to add their review 
+-	Easy way to add own review 
 -	Ability to edit and delete their entities 
 
 ##### back to [content](#table-of-content)
@@ -196,30 +211,61 @@ This app will provide a user with the possibility to view the different scooters
 -	Ability to filter product by category 
 -	Ability to search the database for a specific product name or brand
 -	Ability to read other users reviews and add their own 
--	Ability to contact the site owner and suggest other scooters models be added to the database
+-	Ability to contact the site owner
 
 ##### back to [content](#table-of-content)
 
 ## Design 
 
 ### Colour Scheme 
+![Color Pallete](/static/images/colour-pallete.png)
+-  On occasion colours have been converted to the rgba values to create transparency.
+-  The colour palette has been picked from [coolors](https://coolors.co/dcdfe5-a0b2bb-39d073-e1403d-383843)
+-  Additional colour have been used: #fafafa to give the text a good contrast on the dark grey background 
+
+##### back to [content](#table-of-content)
 
 ### Typography
       
  [Google Fonts](https://fonts.google.com/) have been used on this page 
-    - To give consistency to the users, the consistent font has been used throughout the site:
+    - To give consistency to the users, the consistent fonts has been used throughout the site:
 
-    - All the headings are displayed in font-family:
-    - All other elements are displayed in font-family:
+    - All the headings are displayed in font-family: 'Montserrat', sans-serif;
+
+    - All other elements are displayed in font-family: font-family: 'Nunito Sans', sans-serif;
+
+##### back to [content](#table-of-content)
 
 ### Imagery
 
-    - All the imagery is imported from 
-[Pixabay](https://pixabay.com/)
-    
+- Hero Image of man-on-the-scooter by
+[moovi_escooter](https://pixabay.com/photos/e-scooter-munich-urban-city-4921573/)
 
-     - Favicon icon has been sourced from 
-[icons8](https://icons8.com/icons/set/cocktail)
+- 404-page image by
+[borismayer77](https://pixabay.com/photos/e-scooter-electric-scooter-4786239/)
+
+- All electric scooter images have been sourced from 
+[Shopify.com](https://www.shopify.com/)
+
+##### back to [content](#table-of-content)
+
+### Icons
+
+ - Favicon icon has been sourced from 
+[icons8](https://icons8.com/icons/set/scooter)
+
+- Scooter Circle site is using icons throughout the site to created a better visual experience for users. Icons are easy to understand and grab a user's attention. Icons break down language barriers, reinforce website content and are far more memorable than text alone. 
+
+   - All the icons on site have been imported from 
+   [fontawesome](https://fontawesome.com/) library
+
+##### back to [content](#table-of-content)
+
+### Style 
+
+- A <em>loading spinner</em> has been added to the Scooter Circle, to appear whilst the page or data is loading. The spinner was chosen in the form of the circle to resemple the brand and brand colours have been implemented to the spinner.
+
+- 
     
 ##### back to [content](#table-of-content)
 
