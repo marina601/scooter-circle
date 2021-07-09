@@ -497,6 +497,10 @@ fieldset {
    width: auto !important;
 }
 
+.product-review-by-name {
+   min-height: 25rem !important;
+}
+
 .user-review {
    background-color: #889faa;
    min-height: 38rem;

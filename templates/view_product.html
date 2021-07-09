@@ -105,38 +105,40 @@
         </form>
       </div>
     </section>
+    <!--User Reviews-->
     <section class="reviews">
-      <!--show product reviews-->
       <div class="row">
-        <div class="col s12">
-          <h3 class="text-center">User Reviews</h3>
+        <div class="col s12 text-center">
+          <h3 class="heading">User Reviews</h3>
         </div>
         <div class="row">
           {% for review in reviews if review.product_model == product.product_model %}
-          <div class="col s12 m4">
-            <div class="card user-review">
+          <!--Product Review-->
+          <div class="col s12 m6 l4">
+            <div class="card user-review product-review-by-name">
               <div class="card-content white-text">
                 <h4 class="card-title">{{ review.product_model }}</h4>
                 <p>{{ review.product_review }}</p>
-                <span class="right review-by"><em>Reviewed by: {{ review.created_by|capitalize }}</em></span>
+                <span class="right review-by"><em>Review by: {{ review.created_by|capitalize }}</em></span>
               </div>
             </div>
-            {% else %}
+          </div>
+          {% else %}
             <!--If no reviews-->
             <div class="col s12">
               <h3 class="text-center">No Reviews Added Yet!</h3>
                 <p class="text-center">If you have used this scooter, why not add your own review
                   <a href="#add_review" class="text-shadow btn-small affiliate-link">Here</a>
                 </p>
-              </div>
-            {% endfor %}
-          </div>
-           <!--Back to products link-->
-          <div class="row">
-            <div class="col s12 center-align">
-              <a href="{{ url_for('products') }}" class="text-shadow btn-small btn affiliate-link back-link">Go Back to Products</a>
             </div>
-          </div>
+          {% endfor %}
+      </div>
+      <!--Back to products link-->
+      <div class="row">
+        <div class="col s12 center-align">
+          <a href="{{ url_for('products') }}" class="text-shadow btn-small btn affiliate-link back-link">Go Back to Products</a>
+        </div>
+      </div>
     </section>
     
 
