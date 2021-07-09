@@ -391,9 +391,22 @@ def delete_product(product_id):
 def delete_review(review_id):
     """
     Delete review from the database
+    Find the review by the id
+    Find the value of the product_model being deleted
+    Updating amount of product reviews
+    by decreasing the product_reviews amount by
+    1 every time a review is deleted
     """
-    mongo.db.reviews.remove({"_id": ObjectId(review_id)})
+
+    product_reviewed = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+    product_model = product_reviewed['product_model']
+
+    mongo.db.products.update_one({"product_model": product_model},
+                                 {'$inc': {"product_reviews": -1}})
+
+    mongo.db.reviews.delete_one({"_id": ObjectId(review_id)})
     flash("You review has been Deleted")
+
     return redirect(url_for('profile', username=session['user']))
 
 
