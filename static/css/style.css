@@ -355,7 +355,7 @@ nav,
 }
 
 .product-card {
-   min-height: 72rem;
+   min-height: 78rem;
 }
 
 .card-action {
@@ -386,6 +386,14 @@ nav,
 .tooltipped:hover {
    background-color: #383843;
 }
+
+.total-reviews {
+   margin-left: 2rem !important;
+   padding: 0.5rem !important;
+   height: 3.5rem;
+   margin-bottom: 2rem;
+}
+
 
 /*****************View Product*************************/
 .scooter-img {
