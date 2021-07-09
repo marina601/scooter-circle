@@ -248,8 +248,17 @@ def add_review():
             "created_by": session["user"]
         }
         mongo.db.reviews.insert_one(review)
-        flash("Your Review Has Been Added")
-        return redirect(url_for('profile', username=session['user']))
+    """
+    Updating product amount of product reviews
+    by incrementing the product_reviews amount by
+    1 every time a new review is added
+    """
+    mongo.db.products.update({"product_model": request.form.get
+                             ("product_model")},
+                             {'$inc': {"product_reviews": int(1)}})
+
+    flash("Your Review Has Been Added")
+    return redirect(url_for('profile', username=session['user']))
 
     # if user is not in session return the user to login page
     if 'user' not in session:
@@ -300,7 +309,8 @@ def add_product():
             "product_affiliate_link":
                 request.form.get("product_affiliate_link"),
             "product_image": request.form.get("product_image"),
-            "product_description": request.form.get("product_description")
+            "product_description": request.form.get("product_description"),
+            "product_reviews": int(0)
         }
 
         mongo.db.products.insert_one(product)
@@ -354,7 +364,8 @@ def edit_product(product_id):
             "product_affiliate_link":
                 request.form.get("product_affiliate_link"),
             "product_image": request.form.get("product_image"),
-            "product_description": request.form.get("product_description")
+            "product_description": request.form.get("product_description"),
+            "product_reviews": int(0)
         }
         mongo.db.products.update({"_id": ObjectId(product_id)}, edit_scooter)
         flash("Product Has Been Succsefully Edited")
@@ -441,4 +452,4 @@ def no_connection(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=False)
+            debug=True)
