@@ -321,6 +321,34 @@ I have used [Lucid Chart](https://www.lucidchart.com/) to create a database mode
 
 ### Flow Chart
 
+I have used [Lucid Chart](https://www.lucidchart.com/) to create a database model
+
+![Scooter Circle Flow Chart](wireframes/scooter-circle-flow-chart.png)
+
+- This flow chart was designed to show the use journey through the site. 
+  - Once the user lands on the Home Page, the User has two options either to Login or Register to access the full site. 
+
+- Login Option: 
+  - If user supplies the invalid login details, the user gets redirected to the Login Page to try again, if the user is unsuccesfull again they have an option to register. During development of this project I added custom feedback to the user if the login attempted is not successfull. 
+  - Once the login details are successfull the user gets redirected to their Profile Page.
+
+- Register Option: 
+  - If the user desides to register, is given feedback if the user has picked the username which already exists. The user also needs to choose the passpord and confirm the password, the user is given feedback if the passwords do not match. 
+  - If the user landed on Registar Page by mistake it also has an option to go to Login Page by clicking on the link below submit button. 
+  - Once the regestration is succesfull, the user gets redirectected to Profile Page
+
+- Profile Page: 
+  - The user will see all their reviews on their profile page. The user will have functionality to edit or delete their reviews from their profile page. 
+  - The user has an option to view full selection of products by clicking on the navigation link. 
+
+- View_Product Page: 
+  - Once a specific product has been selected the user will be able to view full product details including all product reviews. 
+  - The user will be able to add their own review here as well.
+
+- Logout Page: 
+  - The user may choose to logout when they finish using the site which will remove thier session cookie and redirect them back to Home Page for non registered users. 
+  - During my development I have changed that and decided to redirect the user to Login Page instead, as the user may want to log back in if they have pressed the button in error. Otherwise the user will just leave the site. 
+
 ##### back to [content](#table-of-content)
 
 ## Features 
