@@ -140,7 +140,7 @@ def profile(username):
     if username == "Admin":
         reviews = list(mongo.db.reviews.find())
     else:
-        reviews = list(mongo.db.reviews.find({"created_by": session["user"]}))
+        reviews = list(mongo.db.reviews.find({"created_by": username}))
 
     # Page Title
     title = 'Profile'
@@ -237,13 +237,13 @@ def view_product(product_id):
 def add_review():
     """
     Firstly check if the user is in session,
-    If not redirect to login page
+    If not redirect to login
     Add review function checks if the method="POST"
     Creating a dictionary to be inserted in the database
     Insert user review to the database
     Redirect the user to their profile page
     """
-
+    # if user is not in session return the user to login page
     if 'user' not in session:
         return redirect(url_for("login"))
 
