@@ -301,6 +301,22 @@ This app will provide a user with the possibility to view the different scooters
 
 ### Database model
 
+I have used [Lucid Chart](https://www.lucidchart.com/) to create a database model
+
+![Database model](wireframes/scooter-circle-database.png)
+
+- The database features three collections: 
+  #### Users:
+  -    Usename and secure password is stored in this collection
+
+  #### Products:
+  -   All the product information is stored in this collections, including   affiliate links to the external websides and images, also the number of reviews each product recieves.
+
+  #### Reviews:   
+  -  All product reviews are stored in this collection, Products and Reviews collection contains the same field product_model which helped me to link two collection together during the project development.
+
+
+
 ##### back to [content](#table-of-content)
 
 ### Flow Chart
