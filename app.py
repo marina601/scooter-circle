@@ -236,11 +236,17 @@ def view_product(product_id):
 @app.route("/add_review", methods=["GET", "POST"])
 def add_review():
     """
+    Firstly check if the user is in session,
+    If not redirect to login page
     Add review function checks if the method="POST"
     Creating a dictionary to be inserted in the database
     Insert user review to the database
     Redirect the user to their profile page
     """
+
+    if 'user' not in session:
+        return redirect(url_for("login"))
+
     if request.method == "POST":
         review = {
             "product_model": request.form.get("product_model"),
@@ -259,10 +265,6 @@ def add_review():
 
     flash("Your Review Has Been Added")
     return redirect(url_for('profile', username=session['user']))
-
-    # if user is not in session return the user to login page
-    if 'user' not in session:
-        return redirect(url_for("login"))
 
 
 @app.route("/add_product", methods=["GET", "POST"])
@@ -465,4 +467,4 @@ def no_connection(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)
