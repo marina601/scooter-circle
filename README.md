@@ -450,23 +450,37 @@ Based on the user stories and expectations, the following features have been imp
 
 ### Registration Page: 
 
-- Post the user data to the database
-- Using a salt method to encrypt the password
-- Checks the database if the user name exists
+- A simple form has been used with method `POST` through **Python** to post the new user information to **MongoDB**
+- The infromation needed for user to register is username and password to simplify the process.
+- **Python** checks the databese if the user exists, if it does the flash message appears to inform the user
+- The user is required to re-type thier password for security, which **Python** checks if two passwords are matching. If they do not match a flash message appears to inform the user.
+- Once all the requirements are met I am using **Werkzeug** security to encrypt the password in the database. 
+- Redirect the user to their profile page, displaying a message *"You have successfully Registered!"* and using *cookie* to put the user into *session*.
+- I am also using **Materialize** `class="validate"` to chage the colour of the input fields when the parametars are met.
 - The input fields have specific parameters to ensure correct user information is entered.
 - If the user fails to comply with parameters, the relevant message will be displayed 
-- Once the submit button is pressed the user will be redirected to their profile page
+- In **HTML** I have added custom validation messages to let the user know what parametars are required 
+  - `oninput="this.setCustomValidity('')"
+     oninvalid="this.setCustomValidity('Please enter a username which is 5 to 10 characters long')`
+- If the user already registered, they can click a button *'Login Here'* which will direct them to the *Login Page*.
 
 ##### back to [content](#table-of-content)
 
 ### Login Page: 
 
-- Request the data from the database
-- Checks if the username matches the database
-- Checks if the password matched the database
-- Checks if the username and password match the correct user-id 
-- If one of the checks fails, then the relevant message will be displayed asking the user to try again 
-- Alternatively, if the user is not registered they can click “Register Button”, which will direct them to the registration page.
+- A simple form has been used with method `POST` through **Python** to check the information in **MongoDB**
+- To login the user has to supply a valid username and password.
+- **Python** checks on input if the username exists
+- Then, a check is performed to determine if unsername and password match in the database. 
+- If one of them fails, the form gets cleared and flash message is displayed to inform the user that they have entered the wrong information, however does not informs the user of which information has been entered incorrectly to make it more difficult for the user to breach security.
+- I am also using **Materialize** `class="validate"`, same as registration page, to chage the colour of the input fields when the parametars are met.
+- The input fields have specific parameters to ensure correct user information is entered.
+  - `pattern="^[a-zA-Z0-9!?]{5,10}$"`
+- If the user fails to comply with parameters, the relevant message will be displayed 
+- In **HTML** I have added custom validation messages to let the user know what parametars are required for each input field.
+  - `oninput="this.setCustomValidity('')"
+     oninvalid="this.setCustomValidity('Please enter a valid password')`
+- Alternatively, if the user is not registered they can click *“Register Button”*, which will direct them to the **Registration page**.
 
 ##### back to [content](#table-of-content)
  
@@ -483,7 +497,7 @@ Products Page:
 
 ##### back to [content](#table-of-content)
 
-### Add Review
+### View Product
 
 - Once the product is selected, it will appear on the add review page with a full description. 
 - Textarea element prompts the user to add and submit the review 
