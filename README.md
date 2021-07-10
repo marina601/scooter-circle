@@ -358,28 +358,95 @@ I have used [Lucid Chart](https://www.lucidchart.com/) to create a database mode
 Based on the user stories and expectations, the following features have been implemented:
 
 ### All pages:  
+
+#### Navbar
+  - Dynamic navigation menu collapses on the mobile screen view.
+  - The navigation is also custom based on the login details of the user:
+     -  Home
+     -  Login
+     -  Register 
+  - For non registered users 
+
+     - Home
+     - Products
+     - Profile
+     - Logout
+   - For registered users 
+
+     - Home 
+     - Products
+     - Add Product
+     - Profile
+     - Logout
+   - For Admin user, who is able to add new products to the database through the site
+
+   - Contain sticky navigation allows the user to access the menu at any time.
+
+   - The navbar is collapsed into a burger icon on mobile and medium screens. 
+
+   - Python checks if the user is logged in or not by checking `if 'user' is session` and passes this data to the Jinja to display the correct navbar for the user, also user accsess level is checked to ensure the correct pages are available. 
+
+   - The logo of the page appers on the left hand side on the large screen devices and then moved to the middle on the middle and small screen devices. The logo contains a link, which when clicked will take the user to the **Home Page**.
+
+   - All navigation links contain hoover effect, when the linked is hoovered over the background colour changes to a slighter darker shade, which includes the logo as well. 
+
+#### Footer
   
-- Dynamic navigation menu collapses on the mobile screen view.
-- The navigation is also custom based on the login details of the user 
+   - Footer is avaialbe to all users at all times.
+   - It contains a link to **Contact Page** which user might want to user to contact the site owner. The contact page is powered by **EmailJS** and once the form is submitted it sends out automated email to the user.
+   - The footer also contains a link to **Terms and Conditions** modal which user might want to read to see the terms of use of the site. At the bottom of the modal two buttons are displayed, one to say *Agree* which user can press and the modal will close. The other button is *Contact* if the user has any queries about terms and conditions, it will take them straight to **Contact Page**.
+
+#### General Features
   
-- Contain sticky navigation allows the user to access the menu at any time.
-  
-- The website has a responsive design based on the screen view.
-    
-- All pages have call-to-action buttons to give the user easy access to the 
-  
-next page, without the need to choose from the navigation menu.
-- Logo image on the left-hand side is presented throughout the pages and lead to the Home page if the user is not logged in, otherwise leads the user to the product page.
--Favicon Icon to improve user experience 
+- The website has a responsive design based on the screen view.  
+- All pages have call-to-action buttons to give the user easy access to the next page, without the need to choose from the navigation menu.
+- Favicon Icon is present for windows and apple devices to  improve user experience. 
+- Loader has been added to the **base.html** template with custome colours. **jQuery** is used to initialize the loader on when the document is loading, time delay function has been implemented to delay the fade of the loader by 1 second: 
+  - `$(window).on('load', function() {
+     $(".preloader").delay(1000).fadeOut('slow');
+   });`
+- Page title to each page has been added dynamically through **Jinja** template in the *base.html* 
+ -  `{% block title %}
+       {% if title %}
+         <title>Scooter Circle - {{ title }}</title>
+       {% else %}
+         <title>Scooter Circle</title>
+       {% endif %}
+     {% endblock %}`
+- The title parametar is passed in the route in **Python**, which **Jinja** checks if the title is present then add the title, if not than use default title.
 
 ##### back to [content](#table-of-content)
 
-### Landing Page: 
+### Home Page
 
-- The user is presented with a hero image which tells the user what to expect from the site
-- Call to action button leads the user to log in before they can perform any actions or view any products
+![home page](wireframes/home-page.png)
+
+#### Hero Image
+
+- The Scooter Circle features a hero image of the man ready to ride his scooter, who is putting on the helmet. The picture is set in the urban setting which is perfect for the target audience. The site testimony is overlayed is positioned on the left hand side to give a better view of the hero image. 
+
+- The testimony contains box shadows `box-shadow:  15px 5px 8px rgba(0, 0, 0, 0.8);` which makes it stand out for better visual effect. On the mobile screen view the testimony is positioned in the middle and does cover the face of the man on scooter, however disition has been made not to fix it, because testimony div contains important information about the website and why people might choose electric transportation. Also the hero image is fixed, therefore the user will be able to see it once the user scrolls up. 
+
+#### Carousel 
+
+- Used carousel component from **Materialize** library to showcase the collection of products. 
+- All images are clickble based on user accsess level: 
+  - For not loged in users once the image is clicked it will take them to the *login.html*
+  - For logged in users once the image is clicked it will take them directly to the *view_product*.html*, where they will be able full details of their chosen scooter, add reviews and view other user reviews. 
+  - The carousel has setInterval function which moves to the next slide with time delay of 2 seconds 
+    - `$('.carousel').carousel();
+    setInterval(function () {
+      $('.carousel').carousel('next');
+    }, 2000); `
+
+### Call-to-Action
+
+- A button **View all Scooters** acts as call to action button for the user to view all products, a link has been added to the button based on user access level: 
+  - For not loged in users, it will take them to the *login.html*
+  - For logged in users, it will take them directly to the *products.html*.
 
 ##### back to [content](#table-of-content)
+
 
 ### Registration Page: 
 
