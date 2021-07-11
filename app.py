@@ -129,29 +129,34 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     """
-    Profile function grabs the session user's username
-    from database and displays user's reviews
-    If session user is Admin display all the reviews
+    Profile function checks if the user is in session
+    Then gets the username from the databese
+    If the ursername = Admin it will display all the reviews
     in the database
+    If user is not logged in will redirect the user to login page
     """
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"].capitalize()
-
-    if username == "Admin":
-        reviews = list(mongo.db.reviews.find())
-    else:
-        reviews = list(mongo.db.reviews.find({"created_by": session["user"]}))
-
     # Page Title
     title = 'Profile'
 
-    # checking if the user exists
-    if session["user"]:
-        return render_template(
+    # if does not work remove this line 
+    reviews = list(mongo.db.reviews.find())
+
+    if 'user' in session:
+        username = mongo.db.users.find_one(
+            {"username": username})["username"].capitalize()
+
+        if username == "Admin":
+            reviews = list(mongo.db.reviews.find())
+        else:
+            reviews = list(mongo.db.reviews.find(
+                           {"created_by": session["user"]}))
+    else:
+        flash('You must be logged in!')
+        return redirect(url_for('login'))
+
+    return render_template(
                 "profile.html", username=username,
                 reviews=reviews, title=title)
-
-    return redirect(url_for('login'))
 
 
 @app.route("/logout")
