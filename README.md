@@ -485,9 +485,36 @@ Based on the user stories and expectations, the following features have been imp
 ##### back to [content](#table-of-content)
  
 ### Profile Page: 
+
+- **Python** checks if the user is in session 
+  - `if 'user' in session:
+        username = mongo.db.users.find_one(
+            {"username": username})["username"].capitalize()`
   
-- The user is welcomed with a welcome message, which uses their username for identification 
-- Once the user has reviewed some products, the products will appear on their profile page
+- The user is welcomed with a welcome message, which uses their username for identification inside a cicle div. 
+
+- If the user does not have any reviews:
+  - The  message is displayed telling the user that they can use this page to manage their reviews
+  - Then a link in form of a button is displayed which redirects them to *products page*
+
+- Once the user has reviewed:
+  - They can use this page to delete or edit their reviews 
+  - The reviews are displayed in the form of the card, on large screen 3 cards are displayed in the row.
+  - On the medium screen the cards are displayed 2 in the row
+  - On the small screen the cards are displayed 1 in each row.
+  - I have user **Materialize** grid system to display the cards on different screen sizes. 
+
+- If the user is 'Admin':
+  - All the reviews are displayed on their profile page 
+  - The Admin user can manage their own reviews as mentioned above. 
+  - The Admin user can *delete* other user reviews if found innapropriate, which is mentioned in *terms and conditions* page. 
+
+- If the user chooses to 'Edit' their review, they will be redirected to the edit_review page.
+- If the user chooses to 'Delete' their review, a modal will appear asking them to confirm their decision. 
+- If the user preses 'Yes' the review will be deleted from the database and the user will be redirected to the *profile page*.
+- If the user presses 'No' the profile page will refresh and the user is redirected back to their profile page, the review will not be deleted. 
+
+- In **Python** I have alse introduced some defencive programing which checks if the user is not logged in, a flash message will be displayed to the user **You must be logged in!** and will redirect the user to the *login Page*.
 
 Products Page: 
 - Filter method has been implemented to let the user filter the products by product category 
