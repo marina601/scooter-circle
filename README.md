@@ -45,19 +45,20 @@ This website will enable the user to share their own reviews, view other users r
    - [**Flow Chart**](#flow-chart)
 
 7 [**Features**](#features)
-
-  - [**Features Implemented**](#features-implemented)
-    - [**All Pages**](#all-pages)
-    - [**Landing Page**](#landing-page)
-    - [**Registration Page**](#registration-page)
-    - [**Login Page**](#login-page)
-    - [**Profile Page**](#profile-page)
-    - [**Add Review**](#add-review) 
-    - [**Add Product**](#add-product) 
-    - [**Terms and Conditions**](#terms-and-conditions) 
-    - [**Affiliate Disclaimer**](#affiliate-disclaimer) 
-    - [**404.html**](#404.html)
-  - [**Features Left to Implement**](#features-left-to-implement)
+   - [**All Pages**](#all-pages)
+   - [**Home Page**](#home-page)
+   - [**Registration Page**](#registration-page)
+   - [**Login Page**](#login-page)
+   - [**Profile Page**](#profile-page)
+   - [**Edit Review**](#edit-review)
+   - [**Products Page**](#products-page)
+   - [**View Product**](#view-product) 
+   - [**Add Product**](#add-product) 
+   - [**Edit Product**](#edit-product) 
+   - [**Contact Page**](#contact-page) 
+   - [**404.html**](#404.html)
+   - [**500.html**](#500.html)
+   - [**Features Left to Implement**](#features-left-to-implement)
 
 8 [**Technology Used**](#technology-used)
    - [**Languages Used**](#language-used)
@@ -357,7 +358,7 @@ I have used [Lucid Chart](https://www.lucidchart.com/) to create a database mode
 
 Based on the user stories and expectations, the following features have been implemented:
 
-### All pages:  
+### All pages 
 
 #### Navbar
   - Dynamic navigation menu collapses on the mobile screen view.
@@ -389,6 +390,10 @@ Based on the user stories and expectations, the following features have been imp
    - The logo of the page appers on the left hand side on the large screen devices and then moved to the middle on the middle and small screen devices. The logo contains a link, which when clicked will take the user to the **Home Page**.
 
    - All navigation links contain hoover effect, when the linked is hoovered over the background colour changes to a slighter darker shade, which includes the logo as well. 
+
+   - Logout nav links, if the user is logged in, by clicking on the link **Python** removes the user from the session cookie and displays a message to the user *You have been logged out*
+     - `session.pop("user")`
+   - The user also gets redirected to the *login page* to be able to login again.
 
 #### Footer
 
@@ -445,7 +450,7 @@ Based on the user stories and expectations, the following features have been imp
       $('.carousel').carousel('next');
     }, 2000); `
 
-### Call-to-Action
+#### Call-to-Action
 
 - A button **View all Scooters** acts as call to action button for the user to view all products, a link has been added to the button based on user access level: 
   - For not loged in users, it will take them to the *login.html*
@@ -454,7 +459,7 @@ Based on the user stories and expectations, the following features have been imp
 ##### back to [content](#table-of-content)
 
 
-### Registration Page: 
+### Registration Page
 
 ![registration page](wireframes/registration-page.png)
 
@@ -474,7 +479,7 @@ Based on the user stories and expectations, the following features have been imp
 
 ##### back to [content](#table-of-content)
 
-### Login Page: 
+### Login Page 
 
 - A simple form has been used with method `POST` through **Python** to check the information in **MongoDB**
 - To login the user has to supply a valid username and password.
@@ -492,7 +497,7 @@ Based on the user stories and expectations, the following features have been imp
 
 ##### back to [content](#table-of-content)
  
-### Profile Page: 
+### Profile Page
 
 - **Python** checks if the user is in session 
   - `if 'user' in session:
@@ -526,14 +531,18 @@ Based on the user stories and expectations, the following features have been imp
  
 ##### back to [content](#table-of-content)
 
-### Products 
+### Edit Review
+
+##### back to [content](#table-of-content)
+
+### Products Page
 
 ![all products](wireframes/products-page.png)
 
-- Search 
+#### Search 
   - A search bar has been implemented with using **MongoDB** text index to allow the user search by *brand or model*.
 
-- Filter
+#### Filter
   - Below the search bar the user may filter their results by: 
     - Range
     - Price
@@ -544,7 +553,7 @@ Based on the user stories and expectations, the following features have been imp
   - The filter form contains 4 select elements displayed side by side to each other on large screen devies, On the medium and small screen view devices the select elements are displayed 2 in the row. 
   - The option given the user is to filter the category by *Low or High* option. The results are returned accordigly depending on the criateria picked.
 
-- Product card
+#### Product card
   - Products are displayed in card layot with fix height for equal layout.
   - The cards are hoverable, another feature picked from **Materiliaze** library to improve a visual effect of the card. 
   - Product cards are displayed in a row by 3 on the large screen, by 2 on the medium screed and by 1 on the mobile device. 
@@ -585,12 +594,12 @@ Based on the user stories and expectations, the following features have been imp
 - Image of their selected scooter and full product details, which were not available in the pre-view product card.
 - After the description a link on the right hand side 'buy this scooter', which leads to the external link where the user may want to make a purchase. In the future this could be a signed up affiliate link, where the site owner will be able to earn commission from.
 
-- Add Review: 
+#### Add Review: 
   - Empty textarea element only populated with product_model name, prompts the user to add and submit a review
   - The user when typing a review has an option to click **Reset** button which will refresh the page and clear the form
   - When the user submits a reviews, the user will redirected to their profile page, where they will be able to **Edit** or **Delete** their review, and a feedback is displayed to the user in a form of flash message "Your Review Has Been Added".
 
-- User Reviews: 
+#### Product Review: 
   - The user is able to view selected products reviews by other users
   - The reviews are presented in the form of the card with the same layout as products cards mentioned above.
   - User reviews contain product_model name, user review and the name of the user who created the review.
@@ -609,6 +618,10 @@ Based on the user stories and expectations, the following features have been imp
 - All the fields will have the required attribute to ensure all the full information is submitted.
 - Custom messages are displayed for each input field to help admin user to fill in the form correctly.
 - Once the form has been submitted, the admin user will be redirected to the *product.html*.
+
+##### back to [content](#table-of-content)
+
+### Edit Product
 
 ##### back to [content](#table-of-content)
 
@@ -631,6 +644,7 @@ Based on the user stories and expectations, the following features have been imp
 - Once the Submit button has been pressed, the message will appear “Your message has been sent” 
 - The form will refresh once the form has been submitted.
 - In the event of an error, the alert will display a message to the user to let them know something has gone wrong and **Submit** button will become disabled once again.
+- **EmailJS** API also send an automated email to the site owner/admin user to let them know a new message has been recieved with user name, email details and a message for easy reply. 
 - At the bottom of the page, the user has a link to take them back to the *home* page.
 
 ##### back to [content](#table-of-content)
@@ -640,6 +654,10 @@ Based on the user stories and expectations, the following features have been imp
   
 - Custom 404.html page has been created in case of an incorrect URL entered.
 - The page contains a link that will lead the user back to the home page. 
+
+##### back to [content](#table-of-content)
+
+### 500.html
 
 ##### back to [content](#table-of-content)
 
