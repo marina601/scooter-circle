@@ -417,7 +417,10 @@ Based on the user stories and expectations, the following features have been imp
        {% endif %}
      {% endblock %}`
 - The title parametar is passed in the route in **Python**, which **Jinja** checks if the title is present then add the title, if not than use default title.
-
+- Buttons to keep with the consistant style of the site all the buttons have been consistant styling
+  - Link Buttons: 
+  - Action Buttons (positive)
+  - Action Buttons (negative)
 ##### back to [content](#table-of-content)
 
 ### Home Page
@@ -533,6 +536,22 @@ Products Page:
 
 ![all products](wireframes/products-page.png)
 
+- Search 
+  - A search bar has been implemented with using **MongoDB** text index to allow the user search by *brand or model*.
+
+- Filter
+  - Below the search bar the user may filter their results by: 
+    - Range
+    - Price
+    - Charging Time
+    - Speed
+  
+  - The results are returned in accending or decending ordery using `products = products.sort("product_max_range", -1)`, a sort functionality from **MongoDB**
+  - The filter form contains 4 select elements displayed side by side to each other on large screen devies, On the medium and small screen view devices the select elements are displayed 2 in the row. 
+  - The option given the user is to filter the category by *Low or High* option. The results are returned accordigly depending on the criateria picked.
+
+
+
 ##### back to [content](#table-of-content)
 
 ### View Product
@@ -553,8 +572,9 @@ Products Page:
 - The form is being populated for the Admin to enter the new products into the database
 - The Admin can choose to reset the form by clicking on the “Reset Button”
 - The Admin can choose to submit the form by clicking on the “Submit Button”
-- All the fields will have the required attribute to ensure all the full information is submitted. 
-Contact Page: 
+- All the fields will have the required attribute to ensure all the full information is submitted.
+
+### Contact Page: 
 - Once the user navigates to the contact page, a short message will appear telling the user why they might choose to get in touch with an admin
 - The contact form is powered by EmailJS
 - The contact form contains the required field to be filled in, it will not submit a black form 
@@ -576,7 +596,8 @@ Contact Page:
 - Pagination, once the website content gets big enough the pagination would be implemented 
 for reviews on the *profile* and *view produt* pages.
 - Also pagination should be implemented for products on *products* page
-- Add to favourite option could be implemented to let the user save their favourite scooters to their profile page
+- Add to favourite option could be implemented to let the user save their favourite scooters to their profile page.
+- Unable the user to search and filter products at the same time. At the moment the user may only search or filter.
 - Profile page could be adjusted to let the user upload their profile picture and change the background colour of their choice, giving the user a custom experience
 - Share products buttons could be implemented to let the user share their favourite products easily via social media to create awareness for the site
 - Site owner might want to sign up for affiliate partnership which is actually available with [Pure Electric](https://www.pureelectric.com/), which I have used to link to, allowing the user to purchase the product if they should decide to do so. Affiliate commission could be earned for the site owner. 
