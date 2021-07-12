@@ -391,10 +391,13 @@ Based on the user stories and expectations, the following features have been imp
    - All navigation links contain hoover effect, when the linked is hoovered over the background colour changes to a slighter darker shade, which includes the logo as well. 
 
 #### Footer
+
+![terms and conditions](wireframes/terms-and-conditions.png)
   
    - Footer is avaialbe to all users at all times.
    - It contains a link to **Contact Page** which user might want to user to contact the site owner. The contact page is powered by **EmailJS** and once the form is submitted it sends out automated email to the user.
    - The footer also contains a link to **Terms and Conditions** modal which user might want to read to see the terms of use of the site. At the bottom of the modal two buttons are displayed, one to say *Agree* which user can press and the modal will close. The other button is *Contact* if the user has any queries about terms and conditions, it will take them straight to **Contact Page**.
+   - Footer also contains copyright information
 
 #### General Features
   
@@ -449,6 +452,8 @@ Based on the user stories and expectations, the following features have been imp
 
 
 ### Registration Page: 
+
+![registration page](wireframes/registration-page.png)
 
 - A simple form has been used with method `POST` through **Python** to post the new user information to **MongoDB**
 - The infromation needed for user to register is username and password to simplify the process.
@@ -524,6 +529,12 @@ Products Page:
 
 ##### back to [content](#table-of-content)
 
+### Products 
+
+![all products](wireframes/products-page.png)
+
+##### back to [content](#table-of-content)
+
 ### View Product
 
 - Once the product is selected, it will appear on the add review page with a full description. 
@@ -552,16 +563,6 @@ Contact Page:
 
 ##### back to [content](#table-of-content)
 
-### Terms and Conditions 
-- Populated by a modal, lets a user read the terms and conditions of the website
-- The modal will closed by clicking on the “X” button at the right-hand corner 
-
-##### back to [content](#table-of-content)
-
-### Affiliate Disclaimer 
-- Tells the user that the website has an affiliate income coming from the sale of any product purchased by clicking on the link “Shop”
-
-##### back to [content](#table-of-content)
 
 ### 404.html
   
@@ -571,6 +572,17 @@ Contact Page:
 ##### back to [content](#table-of-content)
 
 ### Features Left to Implement 
+
+- Pagination, once the website content gets big enough the pagination would be implemented 
+for reviews on the *profile* and *view produt* pages.
+- Also pagination should be implemented for products on *products* page
+- Add to favourite option could be implemented to let the user save their favourite scooters to their profile page
+- Profile page could be adjusted to let the user upload their profile picture and change the background colour of their choice, giving the user a custom experience
+- Share products buttons could be implemented to let the user share their favourite products easily via social media to create awareness for the site
+- Site owner might want to sign up for affiliate partnership which is actually available with [Pure Electric](https://www.pureelectric.com/), which I have used to link to, allowing the user to purchase the product if they should decide to do so. Affiliate commission could be earned for the site owner. 
+- Once the site reaches an excess of 10000 visitors per month the site owner will be able to run custome ads and earn commission from the ads.
+- The site owner might also want to create a blog page, where the news and related articles could be published to increase the user experience and the time the user spends on the site.
+- The site owner might also want to engage with users via providing a subsciption to the monthly newsletter feature. 
 
 ##### back to [content](#table-of-content)
 
