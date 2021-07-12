@@ -45,7 +45,7 @@ window.onload = function () {
 
         emailjs.sendForm(serviceID, templateID, this)
             .then(() => {
-                btn.innerText = 'Submit';
+                btn.innerText = 'Sent';
                 setTimeout(() => { btn.disabled = true; }, 1000);
                 alert(`Thank you ${userName.value}. Your message has been sent! We will be in touch soon!`);
                 contactForm.reset();
