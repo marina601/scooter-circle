@@ -523,13 +523,7 @@ Based on the user stories and expectations, the following features have been imp
 - If the user presses 'No' the profile page will refresh and the user is redirected back to their profile page, the review will not be deleted. 
 
 - In **Python** I have alse introduced some defencive programing which checks if the user is not logged in, a flash message will be displayed to the user **You must be logged in!** and will redirect the user to the *login Page*.
-
-Products Page: 
-- Filter method has been implemented to let the user filter the products by product category 
-- Search method has been introduced to let the user search by a brand of the scooter or model 
-- Call to action buttons at the bottom of the product description one for “Full Details” which leads the user to view more information and add a review.
-- “Shop” button will lead to an Affiliate Amazon site where the user can purchase this product 
-
+ 
 ##### back to [content](#table-of-content)
 
 ### Products 
@@ -550,36 +544,94 @@ Products Page:
   - The filter form contains 4 select elements displayed side by side to each other on large screen devies, On the medium and small screen view devices the select elements are displayed 2 in the row. 
   - The option given the user is to filter the category by *Low or High* option. The results are returned accordigly depending on the criateria picked.
 
+- Product card
+  - Products are displayed in card layot with fix height for equal layout.
+  - The cards are hoverable, another feature picked from **Materiliaze** library to improve a visual effect of the card. 
+  - Product cards are displayed in a row by 3 on the large screen, by 2 on the medium screed and by 1 on the mobile device. 
+  - Each card contains:
+    - Image of the scooter 
+    - Product model
+    - Product range
+    - Product speed 
+    - Product battery charge time
+    - Product price: 
+      - The price has *tooltip* feature from **Materialize** library, on hoover it displays the information: "price may vary". This has been implemented as during the development of the project I have noticed the **Pure Electric** has started to do promotions and sales on different products.
+    - How many total reviews each product has. This feature has been implemented using **MongoDB** `update` query, everytime the review is added to the product a total number of reviews   increases by one:
+      - `mongo.db.products.update({"product_model": request.form.get
+                             ("product_model")},
+                             {'$inc': {"product_reviews": int(1)}})`
+    - If the user deletes their review in their profile page, the total number of reviews decreses by 1
+    - "View full details" link takes the user to *view_product.html*
+
+  - If the username is "Admin":
+    - Additional buttons have been included at the bottom of the card for Admin user to be able to **Edit** or **Delete** product easily. 
+    - I have used **Jinja** to check if the user is admin and display the buttons:
+      - `{% if session.user|lower == "admin"|lower %}`
+    - If the user is not "admin" the buttons are hidden from view.
+    - When pressing the **Delete** button, a modal pops us and asking "admin" to confirm their decition. The functionality works in the same way as "Delete Review" button mentioned above.
+    - When pressing **Edit** button, "admin" user gets redirected to *edit_product* page. 
 
 
 ##### back to [content](#table-of-content)
 
 ### View Product
 
-- Once the product is selected, it will appear on the add review page with a full description. 
-- Textarea element prompts the user to add and submit the review 
-- Once the review has been submitted, the user can see their review appearing in the carousel at the bottom of the page 
-- The current user can delete or update their review 
-- If the user chooses for the review to be deleted, a prompt will appear asking with the following message “You are about the delete your review. Are you sure?”
-- The user can navigate through the reviews by touch or click on the left and right arrows 
-- Admin user can delete any review found inappropriate to the site 
+![view product](wireframes/view-product.png)
+
+- Once the user clicked *view full details* link on the products page, **MongoDB** quire is peformed, **Python** is searches the database for a uniqe key "_id":
+  - ` product = mongo.db.products.find_one({"_id": ObjectId(product_id)})`
+- Also a query is peform to search the database for reviews to a specific product_model
+- The user is able to see the product_model as a title of the page
+- Image of their selected scooter and full product details, which were not available in the pre-view product card.
+- After the description a link on the right hand side 'buy this scooter', which leads to the external link where the user may want to make a purchase. In the future this could be a signed up affiliate link, where the site owner will be able to earn commission from.
+
+- Add Review: 
+  - Empty textarea element only populated with product_model name, prompts the user to add and submit a review
+  - The user when typing a review has an option to click **Reset** button which will refresh the page and clear the form
+  - When the user submits a reviews, the user will redirected to their profile page, where they will be able to **Edit** or **Delete** their review, and a feedback is displayed to the user in a form of flash message "Your Review Has Been Added".
+
+- User Reviews: 
+  - The user is able to view selected products reviews by other users
+  - The reviews are presented in the form of the card with the same layout as products cards mentioned above.
+  - User reviews contain product_model name, user review and the name of the user who created the review.
+  - If the product does not have any reviews, a message is displayed "This product does not have reviews yet". An ancor link conected to the "add-review" form promps the user to add a review.
+
+- At the bottom of the page, there is a call to action button **Go Back to Prodcuts**, which leads the back to *products page*
 
 ##### back to [content](#table-of-content)
 
 ### Add Product
 
-- This option is only available for Admin user.
+- This page is only available for Admin user.
 - The form is being populated for the Admin to enter the new products into the database
-- The Admin can choose to reset the form by clicking on the “Reset Button”
-- The Admin can choose to submit the form by clicking on the “Submit Button”
+- The Admin can choose to reset the form by clicking on the **Clear** button, which will clear the form.
+- The Admin can choose to submit the form by clicking on the **Submit** button which will insert a new product to the databe.
 - All the fields will have the required attribute to ensure all the full information is submitted.
+- Custom messages are displayed for each input field to help admin user to fill in the form correctly.
+- Once the form has been submitted, the admin user will be redirected to the *product.html*.
 
-### Contact Page: 
+##### back to [content](#table-of-content)
+
+### Contact Page:
+![contact page](wireframes/contact-page.png)
+
 - Once the user navigates to the contact page, a short message will appear telling the user why they might choose to get in touch with an admin
-- The contact form is powered by EmailJS
-- The contact form contains the required field to be filled in, it will not submit a black form 
+- The contact form is powered by **EmailJS**
+- JavaScript sends the form to the API, and prevents the default submition of the form by:
+  - `event.preventDefault();`
+- The user requires to fill up their name, email and message fields.
+- The contact form contains a *required* attribute for each input field. 
+- The form, as others is populated with custom feedback, which tells the user what is expected from them.
+- **Materialize** validates the input fields, when the information presented is correct.
+- When the user prsses the **Submit** button to send the form , **JavaScript** changes the value of the button to *Sending..* and once the form is sent the submit button displays *Sent* which lets the user know the form has been submitted. 
+- The submit button becomes disabled once the form is sent to prevent the user from sending another form again. Using a time delay function:
+  - `setTimeout(() => { btn.disabled = true; }, 1000);`
+- Alert message shows to tell the user the their message has been sent and the site owner will be in touch shortly.
+- **EmailJS** also send an automatic email to the user to tell them that their message has been recieved.
 - Once the Submit button has been pressed, the message will appear “Your message has been sent” 
-- The form will refresh once the form has been submitted
+- The form will refresh once the form has been submitted.
+- In the event of an error, the alert will display a message to the user to let them know something has gone wrong and **Submit** button will become disabled once again.
+- At the bottom of the page, the user has a link to take them back to the *home* page.
 
 ##### back to [content](#table-of-content)
 
