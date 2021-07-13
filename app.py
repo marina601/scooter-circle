@@ -174,6 +174,8 @@ def products():
     """
     Sorting database by accessending or dissending order
     to allow filter function
+    This code has been modified from
+    https://stackoverflow.com/questions/65493525/sorting-in-flask-via-jinja-template-variable-issue-when-called
     """
 
     if range == "high":
@@ -225,14 +227,15 @@ def view_product(product_id):
 @app.route("/add_review", methods=["GET", "POST"])
 def add_review():
     """
-    Firstly check if the user is in session,
-    If not redirect to
+    Firstly check if the user is not in session,
+    And redirect to login.html
+    Otherwise:
     Add review function checks if the method="POST"
     Creating a dictionary to be inserted in the database
     Insert user review to the database
     Redirect the user to their profile page
     """
-    # if user is not in session return the user to login page
+
     if 'user' not in session:
         return redirect(url_for("login"))
 
@@ -243,6 +246,7 @@ def add_review():
             "created_by": session["user"]
         }
         mongo.db.reviews.insert_one(review)
+
     """
     Updating product amount of product reviews
     by incrementing the product_reviews amount by

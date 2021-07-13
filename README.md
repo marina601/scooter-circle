@@ -73,6 +73,7 @@ This website will enable the user to share their own reviews, view other users r
    - [**Clone this project**](#clone-this-project)
    
 11 [**Credits**](#credits)
+   - [**Content**](#content)
    - [**Code**](#code)
    - [**Media**](#media)
    - [**Acknowledgement**](#acknowledgement)
@@ -822,6 +823,11 @@ for reviews on the *profile* and *view produt* pages.
 
 16. [Link Checker](https://validator.w3.org/checklink)
    - To validate all the links of the site
+
+17. [Secure Password Generated](https://randomkeygen.com/)
+  - To generate a secure password for my **SECRET_KEY** in *env.py* file
+
+
     
 ##### back to [content](#table-of-content)
 
@@ -902,17 +908,62 @@ To deploy your project on Heroku, use the following steps:
 
 ##### back to [content](#table-of-content)
 
-## Credits 
+## Credits
+
+### Content
+
+- Terms and Conditions content has been used and modifyed to suite the site needs from: 
+  - [docular](https://docular.net/documents/templates/3/reviews-website-terms-and-conditons)
+- A sample of cookie police which is inclueded in terms and conditions is used and modifyed from:
+  - [uppyflyer](https://uppyflyer.com/cookie-policy?gclid=Cj0KCQjw2tCGBhCLARIsABJGmZ6o6PNzXMv9XhUcEnmrSAc5vjfxOmEUGBUXC1rwEQhj3MHrcpEpmuoaAslPEALw_wcB)
+
+- Product infromation has been taken from [pure electric](https://www.pureelectric.com/)
+
+##### back to [content](#table-of-content)
 
 ### Code
 
+- The initial code used to get the contact form to send the information has been taken from [emailJS](https://jsfiddle.net/api/post/library/pure/)
+API documentation and modified to fit the site purpose.
+
+- Fully responsive background image code has been taken from [CSS tricks](https://css-tricks.com/perfect-full-page-background-image/)
+
+- [Materialize](https://materializecss.com/) library has been use to create and initialize components in *script.js*: 
+  - Caroussel
+  - Card
+  - Modal
+  - Tooltip
+  - Navbar
+  - Responsive Grid
+- Code has been modifyed to suite the site design and contnet
+
+- Filter/Sort Function in app.py file line  from 181 to 196, has been modifyed from:
+  - [stackoverflow](https://stackoverflow.com/questions/65493525/sorting-in-flask-via-jinja-template-variable-issue-when-called)
+
+- Preloader css and html code hode has been taken from:
+  - [Luke Hass](https://projects.lukehaas.me/css-loaders/)
+  - Colour has been modifyed to fit with the design of the website
+  - The code has than been initialized in *script.js* file
+ 
 ##### back to [content](#table-of-content)
 
 ### Media
 
+- Background images for *index.html* and *404.html* pages have been sourced from [Pixabay](https://pixabay.com/)
+
+- Scooter images have been sorced from [pure electric](https://www.pureelectric.com/), which are all imported from [shopify](https://www.shopify.com/)
+
 ##### back to [content](#table-of-content)
 
 ### Acknowledgement 
+
+- I would like to thank my mentor *Medale Oluwafemi* for helping to refuctor my code in **Python** to make it easier to read and execute, also for his support and guidance.
+
+- Slack community @Code Institute for reviewing my project and helping me throughout the development.
+
+- Tutor support at @Code Institute, for their guidance and assistance during my project development.
+
+- *Tim Nelson* @Code Institute, for providing a fantastic boiler plate in **Task Manager** project which helped me to create a base for my own project and understand the CRUD opration.
 
 ##### back to [content](#table-of-content)
 
