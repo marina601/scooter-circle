@@ -62,7 +62,8 @@ This website will enable the user to share their own reviews, view other users r
 
 8 [**Technology Used**](#technology-used)
    - [**Languages Used**](#language-used)
-   - [**Frameworks Libraries and Programs Used**](#frameworks-libraries-and-programs-used) 
+   - [**Frameworks and Libraries**](#frameworks-and-libraries)
+   - [**Tools**](#tools) 
 
 9 [**Testing**](#testing)
    - [TESTING.md file](TESTING.md)
@@ -691,17 +692,33 @@ Based on the user stories and expectations, the following features have been imp
 
 ### Features Left to Implement 
 
-- Pagination, once the website content gets big enough the pagination would be implemented 
+1. Pagination
+  - Once the website content gets big enough the pagination would be implemented 
 for reviews on the *profile* and *view produt* pages.
-- Also pagination should be implemented for products on *products* page
-- Add to favourite option could be implemented to let the user save their favourite scooters to their profile page.
-- Unable the user to search and filter products at the same time. At the moment the user may only search or filter.
-- Profile page could be adjusted to let the user upload their profile picture and change the background colour of their choice, giving the user a custom experience
-- Share products buttons could be implemented to let the user share their favourite products easily via social media to create awareness for the site
-- Site owner might want to sign up for affiliate partnership which is actually available with [Pure Electric](https://www.pureelectric.com/), which I have used to link to, allowing the user to purchase the product if they should decide to do so. Affiliate commission could be earned for the site owner. 
-- Once the site reaches an excess of 10000 visitors per month the site owner will be able to run custome ads and earn commission from the ads.
-- The site owner might also want to create a blog page, where the news and related articles could be published to increase the user experience and the time the user spends on the site.
-- The site owner might also want to engage with users via providing a subsciption to the monthly newsletter feature. 
+  - Also pagination should be implemented for products on *products* page.
+
+2. Favourites
+  - Add to favourite option could be implemented to let the user save their favourite scooters to their profile page.
+
+3. Search and Filter funtionality 
+  - Unable the user to search and filter products at the same time. At the moment the user may only search or filter.
+
+4. Custom Profile Page
+  - Profile page could be adjusted to let the user upload their profile picture and change the background colour of their choice, giving the user a custom experience.
+
+5. Share Buttons
+  - Share products buttons could be implemented to let the user share their favourite products easily via social media to create awareness for the site.
+
+6. Affiliate Income
+
+  - Site owner might want to sign up for affiliate partnership which is actually available with [Pure Electric](https://www.pureelectric.com/), which I have used to link to, allowing the user to purchase the product if they should decide to do so. Affiliate commission could be earned for the site owner. 
+  - Once the site reaches an excess of 10000 visitors per month the site owner will be able to run custome ads and earn commission from the ads.
+
+7. Blog Page
+  - The site owner might also want to create a blog page, where the news and related articles could be published to increase the user experience and the time the user spends on the site.
+
+8. Newletter
+  - The site owner might also want to engage with users via providing a subsciption to the monthly newsletter feature. 
 
 ##### back to [content](#table-of-content)
 
@@ -712,56 +729,99 @@ for reviews on the *profile* and *view produt* pages.
 -   [HTML5](https://en.wikipedia.org/wiki/HTML5)
 -   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 -   [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
--   [Python]
+-   [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
 ##### back to [content](#table-of-content)
 
-### Frameworks Libraries and Programs Used 
+### Frameworks and Libraries
 
-1. [Monitize 4.3]()
- - Mainly for responsive grid layout. 
-
+1. [Moterialize](https://materializecss.com/)
+ - Mainly for responsive grid layout. Components from this library    have been used to structure the website and speed up the build proccess.
 
 2. [CSS tricks](https://css-tricks.com/perfect-full-page-background-image/) 
-- Used to create a full background image for the main site and 404.html page.
+- Used to create a full background image for the main site and 404.html, 500.html pages.
 
 3. [Google Fonts:](https://fonts.google.com/)
-    - Google fonts were used to import the 'Akava and Prata' fonts into the style.css file which is used on all pages throughout the project.
+    - Google fonts were used to import the 'Montserrat and Nunito' fonts into the style.css file which is used on all pages throughout the project.
 
 4. [Font Awesome:](https://fontawesome.com/)
     - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
 
 5. [jQuery](https://api.jquery.com/)
-    - jQuery library has been used to target HTML elements and assign event listeners throughout JavaScript files.     
+    - jQuery library has been used to target HTML elements and assign event listeners throughout JavaScript files.   
 
-6. [Git](https://git-scm.com/)
+18. [Jinja](https://jinja.palletsprojects.com/en/3.0.x/)
+    - Templating language for Python, to simply display data from backend to front end
+
+19. [PyMongo](https://pymongo.readthedocs.io/en/stable/)
+    - To connect Python to the MongoDB database
+
+20. [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+    - To constract and render pages
+
+21. [MongoDB Atlas](https://www.mongodb.com)
+    - Non-relational databae hosting service 
+
+22. [Wekzeug](https://werkzeug.palletsprojects.com/en/2.0.x/)
+    - A WSGI web application library used to encript user passwords
+
+23. [Flask-SSLify](https://pypi.org/project/Flask-SSLify/)
+     - Flask extension that confirgures your Flask application to reidrect all incoming http requests to https
+
+##### back to [content](#table-of-content)
+
+### Tools  
+
+1. [Git](https://git-scm.com/)
     - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 
-7. [GitHub:](https://github.com/)
+2. [GitHub:](https://github.com/)
     - GitHub is used to store the project's code after being pushed from Git.
 
-8. [Balsamiq:](https://balsamiq.com/)
+3. [Balsamiq:](https://balsamiq.com/)
     - Balsamiq was used to create the wireframes during the design process.
 
-9. [TinyPng:](https://tinypng.com/)
+4. [TinyPng:](https://tinypng.com/)
    - TinyPng was used to compress the size of the images and improve loading time.
 
-10. Lucid Chart to create a flow chart and database structure 
+5. [Lucid Chart](https://www.lucidchart.com/)
+  - To create a flow chart and database structure 
 
-11. [Email-JS](https://www.emailjs.com/)
+6. [Email-JS](https://www.emailjs.com/)
    - API is used to submit a contact form and send automated emails to the user.
 
-12. [Grammarly](https://www.grammarly.com/)
-    - Used to fix the thousands of grammar errors across the project.
+7. [Grammarly](https://www.grammarly.com/)
+    - Used to fix the grammar errors across the project.
 
-13. [Gitpod](https://www.gitpod.io/)
+8. [Gitpod](https://www.gitpod.io/)
     - Used as the development enviroment.
 
-14. [Google Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
+9. [Google Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
     - Used as a primary method of fixing spacing issues, finding bugs, and testing responsiveness during the project development.
 
-15. [Befunky](https://www.befunky.com/)
+10. [Befunky](https://www.befunky.com/)
     - Online platform used to resize and crop images.
+
+11. [Heroku](https://heroku.com/login)
+   - A cloud platform as a service enabling deployment of the site
+
+12. [PEP8](http://pep8online.com/)
+   - Validate Python code
+
+13. [W3C HTML Validation Service](https://validator.w3.org/)
+    - Validating HTML code
+
+14. [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
+    - Validating CSS code
+
+15. [JSHints](https://jshint.com/)
+    - Validate JavaScript Code
+
+15. [Am I Responsive](http://ami.responsivedesign.is/)
+   - Used to view project on different screen sizes and determine the responsiveness of the site. Also used it for creen shots in Readme.md file
+
+16. [Link Checker](https://validator.w3.org/checklink)
+   - To validate all the links of the site
     
 ##### back to [content](#table-of-content)
 
@@ -857,6 +917,7 @@ To deploy your project on Heroku, use the following steps:
 ##### back to [content](#table-of-content)
 
 ## Disclaimer 
-This website has been created for educational purposes only 
+
+- This website has been created for educational purposes only 
 
 ##### back to [content](#table-of-content)
