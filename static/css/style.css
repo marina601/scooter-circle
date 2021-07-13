@@ -522,6 +522,12 @@ fieldset {
    height: 10vh;
 }
 
+/*****************Edit Review*************************/
+
+.edit-review {
+   height: 80vh;
+}
+
 /*****************Add Product*************************/
 
 .add-product {

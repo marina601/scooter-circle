@@ -422,10 +422,13 @@ Based on the user stories and expectations, the following features have been imp
        {% endif %}
      {% endblock %}`
 - The title parametar is passed in the route in **Python**, which **Jinja** checks if the title is present then add the title, if not than use default title.
-- Buttons to keep with the consistant style of the site all the buttons have been consistant styling
-  - Link Buttons: 
-  - Action Buttons (positive)
-  - Action Buttons (negative)
+
+#### Buttons
+
+- All the buttons have been consistant styling to keep the style of the site consistant
+  - Link Buttons: background-color: grey with white text colour, hover effect changes the background colour to black and text remains white
+  - Action Buttons which contain background colour - green or red, once hovered changes the background to grey.
+ 
 ##### back to [content](#table-of-content)
 
 ### Home Page
@@ -532,6 +535,13 @@ Based on the user stories and expectations, the following features have been imp
 ##### back to [content](#table-of-content)
 
 ### Edit Review
+
+- Once the user choosed to update a review, they are redirected to *edit_review.html*
+- A simple form is displayed containing pre populated fields with product_model and product_review.
+- Using *update* method in **MongoDB** 
+  - `mongo.db.reviews.update({"_id": ObjectId(review_id)}, update_review)`
+- The user is being given feedback when the review is successfully updated and redirected to their profile page where they can view the changes.
+- If the user is pressing **Cancel** button, no changes are made to the database and the user is being redirected back to their *profile page*.
 
 ##### back to [content](#table-of-content)
 
