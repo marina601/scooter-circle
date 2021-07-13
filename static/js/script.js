@@ -1,29 +1,43 @@
+//jshint esversion: 6
+/*globals $:false */
+
 //Preloader, once the document loads hide the loader 
-$(window).on('load', function() {
+$(window).on('load', function () {
   $(".preloader").delay(1000).fadeOut('slow');
 });
 
-$(document).ready(function(){
-  // Initilize sidenav
-    $('.sidenav').sidenav({edge: 'right'});
-  
-  //Initilize carousel and slide the items every 2sec
-    $('.carousel').carousel();
-    setInterval(function () {
-      $('.carousel').carousel('next');
-    }, 2000);
-  
+$(document).ready(function () {
+  /** Initializing Materialize components
+  * Initilize sidenav
+  * Open the sidenav to the right
+  */
+  $('.sidenav').sidenav({
+    edge: 'right'
+  });
+
+  /** Initializing carousel
+  * Set an Interval functions
+  * which shows next item every 2 sec
+  */
+  $('.carousel').carousel();
+  setInterval(function () {
+    $('.carousel').carousel('next');
+  }, 2000);
+
   // select option for add_product.html
   $('select').formSelect();
 
   //modal
   $('.modal').modal();
-  
+
   // tooltip
   $('.tooltipped').tooltip();
 
   //validate select element from Materialize class
+  // this code was taken from Task Manager walkthrough project 
+  //https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DCP101+2017_T3/courseware/9e2f12f5584e48acb3c29e9b0d7cc4fe/6449dcd23ca14016aa83dc7313d91a02/?child=first
   validateMaterializeSelect();
+
   function validateMaterializeSelect() {
     let classValid = {
       "border-bottom": "1px solid #4caf50",
@@ -62,4 +76,4 @@ $(document).ready(function(){
       }
     });
   }
-  });
+});
