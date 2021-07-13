@@ -619,6 +619,7 @@ footer {
    box-shadow:  15px 5px 8px rgba(0, 0, 0, 0.7);
 }
 
+
 .agree {
    letter-spacing: 0.3rem;
 }
@@ -659,10 +660,6 @@ footer {
       width: 90%;
    }
 
-   .error {
-      min-height: 90rem;
-   }
-
    .submit-btn-contact,
    .reset-btn-contact {
       padding-left: 8px;
@@ -674,7 +671,15 @@ footer {
    }
 
    .error {
-      min-height: 120rem;
+      min-height: 90rem;
+   }
+
+   .error-message h2 {
+      font-size: 2.5rem;
+   }
+   
+   .error-message h3 {
+      font-size: 2.2rem;
    }
 }
 

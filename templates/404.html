@@ -7,14 +7,8 @@
             <h2 class="heading">Oh No! Looks like something has gone wrong!
             <br>The page you are looking for does not exist!</h2> 
             <h3 class="heading">Use the link below to go back</h3>               
-
-            {% if session.user %}
-            <a href="{{ url_for('products') }}" class="btn-back btn-large right text-shadow">
-                <i class="fas fa-backward" aria-hidden="true"></i> Go Back!</a>
-            {% else %}
             <a href="{{ url_for('index') }}" class="btn-back btn-large right text-shadow">
-                <i class="fas fa-backward" aria-hidden="true"></i> Go Back!</a>
-            {% endif %}
+                <i class="fas fa-backward" aria-hidden="true"></i> Go Back</a>
         </div>
     </div>
    
