@@ -536,6 +536,7 @@ Based on the user stories and expectations, the following features have been imp
 
 ### Edit Review
 
+![edit review](wireframes/edit-review.png)
 - Once the user choosed to update a review, they are redirected to *edit_review.html*
 - A simple form is displayed containing pre populated fields with product_model and product_review.
 - Using *update* method in **MongoDB** 
@@ -633,9 +634,20 @@ Based on the user stories and expectations, the following features have been imp
 
 ### Edit Product
 
+- This page is available only for admin user, the admin user may choose to edit product infomation if needed. 
+- **Python** checks if the user is not Admin and lets them know they do not have permission to access this page, also redirects the user to login page
+  - `if username != "Admin":
+        flash("You do not have access to this page")
+        return redirect(url_for("login"))`
+- By clicking on **Edit** button in the *products* page, admin user is presented with pre populated form containing all the products details.
+- Admin user may amend any input fileds.
+- Once the form is submitted, using *update* method from **MongoDB** the product information is updated and the user recieves an appropropriate feedback
+- The user gets redirected to *view_product* page where they check their changes have been implemented. 
+- If the user presses **Cancel** button they will redirected back to *products.html* page, and no changes will be made in the database.
+
 ##### back to [content](#table-of-content)
 
-### Contact Page:
+### Contact Page
 ![contact page](wireframes/contact-page.png)
 
 - Once the user navigates to the contact page, a short message will appear telling the user why they might choose to get in touch with an admin
@@ -661,13 +673,19 @@ Based on the user stories and expectations, the following features have been imp
 
 
 ### 404.html
+
+![404.html](wireframes/404-error-page.png)
   
 - Custom 404.html page has been created in case of an incorrect URL entered.
+- The user is presented with a full width background image of the scooter lying on the the at the bottom of the stairs.
 - The page contains a link that will lead the user back to the home page. 
 
 ##### back to [content](#table-of-content)
 
 ### 500.html
+
+- Custom internet servere error handler page has been created.
+- When the error is raised, the same page appears as *404.html* with a link to go back to the *home* page.
 
 ##### back to [content](#table-of-content)
 
