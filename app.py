@@ -440,14 +440,22 @@ def contact():
     title = 'Contact'
     return render_template("contact.html", title=title)
 
-
+@app.errorhandler(404)
+def page_not_found(error):
+    """
+    Renders error.html with 404 message
+    """
+    error_message = str(error)
+    return render_template('404.html',
+                           error_message=error_message), 404
+"""
 @app.errorhandler(404)
 def page_not_found(e):
-    """
+    
     Custome 404 error page
-    """
+    
     return render_template("404.html", e=e), 404
-
+"""
 
 @app.errorhandler(500)
 def no_connection(e):
