@@ -1,94 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Nunito+Sans:wght@600;700&display=swap');
+
 /*******General Styling********/
 html {
    font-size: 62.5%;
-   position: relative; 
-   min-height: 100vh; 
+   position: relative;
+   min-height: 100vh;
    scroll-behavior: smooth;
    background-color: #dcdfe5;
-}
-
-.preloader{
-   height: 100vh;
-   width: 100%;
-   top: 0;
-   left: 0;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-
-/*Preloader
-Code taken from https://projects.lukehaas.me/css-loaders/*/
-.loader {
-  color: #2fc669;
-  background-color: #e1403d;
-  font-size: 10px;
-  margin: 100px auto;
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  position: relative;
-  text-indent: -9999em;
-  -webkit-animation: load4 1.3s infinite linear;
-  animation: load4 1.3s infinite linear;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-}
-@-webkit-keyframes load4 {
-  0%,
-  100% {
-    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
-  }
-  12.5% {
-    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-  }
-  25% {
-    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-  }
-  37.5% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
-  }
-  50% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
-  }
-  62.5% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
-  }
-  75% {
-    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
-  }
-  87.5% {
-    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
-  }
-}
-@keyframes load4 {
-  0%,
-  100% {
-    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
-  }
-  12.5% {
-    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-  }
-  25% {
-    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-  }
-  37.5% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
-  }
-  50% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
-  }
-  62.5% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
-  }
-  75% {
-    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
-  }
-  87.5% {
-    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
-  }
 }
 
 body,
@@ -102,7 +20,12 @@ button {
    color: #0d0709;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
    font-family: 'Nunito Sans', sans-serif;
    font-weight: 600;
 }
@@ -134,10 +57,104 @@ h1, h2, h3, h4, h5, h6 {
 
 /*******Background Colors********/
 
-nav, 
+nav,
 .page-footer {
    background-color: #889FAA;
 }
+
+/*******Preloder Styling********/
+
+.preloader {
+   height: 100vh;
+   width: 100%;
+   top: 0;
+   left: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+/*Preloader code taken from https://projects.lukehaas.me/css-loaders/*/
+.loader {
+   color: #2fc669;
+   background-color: #e1403d;
+   font-size: 10px;
+   margin: 100px auto;
+   width: 1em;
+   height: 1em;
+   border-radius: 50%;
+   position: relative;
+   text-indent: -9999em;
+   /*-webkit-animation: load4 1.3s infinite linear;*/
+   animation: load4 1.3s infinite linear;
+   /*-webkit-transform: translateZ(0);*/
+   /*-ms-transform: translateZ(0);*/
+   transform: translateZ(0);
+}
+
+/*@-webkit-keyframes load4 {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
+}*/
+@keyframes load4 {
+
+   0%,
+   100% {
+      box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+   }
+
+   12.5% {
+      box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+   }
+
+   25% {
+      box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+   }
+
+   37.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+   }
+
+   50% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+   }
+
+   62.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+   }
+
+   75% {
+      box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+   }
+
+   87.5% {
+      box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+   }
+}
+
 
 /*************Navigation*******************/
 
@@ -150,8 +167,8 @@ nav,
 }
 
 .nav-link {
- font-weight: 900;
- font-size: 22px;
+   font-weight: 900;
+   font-size: 22px;
 }
 
 .brand-logo:hover {
@@ -169,7 +186,7 @@ nav,
 
 
 .mobile-nav {
-   color: #fafafa !important; 
+   color: #fafafa !important;
    font-size: 18px !important;
    font-weight: 600 !important;
 }
@@ -181,30 +198,31 @@ nav,
 /****************Flash Messages*************************/
 
 .flash-messages {
-   background-color: rgba(51,51,51,0.1);
+   background-color: rgba(51, 51, 51, 0.1);
    padding: 2rem;
    margin: 0;
 }
 
 /*************Index.html*******************/
 
-
+/*Code for full background image was used from 
+https://css-tricks.com/perfect-full-page-background-image/*/
 .background-img {
-   background: url("../images/man-on-the-scooter-resized.jpg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
+   background: url("../images/man-on-the-scooter-resized.jpg") no-repeat center center fixed;
+   /*-webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 90vh;
+  -o-background-size: cover;*/
+   background-size: cover;
+   height: 90vh;
 }
 
 .testimony-div {
-    width: 35rem !important;
-    height: 28rem;
-    padding: 1rem !important;
-    margin: 5rem 2rem 2rem 2rem;
-    background-color: rgba(136, 159, 170, 0.8);
-    box-shadow:  15px 5px 8px rgba(0, 0, 0, 0.8);
+   width: 35rem !important;
+   height: 28rem;
+   padding: 1rem !important;
+   margin: 5rem 2rem 2rem 2rem;
+   background-color: rgba(136, 159, 170, 0.8);
+   box-shadow: 15px 5px 8px rgba(0, 0, 0, 0.8);
 }
 
 .testimony {
@@ -235,8 +253,7 @@ nav,
    padding: 1rem 1rem 2rem 1rem;
 }
 
-.carousel 
-.carousel-item {
+.carousel .carousel-item {
    width: 400px;
    height: 400px;
    padding-bottom: 1rem;
@@ -259,88 +276,94 @@ nav,
 
 .validate {
    border-bottom: 1px solid #2fc669;
-   -webkit-box-shadow: 0 1px 0 0 #2fc669;
-   box-shadow: 1px solid #2fc669;
+   /*-webkit-box-shadow: 0 1px 0 0 #2fc669;*/
+   box-shadow: 0 1px 0 0 #2fc669;
 }
+
+.login-link {
+   text-align: right;
+}
+
+.product-details,
+.btn-flat {
+   color: #889faa !important;
+}
+
+.login-link a:hover,
+.product-details:hover {
+   background-color: #889faa !important;
+   color: #fafafa !important;
+   padding: 5px !important;
+   border-radius: 5px !important;
+   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+.login-card {
+   height: 35rem !important;
+}
+
+/* Materialize code has been used and modified to fit with the 
+/* style of the site */
 
 /* label color */
 .input-field label {
    color: #383843;
    font-family: 'Montserrat', sans-serif;
    font-size: 1.2rem;
- }
- /* label focus color */
- .input-field input[type=text]:focus + label {
+}
+
+/* label focus color */
+.input-field input[type=text]:focus+label {
    color: #e1403d;
- }
- /* label underline focus color */
- .input-field input[type=text]:focus {
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
    border-bottom: 1px solid #2fc669;
    box-shadow: 0 1px 0 0 #2fc669;
- }
- /* valid color */
- .input-field input[type=text].valid {
+}
+
+/* valid color */
+.input-field input[type=text].valid {
    border-bottom: 1px solid #2fc669;
    box-shadow: 0 1px 0 0 #2fc669;
- }
- /* invalid color */
- .input-field input[type=text].invalid {
+}
+
+/* invalid color */
+.input-field input[type=text].invalid {
    border-bottom: 1px solid #e1403d;
    box-shadow: 0 1px 0 0 #e1403d;
- }
- /* icon prefix focus color */
- .input-field .prefix.active {
+}
+
+/* icon prefix focus color */
+.input-field .prefix.active {
    color: #2fc669;
- }
-
- .login-link {
-    text-align: right;
- }
-
-   
- .product-details,
- .btn-flat {
-   color: #889faa !important;
- }
-
- .login-link a:hover,
- .product-details:hover {
-    background-color: #889faa !important;
-    color: #fafafa !important;
-    padding: 5px !important;
-    border-radius: 5px !important;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5) !important;
- }
+}
 
 
- /***************Profile*****************/
+/***************Profile*****************/
 
- .profile-section {
-    margin-top: 0px;
- }
+.profile-section {
+   margin-top: 0px;
+}
 
- .card-profile {
-    background-color: #889faa;
-    color: #fafafa;
-    border-radius: 50%;
-    width: 25rem !important;
-    height: 25rem !important;
- }
+.card-profile {
+   background-color: #889faa;
+   color: #fafafa;
+   border-radius: 50%;
+   width: 25rem !important;
+   height: 25rem !important;
+}
 
- .card-action-btn {
-    margin-top: 1.5rem;
- }
+.card-action-btn {
+   margin-top: 1.5rem;
+}
 
- .view-products-btn {
-    text-align: center !important;
- }
+.view-products-btn {
+   text-align: center !important;
+}
 
- /***************Registration Form*****************/
-
- .login-card {
-    height: 35rem !important;
- }
- /*****************Products *************************/
+/*****************Products*************************/
 
 .card-title {
    position: relative !important;
@@ -354,11 +377,11 @@ nav,
 }
 
 .card-action {
- font-weight: 600;
- margin-left: 7rem;
- margin-right: 0;
- text-align: end;
- padding-bottom: 0.5rem;
+   font-weight: 600;
+   margin-left: 7rem;
+   margin-right: 0;
+   text-align: end;
+   padding-bottom: 0.5rem;
 }
 
 .delete-admin {
@@ -427,7 +450,7 @@ fieldset {
    background-color: #dcdfe5;
 }
 
-.btn-reset{
+.btn-reset {
    float: left;
    background-color: #e1403d !important;
    color: #fafafa !important;
@@ -509,7 +532,7 @@ fieldset {
 }
 
 .search-panel {
-  height: 10rem !important;
+   height: 10rem !important;
 }
 
 
@@ -541,6 +564,7 @@ fieldset {
 .contact-txt {
    padding: 2rem;
 }
+
 /*****************Footer*************************/
 
 footer {
@@ -556,10 +580,10 @@ footer {
 }
 
 .footer-links {
-      list-style-type: none;
-      text-align: center;
-      padding: 0.5rem;
-      margin: 0.2rem auto;
+   list-style-type: none;
+   text-align: center;
+   padding: 0.5rem;
+   margin: 0.2rem auto;
 }
 
 .footer-links li {
@@ -567,51 +591,61 @@ footer {
    font-size: 2rem;
    padding: 1rem;
    text-align: center;
- }
+}
 
- .conditions li {
+.conditions li {
    list-style-type: circle !important;
    color: #383843;
- }
+}
 
- .conditions-ordered li {
-    list-style-type: lower-alpha !important;
- }
+.conditions-ordered li {
+   list-style-type: lower-alpha !important;
+}
 
- .agree {
+.agree {
    font-size: 2rem;
    letter-spacing: inherit;
    font-weight: 600;
- }
+}
 
- .btn-footer {
-    background-color: #889FAA;
-    font-weight: 600;
- }
+.btn-footer {
+   background-color: #889FAA;
+   font-weight: 600;
+}
 
- .btn-footer:hover {
-    background-color: #383843;
- }
+.btn-footer:hover {
+   background-color: #383843;
+}
 
- .terms h3, h4, h5, ul, li, ol, p {
-    color: #383843;
- }
+.terms h3,
+h4,
+h5,
+ul,
+li,
+ol,
+p {
+   color: #383843;
+}
+
 /*****************404.html*************************/
 
+/*Code for full background image was used from 
+https://css-tricks.com/perfect-full-page-background-image/*/
+
 .error {
-   background: url("../images/404-page.jpg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
+   background: url("../images/404-page.jpg") no-repeat center center fixed;
+   /* -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
-  height: 90vh;
+  background-size: cover;*/
+   height: 90vh;
 }
 
 .error-message {
    background-color: rgba(136, 159, 170, 0.8);
    margin-top: 5rem;
    padding-bottom: 1rem !important;
-   box-shadow:  15px 5px 8px rgba(0, 0, 0, 0.7);
+   box-shadow: 15px 5px 8px rgba(0, 0, 0, 0.7);
 }
 
 
@@ -641,16 +675,16 @@ footer {
       height: 35rem;
       margin: 1rem auto;
    }
-   
-   .product-spec{
+
+   .product-spec {
       padding: 0rem 2rem !important;
       margin: 0.5rem 1rem;
    }
-   
+
    .login-link {
       text-align: left;
    }
-   
+
    .edit-review-panel {
       width: 90%;
    }
@@ -672,7 +706,7 @@ footer {
    .error-message h2 {
       font-size: 2.5rem;
    }
-   
+
    .error-message h3 {
       font-size: 2.2rem;
    }
@@ -688,4 +722,3 @@ footer {
       max-height: fit-content;
    }
 }
-
