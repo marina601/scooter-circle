@@ -1,7 +1,7 @@
 //jshint esversion: 6
 /*globals $:false */
 
-//Preloader, once the document loads hide the loader 
+//Preloader, once the document loads fade out the preloader 
 $(window).on('load', function () {
   $(".preloader").delay(500).fadeOut('slow');
 });

@@ -21,9 +21,9 @@ var templateID = 'template_yz2jh7k';
 })();
 
 /**
- * To set up intial stracture of this function the code was used from emailJS documentation 
- * on submit add event listener 
- * prevent default submit 
+ * Add event listener to the form element
+ * on submit add event listener to prevent 
+ * default submittion of the form
  * button value changes once the button is pressed 
  */
 
@@ -34,10 +34,10 @@ window.onload = function () {
 
         /**
          * Submitting the form 
-         * Submit button value changed to submit once the form is sent 
+         * Submit button value changed to 'Sent' once the form is send.
          * time out function to disable the submit button once the form has been submitted 
          * Alert letting the user know the message has been sent
-         * Reset the form 
+         * Then the form will be cleared and reset
          * Incase of an error 
          * Submit button is disabled 
          * Alert shows letting the user know the message has not been sent 
