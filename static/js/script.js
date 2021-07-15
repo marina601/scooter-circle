@@ -3,14 +3,15 @@
 
 //Preloader, once the document loads hide the loader 
 $(window).on('load', function () {
-  $(".preloader").delay(1000).fadeOut('slow');
+  $(".preloader").delay(500).fadeOut('slow');
 });
 
 $(document).ready(function () {
   /** Initializing Materialize components
-  * Initilize sidenav
-  * Open the sidenav to the right
+  *   Initilize sidenav
+  *   Open the sidenav to the right
   */
+ 
   $('.sidenav').sidenav({
     edge: 'right'
   });
