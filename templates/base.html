@@ -114,11 +114,14 @@
       <div class="col s12">
         <ul class="text-shadow footer-links text-center">
           <!--Contact Page Link-->
-          <li><a class="waves-effect waves-light btn  btn-footer modal-trigger grey-text text-lighten-3"
+          <li><a class="waves-effect waves-light btn btn-footer modal-trigger"
               href="{{ url_for('contact') }}">Contact</a></li>
           <!--Modal Trigger for Terms and Conditions-->
-          <li><button class="waves-effect waves-light btn  btn-footer modal-trigger grey-text text-lighten-3"
-              >Terms and Conditions</button></li>
+          <li>
+            <button data-target="modal1" class="text-shadow waves-effect waves-light btn btn-footer modal-trigger"
+              >Terms and Conditions
+            </button>
+          </li>
         </ul>
       </div>
     </div>
