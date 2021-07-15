@@ -218,6 +218,7 @@ def view_product(product_id):
     reviews = list(mongo.db.reviews.find().sort("product_model", 1))
 
     if 'user' not in session:
+        flash("You must be logged in to view this page!")
         return redirect(url_for("login"))
 
     return render_template("view_product.html",
