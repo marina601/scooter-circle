@@ -169,14 +169,59 @@
   - If the user presses on **Cancel** button when updating their review, it will redirect them back to the *Profile* page and no changes will be made to their original review.
 
 3.	As a frequent user, I want to be able to delete my review. 
+
+  - From *Profile* page, where all user reviews are displayed, the user may click on **Delete** button for a specific review.
+  - Once the button is pressed a modal will appear which will ask the user to confirm their selection
+  - If the user presses **Yes** the review will be deleted from the databese
+  - The user will be informed 
+    - "You review has been Deleted"
+  - The deleted review will be deleted from the database and will not appear on the user profile page. 
+  - If the user presses **No**, the modal will close and no chages will be made.
+
 4.	As a frequent user, I want to read other user’s reviews.
+
+  - The user may find out how many reviews each product has by going to **Products** page
+  - Scooter image and short specification is displayed in the card format for each scooter in the database
+  - Inside the scooter card the total number of reviews are displayed, therefore the user will be aware how many reviews each product has. 
+  - The user can view the scooter reviews by clicking "View Full Details" link, which will lead them to *View Product* page, below add review form, they will be able to view all other product reviews created by users. 
+  - If the product does not have any reviews the message will be displayed: 
+    - "No Reviews Added Yet!"
+  - A call to action is displayed for the user to add thier own reveiw with an anchor link to add-review form.
+  - At the bottom of the page the user has another option to "Go Back To Products", which will them to the *Products* page.
+
 5.	As a frequent user, I want to be able to contact the site and request other scooter models to be added to the list.
+
+  - The user may contact the site owner by pressing on the link in the **Footer** which stays *Contact*.
+  - The link will lead them to the *Contact Page*.
+  - The user is welcomed with a short message, which explains to them how they can get in touch.
+  - The user needs to fill in their: 
+    - Name
+    - Email
+    - Query
+  - Once all the input fields filled in correctly the user is able to submit the form.
+  - If the input fields are not filled in correctly custom messages are displayed to guide the user through proccess.
+  - Once the form has been submitted, the alert is displayed to the user letting them know their message has been sent.
+  - Automated message is sent to the user at the same time to let them know somebody will be in touch shortly.
+  - The user now have an option at the bottom of the page to press a button "Go Back To Home Page"
+  - Which will redirect the user to the *Home Page*
+  - The user may choose to press **Reset** button at any time to clear the form
+
 6.	As a frequent user, I want to know where I can purchase the product.
-7.  As a frequent user, I want to be able to search for products by brand or model.
+
+  - A frequent user may click on **Buy This Scooter** button in the *View Product Page* below the product description. 
+  - The link will take the user to a different site, which will be open in the new tab, letting the user have easy access back to the site.
+  - The user may choose to purchase the product from the the site the link leads to. 
+
+7. As a frequent user, I want to be able to search for products by brand or model.
+
+  - The user inside the *Producst Page* has an option to search for product brand or model inside the search bar. 
+  - The user is informed with pre-filled text, what should be their search creterea. 
+  - The use is also given an option to filter the products by categories. 
 
 ### Business goals
 
 1.	As a business owner, I want to provide a platform for users where they can view and add reviews for electric scooters.
+  - Scooter Circle was carefully planned and designed to be responsive and work well on mobile, tablet and desktop devices.
 2.	As a business owner, I want the user to be able to register with secure login details.
 3.	As a business owner, I want the client to be able to use the site easily on any device.
 4.	As a business owner, I want to provide useful links to users where they can purchase products and earn an affiliate commission.
@@ -187,5 +232,9 @@
 
 ##### back to [content](#table-of-content)
 
+## Bugs
 
+### Add Review and Edit Review 
+  - Whilst testing user stories, I realized the user is able to amend the product_model name, which would lead to review added not matching any products and only appearing on the user profile page. 
+  - I have fixed it by including `readonly="readonly"` attribut to the **input** element. 
 ##### back to [content](#table-of-content)
