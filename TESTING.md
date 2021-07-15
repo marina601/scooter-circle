@@ -42,7 +42,7 @@
    - HTML code pass validation without major errors, type attribute has been removed from all texteria elements. Also `<a> type=submit` has been removed. 
 
 - [W3C Link Checker](https://validator.w3.org/checklink)
-   - All links have been checked and no errors have been detected, excepot for 404.html page 
+   - All links have been checked and no errors have been detected, except on line 39 not a link has returned an error. I have checked all the anchor links in the **modal** and changed them to buttons. Also the issue was with anchor link for mobile navigation, I have added a `role="button"` to the anchor tag.
     
 - [JSHint](https://jshint.com/)
    ### recipes.js 
