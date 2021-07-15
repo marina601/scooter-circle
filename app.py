@@ -102,7 +102,7 @@ def login():
 
         else:
             # invalid username match
-            flash("You have enetered incorrect Username and/or Password")
+            flash("You have entered incorrect Username and/or Password")
             return redirect(url_for('login'))
 
     # Page Title
