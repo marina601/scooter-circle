@@ -941,8 +941,10 @@ API documentation and modified to fit the site purpose.
   - [stackoverflow](https://stackoverflow.com/questions/65493525/sorting-in-flask-via-jinja-template-variable-issue-when-called)
 
 - Preloader CSS and HTML code has been taken from:
-  - [Luke Hass](https://projects.lukehaas.me/css-loaders/)
+  - [Tobias Ahlin](https://tobiasahlin.com/spinkit/)
   - Colour has been modified to fit with the design of the website
+  - To position the div I have used the tutorial from 
+  - [Techsini](https://techsini.com/how-to-add-css-preloader-to-your-website-tutorial/)
   - The code has then been initialized in the *script.js* file
  
 ##### back to [content](#table-of-content)
