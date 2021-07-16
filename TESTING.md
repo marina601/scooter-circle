@@ -362,6 +362,8 @@
    - The testimony background contains *RGBA* colour with allowed a semi-transparent background for the use to be able to see the background image.
    - On the mobile device, `margin-bottom` has been implemented to let the user see the background image once they scroll.
 
+![testimony](wireframes/home-page-tablet-view.png)
+
 4. Wecome Message 
    - View the wecome message on all devices, confirm the message appears in the center of the page.
 
@@ -381,8 +383,9 @@
     - Confrim the carusel is touch compatble by sliding the fingers to the left and right
     - On the mobile view confirm the carousel is viewed by one carousel item at the time.
 
-5. Call to Action 
+![carousel-mobile-view](wireframes/home-page-mobile-view.png)
 
+5. Call to Action 
   - View all scooters call to action button appears at the bottom of the page.
   - Hover over the link, confirm background colour is changing as expected.
   - Click on the link, confirm it takes the not logged in user to the login page.
@@ -391,8 +394,38 @@
   - Confirm the link appears in the middle of the page on all screen size devices. 
   - All the steps above have been repeated on all screen sizes. 
 
+### Registration Page
+  - Go to create account page, confirm the the form is displayed correctly.
+  - Try to press register, without filling in the form. Confirm custom message appears to inform the user what they should enter.
+  - Confirm the validation fields change colour to red for invalid entry.
+  ![feedback](wireframes/custom-feedback.png)
+  - Try to enter a username, but not the password and press register button, confirm the custome message appears to the user to enter a password and its parametars 
+  - Try to create a new account that already exists (same username), confirm that the flash message appears at the top of the page informing the user that this account already exists.
+  ![same username](wireframes/username-in-use.png)
+  - Try to create a new account with a new username but with two passwords that do not match, confirm that the flash message appears at the top of the page informing the user that the passwords entered do not match.
+  - Create a new account with new username and 2 passwords which match, confirm all required fields turn green on succesfull validation.
+  - Confirm the user has been redicrected to their profile page with custom message confirming their registration.
+  - Confrim username is displayed on their profile page.
+  - Click the login here button, confirm that it takes the user to the log in page.
+  - Above steps have been repeated on the mobile and tablet devices. No changes to this page layout across the different screen sized.
+  - Confirm the navbar has changed based on user access. 
+  ![registration-complete](wireframes/registration-complete.png)
 
+##### back to [content](#table-of-content)
 
+### Login Page
+- Go to the log in page, confirm that the log in form is displayed correctly.
+- Try to submit the form without entering any details, confirm a custom feedback is displayed, which tells the user to enter a valid username.
+- Enter the username, but not the password, confirm a custom feedback is displayed, telling the user to enter a valid passowrd. The input field also turn red on invalid input.
+![missing-password](wireframes/missing-password.png)
+- Try to log in with a username or password which does not exists in the database, confirm the flash message is displayed letting the user know that some of the details entered are incorrect.
+![wrong-details](wireframes/wrong-details.png)
+- Try to log in using correct username and password, confirm that the input fields change the colour to green on the valid entry.
+- Confrim that the logged in user is redirected to their profile page.
+- Log out, then try to log in using correct username and password, confirm that this is successful.
+- Confirm *Register Here* link takes the user to the register page.
+- Above steps have been repeated on the mobile and tablet devices. No changes to this page layout across the different screen sized.
+- Confirm the navbar has changed based on user access.
 
 ## Bugs
 
