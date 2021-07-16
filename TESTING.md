@@ -427,6 +427,45 @@
 - Above steps have been repeated on the mobile and tablet devices. No changes to this page layout across the different screen sized.
 - Confirm the navbar has changed based on user access.
 
+### Profile Page
+
+- Try accessing the profile page by typing the '/profile' to end of the url, confirm the user is getting redirected to the login page and flash message is displayed informing the user they must be logged in to access this page.
+- Try accessing the profile page by typing the '/profile/admin' to end of the url, confirm the user is getting redirected to the login page and flash message is displayed informing the user they must be logged in to access this page.
+- Login with valid login details, confirm welcome message is displayed using the correct username for identification.
+- Confirm the circle in the middle of the page contains correct username.
+![user-profile](wireframes/user-profile.png)
+
+#### For users who have added reviews: 
+  - Heading is displayed in the middle of "Your Scooter Reviews"
+  - Reviews: 
+    - The reviews are displayed in the form of the card, with equal height to create consistancy.
+    - Confirm the reviews are displayed in the profile page which have been created by the username used to access the accout
+![user-reviews](wireframes/user-reviews.png)
+    - Review cards are displayed in 3 cards in the row on the large screen view, 2 cards in the row on the tablet screen view and 1 card taking up the whole row on the mobile screen view.
+    - Hover over edit and delete button, confirm the background colour is changing as expected.
+    - Click on edit button, confirm the link takes the user to the edit-review page
+    - Click delete button, confirm a modal appears asking the user to validate their decision.
+![delete-reviw](wireframes/delete-user-review.png)
+    - If the user presses no, the modal closes and not changes are made to the database.
+    - If the user presses yes, the review is deleted from the databse. 
+    - Confirm the user gets redirected back to the profile page, where the review which they have deleted is no longer avaiable. Flash message appears on the profile page to provide feedback to the user.
+
+  #### Users who have not created any reviews yet: 
+    - The heading displayed on the profile page: "Your have not reviewed any products yet!"
+    - A short message tells them what they can use their profile page for
+    - A link "View All Scooters", when hovered changed colour as expected.
+    - Confirm the link takes the user to the products page
+![no-reviews](wireframes/user-no-reviews.png)
+
+  #### Admn user:
+    - Login with admin login details
+    - Admin is able to view all the reviews in the database created by different users
+    - Admin user is able to edit or delete their own reviews 
+    - Confirm no edit button is available for admin user to edit, user reviews
+    - Confirm only delete button is available for admin user to delete other user reviews if found innapropriate.
+![admin-view](wireframes/reviews-admin.png)
+
+
 ## Bugs
 
 ### Add Review and Edit Review 
@@ -436,5 +475,9 @@
 ### Navbar
   - Little but noticed during testing, Scooter Circle logo, when hovered, was displaying extra height. 
   - Fix: remove hight property in css
+
+### Home Page
+  - During manual testing noticed that call to action button at the bottom of the page was not big enough and the text overlayed the background colour of the button, especially on the iPhone.
+  - Fix: removed extra classes from the link and re-used the link style from the *Contact Page*, which solved the issue
 
 ##### back to [content](#table-of-content)
