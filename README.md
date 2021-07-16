@@ -827,6 +827,9 @@ for reviews on the *profile* and *view product* pages.
 17. [Secure Password Generated](https://randomkeygen.com/)
   - To generate a secure password for my **SECRET_KEY** in *env.py* file
 
+18. [Extendclass](https://extendsclass.com/python-tester.html)
+  - To check syntax errors in **Python** code.
+
 
     
 ##### back to [content](#table-of-content)
