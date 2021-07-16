@@ -13,44 +13,53 @@
     </div>
     <div class="col l6 m4 offset-m2 s12 product-spec">
       <p>
-        <i class="fas fa-tag" aria-hidden="true"></i><span class="sr-only">tag</span>
+        <i class="fas fa-tag" aria-hidden="true"></i>
+        <span class="product-categories">Brand: </span>
         {{ product.product_brand }}
       </p>
       <p>
-        <i class="fas fa-tachometer-alt" aria-hidden="true"></i><span class="sr-only">speedometer</span>
+        <i class="fas fa-tachometer-alt" aria-hidden="true"></i>
+        <span class="product-categories">Max Speed: </span>
         {{ product.product_max_speed }}mph
       </p>
       <p>
-        <i class="fas fa-charging-station" aria-hidden="true"></i><span class="sr-only">battery charging time</span>
+        <i class="fas fa-charging-station" aria-hidden="true"></i>
+        <span class="product-categories">Battery Charging Time: </span>
         {{ product.product_battery_charge }}hrs
       </p>
       <p>
-        <i class="fas fa-pound-sign" aria-hidden="true"></i><span class="sr-only">pound sign</span>
+        <span class="product-categories">Price <i class="fas fa-pound-sign" aria-hidden="true"></i>: </span>
         {{ product.product_price }}
         <button class="btn tooltipped text-shadow" data-position="top" data-tooltip="Price may vary">!</button>
       </p>
       <p>
-        <i class="fas fa-route" aria-hidden="true"></i><span class="sr-only">route</span>
+        <i class="fas fa-route" aria-hidden="true"></i>
+        <span class="product-categories">Max Range: </span>
         {{ product.product_max_range }}miles
       </p>
       <p>
-        <i class="fas fa-power-off" aria-hidden="true"></i><span class="sr-only">motor power</span>
+        <i class="fas fa-power-off" aria-hidden="true"></i>
+        <span class="product-categories">Motor Power: </span>
         {{ product.product_motor_power }}watts
       </p>
       <p>
-        <i class="fas fa-truck-loading" aria-hidden="true"></i><span class="sr-only">loading capacity</span>
+        <i class="fas fa-truck-loading" aria-hidden="true"></i>
+        <span class="product-categories">Loading Capacity: </span>
         {{ product.product_load }}kg
       </p>
       <p>
-        <i class="fas fa-dharmachakra" aria-hidden="true"></i><span class="sr-only">wheel size</span>
+        <i class="fas fa-dharmachakra" aria-hidden="true"></i>
+        <span class="product-categories">Wheel Size: </span>
         {{ product.product_wheel_size }}cm
       </p>
       <p>
-        <i class="fas fa-water" aria-hidden="true"></i><span class="sr-only">water resistant</span>
-        {{ product.product_water_resistant }}
+        <i class="fas fa-water" aria-hidden="true"></i>
+        <span class="product-categories">Water Resistant: </span>
+       {{ product.product_water_resistant }}
       </p>
       <p>
-        <i class="fas fa-weight-hanging" aria-hidden="true"></i><span class="sr-only">capacity</span>
+        <i class="fas fa-weight-hanging" aria-hidden="true"></i>
+        <span class="product-categories">Weight: </span>
         {{ product.product_weight }}kg
       </p>
     </div>
