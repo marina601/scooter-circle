@@ -204,7 +204,7 @@
   - Automated message is sent to the user at the same time to let them know somebody will be in touch shortly.
   - The user now have an option at the bottom of the page to press a button "Go Back To Home Page"
   - Which will redirect the user to the *Home Page*
-  - The user may choose to press **Reset** button at any time to clear the form
+  - The user may choose to press **Reset** button at any time to clear the form.
 
 6.	As a frequent user, I want to know where I can purchase the product.
 
@@ -221,15 +221,59 @@
 ### Business goals
 
 1.	As a business owner, I want to provide a platform for users where they can view and add reviews for electric scooters.
-  - Scooter Circle was carefully planned and designed to be responsive and work well on mobile, tablet and desktop devices.
+
+  - The user may add scooter review, when viewing full product details of specific scooter model. 
+  - At this point the user will also see the other user reviews at the bottom of the page.
+  - The user will be able to see how many reviews each product has by viewing all the products on the *Product* page. The total number of reviews presented to the user in the form of the card with product info.
+
 2.	As a business owner, I want the user to be able to register with secure login details.
+
+  - Scooter Circle has been designed to simplify registration process for the user and ensue the user details are stored securely.
+  - For the user to register they have to provide the username
+  - Also have to type thier choisen password twice, once both of the password fields match, the data gets stored in the database.
+  - I have usede `generate_password_hash` method from `werkzeug.security` to hash the password in the database. 
+  - The site owner who will have access to the database, will be able to see the username, however will not be able to see the user password which is stored securily. 
+  - Username may access their account only when username and password match the database, upon the login attempt.
+
 3.	As a business owner, I want the client to be able to use the site easily on any device.
+
+ - Scooter Circle was carefully planned and designed to be responsive and work well on mobile, tablet and desktop devices.
+
 4.	As a business owner, I want to provide useful links to users where they can purchase products and earn an affiliate commission.
+
+   - The link 'Buy This Scooter' has been added to each product in *View Product Page* which leads to an external company, where the product can be purchased. 
+   - The [Pure Electric](https://www.pureelectric.com/) do offer affiliate partnership, however this has not been implemented yet, as this project is for educational purposes at this moment in time.
+
 5.	As a business owner, I want to be able to delete any reviews which I consider to be inappropriate or out of content.
+
+  - An admin user has all the reviews visible on their profile page.
+  - An admin user may delete any review they find innapropriate or out of content.
+  - An admin user will not have access to edit any of the reviews which have not been created by themselfs.
+  - This information is provided to the user in *Terms and Conditions Page*, which they have access to at all times by clicking a button in the footer.
+
 6.	As a business owner, I want to be able to add additional new products to the site. 
+
+  - An admin user has *Add Product* page available to them.
+  - A simple form which guides the Admin to fill in all the input fields which are required to display full product information on the site.
+  - All the input fields have required attributes with custom feedback to the user, to ensuer all the information is entered correctrly.
+  - Once the **Submit** button is pressed the product will be added to the database. 
+  - The user will be redirected to the *Products Page* and feedback will be provided.
+  - An admin user may clear the form at any time by pressing the button **Clear**
+
 7.  As a business owner, I want to be able to edit or delete products.
+
+  - An admin user, in the *Product Page* at the bottom of the each product card, have two buttons to **Edit** or **Delete** a product.
+  - If *Edit* option is chosen, the admin user may update product information
+  - If *Delete* option is chosen, the admin user may delete the product from the database.
+  - In the event of the *Delete* option, a modal will appear to ask the admin user to confim their decision.
+
 8.  As a business owner, I want to provide the user with search and filter functionality for products to enable easy access to the database.
 
+ - Scooter Circle has been designed with user experience in mind, providing a platform for users, not only to view the products and product reviews, but also search for a specific item.
+ - Search funcitonality implemented to enable the user to search by scooter model or brand.
+ - Also Filter function is implemented to let the user filter the results with their choisen category in mind. 
+ - Only 4 categories are avaialbe for user to filter by at the moment, those categories have been chosed based on the importance of the their value to the product.
+ 
 ##### back to [content](#table-of-content)
 
 ## Bugs
