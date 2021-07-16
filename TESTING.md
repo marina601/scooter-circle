@@ -9,8 +9,13 @@
 [**Testing**](#testing)
    - [**Validation Results**](#validation-results)
    - [**Testing User Stories**](#user-stories-testing)
+        - [**First Time User**](#first-time-user)
+        - [**Returning User**](#returning-user)
+        - [**Frequent User**](#frequent-user)
+        - [**Business Goals**](#business-goals)
    - [**Further Testing**](#further-testing)
       - [**Device Compatibility Table**](#device-compatibility-table)
+      - [**Elements on Every Page**](#elements-on-every-page)
       - [**Home Page**](#home-page)
       - [**Registration Page**](#registration-page)
       - [**Login Page**](#login-page)
@@ -60,7 +65,9 @@
 
 - [PEP8](http://pep8online.com/)
    - The code passed through validation without errors
-   
+
+- [Extendclass](https://extendsclass.com/python-tester.html)
+   - No syntax errors have been found
 
 ##### back to [content](#table-of-content)
 
@@ -104,6 +111,8 @@
   - The user may click on the button in the footer of any page, the user is able to click a button "Terms and Conditions" which will open a modal with full terms and conditions of the site. 
   - The user has 2 options, either press the button to "Agree", which will close the modal.
   - Or the user may want to contact the site owners and ask more questions, the button "Contact" is presented next to "Agree" button in the modal, which will redirect the user to the *Contact Page*.
+
+##### back to [content](#table-of-content)
 
 #### Returning User 
 
@@ -150,6 +159,7 @@
     - "No Results Found"
   - The user may choose to reset their search bar or filter options by pressing "Reset" button, which will display all the products in the database again.
 
+##### back to [content](#table-of-content)
 
 #### Frequent User
 
@@ -276,9 +286,122 @@
  
 ##### back to [content](#table-of-content)
 
+## Further Testing
+
+### Manual (logical) testing of all elements and functionality on every page.
+
+### Device compatibility table
+
+
+| Pages    |<strong>Laptop</strong>|<strong>Ipad</strong>|<strong>IphoneX</strong> | <strong>Nokia2.4</strong> | <strong>Sumsung</strong> |
+|----------|:---------------------:|--------------------:|------------------------:|-----------------------:|-----------------------:|
+| Home     | &check; | &check;| &check;| &check;| &check;|
+| Login   | &check; | &check;| &check;| &check;| &check;|   
+| Register    | &check; | &check;| &check;| &check;| &check;|
+| Products | &check; | &check;| &check;| &check;| &check;|
+| View Product | &check; | &check;| &check;| &check;| &check;|
+| Edit Product | &check; | &check;| &check;| &check;| &check;|
+| Add Product | &check; | &check;| &check;| &check;| &check;|
+| Edit Review | &check; | &check;| &check;| &check;| &check;|
+| Profile | &check; | &check;| &check;| &check;| &check;|
+| 400.html | &check; | &check;| &check;| &check;| &check;|
+    
+##### back to [content](#table-of-content)
+
+### Elements on Every Page 
+
+- All steps on desktop were repeated on mobile, tablet and laptop screen sizes.
+
+1. Navigation
+
+- Hover over each link, confirm the hover effect works as expected.
+- Click the Scooter Circle logo, confirm it takes the user to the home page.
+- Click the Home link, confirm it takes the user to the home page.
+- Click the Login link, confirm it takes the user to the login page.
+- Click the Register link, confirm it takes the user to the register page.
+- Log into Scooter Circle, confirm that the navbar no longer displays the Login or Register links,but does now display the Home, Products, Profile and Logout links instead.
+  - Clcik on the Products link, confirm it takes the user to products page.
+  - Click the Profile link, confirm it takes the user to their profile page.
+  - Click the Log out link, confirm the user is logged out and the navbar returns to the logged out configuration.
+- Log into Scooter Circle with Admin user details
+  - Confirm Add Product link appears on the navbar
+  - Click on Add Product link, confirm it takes the Admin user to the add product page.
+- Go to the bottom of the page to make sure the navigation bar is sticky.
+
+- Mobile and Tablet view:
+  - Confirm Scooter Circle logo appears in the middle of the navbar as expected
+  - Confirm burger button appears on the right hand side of the navbar
+  - Click on the burger button, confirm navbar is collapsed with links available for home, login and register page.
+  - Confirm Scooter Circle logo also appers in expanded view.
+  - Click on the Scooter Circle logo in the expanded view, confirm takes the user to the home page.
+  - Followed the same steps as above to determine all the links are working.
+  - Flip the tablet and mobile devices to check responsiveness.
+
+2. Footer
+
+  - Hovered over each link, confirmed background colour changed as expected.
+  - Click on contact link, confirmed it takes the user to the contact page.
+  - Click on terms and conditions button, confirm the modal appears with terms and conditions of the site.
+  - The footer is responsive on all window view sizes.
+
+3. Preloader
+
+ - Open any page and confirm that the preloader displays for 1 seconds as the page content is loaded.
+ - Confirm the preloader animates as expected.
+
+### Home Page
+
+1. Hero Image
+   - Confirm the background image loads in the reasonable time
+   - Confirm the background image has fixed position by scorolling up the page
+
+2. Testimony
+   - Starting from the desktop view the testimony has a Materialize margin to the right class. Featuring the man on the scooter in the background. 
+   - View the page in the tablet view the testimony still has a margin to the right, the user is still able to see the view of the man on the scooter.
+   - Chance the screen size to mobile view, the testimony appears in the middle of the page. 
+   - The testimony background contains *RGBA* colour with allowed a semi-transparent background for the use to be able to see the background image.
+   - On the mobile device, `margin-bottom` has been implemented to let the user see the background image once they scroll.
+
+4. Wecome Message 
+   - View the wecome message on all devices, confirm the message appears in the center of the page.
+
+3. Carousell 
+   - View the carousels and confirm that they slide a comfortable speed and interval.
+   - Confirm the carousel if viewed in 3d format on tablet and large screen devices.
+   - Poin with the mouse on the carousel item, the pointer is displayed to let the user know the carousel item is clickable
+   - Click on the image on the left, confirm the carousel stops and reverst to the image clicked
+   - Click on the image on the right, confirm the carousel speeds up to the image clicked by the user
+   - Move mouse away from carousel, confirm that carousel starts moving again.
+   - Confrim each carousel image has the same width and height
+   - Confrim each image has a `alt` description
+   - Click on carousel image and confirm it directs a non logged in user to login page.
+   - Login to Scooter Circle, click on any carousel image and confirm the link directs to view product page of the product chosen to view.
+
+  - Above tests have been repeated on the tablet and mobile devices with a few exceptions:
+    - Confrim the carusel is touch compatble by sliding the fingers to the left and right
+    - On the mobile view confirm the carousel is viewed by one carousel item at the time.
+
+5. Call to Action 
+
+  - View all scooters call to action button appears at the bottom of the page.
+  - Hover over the link, confirm background colour is changing as expected.
+  - Click on the link, confirm it takes the not logged in user to the login page.
+  - Custom message is displayed to tell the user they must be logged in to view this page. 
+  - Login to Scooter Circle, click on the link, confirm it takes the user to the products page.
+  - Confirm the link appears in the middle of the page on all screen size devices. 
+  - All the steps above have been repeated on all screen sizes. 
+
+
+
+
 ## Bugs
 
 ### Add Review and Edit Review 
   - Whilst testing user stories, I realized the user is able to amend the product_model name, which would lead to review added not matching any products and only appearing on the user profile page. 
-  - I have fixed it by including `readonly="readonly"` attribut to the **input** element. 
+  - I have fixed it by including `readonly="readonly"` attribut to the **input** element.
+
+### Navbar
+  - Little but noticed during testing, Scooter Circle logo, when hovered, was displaying extra height. 
+  - Fix: remove hight property in css
+
 ##### back to [content](#table-of-content)
