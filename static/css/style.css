@@ -364,6 +364,18 @@ https://css-tricks.com/perfect-full-page-background-image/*/
    padding-bottom: 0.5rem;
 }
 
+.hover-effect {
+       width: 100px; 
+       height: 20px;
+       background-color: #383843;
+       position: relative;
+       top: -30px;
+       right: 40px;
+       padding: 4px;
+       border-radius: 5px;
+       color: #fafafa
+}
+
 .delete-admin {
    width: 10rem;
    padding-right: 0;
