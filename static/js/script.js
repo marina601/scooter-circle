@@ -3,7 +3,7 @@
 
 //Preloader, once the document loads fade out the preloader 
 $(window).on('load', function () {
-  $(".preloader").delay(500).fadeOut('slow');
+  $(".preloader").delay(1000).fadeOut('slow');
 });
 
 $(document).ready(function () {
