@@ -157,7 +157,6 @@ Code Taken from https://techsini.com/how-to-add-css-preloader-to-your-website-tu
 
 .brand-logo:hover {
    background-color: #718d9a;
-   height: 6.3rem;
 }
 
 .sidenav {
@@ -648,6 +647,7 @@ https://css-tricks.com/perfect-full-page-background-image/*/
    .logo {
       letter-spacing: 0px;
       font-size: 2.3rem;
+      margin: 20px auto 7px auto;
    }
 
    .scooter-img {
