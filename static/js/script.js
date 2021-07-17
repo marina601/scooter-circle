@@ -8,18 +8,18 @@ $(window).on('load', function () {
 
 $(document).ready(function () {
   /** Initializing Materialize components
-  *   Initilize sidenav
-  *   Open the sidenav to the right
-  */
- 
+   *   Initilize sidenav
+   *   Open the sidenav to the right
+   */
+
   $('.sidenav').sidenav({
     edge: 'right'
   });
 
   /** Initializing carousel
-  * Set an Interval functions
-  * which shows next item every 2 sec
-  */
+   * Set an Interval functions
+   * which shows next item every 2 sec
+   */
   $('.carousel').carousel();
   setInterval(function () {
     $('.carousel').carousel('next');
@@ -77,4 +77,37 @@ $(document).ready(function () {
       }
     });
   }
+  /**
+   * Function which for Products.html
+   * on hover of the icon
+   * Appends a new <span> element to HTML
+   * Custom message for each icon is displayed
+   * To tell the user what the icon represents
+   * Then fade out method is used
+   * to remove the last <span> element fast 
+   */
+  $(".speed").hover(
+    function () {
+      $(this).append($("<span class='hover-effect disp-top'>max speed</span>"));
+    },
+    function () {
+      $(this).find("span").last().toggle();
+    }
+  );
+  $(".battery").hover(
+    function () {
+      $(this).append($("<span class='hover-effect disp-bottom'>charging time</span>"));
+    },
+    function () {
+      $(this).find("span").last().toggle();
+    }
+  );
+  $(".range").hover(
+    function () {
+      $(this).append($("<span class='hover-effect disp-bottom'>max range</span>"));
+    },
+    function () {
+      $(this).find("span").last().remove();
+    }
+  );
 });
