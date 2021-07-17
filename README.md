@@ -593,6 +593,24 @@ Based on the user stories and expectations, the following features have been imp
     - When pressing the **Delete** button, a modal pops us and asking "admin" to confirm their decision. The functionality works in the same way as "Delete Review" button mentioned above.
     - When pressing the **Edit** button, the "admin" user gets redirected to the *edit_product* page. 
 
+#### Hover effect of the catergory icons
+   - This feature has been addeded at testing process of the project. I have been suggested to add this feature to enhance the user experience by one of my collegue @Code Insitute *Shane O'Sullivan*. 
+   - The category icons appear next to each category in the products cards
+   - Using jQuery, I have used **hover** method to let the user, if in doubt, know what the icon represents
+     - `$(".battery").hover(
+    function () {
+      $(this).append($("<span class='hover-effect disp-bottom'>charging time</span>"));
+    }`
+  - Therefore when the icon is hovered or touched on mobile devices, span element gets appended and description is shown to the user
+  - The icons appear in two collums, the icon at the top will have an icon description showing at the top.
+  - The icons at the bottom will have the icon description showing at the bottom.
+  - When the user moves on to the different icon or leves the card, the description will be removed.
+   - `function () {
+      $(this).find("span").last().toggle();
+    }`
+  - When the description is shown, the background colour is #383843, keeping the same style as **tooltip** feature.
+  
+
 
 ##### back to [content](#table-of-content)
 
