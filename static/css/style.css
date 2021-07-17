@@ -369,11 +369,19 @@ https://css-tricks.com/perfect-full-page-background-image/*/
        height: 20px;
        background-color: #383843;
        position: relative;
-       top: -35px;
-       right: 20px;
        padding: 4px;
        border-radius: 5px;
        color: #fafafa
+}
+
+.disp-bottom {
+   right: 25px;
+   bottom: -60px;
+}
+
+.disp-top {
+   top: -30px;
+   right: 35px;
 }
 
 .delete-admin {
