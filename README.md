@@ -982,7 +982,7 @@ API documentation and modified to fit the site purpose.
 
 - I would like to thank my mentor *Medale Oluwafemi* for helping to refactor my code in **Python** to make it easier to read and execute, also for his support and guidance.
 
-- Slack community @Code Institute for reviewing my project and helping me throughout the development.
+- Slack community @Code Institute for reviewing my project and helping me throughout the development, especially *Shane O'Sullivan*, who has suggested extra features to improve UX of the project.
 
 - Tutor support at @Code Institute, for their guidance and assistance during my project development.
 
