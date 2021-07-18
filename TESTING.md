@@ -46,9 +46,9 @@
    - Type attribute has been removed from all texteria elements. 
    - Also `<a> type=submit` has been removed.
 
-   ### Profile Page
+   - Profile Page
 
-   ### View Product
+   - View Product
 
    #### All other pages have passed without errors.
 
@@ -465,6 +465,75 @@
     - Confirm only delete button is available for admin user to delete other user reviews if found innapropriate.
 ![admin-view](wireframes/reviews-admin.png)
 
+##### back to [content](#table-of-content)
+
+### Edit Review
+
+- From Profile page, click edit button in the review card, confirm it takes the user to edit_review.html
+- Hover over Submit and Cancel button, confirm the background colour changes as expected.
+- Confrim the correct text is displayed.
+- Delete all the text from the texterea element and presse submit button, message displayed to tell the user the field must containg text.
+![edit-review-tablet](wireframes/edit-review-tablet.png)
+- Try to delete the scooter model, confirm it is not possible, as input field contains an attribute *read only*
+- Edit the review and press submit, confirm the user is being redirected back to their profile page where they are able to view their edited review.
+- Flash message is displayed confirming to the user "Your Review Has Been Succsefully Updated"
+![edit-reviw-mobile](wireframes/edit-review-mobile.png)
+- Press cancel button in the edit_review page, confirm the user is being redirected to the profile page, no changes has been made to the review and the database.
+
+##### back to [content](#table-of-content)
+
+### Products Page
+
+- As a not logged in user, try to type products page by editing the url, confirm the user is being redirected to the login page with a message telling the user they must be logged in to view this page.
+- Login into Scooter Circle and click the products link in the navbar, confirm it takes the user to the correct page.
+- Search and filter options are conmited in the same form element.
+
+- Search bar: 
+  - Confirm the search input field  contains search icon and lable, telling the user what they are able to search for.
+  - Press Search button with empty search bar, confirm all the products are still displayed on the page.
+  - Type any words which scotter model or brand may contain, confirm the correct results are returned. 
+  - Confirm all the products are displayed containing the search cretiria.
+  - Try to search for something which does not match scooter model or brand, confirm no products are displayed and message displayed to the user telling them their search cretirea was not met.
+  - Press Reset button, confirm all scooters in the database are displayed
+
+- Filters: 
+  - Filters are displayed below search bar, however search and clear button still work for filters and search bar.
+  - At this moment in time the user is not able to combine the search and filter functionality, therefore the user may either search or filter products. 
+  - The user may filter products by 4 different categories (Range, Chargin Time, Speed, Price), these option are displayed side by side on the large screen view. On the mobile and tablet the filter options are displayed by 2 in the row.
+  - The user may choose to filter products by "Range"- drop down option is available "Low" or "High", confirm when the user picks "low" option all the product returned displaying acseding range value.
+  - If the user presses "high" option, all the products are returned displaying disending reange value.
+  - Repeat above steps for all filter options on mobile and tablet screen views.
+  - Press Reset button, confirm the filters have been cleared and all scooters in the database are displayed on the page.
+
+- Product Card
+  - Each scooter are displayed in the card format
+  - Confirm all cards have fixed height to give the user an equal view of the page
+  - Large screen view - 3 cards in the row
+  - Tablet view - 2 cards in the row
+  - Mobile view - 1 card in each row
+  - Hover over each product card and confirm each card stands out `class = "hoverable"` from **Materialize** library.
+  - Each card contains a scooter image, product_model name, 4 main product categories (the same as filters), total number of reviews each product contain and a link to scooter's full details.
+  - Confirm the image is loading without delays
+  - Hover each image in the dev tools to confirm the *alt* info is present
+  - Hover over scooter category icons and confirm each icon contains description, when the user moves the mouse away the description desapears.
+  - The only icon which does not have a description is **£** which is self explanatory.
+  - The price icon contain a tool tip feature, which tells the user the price may vary
+  - Each card contains the total number of product reviews (every time the user adds a review the total number increases by 1, everytime the user deletes the review the total number of reviews decreases by 1.)
+  - If the product does not have reviews yet, "0 user reviews" is displayed.
+  - Hover over "View Full Details" link and confirm the background colour changes as expected, also the link takes the user to the correct page, showing the full details of the product chosen by the user.
+
+  - View for Admin user
+    - Login with admin user details
+    - Product card displays 2 button at the bottom of each card to **Delete** or **Edit** product.
+    - Hover over the buttons to confirm the background colour changes as expected.
+    - Press the delete button, confirm modal appears to ask the user to confirm their desicion.
+    - The modal works exactly in the same way as delete review in the profile page.
+    - Feedback is presented to the Admin user when the product is successfully deleted
+    - Press Edit button, confirm the link takes the user to the edit_product page and all the correct information is displayed.
+
+
+##### back to [content](#table-of-content)
+
 
 ## Bugs
 
@@ -479,5 +548,11 @@
 ### Home Page
   - During manual testing noticed that call to action button at the bottom of the page was not big enough and the text overlayed the background colour of the button, especially on the iPhone.
   - Fix: removed extra classes from the link and re-used the link style from the *Contact Page*, which solved the issue
+
+### Filter functionality
+  - I came across an issue, when sorting price in filter function. All the filters were working except the price, which was not returning the values in order.
+  - Fixed the issue by changing the data type the database was reasiving, originally it was a string, however I changed it to intigure, which solved the problem.
+  - I have also ensured when the new product is created the data recieved by the database is intiger by wrapping the value from the input field.
+    - `"product_price": int(request.form.get("product_price"))`
 
 ##### back to [content](#table-of-content)
