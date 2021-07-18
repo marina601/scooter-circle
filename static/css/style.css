@@ -7,6 +7,7 @@ html {
    min-height: 100vh;
    scroll-behavior: smooth;
    background-color: #dcdfe5;
+   overflow-x: hidden;
 }
 
 body,
@@ -387,6 +388,7 @@ https://css-tricks.com/perfect-full-page-background-image/*/
 .delete-admin {
    width: 10rem;
    padding-right: 0;
+   padding-left: 0px;
 }
 
 .filter-panel {
