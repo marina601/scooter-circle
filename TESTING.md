@@ -496,6 +496,8 @@
   - Try to search for something which does not match scooter model or brand, confirm no products are displayed and message displayed to the user telling them their search cretirea was not met.
   - Press Reset button, confirm all scooters in the database are displayed
 
+![no-results](wireframes/products-no-results.jpg)
+
 - Filters: 
   - Filters are displayed below search bar, however search and clear button still work for filters and search bar.
   - At this moment in time the user is not able to combine the search and filter functionality, therefore the user may either search or filter products. 
@@ -504,6 +506,8 @@
   - If the user presses "high" option, all the products are returned displaying disending reange value.
   - Repeat above steps for all filter options on mobile and tablet screen views.
   - Press Reset button, confirm the filters have been cleared and all scooters in the database are displayed on the page.
+
+![tablet-view](wireframes/products-tablet-view.jpg) | ![mobile-view](wireframes/products-mobile-view.jpg)
 
 - Product Card
   - Each scooter are displayed in the card format
@@ -516,11 +520,15 @@
   - Confirm the image is loading without delays
   - Hover each image in the dev tools to confirm the *alt* info is present
   - Hover over scooter category icons and confirm each icon contains description, when the user moves the mouse away the description desapears.
+  - The icon which appears on the first row, displays the description at the top of the icon
+  - The icons which appear on the second row, display description at the bottom of the icon
   - The only icon which does not have a description is **£** which is self explanatory.
   - The price icon contain a tool tip feature, which tells the user the price may vary
   - Each card contains the total number of product reviews (every time the user adds a review the total number increases by 1, everytime the user deletes the review the total number of reviews decreases by 1.)
   - If the product does not have reviews yet, "0 user reviews" is displayed.
   - Hover over "View Full Details" link and confirm the background colour changes as expected, also the link takes the user to the correct page, showing the full details of the product chosen by the user.
+
+  ![category-description-up](wireframes/products-category-hover-up.png) | ![category-description-down](wireframes/products-hover-down.png)  | ![tooltip](wireframes/products-tooltip.png)
 
   - View for Admin user
     - Login with admin user details
@@ -530,6 +538,8 @@
     - The modal works exactly in the same way as delete review in the profile page.
     - Feedback is presented to the Admin user when the product is successfully deleted
     - Press Edit button, confirm the link takes the user to the edit_product page and all the correct information is displayed.
+  
+  ![admin-view](wireframes/products-admin-view.png)
 
 
 ##### back to [content](#table-of-content)
