@@ -646,6 +646,39 @@
 - All custom validations have are identical to add product page, manual validation has been performed in the same way as add product page.
 - Hover over the 2 buttons in the end of the form, confirm the background colour changes as expected.
 - Press Cancel button, the user is being redirected back to the products page, no changes are made in the database.
+- Repeated the following steps for tablet and mobile view. 
+
+##### back to [content](#table-of-content)
+
+### Contact Page
+
+- Click on the link in the footer "Contact" which leads the user to the contact page
+- The user is presented with a simple form to fill out 
+- Click and try to submit an empty form, a custom message appears which asks the user to enter their name
+- Enter the name, but not an email and try to submit the form again, a message appears asking the user to enter thier email address
+- Enter name, email but not message and try to submit the form, message appears telling the user they must enter at least 10 characters.
+- Confirm the input field changes the colour to green on valid entry and to red on invalid entry
+- Complete all the required input fields and submit the form, submit button changed value to "Sending..." and alert appears to tell the user the message has been sent.
+- The form is cleared and submit button is disabled, with the value "Sent"
+- Automated email is sent to the user to tell them the message has been recieved and somebody will be in touch soon.
+- Automated email is sent to the site owner telling them they recieved a new message with username, email and enquire.
+- Now the user has an option to press the button below "Go back to home page", which as expected takes user to the home page.
+- Repeated the following steps for tablet and mobile view. 
+- The result was satisfactory across the different size devices and browsers.
+
+![contact-page-tablet-view](wireframes/contact-tablet-view.png) | ![conatact-page-mobile](wireframes/contact-mobile-view.png)
+
+##### back to [content](#table-of-content)
+
+### 404.html Page
+
+- Starting at the desktop view, typed some random characters after the URL and custom 404 page is displayed.
+- Hover over the button which leads to the home page and the color has changed. 
+- Clicked on the button and the link has diverted the user to the home page. 
+- Repeated the following steps for tablet and mobile view. 
+- The result was satisfactory across the different size devices and browsers. 
+
+##### back to [content](#table-of-content)
 
 ## Bugs
 
