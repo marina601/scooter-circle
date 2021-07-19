@@ -521,13 +521,10 @@ fieldset {
    width: auto !important;
 }
 
-.product-review-by-name {
-   min-height: 25rem !important;
-}
 
 .user-review {
    background-color: #889faa;
-   min-height: 38rem;
+   min-height: 25rem;
    max-height: fit-content;
    margin: 2rem 0.5rem;
 }
@@ -725,7 +722,7 @@ https://css-tricks.com/perfect-full-page-background-image/*/
    }
 
    .user-review {
-      min-height: 34rem;
+      min-height: 30rem;
       max-height: fit-content;
    }
 }
