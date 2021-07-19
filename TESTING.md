@@ -601,6 +601,16 @@
   
 ##### back to [content](#table-of-content)
 
+### Add Product 
+  - This page is available for Admin user only, which enables an Admin user to add products to the database using the site
+  - Try to amend the url and add add_product to the end, confirm the user is being redirected to the login page and feeback is provided via flash message, which tells the user they do not have access to this page.
+
+  - Login with Admin login details
+  - Using the navbar, navigate to Add Product page
+  - A form is presented to the user with required input fields which need to be filled in 
+  - Each input field contains an icon and a label, to guide the user what is required
+  - Try to submit an empty form, an alert message appears as expected to let the user know what information is missing
+  - 
 
 ## Bugs
 
