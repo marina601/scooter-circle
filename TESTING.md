@@ -678,6 +678,26 @@
 - Repeated the following steps for tablet and mobile view. 
 - The result was satisfactory across the different size devices and browsers. 
 
+### 500.html Page
+
+- Custom server error page has been designed to provide feedback to the user
+- The page is identical to 404.html and also provides the link for the user to return to home page
+- To test this page I had to take the following steps
+  1. inside the app.py file `from Flask import abort`
+  2. add abort(500) before a return or redirect in any route
+    - `@app.route("/index")
+       def index():
+       """
+      Find Products from Mongo db collection
+      """
+      products = mongo.db.products.find()
+      abort(500)
+      return render_template("index.html", products=products)`
+  
+  - I have used the above code to test my custom 500.html, then removed abort from import in Flask and abort(500) within the route
+
+![500.html](wireframes/500.html.png)
+
 ##### back to [content](#table-of-content)
 
 ## Bugs
