@@ -221,8 +221,11 @@ def view_product(product_id):
         flash("You must be logged in to view this page!")
         return redirect(url_for("login"))
 
+    # Page Title
+    title = 'View Product'
+
     return render_template("view_product.html",
-                           product=product, reviews=reviews)
+                           product=product, reviews=reviews, title=title)
 
 
 @app.route("/add_review", methods=["GET", "POST"])
