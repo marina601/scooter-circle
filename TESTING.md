@@ -635,6 +635,18 @@
 
 ![add-product-tablet](wireframes/add-product-tablet-view.png) | ![add-product-mobile](wireframes/add-product-mobile.png)
 
+##### back to [content](#table-of-content)
+
+### Edit Product 
+
+- This page is only for Admin user, who is able to esily edit product using the website.
+- Login with Admin details, from the products page click Edit button in any product card, confirm the correct information is displayed for selected product.
+- Try to delete any input field and submit the form, the user is being redirected to view product details page for the selected product with original value still in place, no changes have been made in the database
+- Try to amend the any value and submit the form, by pressing Edit button, confirm the user is being redirected to the products page as expected with feedback displayed to the user.
+- All custom validations have are identical to add product page, manual validation has been performed in the same way as add product page.
+- Hover over the 2 buttons in the end of the form, confirm the background colour changes as expected.
+- Press Cancel button, the user is being redirected back to the products page, no changes are made in the database.
+
 ## Bugs
 
 ### Add Review and Edit Review 
@@ -655,7 +667,7 @@
   - I have also ensured when the new product is created the data recieved by the database is intiger by wrapping the value from the input field.
     - `"product_price": int(request.form.get("product_price"))`
 
-### Add Product Form Validation 
+### Add Product  and Edit Product Form Validation 
   - When testing and validating user input the custom validation was not showing up as expected.
   - Fixed: using an alert: 
     - `oninvalid="alert('Please enter a scooter range using numerical value only!')"`
