@@ -351,7 +351,7 @@ def edit_product(product_id):
         edit_scooter = {
             "product_model": request.form.get("product_model"),
             "product_brand": request.form.get("product_brand"),
-            "product_price": request.form.get("product_price"),
+            "product_price": int(request.form.get("product_price")),
             "product_max_range": request.form.get("product_max_range"),
             "product_max_speed": request.form.get("product_max_speed"),
             "product_motor_power": request.form.get("product_motor_power"),
