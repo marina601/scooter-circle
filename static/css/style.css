@@ -637,12 +637,14 @@ https://css-tricks.com/perfect-full-page-background-image/*/
 
 .error {
    background: url("../images/404-page.jpg") no-repeat center center fixed;
-   height: 90vh;
+   background-size: cover;
+   height: 80rem;
 }
 
 .error-message {
    background-color: rgba(136, 159, 170, 0.8);
    margin-top: 5rem;
+   margin-bottom: 5rem;
    padding-bottom: 1rem !important;
    box-shadow: 15px 5px 8px rgba(0, 0, 0, 0.7);
 }
@@ -699,16 +701,12 @@ https://css-tricks.com/perfect-full-page-background-image/*/
       width: 90%;
    }
 
-   .error {
-      min-height: 120rem;
-   }
-
-   .error-message h2 {
+   .error-message h1 {
       font-size: 2.5rem;
    }
 
-   .error-message h3 {
-      font-size: 2.2rem;
+   .error-message h2 {
+      font-size: 2rem;
    }
 
    .testimony-div {
