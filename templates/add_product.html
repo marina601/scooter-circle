@@ -72,7 +72,7 @@
           <div class="input-field col s12">
             <i class="fas fa-truck-loading prefix" aria-hidden="true"></i>
             <input id="product_load" name="product_load" class="validate" type="number" step="any"
-              oninvalid="alert('Please enter a scooter maximum load capacity in kn using numeric value!')" required >
+              oninvalid="alert('Please enter a scooter maximum load capacity in kg using numeric value!')" required >
             <label for="product_load">Scooter Max Load in kg</label>
           </div>
         </div>
@@ -141,8 +141,8 @@
           <div class="input-field col s12">
             <i class="fas fa-file-alt prefix" aria-hidden="true"></i>
             <textarea id="product_description" class="materialize-textarea validate"
-              name="product_description" minlength="5" maxlength="500"
-              oninvalid="alert('Please enter a scooter description')"></textarea>
+              name="product_description" minlength="50" maxlength="500"
+              oninvalid="alert('Please enter a scooter description which is at least 50 characters long')"></textarea>
             <label for="product_description">Scooter Description</label>
           </div>
         </div>
