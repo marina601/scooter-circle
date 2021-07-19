@@ -610,7 +610,30 @@
   - A form is presented to the user with required input fields which need to be filled in 
   - Each input field contains an icon and a label, to guide the user what is required
   - Try to submit an empty form, an alert message appears as expected to let the user know what information is missing
-  - 
+  - Type text in to any of the following input fields:
+    - Price
+    - Range
+    - Speed
+    - Motor
+    - Load
+    - Wheel Size 
+    - Battery Charge
+    - Scooter weight
+  - Confrim it is not possible to type text on any of the above input fields, as type attribut is set to number
+  - Type something into Affiliate link or Scooter image field, confirm the validation field turns red and when trying to submit the form an alert shows telling the user is expecting an URL.
+  - In the scooter descripiton field type 4 letters, confirm the alert shows telling the user to enter at least 50 characters.
+  - Hover over submit and clear button to confirm the background colour changes as expected.
+  - Press Clear button, confirm the form has been cleared
+  - On valid entry, confirm the input field changes colour to green and on invalid entry confirm the input field changes colour to red.
+  - Once all the fields have been correctly field in, press Submit button, confirm the user is being redirected to products page, where they are able to view their new product entry.
+  - Feedback is given to the user telling them the product has been added to the database. 
+
+![new-product-added](wireframes/product-added.png)
+
+  - User reviews for new product entry automatically set to 0.
+  - Now the Admin user is able to edit or delete this product if needed.
+
+![add-product-tablet](wireframes/add-product-tablet-view.png) | ![add-product-mobile](wireframes/add-product-mobile.png)
 
 ## Bugs
 
@@ -632,4 +655,8 @@
   - I have also ensured when the new product is created the data recieved by the database is intiger by wrapping the value from the input field.
     - `"product_price": int(request.form.get("product_price"))`
 
+### Add Product Form Validation 
+  - When testing and validating user input the custom validation was not showing up as expected.
+  - Fixed: using an alert: 
+    - `oninvalid="alert('Please enter a scooter range using numerical value only!')"`
 ##### back to [content](#table-of-content)
