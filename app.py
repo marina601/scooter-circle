@@ -345,6 +345,8 @@ def edit_product(product_id):
     Update product based on product id
     """
 
+    product = mongo.db.products.find_one({"_id": ObjectId(product_id)})
+
     if request.method == "POST":
         edit_scooter = {
             "product_model": request.form.get("product_model"),
@@ -367,9 +369,8 @@ def edit_product(product_id):
             "product_reviews": int(0)
         }
         mongo.db.products.update({"_id": ObjectId(product_id)}, edit_scooter)
-        flash("Product Has Been Succsefully Edited")
-
-    product = mongo.db.products.find_one({"_id": ObjectId(product_id)})
+        flash("Product Has Been Succesfully Edited")
+        return redirect(url_for('products'))
 
     # Page Title
     title = 'Edit-Product'
