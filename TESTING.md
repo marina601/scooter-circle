@@ -541,7 +541,64 @@
   
   ![admin-view](wireframes/products-admin-view.png)
 
+### View Product
 
+- The user may access this information in 2 ways: 
+  1. As logged in user, coming from Home Page, click on any image in the carousel and confirm it takes the user to selected scooter view product page.
+  2. From Products Page, click on the link "View Full Details" link, in any of the products cards and confirm the correct information is displayed for the product chosen.
+
+- View Product page contains scooter model name as a title 
+- The image is positioned to the left of the page of the selected scooter
+- Inspect the image to confirm the alt information is preset and displayed correctly
+- Product Categories are displayed on the right hand side of the page, beside the scooter image.
+- Each category has an icon and description beside it, except the "£" icon as it is self explanatory
+- The price icon contain a tooltip, the same as product-card.
+- Hover over the tooltip, confirm the background colour changes as expected and the correct information is displayed.
+- Description of the product is displayed after the image and categories.
+- Hover over "Buy this product" link and confirm the background colour changes as expected.
+- Click on the link and confirm it opens in the new tab, linked to the correct product
+
+![view-product-tablet](wireframes/view-product-tablet.png)
+
+- Mobile view: 
+  - On the small screen devices, the image takes a full width row and categories information is displayed below the image.
+
+![view-product-mobile](wireframes/view-product-mobile.png)
+
+- Add Product Review
+  - A form with a title of "Review This Product" promps the user to add a review
+  - A form is populated with scooter model name and empty texterea field for user to add their own reveiw
+  - Try to delete product model name and confirm it is not possible, as the input field is set to "readonly"
+  - Try to sumbit an empty form and confirm an alert appears to tell the user to fill in the empty field.
+  - Try to type only one character and submit the form, confirm a custom feedback is given to the user, which tells the user the requirements.
+  - Type some text in the form and press Clear button confirm the form is cleared.
+  - Add a product review and press submit, confirm it redirects the user to their profile page with a flash message providing the feedback to the user.
+  - User is able to see the new review which they have just added in their profile page.
+  - Confirm the total number of reviews have been updated in the products card and database.
+
+![add-review-mobile](wireframes/add-review-mobile.png) | ![add-review-tablet](wireframes/add-review-tablet.png)
+
+  - User Reviews
+    - If product contains user reviews:
+      - Keeping with the style of the site, the reviews are displayed using card component with the same layout as product-cards across screen devices.
+      - Each card contains product model name as title
+      - User review 
+      - Created by: username 
+      - Each review card has fixed height
+
+![user-reviews](wireframes/user-reviews-mobile.png)
+    
+    - No reviews available for this product:
+      - A message displayed to the user telling them "No Reviews Added Yet!"
+      - A call to action asking the user to add their own review with an anchor link to the add review form.
+      - Click on the anchor link to confirm the add review form is displayed
+
+![no-reviews](wireframes/no-review.png)
+
+  - Call to action link at the bottom of the page promps the user to go back to products page.
+  - Click on the link and confirm the link takes the user to the correct page.
+  - Above steps have been repeated across all screen devices
+  
 ##### back to [content](#table-of-content)
 
 
