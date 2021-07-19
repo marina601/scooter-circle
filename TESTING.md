@@ -700,6 +700,24 @@
 
 ##### back to [content](#table-of-content)
 
+## Google Lighthouse Testing
+
+- To get an accurate report all the pages have been viewed using an incognito window.
+
+1. Home Page
+2. Registration Page 
+3. Login Page
+4. Profile Page
+5. Edit Review
+6. Products Page
+7. View Product
+8. Add Product
+9. Edit Product
+10. Contact Page
+11. 404.html
+
+##### back to [content](#table-of-content)
+
 ## Bugs
 
 ### Add Review and Edit Review 
