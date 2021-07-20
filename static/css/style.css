@@ -240,6 +240,11 @@ https://css-tricks.com/perfect-full-page-background-image/*/
    padding-bottom: 1rem;
 }
 
+.carousel-item img {
+   width: 380px !important;
+   height: 380px;
+}
+
 /***************Registration Form*****************/
 
 .submit-btn {
