@@ -16,14 +16,14 @@
             <!--Product Model Name-->
             <div class="row">
               <div class="input-field col s12">
-                <label for="product_model"></label>
+                <label for="product_model">Product Model</label>
                 <input id="product_model" type="text" name="product_model" value="{{ review.product_model }}" readonly="readonly">
               </div>
             </div>
             <!--Original User Review-->
             <div class="row">
               <div class="input-field col s12">
-                <label for="product_review"></label>
+                <label for="product_review">Edit your review</label>
                 <textarea id="product_review" name="product_review" minlength="10" maxlength="200"
                   class="materialize-textarea validate" required>{{ review.product_review }}</textarea>
               </div>
