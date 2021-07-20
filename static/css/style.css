@@ -355,6 +355,12 @@ https://css-tricks.com/perfect-full-page-background-image/*/
 }
 
 /*****************Products*************************/
+.p-filter {
+   font-size: 1.63rem;
+   font-weight: 600;
+   font-family: 'Nunito Sans', sans-serif;
+   margin: 0.7rem;
+}
 
 .card-title {
    position: relative !important;
