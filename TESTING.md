@@ -714,7 +714,7 @@
 
 2. Registration Page 
 
-![lighthouse-report](wireframes/registration-page-lighthouse-report.png)
+![lighthouse-report](wireframes/register-lighthouse-report.png)
 - Added link to google fonts in the head of the document to increase the speed
 
 3. Login Page
@@ -751,14 +751,28 @@
 
 9. Edit Product
 
-![edit-product-lighthouse-report]()
-- I have moved google font to increase performance to the head element and removed import from style.css
+![edit-product-lighthouse-report](wireframes/edit-review-lighthouse-report.png)
+- I have moved google font to the head element and removed import from style.css to improve performance
 
 10. Contact Page
 
 ![contact-page-lighthouse-report](wireframes/contact-lighthouse-report.png)
 
 - No issues needed fixing on this page.
+
+##### back to [content](#table-of-content)
+
+### Cross Browser Compatibility Table 
+
+| Pages    | <strong>Google Chrome</strong>   |       <strong>Edge</strong>     |     <strong>Safari</strong>     |
+|----------|:--------------------------------:|--------------------------------:--------------------------------:|
+| Home     |&check; | &check;| &check;| 
+| Recipe   |&check; | &check;| &check;|    
+| About    |&check; | &check;| &check;|
+| Contact  |&check; | &check;| &check;|
+| 404.html |&check; | &check;| &check;|
+
+- Browser compatibility test has been successful and all browsers tested displayed the information correctly.
 
 ##### back to [content](#table-of-content)
 
