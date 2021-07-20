@@ -705,16 +705,60 @@
 - To get an accurate report all the pages have been viewed using an incognito window.
 
 1. Home Page
+
+- Initial issues with performance score of the site, following the google lighthouse report and advice I have added `rel="preconnect"` to externam cdns. Informaiton for this found on [web dev](https://web.dev/uses-rel-preconnect/?utm_source=lighthouse&utm_medium=devtools)
+- Also added `loading="lazy"` to carousel images to imporve performance
+- I have noticed the preloader added to the side does slow down the speed of the site, however I have decided not to remove it. 
+- Also added specific width and height to carousel images.
+
+
 2. Registration Page 
+
+![lighthouse-report](wireframes/registration-page-lighthouse-report.png)
+- Added link to google fonts in the head of the document to increase the speed
+
 3. Login Page
+
+![login-page-lighthouse](wireframes/login-page-lighthouse-report.png)
+
 4. Profile Page
+
+![profile-page-report](wireframes/profile-page-lighthouse.png)
+
 5. Edit Review
+
+- Heading elements are not in a sequentially-descending order, changed the mobile logo from h3 to h2 element
+
 6. Products Page
+
+![products-lighthouse-report](wireframes/products-lighthouse-report.png)
+
+- Heading elements are not in a sequentially-descending order, changed the filter heading to a paragraph and product model name in the card to <h3>.
+- Also google has failed input for drop down, materialize renders select elements into a div and adding an input field, which does not contain id, therefore I was not able to add a label for the input field.
+
 7. View Product
+
+![view-product-lighthouse-report](wireframes/view-product-lighthouse-report.png)
+
+- Form elements do not have labels, the error was caused due to an empty label element. Fixed it by adding text to the label between closing and opeting
+
 8. Add Product
+
+![add-product-lighthouse-report](wireframes/add-product-lighthouse-report.png)
+
+- Select element shows as a failing element due to Materialize class
+- Not enough contrast between background and foreground colours
+
 9. Edit Product
+
+![edit-product-lighthouse-report]()
+- I have moved google font to increase performance to the head element and removed import from style.css
+
 10. Contact Page
-11. 404.html
+
+![contact-page-lighthouse-report](wireframes/contact-lighthouse-report.png)
+
+- No issues needed fixing on this page.
 
 ##### back to [content](#table-of-content)
 
@@ -742,4 +786,5 @@
   - When testing and validating user input the custom validation was not showing up as expected.
   - Fixed: using an alert: 
     - `oninvalid="alert('Please enter a scooter range using numerical value only!')"`
+
 ##### back to [content](#table-of-content)
