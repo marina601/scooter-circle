@@ -8,8 +8,8 @@
   <meta name="description" content="electric scooters reviews">
   <meta name="keywords" content="electric scooters, e-scooters, reviews">
   <meta name="author" content="Marina Shalneva">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="preload stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" as="style">
+  <link rel="preload stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" as="style">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   {% block styles %}
   {% endblock %}
@@ -278,7 +278,7 @@
   <!--Script-->
   <script rel="preload" as="script" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script rel="preload" as="script" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script rel="preload" as="script" src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <script  src="{{ url_for('static', filename='js/script.js') }}"></script>
   {% block scripts %}
   {% endblock %}
 </body>
