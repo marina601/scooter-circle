@@ -160,6 +160,11 @@ Code Taken from https://techsini.com/how-to-add-css-preloader-to-your-website-tu
    background-color: #718d9a;
 }
 
+.brand-logo h2 {
+   font-size: 2.2rem;
+   color: #fafafa;
+}
+
 .sidenav {
    background-color: #889FAA;
 }
