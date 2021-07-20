@@ -28,11 +28,11 @@
             {% for product in products %}
                {% if session.user %}
                 <a class="carousel-item" href="{{ url_for('view_product', product_id=product._id) }}">
-                    <img src="{{ product.product_image }}" alt="{{ product.product_model }}">
+                    <img src="{{ product.product_image }}" loading="lazy" alt="{{ product.product_model }}">
                 </a>
                {% else %}
                <a class="carousel-item" href="{{ url_for('login')}}">
-                  <img src="{{ product.product_image }}" alt="{{ product.product_model }}">
+                  <img src="{{ product.product_image }}" loading="lazy" alt="{{ product.product_model }}">
                 </a>
                {% endif %}
             {% endfor %}
