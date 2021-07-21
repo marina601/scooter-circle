@@ -265,7 +265,6 @@ https://css-tricks.com/perfect-full-page-background-image/*/
 
 .validate {
    border-bottom: 1px solid #2fc669;
-   /*-webkit-box-shadow: 0 1px 0 0 #2fc669;*/
    box-shadow: 0 1px 0 0 #2fc669;
 }
 
@@ -447,7 +446,7 @@ https://css-tricks.com/perfect-full-page-background-image/*/
 }
 
 .view-product,
-.add_review,
+/*.add_review*/,
 .reviews {
    min-height: auto !important;
 }
@@ -522,10 +521,10 @@ fieldset {
    background-color: #383843;
 }
 
-.add_review {
+/*.add_review {
    padding-top: 3rem;
    margin-bottom: -0.1rem;
-}
+}*/
 
 .review-btn {
    margin: 2rem auto;
@@ -538,7 +537,7 @@ fieldset {
 
 .user-review {
    background-color: #889faa;
-   min-height: 25rem;
+   min-height: 30rem;
    max-height: fit-content;
    margin: 2rem 0.5rem;
 }
@@ -726,6 +725,11 @@ https://css-tricks.com/perfect-full-page-background-image/*/
    .testimony-div {
       margin-bottom: 20rem;
    }
+
+   .user-review {
+      min-height: 38rem;
+      max-height: fit-content;
+   }
 }
 
 @media screen and (max-width: 992px) {
@@ -734,7 +738,7 @@ https://css-tricks.com/perfect-full-page-background-image/*/
    }
 
    .user-review {
-      min-height: 30rem;
+      min-height: 34rem;
       max-height: fit-content;
    }
 }
