@@ -47,8 +47,14 @@
    - Also `<a> type=submit` has been removed.
 
    - Profile Page
+     - Missing closing `</div>` found and closed in the code
+     - Submit button had two `type` attributes, removed one
 
    - View Product
+     - Missing closing `</div>` found and closed
+     - Also closed the moved closing tag after the `{% endif %}` statement
+
+  - Final check has been completed for all pages, no errors or warnings have been found.
 
    #### All other pages have passed without errors.
 
