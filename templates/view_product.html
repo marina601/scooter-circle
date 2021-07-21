@@ -7,26 +7,31 @@
       <h2 class="text-center heading">{{ product.product_model }}</h2>
     </div>
   </div>
+  <!--Product Image-->
   <div class="row">
     <div class="col m6 s12">
       <img src="{{ product.product_image }}" class="scooter-img" alt="{{ product.product_model }}">
     </div>
     <div class="col l6 m4 offset-m2 s12 product-spec">
+      <!--Product Brand-->
       <p>
         <i class="fas fa-tag" aria-hidden="true"></i>
         <span class="product-categories">Brand: </span>
         {{ product.product_brand }}
       </p>
+      <!--Product Speed-->
       <p>
         <i class="fas fa-tachometer-alt" aria-hidden="true"></i>
         <span class="product-categories">Max Speed: </span>
         {{ product.product_max_speed }}mph
       </p>
+      <!--Product Charging Time-->
       <p>
         <i class="fas fa-charging-station" aria-hidden="true"></i>
         <span class="product-categories">Battery Charging Time: </span>
         {{ product.product_battery_charge }}hrs
       </p>
+      <!--Product Price-->
       <p>
         <i class="fas fa-pound-sign" aria-hidden="true"></i>
         <span class="sr-only">Price</span>
@@ -34,31 +39,37 @@
         {{ product.product_price }}
         <button class="btn tooltipped text-shadow" data-position="top" data-tooltip="Price may vary">!</button>
       </p>
+      <!--Product Range-->
       <p>
         <i class="fas fa-route" aria-hidden="true"></i>
         <span class="product-categories">Max Range: </span>
         {{ product.product_max_range }}miles
       </p>
+      <!--Product Motor Power-->
       <p>
         <i class="fas fa-power-off" aria-hidden="true"></i>
         <span class="product-categories">Motor Power: </span>
         {{ product.product_motor_power }}watts
       </p>
+      <!--Product Loading Capacity-->
       <p>
         <i class="fas fa-truck-loading" aria-hidden="true"></i>
         <span class="product-categories">Loading Capacity: </span>
         {{ product.product_load }}kg
       </p>
+      <!--Product Wheel Size-->
       <p>
         <i class="fas fa-dharmachakra" aria-hidden="true"></i>
         <span class="product-categories">Wheel Size: </span>
         {{ product.product_wheel_size }}cm
       </p>
+      <!--Product Water Resistant-->
       <p>
         <i class="fas fa-water" aria-hidden="true"></i>
         <span class="product-categories">Water Resistant: </span>
-       {{ product.product_water_resistant }}
+        {{ product.product_water_resistant }}
       </p>
+      <!--Product Weight-->
       <p>
         <i class="fas fa-weight-hanging" aria-hidden="true"></i>
         <span class="product-categories">Weight: </span>
@@ -66,8 +77,11 @@
       </p>
     </div>
   </div>
-  <div class="col s12 p-description">
-    <p>{{ product.product_description }}</p>
+  <!--Product Description-->
+  <div class="row">
+    <div class="col s12 p-description">
+      <p>{{ product.product_description }}</p>
+    </div>
   </div>
   <!--Affiliate Link for Product-->
   <div class="row">
@@ -76,9 +90,7 @@
         rel="noreferrer">Buy This Scooter</a>
     </div>
   </div>
-</section>
-<!--Add Review-->
-<section class="main-content add_review">
+  <!--Add Review-->
   <div class="row card-panel grey lighten-5 add-review-card">
     <form class="col m7 s12 add-review-form" method="POST" action="{{ url_for('add_review') }}">
       <fieldset>
@@ -86,7 +98,8 @@
         <div class="row">
           <div class="input-field col s12">
             <label for="product_model">Product Model</label>
-            <input id="product_model" type="text" name="product_model" value="{{ product.product_model }}" readonly="readonly">
+            <input id="product_model" type="text" name="product_model" value="{{ product.product_model }}"
+              readonly="readonly">
           </div>
           <div class="row">
             <div class="input-field col s12">
@@ -97,6 +110,7 @@
                 class="materialize-textarea validate" required></textarea>
             </div>
           </div>
+        </div>
       </fieldset>
       <!--Reset Button-->
       <div class="row card-action review-btn">
@@ -107,7 +121,7 @@
         </div>
         <div class="col s6">
           <!--Submit Button-->
-          <button type="submit" class="btn-large submit-btn text-shadow btn-submit submit-btn-contact" type="submit">
+          <button type="submit" class="btn-large submit-btn text-shadow btn-submit submit-btn-contact">
             Submit <i class="fas fa-sign-in-alt prefix"></i>
           </button>
         </div>
@@ -121,35 +135,36 @@
     <div class="col s12 text-center">
       <h3 class="heading">User Reviews</h3>
     </div>
-    <div class="row">
-      {% for review in reviews if review.product_model == product.product_model %}
-      <!--Product Review-->
-      <div class="col s12 m6 l4">
-        <div class="card user-review">
-          <div class="card-content white-text">
-            <h4 class="card-title">{{ review.product_model }}</h4>
-            <p>{{ review.product_review }}</p>
-            <span class="right review-by"><em>Review by: {{ review.created_by|capitalize }}</em></span>
-          </div>
+  </div>
+  <div class="row">
+    {% for review in reviews if review.product_model == product.product_model %}
+    <!--Product Review-->
+    <div class="col s12 m6 l4">
+      <div class="card user-review">
+        <div class="card-content white-text">
+          <h4 class="card-title">{{ review.product_model }}</h4>
+          <p>{{ review.product_review }}</p>
+          <span class="right review-by"><em>Review by: {{ review.created_by|capitalize }}</em></span>
         </div>
       </div>
-      {% else %}
-      <!--If no reviews-->
-      <div class="col s12">
-        <h3 class="text-center">No Reviews Added Yet!</h3>
-        <p class="text-center">If you have used this scooter, why not add your own review
-          <a href="#add_review" class="text-shadow btn-small affiliate-link">Here</a>
-        </p>
-      </div>
-      {% endfor %}
     </div>
-    <!--Back to products link-->
-    <div class="row">
-      <div class="col s12 center-align">
-        <a href="{{ url_for('products') }}" class="text-shadow btn-small btn affiliate-link back-link">Go Back to
-          Products</a>
-      </div>
+    {% else %}
+    <!--If no reviews-->
+    <div class="col s12">
+      <h3 class="text-center">No Reviews Added Yet!</h3>
+      <p class="text-center">If you have used this scooter, why not add your own review
+        <a href="#add_review" class="text-shadow btn-small affiliate-link">Here</a>
+      </p>
     </div>
+    {% endfor %}
+  </div>
+  <!--Back to products link-->
+  <div class="row">
+    <div class="col s12 center-align">
+      <a href="{{ url_for('products') }}" class="text-shadow btn-small btn affiliate-link back-link">Go Back to
+        Products</a>
+    </div>
+  </div>
 </section>
 
 
