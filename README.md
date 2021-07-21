@@ -848,6 +848,9 @@ for reviews on the *profile* and *view product* pages.
 18. [Extendclass](https://extendsclass.com/python-tester.html)
   - To check syntax errors in **Python** code.
 
+19. [HTML5 Closing Tag Checker](https://www.aliciaramirez.com/closing-tags-checker/)
+  - Used this tool to find missing tags
+
 
     
 ##### back to [content](#table-of-content)
