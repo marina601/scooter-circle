@@ -76,9 +76,9 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """
-    Login function checks if the method is POST
-    If user exists in the database
-    If password matches user input
+    Login function route
+    Check if user exists in the database
+    Check if password matches user input
     Redirects user to profile page
     Otherwise error message displayed
     """
@@ -105,6 +105,10 @@ def login():
             flash("You have entered incorrect Username and/or Password")
             return redirect(url_for('login'))
 
+    # if the user is already in session
+    if 'user' in session:
+        return redirect(url_for('profile', username=session['user']))
+ 
     # Page Title
     title = 'Login'
     return render_template("login.html", title=title)
@@ -147,7 +151,7 @@ def logout():
     # remove user from session cookies
     flash("You have been logged out")
     session.pop("user")
-    return redirect(url_for("login"))
+    return redirect(url_for("index"))
 
 
 @app.route("/products")
@@ -239,9 +243,6 @@ def add_review():
     Redirect the user to their profile page
     """
 
-    if 'user' not in session:
-        return redirect(url_for("login"))
-
     if request.method == "POST":
         review = {
             "product_model": request.form.get("product_model"),
@@ -269,25 +270,23 @@ def add_review():
 @app.route("/add_product", methods=["GET", "POST"])
 def add_product():
     """
-    Add product to the database by Admin user only
-    Checking if the user is in session
-    and if the username is "Admin"
-    Otherwise redirect to login page
+    Add product to the database route
+    If user is not logged in redirect to homepage
+    If user is not Admin redirect to login page
     """
+    if "user" not in session:
+        return redirect(url_for("index"))
 
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"].capitalize()
 
-    if 'user' not in session:
-        flash("You must be logged in with Admin account to access this page!")
-        return redirect(url_for("login"))
     if username != "Admin":
         flash("You do not have access to this page")
         return redirect(url_for("login"))
 
     """
     Adding product to the databae
-    Creating a dictionary to add to the database
+    Creating a dictionary to add to the DB
     Insert a dictionary to the database
     Redirect Admin user to the products.html
     """
@@ -331,12 +330,13 @@ def edit_product(product_id):
     and if the username is "Admin"
     Otherwise redirect to login page
     """
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"].capitalize()
-
     if 'user' not in session:
         flash("You must be logged in with Admin account to access this page!")
         return redirect(url_for("login"))
+
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"].capitalize()
+
     if username != "Admin":
         flash("You do not have access to this page")
         return redirect(url_for("login"))
@@ -467,4 +467,4 @@ def no_connection(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=False)
+            debug=True)
