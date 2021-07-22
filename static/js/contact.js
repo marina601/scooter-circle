@@ -22,8 +22,8 @@ var templateID = 'template_yz2jh7k';
 
 /**
  * Add event listener to the form element
- * on submit add event listener to prevent 
- * default submittion of the form
+ * on submit add an event listener to prevent 
+ * default submission of the form
  * button value changes once the button is pressed 
  */
 
@@ -34,11 +34,11 @@ window.onload = function () {
 
         /**
          * Submitting the form 
-         * Submit button value changed to 'Sent' once the form is send.
+         * Submit button value changed to 'Sent' once the form is sent.
          * time out function to disable the submit button once the form has been submitted 
          * Alert letting the user know the message has been sent
          * Then the form will be cleared and reset
-         * Incase of an error 
+         * In case of an error 
          * Submit button is disabled 
          * Alert shows letting the user know the message has not been sent 
          */
