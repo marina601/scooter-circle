@@ -114,8 +114,8 @@ def login():
 def profile(username):
     """
     Profile function checks if the user is in session
-    Then gets the username from the databese
-    If the ursername = Admin it will display all the reviews
+    Then gets the username from the database
+    If the username = Admin it will display all the reviews
     in the database
     If user is not logged in will redirect the user to login page
     """
@@ -154,9 +154,9 @@ def logout():
 def products():
     """
     Getting input field values from the select element
-    Search function checks allows users to search products
+    Search function allows users to search products
     by product_model or product_brand
-    If query is empty displays all products from the database
+    If a query is empty displays all products from the database
     """
 
     price = request.args.get("product_price")
@@ -171,7 +171,7 @@ def products():
         products = mongo.db.products.find()
 
     """
-    Sorting database by accessending or dissending order
+    Sorting database by ascending or descending order
     to allow filter function
     This code has been modified from
     https://stackoverflow.com/questions/65493525/sorting-in-flask-via-jinja-template-variable-issue-when-called
@@ -254,7 +254,7 @@ def add_review():
     Updating product amount of product reviews
     by incrementing the product_reviews amount by
     1 every time a new review is added
-    How to increment a value source has been found
+    How to increment a value, source has been found
     in MongoDB documentation
     (https://docs.mongodb.com/manual/reference/operator/update/inc/)
     """
@@ -417,7 +417,7 @@ def delete_review(review_id):
 def edit_review(review_id):
     """
     Edit review function checks if
-    the reques method = "POST"
+    the request method = "POST"
     creating a dictionary getting all the input values from
     the input field elements
     Update the user review based on review_id
@@ -467,4 +467,4 @@ def no_connection(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=False)
+            debug=True)
