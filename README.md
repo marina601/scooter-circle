@@ -5,7 +5,7 @@
 [View the deployed project here](https://scooter-circle.herokuapp.com/)
 
 I have created this site as part of my Milestone 3 project for Code Institute, 
-focusing on Fulls Stack Frameworks using Python, Flask and Mongo DB, whilst performing a complete CRUD operation.
+focusing on Backend Development using Python, Flask and Mongo DB, whilst performing a complete CRUD operation.
 
 This app is for young adults between the age of 25-34, who are focused on environmentally friendly, easy to use and cost-effective personal transportation.
 
@@ -851,6 +851,9 @@ for reviews on the *profile* and *view product* pages.
 19. [HTML5 Closing Tag Checker](https://www.aliciaramirez.com/closing-tags-checker/)
   - Used this tool to find missing tags
 
+20. [Lampada](https://app.lambdatest.com/console/realtime)
+  - Used this tool to help with cross browser compatability test 
+
 
     
 ##### back to [content](#table-of-content)
@@ -970,7 +973,14 @@ API documentation and modified to fit the site purpose.
   - To position the div I have used the tutorial from 
   - [Techsini](https://techsini.com/how-to-add-css-preloader-to-your-website-tutorial/)
   - The code has then been initialized in the *script.js* file
- 
+
+- Block title template has been used from [Jinja documentation](https://jinja.palletsprojects.com/en/3.0.x/templates/), also a fall back title has been added if the page does not have a specific title added in route.
+
+- [MongoDB documentation](https://docs.mongodb.com/manual/reference/operator/update/inc/) have been used to find out how to increment total number of reviews, when adding a new review. The same operator has been used to reduce the number of reviews, when the user is deleting a review.
+
+- Code for custom error handling pages has been sorced from [Flask documentation](https://flask.palletsprojects.com/en/1.(1.x/patterns/errorpages/)
+
+- Code to handle custom error message in HTML5 was sorced from [Stackoverflow](https://stackoverflow.com/questions/5272433/html5-form-required-attribute-set-custom-validation-message)
 ##### back to [content](#table-of-content)
 
 ### Media
