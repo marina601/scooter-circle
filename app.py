@@ -366,7 +366,7 @@ def edit_product(product_id):
                 request.form.get("product_affiliate_link"),
             "product_image": request.form.get("product_image"),
             "product_description": request.form.get("product_description"),
-            "product_reviews": int(0)
+            "product_reviews": product['product_reviews']
         }
         mongo.db.products.update({"_id": ObjectId(product_id)}, edit_scooter)
         flash("Product Has Been Succesfully Edited")
