@@ -122,7 +122,6 @@ def profile(username):
     # Page Title
     title = 'Profile'
 
-    # if does not work remove this line
     reviews = list(mongo.db.reviews.find())
 
     if 'user' in session:
@@ -255,6 +254,9 @@ def add_review():
     Updating product amount of product reviews
     by incrementing the product_reviews amount by
     1 every time a new review is added
+    How to increment a value source has been found
+    in MongoDB documentation
+    (https://docs.mongodb.com/manual/reference/operator/update/inc/)
     """
     mongo.db.products.update({"product_model": request.form.get
                              ("product_model")},
