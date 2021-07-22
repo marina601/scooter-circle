@@ -447,7 +447,7 @@ https://css-tricks.com/perfect-full-page-background-image/*/
 
 /*****************View Product*************************/
 .scooter-img {
-   width: 45rem;
+   width: 50rem;
    height: 45rem;
    padding: 1rem;
    margin: 1rem;
@@ -458,7 +458,7 @@ https://css-tricks.com/perfect-full-page-background-image/*/
 }
 
 .p-description {
-   padding: 0rem 2rem;
+   padding: 3rem !important;
    margin-bottom: 0rem;
 }
 
