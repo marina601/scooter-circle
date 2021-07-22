@@ -19,11 +19,7 @@ button {
    color: #0d0709;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
+h1, h2, h3, h4, h5,
 h6 {
    font-family: 'Nunito Sans', sans-serif;
    font-weight: 600;
@@ -446,7 +442,6 @@ https://css-tricks.com/perfect-full-page-background-image/*/
 }
 
 .view-product,
-/*.add_review*/,
 .reviews {
    min-height: auto !important;
 }
@@ -503,7 +498,6 @@ fieldset {
 
 .affiliate-link {
    background-color: #889faa;
-   width: 18rem !important;
    height: 4rem;
    margin: 2rem;
    padding-top: 0.5rem !important;
@@ -521,11 +515,6 @@ fieldset {
    background-color: #383843;
 }
 
-/*.add_review {
-   padding-top: 3rem;
-   margin-bottom: -0.1rem;
-}*/
-
 .review-btn {
    margin: 2rem auto;
 }
@@ -533,7 +522,6 @@ fieldset {
 .back-link {
    width: auto !important;
 }
-
 
 .user-review {
    background-color: #889faa;
@@ -633,12 +621,8 @@ footer {
    background-color: #383843;
 }
 
-.terms h3,
-h4,
-h5,
-ul,
-li,
-ol,
+.terms h3, h4, h5, ul,
+li, ol,
 p {
    color: #383843;
 }
@@ -661,7 +645,6 @@ https://css-tricks.com/perfect-full-page-background-image/*/
    padding-bottom: 1rem !important;
    box-shadow: 15px 5px 8px rgba(0, 0, 0, 0.7);
 }
-
 
 .agree {
    letter-spacing: 0.3rem;
