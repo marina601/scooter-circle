@@ -365,7 +365,7 @@ https://css-tricks.com/perfect-full-page-background-image/*/
 }
 
 .product-card {
-   min-height: 78rem;
+   min-height: 92rem;
 }
 
 .card-action {
@@ -377,13 +377,13 @@ https://css-tricks.com/perfect-full-page-background-image/*/
 }
 
 .hover-effect {
-       width: 100px; 
-       height: 20px;
-       background-color: #383843;
-       position: relative;
-       padding: 4px;
-       border-radius: 5px;
-       color: #fafafa
+   width: 100px;
+   height: 20px;
+   background-color: #383843;
+   position: relative;
+   padding: 4px;
+   border-radius: 5px;
+   color: #fafafa
 }
 
 .disp-bottom {
@@ -423,6 +423,25 @@ https://css-tricks.com/perfect-full-page-background-image/*/
    padding: 0.5rem !important;
    height: 3.5rem;
    margin-bottom: 2rem;
+}
+
+.view-product-link {
+   cursor: pointer;
+}
+
+.view-product-link h3:hover {
+   background-color: #718d9a;
+   color: #fafafa !important;
+   border-radius: 0.5rem;
+}
+
+.details-link {
+   text-align: center;
+   font-weight: 600;
+   font-size: 2.2rem;
+   padding: 1rem;
+   margin-top: 1rem;
+   margin-bottom: 1rem;
 }
 
 
@@ -715,6 +734,10 @@ https://css-tricks.com/perfect-full-page-background-image/*/
       min-height: 38rem;
       max-height: fit-content;
    }
+
+   .product-card {
+      min-height: 70rem;
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -726,4 +749,8 @@ https://css-tricks.com/perfect-full-page-background-image/*/
       min-height: 34rem;
       max-height: fit-content;
    }
+
+   .product-card {
+      min-height: 74rem;
+  }
 }

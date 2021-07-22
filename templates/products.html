@@ -81,8 +81,10 @@
         <div class="col l4 m6 s12">
           <div class="card product-card hoverable">
             <div class="card-image">
-              <img src="{{ product.product_image }}" alt="{{ product.product_model }}">
-              <h3 class="card-title">{{ product.product_model }}</h3>
+              <a href="{{ url_for('view_product', product_id=product._id) }}" class="view-product-link">
+                <img src="{{ product.product_image }}" alt="{{ product.product_model }}">
+                <h3 class="card-title">{{ product.product_model }}</h3>
+              </a>
             </div>
             <div class="card-content row">
               <div class="col s6">
@@ -122,11 +124,9 @@
             </div>
             <!--Link to full product details-->
             <div class="row">
-              <div class="card-action details-link">
-                <div class="col s12">
-                  <a href="{{ url_for('view_product', product_id=product._id) }}" class="product-details">View Full
-                    Details</a>
-                </div>
+              <div class="details-link col s12">
+                  <a href="{{ url_for('view_product', product_id=product._id) }}" class="product-details">
+                    View Full Details</a>
               </div>
             </div>
             <div class="card-action card-btn">
