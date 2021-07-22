@@ -26,7 +26,7 @@
        <div class="row col s12 carousel-div">
         <div class="carousel">
             {% for product in products %}
-                <a class="carousel-item" href="{{ url_for('view_product', product_id=product._id) }}">
+                <a class="carousel-item view-product-link" href="{{ url_for('view_product', product_id=product._id) }}">
                     <img src="{{ product.product_image }}" loading="lazy" alt="{{ product.product_model }}">
                 </a>
             {% endfor %}
