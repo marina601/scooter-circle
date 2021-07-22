@@ -1,12 +1,10 @@
 //jshint esversion: 6
 /*globals $:false */
 
-//Preloader, once the document loads fade out the preloader 
-$(window).on('load', function () {
-  $(".preloader").delay(1000).fadeOut('slow');
-});
-
 $(document).ready(function () {
+  //Preloader, once the document loads fade out the preloader 
+  $(".preloader").delay(1000).fadeOut('slow');
+
   /** Initializing Materialize components
    *   Initilize sidenav
    *   Open the sidenav to the right
@@ -78,13 +76,13 @@ $(document).ready(function () {
     });
   }
   /**
-   * Function which for Products.html
+   * Function which is for Products.html
    * on hover of the icon
    * Appends a new <span> element to HTML
    * Custom message for each icon is displayed
    * To tell the user what the icon represents
    * Then fade out method is used
-   * to remove the last <span> element fast 
+   * to remove the last <span> element
    */
   $(".speed").hover(
     function () {
@@ -107,7 +105,7 @@ $(document).ready(function () {
       $(this).append($("<span class='hover-effect disp-bottom'>max range</span>"));
     },
     function () {
-      $(this).find("span").last().remove();
+      $(this).find("span").last().toggle();
     }
   );
 });
