@@ -712,7 +712,9 @@
 
 1. Home Page
 
-- Initial issues with performance score of the site, following the google lighthouse report and advice I have added `rel="preconnect"` to externam cdns. Informaiton for this found on [web dev](https://web.dev/uses-rel-preconnect/?utm_source=lighthouse&utm_medium=devtools)
+![home-page-lighthouse-report](wireframes/home-page-lighthouse-report.png)
+
+- Initial issues with performance score of the site, following the google lighthouse report and advice I have added `rel="preconnect"` and `rel="preload"` to externam cdns. Informaiton for this found on [web dev](https://web.dev/uses-rel-preconnect/?utm_source=lighthouse&utm_medium=devtools)
 - Also added `loading="lazy"` to carousel images to imporve performance
 - I have noticed the preloader added to the side does slow down the speed of the site, however I have decided not to remove it. 
 - Also added specific width and height to carousel images.
@@ -732,6 +734,8 @@
 ![profile-page-report](wireframes/profile-page-lighthouse.png)
 
 5. Edit Review
+
+![edit-review-report](wireframes/edit-review-lighthouse-report.png)
 
 - Heading elements are not in a sequentially-descending order, changed the mobile logo from h3 to h2 element
 
@@ -770,15 +774,22 @@
 
 ### Cross Browser Compatibility Table 
 
-| Pages    | <strong>Google Chrome</strong>   |       <strong>Edge</strong>     |     <strong>Safari</strong>     |
-|----------|:--------------------------------:|--------------------------------:--------------------------------:|
-| Home     |&check; | &check;| &check;| 
-| Recipe   |&check; | &check;| &check;|    
-| About    |&check; | &check;| &check;|
-| Contact  |&check; | &check;| &check;|
-| 404.html |&check; | &check;| &check;|
+| Pages    | **Google Chrome** | **Edge**  | **Safari**| **Firefox**
+|----------|:-----------------:|-----------:|---------:|-----------:|
+| Home     |&check;            | &check;   | &check;| &check;|
+| Products    |&check; | &check;| &check;| &check;|
+| View Product   |&check; | &check;| &check;| &check;| 
+| Profile    |&check; | &check;| &check;| &check;|
+| Login    |&check; | &check;| &check;| &check;|
+| Register    |&check; | &check;| &check;| &check;|
+| Edit Review    |&check; | &check;| &check;| &check;|
+| Add Product    |&check; | &check;| &check;| &check;|
+| Edit Product    |&check; | &check;| &check;| &check;|
+| Contact  |&check; | &check;| &check;| &check;|
+| 404.html |&check; | &check;| &check;| &check;|
 
-- Browser compatibility test has been successful and all browsers tested displayed the information correctly.
+
+- Browser compatibility test has been successful and all browsers tested displayed the information correctly. Used [Lampada](https://app.lambdatest.com/console/realtime) to help with cross browser compatability
 
 ##### back to [content](#table-of-content)
 
@@ -806,5 +817,10 @@
   - When testing and validating user input the custom validation was not showing up as expected.
   - Fixed: using an alert: 
     - `oninvalid="alert('Please enter a scooter range using numerical value only!')"`
+
+### Edit Product 
+  - Error found whilst testing, the `product_reviews` where resetting to 0 when updating a product.
+  - Fix this error by submitting a value from the database:
+    - `"product_reviews": product['product_reviews']` 
 
 ##### back to [content](#table-of-content)
