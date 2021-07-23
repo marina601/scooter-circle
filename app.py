@@ -76,7 +76,7 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """
-    Login function route
+    Login route
     Check if user exists in the database
     Check if password matches user input
     Redirects user to profile page
@@ -108,7 +108,7 @@ def login():
     # if the user is already in session
     if 'user' in session:
         return redirect(url_for('profile', username=session['user']))
- 
+
     # Page Title
     title = 'Login'
     return render_template("login.html", title=title)
@@ -117,11 +117,12 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     """
-    Profile function checks if the user is in session
-    Then gets the username from the database
-    If the username = Admin it will display all the reviews
-    in the database
-    If user is not logged in will redirect the user to login page
+    Profile route
+    Checks if the user is in session
+    Query is sent to DB
+    Display all the reviews created by user
+    If the username = Admin, display all the reviews
+    If user is not logged in, redirect to login page
     """
     # Page Title
     title = 'Profile'
@@ -157,10 +158,11 @@ def logout():
 @app.route("/products")
 def products():
     """
-    Getting input field values from the select element
-    Search function allows users to search products
+    Products route
+    Displays all products in the DB
+    Text index created to allow user to search DB
     by product_model or product_brand
-    If a query is empty displays all products from the database
+    If a query is empty displays all products
     """
 
     price = request.args.get("product_price")
@@ -176,7 +178,7 @@ def products():
 
     """
     Sorting database by ascending or descending order
-    to allow filter function
+    to allow for filter function
     This code has been modified from
     https://stackoverflow.com/questions/65493525/sorting-in-flask-via-jinja-template-variable-issue-when-called
     """
@@ -213,9 +215,9 @@ def products():
 @app.route("/view_product/<product_id>", methods=["GET", "POST"])
 def view_product(product_id):
     """
-    View products by product id and
+    View product by product id
     display reviews for the specific product
-    If user is not in session return the user to login page
+    If user is not in session redirect to login page
     """
     product = mongo.db.products.find_one({"_id": ObjectId(product_id)})
     reviews = list(mongo.db.reviews.find().sort("product_model", 1))
@@ -234,12 +236,9 @@ def view_product(product_id):
 @app.route("/add_review", methods=["GET", "POST"])
 def add_review():
     """
-    Firstly check if the user is not in session,
-    And redirect to login.html
-    Otherwise:
-    Add review function checks if the method="POST"
-    Creating a dictionary to be inserted in the database
-    Insert user review to the database
+    Add review route
+    Creating a dictionary to be inserted in the DB
+    Insert user review to the DB
     Redirect the user to their profile page
     """
 
@@ -252,9 +251,9 @@ def add_review():
         mongo.db.reviews.insert_one(review)
 
     """
-    Updating product amount of product reviews
-    by incrementing the product_reviews amount by
-    1 every time a new review is added
+    Updating product_reviews in product collection
+    by incrementing total amount by 1
+    each time a new review is added
     How to increment a value, source has been found
     in MongoDB documentation
     (https://docs.mongodb.com/manual/reference/operator/update/inc/)
@@ -285,9 +284,9 @@ def add_product():
         return redirect(url_for("login"))
 
     """
-    Adding product to the databae
+    Adding product to the DB
     Creating a dictionary to add to the DB
-    Insert a dictionary to the database
+    Insert a dictionary to the DB
     Redirect Admin user to the products.html
     """
 
@@ -326,13 +325,12 @@ def add_product():
 @app.route("/edit_product/<product_id>", methods=["GET", "POST"])
 def edit_product(product_id):
     """
-    Checking if the user is in session
-    and if the username is "Admin"
-    Otherwise redirect to login page
+    If user not logged in redirect to home page
+    If the username is not "Admin"
+    Redirect to login page
     """
     if 'user' not in session:
-        flash("You must be logged in with Admin account to access this page!")
-        return redirect(url_for("login"))
+        return redirect(url_for("index"))
 
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"].capitalize()
@@ -342,8 +340,9 @@ def edit_product(product_id):
         return redirect(url_for("login"))
 
     """
-    Editing existing product if the method is post
-    Create a dictionary getting the values from the form input fields
+    Editing existing product
+    Create a dictionary
+    getting the values from the form input fields
     Update product based on product id
     """
 
@@ -394,10 +393,9 @@ def delete_review(review_id):
     """
     Delete review from the database
     Find the review by the id
-    Find the value of the product_model being deleted
-    Updating amount of product reviews
-    by decreasing the product_reviews amount by
-    1 every time a review is deleted
+    Find product_model name
+    Update number of product_reviews
+    by decreasing the total reviews amount by 1
     """
 
     product_reviewed = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
@@ -416,10 +414,7 @@ def delete_review(review_id):
 @app.route("/add_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
     """
-    Edit review function checks if
-    the request method = "POST"
-    creating a dictionary getting all the input values from
-    the input field elements
+    Edit review route
     Update the user review based on review_id
     """
     if request.method == "POST":
@@ -467,4 +462,4 @@ def no_connection(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)
