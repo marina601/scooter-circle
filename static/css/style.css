@@ -193,7 +193,7 @@ Code Taken from https://techsini.com/how-to-add-css-preloader-to-your-website-tu
 /*Code for full background image was used from 
 https://css-tricks.com/perfect-full-page-background-image/*/
 .background-img {
-   background: url("../images/man-on-the-scooter-resized.png") no-repeat center center fixed;
+   background: url("../images/man-on-the-scooter.jpg") no-repeat center center fixed;
    background-size: cover;
    height: 90vh;
 }
