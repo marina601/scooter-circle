@@ -405,7 +405,7 @@ def delete_review(review_id):
                                  {'$inc': {"product_reviews": -1}})
 
     mongo.db.reviews.delete_one({"_id": ObjectId(review_id)})
-    flash("You review has been Deleted")
+    flash("Your review has been Deleted")
 
     return redirect(url_for('profile', username=session['user']))
 
@@ -424,7 +424,7 @@ def edit_review(review_id):
             "created_by": session["user"]
         }
         mongo.db.reviews.update({"_id": ObjectId(review_id)}, update_review)
-        flash("Your Review Has Been Succsefully Updated")
+        flash("Your Review Has Been Successfully Updated")
         return redirect(url_for('profile', username=session["user"]))
 
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
