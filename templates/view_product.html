@@ -147,7 +147,7 @@
     {% for review in reviews if review.product_model == product.product_model %}
     <!--Product Review-->
     <div class="col s12 m6 l4">
-      <div class="card user-review">
+      <div class="card user-review-card user-review">
         <div class="card-content white-text">
           <h4 class="card-title">{{ review.product_model }}</h4>
           <p>{{ review.product_review }}</p>
