@@ -26,8 +26,8 @@
       - [**Add Product**](#add-product) 
       - [**Edit Product**](#edit-product) 
       - [**Contact Page**](#contact-page) 
-      - [**404.html**](#404.html)
-      - [**500.html**](#500.html)
+      - [**404 Page**](#404-page)
+      - [**500 Page**](#500-page)
    - [**Google Lighthouse Testing**](#google-lighthouse-testing)
    - [**Cross Browser Compatibility Table**](#cross-browser-compatibility-table)
    - [**Bugs**](#bugs)
@@ -242,6 +242,8 @@
   - The user is informed with pre-filled text, what should be their search criteria. 
   - The use is also given an option to filter the products by categories. 
 
+##### back to [content](#table-of-content)
+
 ### Business goals
 
 1.	As a business owner, I want to provide a platform for users where they can view and add reviews for electric scooters.
@@ -363,6 +365,8 @@
  - Open any page and confirm that the preloader displays for 1 second as the page content is loaded.
  - Confirm the preloader animates as expected.
 
+##### back to [content](#table-of-content)
+
 ### Home Page
 
 1. Hero Image
@@ -408,6 +412,8 @@
   - Confirm the link appears in the middle of the page on all screen size devices. 
   - All the steps above have been repeated on all screen sizes. 
 
+##### back to [content](#table-of-content)
+
 ### Registration Page
   - Go to create account page, confirm the form is displayed correctly.
   - Try to press register, without filling in the form. Confirm custom message appears to inform the user what they should enter.
@@ -441,6 +447,8 @@
 - Above steps have been repeated on mobile and tablet devices. No changes to this page layout across the different screen sizes.
 - Confirm the navbar has changed based on user access.
 - As a logged-in user, try to access the Login Page by modifying the URL, confirm the user has been redirected to their profile page.
+
+##### back to [content](#table-of-content)
 
 ### Profile Page
 
@@ -559,6 +567,8 @@
   
   ![admin-view](wireframes/images/products-admin-view.png)
 
+##### back to [content](#table-of-content)
+
 ### View Product
 
 - The user may access this information in 2 ways: 
@@ -621,14 +631,14 @@
 
 ### Add Product 
   - This page is available for Admin user only, which enables an Admin user to add products to the database using the site
-  - Try to amend the url and add add_product to the end, confirm the user is being redirected to the login page and feeback is provided via flash message, which tells the user they do not have access to this page.
-
+  - Try to amend the URL and add add_product to the end, confirm the user is being redirected to their profile page and feedback is provided via flash message, which tells the user they do not have access to this page.
+  - Try to amend the URL as non-logged in user, confirm the user is being redirected to the home page.
   - Login with Admin login details
   - Using the navbar, navigate to Add Product page
-  - A form is presented to the user with required input fields which need to be filled in 
-  - Each input field contains an icon and a label, to guide the user what is required
+  - A form is presented to the user with required input fields that need to be filled in 
+  - Each input field contains an icon and a label, to guide the user on what is required
   - Try to submit an empty form, an alert message appears as expected to let the user know what information is missing
-  - Type text in to any of the following input fields:
+  - Type text into any of the following input fields:
     - Price
     - Range
     - Speed
@@ -637,33 +647,33 @@
     - Wheel Size 
     - Battery Charge
     - Scooter weight
-  - Confrim it is not possible to type text on any of the above input fields, as type attribut is set to number
-  - Type something into Affiliate link or Scooter image field, confirm the validation field turns red and when trying to submit the form an alert shows telling the user is expecting an URL.
-  - In the scooter descripiton field type 4 letters, confirm the alert shows telling the user to enter at least 50 characters.
+  - Confirm it is not possible to type text on any of the above input fields, as the type attribute is set to a number
+  - Type something into the Affiliate link or Scooter image field, confirm the validation field turns red and when trying to submit the form an alert shows telling the user is expecting an URL.
+  - In the scooter description field type 4 letters, confirm the alert shows telling the user to enter at least 50 characters.
   - Hover over submit and clear button to confirm the background colour changes as expected.
-  - Press Clear button, confirm the form has been cleared
+  - Press the Clear button, confirm the form has been cleared
   - On valid entry, confirm the input field changes colour to green and on invalid entry confirm the input field changes colour to red.
-  - Once all the fields have been correctly field in, press Submit button, confirm the user is being redirected to products page, where they are able to view their new product entry.
+  - Once all the fields have been correctly field in, press Submit button, confirm the user is being redirected to the products page, where they can view their new product entry.
   - Feedback is given to the user telling them the product has been added to the database. 
 
-![new-product-added](wireframes/product-added.png)
+![new-product-added](wireframes/images/product-added.png)
 
-  - User reviews for new product entry automatically set to 0.
+  - User reviews for new product entries are automatically set to 0.
   - Now the Admin user is able to edit or delete this product if needed.
 
-![add-product-tablet](wireframes/add-product-tablet-view.png) | ![add-product-mobile](wireframes/add-product-mobile.png)
+![add-product-tablet](wireframes/images/add-product-tablet-view.png) | ![add-product-mobile](wireframes/images/add-product-mobile.png)
 
 ##### back to [content](#table-of-content)
 
 ### Edit Product 
 
-- This page is only for Admin user, who is able to esily edit product using the website.
-- Login with Admin details, from the products page click Edit button in any product card, confirm the correct information is displayed for selected product.
-- Try to delete any input field and submit the form, the user is being redirected to view product details page for the selected product with original value still in place, no changes have been made in the database
-- Try to amend the any value and submit the form, by pressing Edit button, confirm the user is being redirected to the products page as expected with feedback displayed to the user.
-- All custom validations have are identical to add product page, manual validation has been performed in the same way as add product page.
+- This page is only for Admin user, who is able to easily edit product using the website.
+- Login with Admin details, from the products page click the Edit button on any product card, confirm the correct information is displayed for a selected product.
+- Try to delete any input field and submit the form, the user is being redirected to the view product details page for the selected product with the original value still in place, no changes have been made in the database
+- Try to amend any value and submit the form, by pressing the Edit button, confirm the user is being redirected to the products page as expected with feedback displayed to the user.
+- All custom validations have are identical to add product page, manual validation has been performed in the same way as the add product page.
 - Hover over the 2 buttons in the end of the form, confirm the background colour changes as expected.
-- Press Cancel button, the user is being redirected back to the products page, no changes are made in the database.
+- Cancel the button, the user is being redirected back to the products page, no changes are made in the database.
 - Repeated the following steps for tablet and mobile view. 
 
 ##### back to [content](#table-of-content)
@@ -673,40 +683,42 @@
 - Click on the link in the footer "Contact" which leads the user to the contact page
 - The user is presented with a simple form to fill out 
 - Click and try to submit an empty form, a custom message appears which asks the user to enter their name
-- Enter the name, but not an email and try to submit the form again, a message appears asking the user to enter thier email address
-- Enter name, email but not message and try to submit the form, message appears telling the user they must enter at least 10 characters.
+- Enter the name, but not an email and try to submit the form again, a message appears asking the user to enter their email address
+- Enter name, email but not message and try to submit the form, a message appears telling the user they must enter at least 10 characters.
 - Confirm the input field changes the colour to green on valid entry and to red on invalid entry
-- Complete all the required input fields and submit the form, submit button changed value to "Sending..." and alert appears to tell the user the message has been sent.
+- Complete all the required input fields and submit the form, submit button changed value to "Sending..." and an alert appears to tell the user the message has been sent.
 - The form is cleared and submit button is disabled, with the value "Sent"
-- Automated email is sent to the user to tell them the message has been recieved and somebody will be in touch soon.
-- Automated email is sent to the site owner telling them they recieved a new message with username, email and enquire.
-- Now the user has an option to press the button below "Go back to home page", which as expected takes user to the home page.
+- Automated email is sent to the user to tell them the message has been received and somebody will be in touch soon.
+- Automated email is sent to the site owner telling them they received a new message with username, email and enquire.
+- Now the user has an option to press the button below "Go back to home page", which as expected takes the user to the home page.
 - Repeated the following steps for tablet and mobile view. 
 - The result was satisfactory across the different size devices and browsers.
 
-![contact-page-tablet-view](wireframes/contact-tablet-view.png) | ![conatact-page-mobile](wireframes/contact-mobile-view.png)
+![contact-page-tablet-view](wireframes/images/contact-tablet-view.png) | ![conatact-page-mobile](wireframes/images/contact-mobile-view.png)
 
 ##### back to [content](#table-of-content)
 
-### 404.html Page
+### 404 Page
 
 - Starting at the desktop view, typed some random characters after the URL and custom 404 page is displayed.
-- Hover over the button which leads to the home page and the color has changed. 
+- Hover over the button which leads to the home page and the colour has changed. 
 - Clicked on the button and the link has diverted the user to the home page. 
 - Repeated the following steps for tablet and mobile view. 
 - The result was satisfactory across the different size devices and browsers. 
 
-### 500.html Page
+##### back to [content](#table-of-content)
+
+### 500 Page
 
 - Custom server error page has been designed to provide feedback to the user
-- The page is identical to 404.html and also provides the link for the user to return to home page
+- The page is identical to 404.html and also provides the link for the user to return to the home page
 - To test this page I had to take the following steps
   1. inside the app.py file `from Flask import abort`
   2. add abort(500) before a return or redirect in any route
     - `@app.route("/index")
        def index():
        """
-      Find Products from Mongo db collection
+      Find Products from the MongoDB collection
       """
       products = mongo.db.products.find()
       abort(500)
@@ -714,7 +726,7 @@
   
   - I have used the above code to test my custom 500.html, then removed abort from import in Flask and abort(500) within the route
 
-![500.html](wireframes/500.html.png)
+![500.html](wireframes/images/500.html.png)
 
 ##### back to [content](#table-of-content)
 
@@ -724,63 +736,71 @@
 
 1. Home Page
 
-![home-page-lighthouse-report](wireframes/home-page-lighthouse-report.png)
+![home-page-lighthouse-report](wireframes/images/home-page-lighthouse-report.png)
 
-- Initial issues with performance score of the site, following the google lighthouse report and advice I have added `rel="preconnect"` and `rel="preload"` to externam cdns. Informaiton for this found on [web dev](https://web.dev/uses-rel-preconnect/?utm_source=lighthouse&utm_medium=devtools)
-- Also added `loading="lazy"` to carousel images to imporve performance
-- I have noticed the preloader added to the side does slow down the speed of the site, however I have decided not to remove it. 
-- Also added specific width and height to carousel images.
+- Initial issues with a performance score of the site, following the google lighthouse report and advice I have added `rel="preconnect"` and `rel="preload"` to external cdns. Information for this found on [web dev](https://web.dev/uses-rel-preconnect/?utm_source=lighthouse&utm_medium=devtools)
+- Also added `loading="lazy"` to carousel images to improve performance
+- I have noticed the preloader added to the side does slow down the speed of the site, however, I have decided not to remove it. 
+- Also added specific width and height to carousel images, however, the images affect the site performance the most.
 
 
 2. Registration Page 
 
-![lighthouse-report](wireframes/register-lighthouse-report.png)
-- Added link to google fonts in the head of the document to increase the speed
+![lighthouse-report](wireframes/images/register-lighthouse-report.png)
+
+- Added a link to google fonts in the head of the document to increase the speed, however, after going through the link check validation I have decided to remove it. 
+- Link checker returned 2 links with a 404 error for google fonts, I moved the fonts back to CSS file and the performance went down to 82%
 
 3. Login Page
 
-![login-page-lighthouse](wireframes/login-page-lighthouse-report.png)
+![login-page-lighthouse](wireframes/images/login-page-lighthouse-report.png)
+
+- No issues were found on this page
 
 4. Profile Page
 
-![profile-page-report](wireframes/profile-page-lighthouse.png)
+![profile-page-report](wireframes/images/profile-page-lighthouse.png)
+
+- No issues were found on this page
 
 5. Edit Review
 
-![edit-review-report](wireframes/edit-review-lighthouse-report.png)
+![edit-review-report](wireframes/images/edit-product-lighthouse-report.jpg)
 
-- Heading elements are not in a sequentially-descending order, changed the mobile logo from h3 to h2 element
+- Heading elements are not in sequentially descending order, changed the mobile logo from h3 to h2 element
+- Google fonts still affecting the performance of the site 
 
 6. Products Page
 
-![products-lighthouse-report](wireframes/products-lighthouse-report.png)
+![products-lighthouse-report](wireframes/images/produts-lighthouse-report.jpg)
 
-- Heading elements are not in a sequentially-descending order, changed the filter heading to a paragraph and product model name in the card to <h3>.
-- Also google has failed input for drop down, materialize renders select elements into a div and adding an input field, which does not contain id, therefore I was not able to add a label for the input field.
+- Heading elements are not in sequentially descending order, changed the filter heading to a paragraph and product model name in the card to <h3>.
+- Also google has failed input for drop-down, materialize renders select elements into a div and adding an input field, which does not contain id, therefore I was not able to add a label for the input field.
+- Google fonts affecting the loading time
 
 7. View Product
 
-![view-product-lighthouse-report](wireframes/view-product-lighthouse-report.png)
+![view-product-lighthouse-report](wireframes/images/view-product-lighthouse-report.png)
 
-- Form elements do not have labels, the error was caused due to an empty label element. Fixed it by adding text to the label between closing and opeting
+- Form elements do not have labels, the error was caused due to an empty label element. Fixed it by adding text to the label between closing and opening
 
 8. Add Product
 
-![add-product-lighthouse-report](wireframes/add-product-lighthouse-report.png)
+![add-product-lighthouse-report](wireframes/images/add-product-lighthouse-report.png)
 
-- Select element shows as a failing element due to Materialize class
+- Select element shows as a failing element due to Materialize class, materialize renders the select element into the div and dynamically adds an input element, that is the element which is failing in the lighthouse report 
 - Not enough contrast between background and foreground colours
 
 9. Edit Product
 
-![edit-product-lighthouse-report](wireframes/edit-review-lighthouse-report.png)
-- I have moved google font to the head element and removed import from style.css to improve performance
+![edit-product-lighthouse-report](wireframes/images/edit-product-lighthouse-report.jpg)
+- Same issue as above with select element in the form
 
 10. Contact Page
 
-![contact-page-lighthouse-report](wireframes/contact-lighthouse-report.png)
+![contact-page-lighthouse-report](wireframes/images/contact-lighthouse-report.png)
 
-- No issues needed fixing on this page.
+- No issues were found on this page.
 
 ##### back to [content](#table-of-content)
 
@@ -801,28 +821,28 @@
 | 404.html |&check; | &check;| &check;| &check;|
 
 
-- Browser compatibility test has been successful and all browsers tested displayed the information correctly. Used [Lampada](https://app.lambdatest.com/console/realtime) to help with cross browser compatability
+- Browser compatibility test has been successful and all browsers tested displayed the information correctly. Used [Lampada](https://app.lambdatest.com/console/realtime) to help with  cross-browser compatibility.
 
 ##### back to [content](#table-of-content)
 
 ## Bugs
 
 ### Add Review and Edit Review 
-  - Whilst testing user stories, I realized the user is able to amend the product_model name, which would lead to review added not matching any products and only appearing on the user profile page. 
-  - I have fixed it by including `readonly="readonly"` attribut to the **input** element.
+  - Whilst testing user stories, I realized the user can amend the product_model name, which would lead to review added not matching any products and only appearing on the user profile page. 
+  - I have fixed it by including `readonly="readonly"` attribute to the **input** element.
 
 ### Navbar
   - Little but noticed during testing, Scooter Circle logo, when hovered, was displaying extra height. 
-  - Fix: remove hight property in css
+  - Fix: remove hight property in CSS
 
 ### Home Page
   - During manual testing noticed that call to action button at the bottom of the page was not big enough and the text overlayed the background colour of the button, especially on the iPhone.
   - Fix: removed extra classes from the link and re-used the link style from the *Contact Page*, which solved the issue
 
 ### Filter functionality
-  - I came across an issue, when sorting price in filter function. All the filters were working except the price, which was not returning the values in order.
-  - Fixed the issue by changing the data type the database was reasiving, originally it was a string, however I changed it to intigure, which solved the problem.
-  - I have also ensured when the new product is created the data recieved by the database is intiger by wrapping the value from the input field.
+  - I came across an issue when sorting price in the filter function. All the filters were working except the price, which was not returning the values in order.
+  - Fixed the issue by changing the data type the database was receiving, originally it was a string, however, I changed it to a number, which solved the problem.
+  - I have also ensured when the new product is created the data received by the database is a number by wrapping the value from the input field.
     - `"product_price": int(request.form.get("product_price"))`
 
 ### Add Product  and Edit Product Form Validation 
