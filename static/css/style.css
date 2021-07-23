@@ -546,9 +546,14 @@ fieldset {
 
 .user-review {
    background-color: #889faa;
-   min-height: 30rem;
-   max-height: fit-content;
+   min-height: 25rem;
+   overflow: auto;
    margin: 2rem 0.5rem;
+}
+
+.user-review h4 {
+   padding: 0px !important;
+   margin: 0px;
 }
 
 .review-by {
@@ -730,10 +735,10 @@ https://css-tricks.com/perfect-full-page-background-image/*/
       margin-bottom: 20rem;
    }
 
-   .user-review {
+   /*.user-review {
       min-height: 38rem;
       max-height: fit-content;
-   }
+   }*/
 
    .product-card {
       min-height: 70rem;
@@ -745,12 +750,15 @@ https://css-tricks.com/perfect-full-page-background-image/*/
       height: 27rem !important;
    }
 
-   .user-review {
-      min-height: 34rem;
-      max-height: fit-content;
+  .user-review {
+      min-height: 27rem;
    }
 
    .product-card {
       min-height: 74rem;
+  }
+
+  .scooter-img {
+     height: 50rem;
   }
 }
