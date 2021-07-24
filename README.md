@@ -1,6 +1,6 @@
 # Scooter Circle
 
-![Scooter Circle](/static/images/responsive-img.png "Am I Responsive Image") 
+![Scooter Circle](wireframes/images/responsive-img.png "Am I Responsive Image") 
 
 [View the deployed project here](https://scooter-circle.herokuapp.com/)
 
@@ -221,7 +221,8 @@ This app will provide a user with the possibility to view the different scooters
 ## Design 
 
 ### Colour Scheme 
-![Color Pallete](/static/images/colour-pallete.png)
+![Color Pallete](wireframes/images/colour-pallete.png)
+
 -  On occasion colours have been converted to *rgba* values to create transparency.
 -  The colour palette has been picked from [coolors](https://coolors.co/dcdfe5-a0b2bb-39d073-e1403d-383843)
 -  Additional colours have been used: #fafafa to give the text a good contrast on the dark grey background 
@@ -552,7 +553,7 @@ I have used [Lucid Chart](https://www.lucidchart.com/) to create a database mode
 ![all products](wireframes/images/products-page.png)
 
 #### Search 
-  - A search bar has been implemented using **MongoDB** text index to allow the user search by *brand or model*.
+  - A search bar has been implemented using **MongoDB** text index to allow the user to search by *brand or model*.
 
 #### Filter
   - Below the search bar the user may filter their results by: 
@@ -600,16 +601,14 @@ I have used [Lucid Chart](https://www.lucidchart.com/) to create a database mode
     function () {
       $(this).append($("<span class='hover-effect disp-bottom'>charging time</span>"));
     }`
-  - Therefore when the icon is hovered or touched on mobile devices, span element gets appended and description is shown to the user
-  - The icons appear in two collums, the icon at the top will have an icon description showing at the top.
+  - Therefore when the icon is hovered or touched on mobile devices,the span element gets appended and a description is shown to the user
+  - The icons appear in two columns, the icon at the top will have an icon description showing at the top.
   - The icons at the bottom will have the icon description showing at the bottom.
-  - When the user moves on to the different icon or leves the card, the description will be removed.
+  - When the user moves on to a different icon or leaves the card, the description will be removed.
    - `function () {
       $(this).find("span").last().toggle();
     }`
   - When the description is shown, the background colour is #383843, keeping the same style as **tooltip** feature.
-  
-
 
 ##### back to [content](#table-of-content)
 
@@ -696,7 +695,7 @@ I have used [Lucid Chart](https://www.lucidchart.com/) to create a database mode
 ![404.html](wireframes/images/404-error-page.png)
   
 - Custom 404.html page has been created in case of an incorrect URL entered.
-- The user is presented with a full-width background image of the scooter lying on the at the floor at  the  bottom of the stairs.
+- The user is presented with a full-width background image of the scooter lying on the floor at the  bottom of the stairs.
 - The page contains a link that will lead the user back to the home page. 
 
 ##### back to [content](#table-of-content)
@@ -713,7 +712,7 @@ I have used [Lucid Chart](https://www.lucidchart.com/) to create a database mode
 1. Pagination
   - Once the website content gets big enough the pagination would be implemented 
 for reviews on the *profile* and *view product* pages.
-  - Also pagination should be implemented for products on the *products* page.
+  - Also, pagination should be implemented for products on the *products* page.
 
 2. Favourites
   - Add to favourite option could be implemented to let the user save their favourite scooters to their profile page.
@@ -778,7 +777,7 @@ for reviews on the *profile* and *view product* pages.
     - Non-relational databae hosting service 
 
 9. [Wekzeug](https://werkzeug.palletsprojects.com/en/2.0.x/)
-    - A WSGI web application library used to encrypt user passwords
+    - A WSGI web application library is used to encrypt user passwords
 
 10. [Flask-SSLify](https://pypi.org/project/Flask-SSLify/)
      - Flask extension that configures your Flask application to redirect all incoming HTTP requests to HTTPS
@@ -848,7 +847,7 @@ for reviews on the *profile* and *view product* pages.
   - Used this tool to find missing tags
 
 20. [Lampada Test](https://app.lambdatest.com/console/realtime)
-  - Used this tool to help with cross browser compatability test 
+  - Used this tool to help with cross-browser compatibility test 
 
 
     
@@ -970,11 +969,11 @@ API documentation and modified to fit the site purpose.
   - [Techsini](https://techsini.com/how-to-add-css-preloader-to-your-website-tutorial/)
   - The code has then been initialized in the *script.js* file
 
-- Block title template has been used from [Jinja documentation](https://jinja.palletsprojects.com/en/3.0.x/templates/), also a fall back title has been added if the page does not have a specific title added in route.
+- Block title template has been used from [Jinja documentation](https://jinja.palletsprojects.com/en/3.0.x/templates/), also a fallback title has been added if the page does not have a specific title added in route.
 
-- [MongoDB documentation](https://docs.mongodb.com/manual/reference/operator/update/inc/) have been used to find out how to increment total number of reviews, when adding a new review. The same operator has been used to reduce the number of reviews, when the user is deleting a review.
+- [MongoDB documentation](https://docs.mongodb.com/manual/reference/operator/update/inc/) have been used to find out how to increment a total number of reviews when adding a new review. The same operator has been used to reduce the number of reviews when the user is deleting a review.
 
-- Code for custom error handling pages has been sorced from [Flask documentation](https://flask.palletsprojects.com/en/2.0.x/errorhandling/)
+- Code for custom error handling pages has been sourced from [Flask documentation](https://flask.palletsprojects.com/en/2.0.x/errorhandling/)
 
 - Code to handle custom error message in HTML5 form elements was sorced from [Stackoverflow](https://stackoverflow.com/questions/5272433/html5-form-required-attribute-set-custom-validation-message)
 ##### back to [content](#table-of-content)
@@ -991,7 +990,7 @@ API documentation and modified to fit the site purpose.
 
 - I would like to thank my mentor *Medale Oluwafemi* for helping to refactor my code in **Python** to make it easier to read and execute, also for his support and guidance.
 
-- Slack community @Code Institute for reviewing my project and helping me throughout the development, especially *Shane O'Sullivan*, who has suggested extra features to improve UX of the project.
+- Slack community @Code Institute for reviewing my project and helping me throughout the development, especially *Shane O'Sullivan*, who has suggested extra features to improve the UX and UI of the project.
 
 - Tutor support at @Code Institute, for their guidance and assistance during my project development.
 
