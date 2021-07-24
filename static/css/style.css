@@ -765,3 +765,16 @@ https://css-tricks.com/perfect-full-page-background-image/*/
   }
 
 }
+
+@media screen and (max-width: 1024px) {
+   .product-card {
+      min-height: 71rem;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .product-card {
+      min-height: 74rem;
+   }
+}
+
