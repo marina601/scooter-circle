@@ -778,3 +778,8 @@ https://css-tricks.com/perfect-full-page-background-image/*/
    }
 }
 
+@media screen and (min-width: 1200px) {
+   .product-spec {
+      margin-left: 0px !important;
+   }
+ }
