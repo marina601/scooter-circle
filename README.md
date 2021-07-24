@@ -5,7 +5,7 @@
 [View the deployed project here](https://scooter-circle.herokuapp.com/)
 
 I have created this site as part of my Milestone 3 project for Code Institute, 
-focusing on Backend Development using Python, Flask and Mongo DB, whilst performing a complete CRUD operation.
+focusing on Backend Development using HTML, CSS, JavaScript, jQuery, Python, Flask and MongoDB, whilst performing a complete CRUD operation.
 
 This app is for young adults between the age of 25-34, who are focused on environmentally friendly, easy to use and cost-effective personal transportation.
 
@@ -56,8 +56,8 @@ This website will enable the user to share their reviews, view other users revie
    - [**Add Product**](#add-product) 
    - [**Edit Product**](#edit-product) 
    - [**Contact Page**](#contact-page) 
-   - [**404.html**](#404.html)
-   - [**500.html**](#500.html)
+   - [**404 Error Page**](#404-error-page)
+   - [**500 Error Page**](#500-error-page)
    - [**Features Left to Implement**](#features-left-to-implement)
 
 8 [**Technology Used**](#technology-used)
@@ -124,7 +124,7 @@ This app will provide a user with the possibility to view the different scooters
 -	A guest user will only have 3 options visible to them in terms of navigation (Home, Login, Register)
 -	A guest user, once clicked on the image of any scooter will be directed to the login page.
 -	If a guest user did not register yet, they will be able to click on the "Register" button at the bottom of the form to go to the registration page. 
--	A guest user will be able to complete the form and register to access the full side. 
+-	A guest user will be able to complete the form and register to access the full site. 
 
 ##### back to [content](#table-of-content)
 
@@ -132,7 +132,7 @@ This app will provide a user with the possibility to view the different scooters
 
 -	A logged-in user will benefit from the full functionality of the site. 
 -	The navigation links will contain (Home, Products, Profile, Logout)
--	Logged in user can view the full range of products available on the site
+-	Logged in users can view the full range of products available on the site
 -	Logged in users can add a review once full product details are viewed, where an empty text field will be provided for them to add their review.
 -	Logged-in users can view other users reviews for the selected product 
 -	Logged in users can Edit or Delete their review 
@@ -158,7 +158,7 @@ This app will provide a user with the possibility to view the different scooters
 
 1.	As a first time user, I want to understand what this site is about.
 2.	As a first time user, I want to view a collection of products available on site.
-3.	As a first-time user, I want to be able to see more products and user reviews.
+3.	As a first-time user, I want to see more products and user reviews.
 4.  As a first-time user, I want to view the terms and conditions of the site.
 
 #### Returning User 
@@ -270,7 +270,7 @@ This app will provide a user with the possibility to view the different scooters
 
 - Materialize <em>carousel</em> was used on the Home page to display the selection of products, I have also implemented an autoplay function to slide the items every two seconds and added custom size to the carousel items 
 
-- Materialize <em>card</em> was utilized on Scooter Circle to display a short description of each scooter with a link to display full details of the scooter. The card displayed a few product categories using forntawesome icons which are repeated on the product page. The card has been also used to display product reviews with custom sizing of the card.
+- Materialize <em>card</em> was utilized on Scooter Circle to display a short description of each scooter with a link to display full details of the scooter. The card displayed a few product categories using font awesome icons which are repeated on the product page. The card has been also used to display product reviews with custom sizing of the card.
 
 - Materialize <em>modal</em> has been used to display the terms and conditions page, also for defensive programming when the user is trying to delete a review or a product to alert the user of their action and ask to confirm their choice.
 
@@ -278,7 +278,7 @@ This app will provide a user with the possibility to view the different scooters
     
 ##### back to [content](#table-of-content)
 
-## Wireframes, Database and Flow Chart
+## Wireframes Flowchart and Data Model
 
 ### Wireframes 
 
@@ -399,7 +399,7 @@ Based on the user stories and expectations, the following features have been imp
 
 #### Footer
 
-![terms and conditions](wireframes/terms-and-conditions.png)
+![terms and conditions](wireframes/images/terms-and-conditions.png)
   
    - Footer is availabe to all users at all times.
    - It contains a link to **Contact Page** which users might want to use to contact the site owner. The contact page is powered by **EmailJS** and once the form is submitted it sends out an automated email to the user.
@@ -435,7 +435,7 @@ Based on the user stories and expectations, the following features have been imp
 
 ### Home Page
 
-![home page](wireframes/home-page.png)
+![home page](wireframes/images/home-page.png)
 
 #### Hero Image
 
@@ -466,7 +466,7 @@ Based on the user stories and expectations, the following features have been imp
 
 ### Registration Page
 
-![registration page](wireframes/registration-page.png)
+![registration page](wireframes/images/registration-page.png)
 
 - A simple form has been used with method `POST` through **Python** to post the new user information to **MongoDB**
 - The information needed for the user to register is username and password to simplify the process.
@@ -538,7 +538,7 @@ Based on the user stories and expectations, the following features have been imp
 
 ### Edit Review
 
-![edit review](wireframes/edit-review.png)
+![edit review](wireframes/images/edit-review.png)
 - Once the user chooses to update a review, they are redirected to *edit_review.html*
 - A simple form is displayed containing pre-populated fields with product_model and product_review.
 - Using *update* method in **MongoDB** 
@@ -550,7 +550,7 @@ Based on the user stories and expectations, the following features have been imp
 
 ### Products Page
 
-![all products](wireframes/products-page.png)
+![all products](wireframes/images/products-page.png)
 
 #### Search 
   - A search bar has been implemented using **MongoDB** text index to allow the user search by *brand or model*.
@@ -616,7 +616,7 @@ Based on the user stories and expectations, the following features have been imp
 
 ### View Product
 
-![view product](wireframes/view-product.png)
+![view product](wireframes/images/view-product.png)
 
 - Once the user clicked *view full details* link on the products page, **MongoDB** query is performed, **Python** is searching the database for a unique key "_id":
   - ` product = mongo.db.products.find_one({"_id": ObjectId(product_id)})`
@@ -668,7 +668,7 @@ Based on the user stories and expectations, the following features have been imp
 ##### back to [content](#table-of-content)
 
 ### Contact Page
-![contact page](wireframes/contact-page.png)
+![contact page](wireframes/images/contact-page.png)
 
 - Once the user navigates to the contact page, a short message will appear telling the user why they might choose to get in touch with an admin
 - The contact form is powered by **EmailJS**
@@ -692,9 +692,9 @@ Based on the user stories and expectations, the following features have been imp
 ##### back to [content](#table-of-content)
 
 
-### 404.html
+### 404 Error Page
 
-![404.html](wireframes/404-error-page.png)
+![404.html](wireframes/images/404-error-page.png)
   
 - Custom 404.html page has been created in case of an incorrect URL entered.
 - The user is presented with a full-width background image of the scooter lying on the at the floor at  the  bottom of the stairs.
@@ -702,7 +702,7 @@ Based on the user stories and expectations, the following features have been imp
 
 ##### back to [content](#table-of-content)
 
-### 500.html
+### 500 Error Page
 
 - Custom internet server error handler page has been created.
 - When the error is raised, the same page appears as *404.html* with a link to go back to the *home* page.
@@ -754,37 +754,34 @@ for reviews on the *profile* and *view product* pages.
 
 ### Frameworks and Libraries
 
-1. [Moterialize](https://materializecss.com/)
+1. [Materialize](https://materializecss.com/)
  - Mainly for responsive grid layout. Components from this library have been used to structure the website and speed up the build process.
 
-2. [CSS tricks](https://css-tricks.com/perfect-full-page-background-image/) 
-- Used to create a full background image for the main site and 404.html, 500.html pages.
-
-3. [Google Fonts:](https://fonts.google.com/)
+2. [Google Fonts:](https://fonts.google.com/)
     - Google fonts were used to import the 'Montserrat and Nunito' fonts into the style.css file which is used on all pages throughout the project.
 
-4. [Font Awesome:](https://fontawesome.com/)
+3. [Font Awesome:](https://fontawesome.com/)
     - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
 
-5. [jQuery](https://api.jquery.com/)
+4. [jQuery](https://api.jquery.com/)
     - jQuery library has been used to target HTML elements and assign event listeners throughout JavaScript files.   
 
-18. [Jinja](https://jinja.palletsprojects.com/en/3.0.x/)
+5. [Jinja](https://jinja.palletsprojects.com/en/3.0.x/)
     - Templating language for Python, to simply display data from backend to front end
 
-19. [PyMongo](https://pymongo.readthedocs.io/en/stable/)
+6. [PyMongo](https://pymongo.readthedocs.io/en/stable/)
     - To connect Python to the MongoDB database
 
-20. [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+7. [Flask](https://flask.palletsprojects.com/en/2.0.x/)
     - To constract and render pages
 
-21. [MongoDB Atlas](https://www.mongodb.com)
+8. [MongoDB Atlas](https://www.mongodb.com)
     - Non-relational databae hosting service 
 
-22. [Wekzeug](https://werkzeug.palletsprojects.com/en/2.0.x/)
+9. [Wekzeug](https://werkzeug.palletsprojects.com/en/2.0.x/)
     - A WSGI web application library used to encrypt user passwords
 
-23. [Flask-SSLify](https://pypi.org/project/Flask-SSLify/)
+10. [Flask-SSLify](https://pypi.org/project/Flask-SSLify/)
      - Flask extension that configures your Flask application to redirect all incoming HTTP requests to HTTPS
 
 ##### back to [content](#table-of-content)
@@ -851,7 +848,7 @@ for reviews on the *profile* and *view product* pages.
 19. [HTML5 Closing Tag Checker](https://www.aliciaramirez.com/closing-tags-checker/)
   - Used this tool to find missing tags
 
-20. [Lampada](https://app.lambdatest.com/console/realtime)
+20. [Lampada Test](https://app.lambdatest.com/console/realtime)
   - Used this tool to help with cross browser compatability test 
 
 
@@ -978,9 +975,9 @@ API documentation and modified to fit the site purpose.
 
 - [MongoDB documentation](https://docs.mongodb.com/manual/reference/operator/update/inc/) have been used to find out how to increment total number of reviews, when adding a new review. The same operator has been used to reduce the number of reviews, when the user is deleting a review.
 
-- Code for custom error handling pages has been sorced from [Flask documentation](https://flask.palletsprojects.com/en/1.(1.x/patterns/errorpages/)
+- Code for custom error handling pages has been sorced from [Flask documentation](https://flask.palletsprojects.com/en/2.0.x/errorhandling/)
 
-- Code to handle custom error message in HTML5 was sorced from [Stackoverflow](https://stackoverflow.com/questions/5272433/html5-form-required-attribute-set-custom-validation-message)
+- Code to handle custom error message in HTML5 form elements was sorced from [Stackoverflow](https://stackoverflow.com/questions/5272433/html5-form-required-attribute-set-custom-validation-message)
 ##### back to [content](#table-of-content)
 
 ### Media
