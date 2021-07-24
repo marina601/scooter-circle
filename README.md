@@ -270,7 +270,7 @@ This app will provide a user with the possibility to view the different scooters
 
 - Materialize <em>carousel</em> was used on the Home page to display the selection of products, I have also implemented an autoplay function to slide the items every two seconds and added custom size to the carousel items 
 
-- Materialize <em>card</em> was utilized on Scooter Circle to display a short description of each scooter with a link to display full details of the scooter. The card displayed a few product categories using font awesome icons which are repeated on the product page. The card has been also used to display product reviews with custom sizing of the card.
+- Materialize <em>card</em> was utilized on Scooter Circle to display a short description of each scooter with a link to display full details of the scooter. The card shows a few product categories using font awesome icons which are repeated on the product page. The card has been also used to display product reviews with custom sizing of the card.
 
 - Materialize <em>modal</em> has been used to display the terms and conditions page, also for defensive programming when the user is trying to delete a review or a product to alert the user of their action and ask to confirm their choice.
 
@@ -292,10 +292,10 @@ This app will provide a user with the possibility to view the different scooters
    -  At the bottom of the page I have used a carousel to display the products to the user with an automated slide to the next item to enhance the user experience. 
 
    - Footer:
-   - Removed affiliate disclaimer link, this could possible implemented in the future once the affiliate is secured. Also added a note in the terms and conditions about affiliate links
+   - Removed affiliate disclaimer link, this could be implemented in the future once the affiliate is secured. Also added a note in the terms and conditions about affiliate links
    
    - View Product Page:
-   - Removed the link 'Shop' from the card and added the link to view_product.html to encourage the user to view the full details of the product together with user reviews before decifding on a purchase. 
+   - Removed the link 'Shop' from the card and added the link to view_product.html to encourage the user to view the full details of the product together with user reviews before deciding on a purchase. 
 
    - Header: 
    - Did not like the look of the logo in the header, due to its design the logo was giving too much padding to the bottom of the navbar. When resizing the logo, the text was too small and would not stand out and have poor contrast. Therefore decided to use the name of the site and logo for the favicon icon only.
@@ -313,7 +313,7 @@ I have used [Lucid Chart](https://www.lucidchart.com/) to create a database mode
   -    Usename and secure password is stored in this collection.
 
   #### Products:
-  -   All the product information is stored in this collections, including  affiliate links to the external websites and images, also the number of reviews each product receives.
+  -   All the product information is stored in this collection, including affiliate links to the external websites and images, also the number of reviews each product receives.
 
   #### Reviews:   
   -  All product reviews are stored in this collection, Products and Reviews collection contains the same field product_model which helped me to link two collections together during the project development.
@@ -332,7 +332,7 @@ I have used [Lucid Chart](https://www.lucidchart.com/) to create a database mode
   - Once the user lands on the Home Page, the User has two options either to Login or Register to access the full site. 
 
 - Login Option: 
-  - If the user supplies the invalid login details, the user gets redirected to the Login Page to try again, if the user is unsuccessful  again they have an option to register. During the development of this project, I added custom feedback to the user if the login attempted is not successful. 
+  - If the user supplies the invalid login details, the user gets redirected to the Login Page to try again, if the user is unsuccessful again they have an option to register. During the development of this project, I added custom feedback to the user if the login attempted is not successful. 
   - Once the login details are successful the user gets redirected to their Profile Page.
 
 - Register Option: 
@@ -350,7 +350,6 @@ I have used [Lucid Chart](https://www.lucidchart.com/) to create a database mode
 
 - Logout Page: 
   - The user may choose to log out when they finish using the site which will remove their session cookie and redirect them back to Home Page for non registered users. 
-  - During my development I have changed that and decided to redirect the user to Login Page instead, as the user may want to log back in if they have pressed the button in error. Otherwise, the user will just leave the site. 
 
 ##### back to [content](#table-of-content)
 
@@ -358,7 +357,7 @@ I have used [Lucid Chart](https://www.lucidchart.com/) to create a database mode
 
 ### Features Implemented 
 
-Based on the user stories and expectations, the following features have been implemented:
+- Based on the user stories and expectations, the following features have been implemented:
 
 ### All pages 
 
@@ -391,25 +390,25 @@ Based on the user stories and expectations, the following features have been imp
 
    - The logo of the page appears on the left-hand side on the large screen devices and then moved to the middle on the middle and small screen devices. The logo contains a link, which when clicked will take the user to the **Home Page**.
 
-   - All navigation links contain the hoovering effect, when the link hoveres over the background colour change to a slighter darker shade, which includes the logo as well. 
+   - All navigation links contain the hoovering effect, when the link hovered over the background colour change to a slighter darker shade, which includes the logo as well. 
 
    - Logout nav links, if the user is logged in, by clicking on the link **Python** removes the user from the session cookie and displays a message to the user *You have been logged out*
      - `session.pop("user")`
-   - The user also gets redirected to the *login page* to be able to log in again.
+   - The user also gets redirected to the *Home page*.
 
 #### Footer
 
 ![terms and conditions](wireframes/images/terms-and-conditions.png)
   
-   - Footer is availabe to all users at all times.
+   - Footer is available to all users at all times.
    - It contains a link to **Contact Page** which users might want to use to contact the site owner. The contact page is powered by **EmailJS** and once the form is submitted it sends out an automated email to the user.
-   - The footer also contains a link to the **Terms and Conditions** modal which users might want to read to see the terms of use of the site. At the bottom of the modal two buttons are displayed, one to say *Agree* which the user can press and the modal will close. The other button is *Contact* if the user has any queries about terms and conditions, it will take them straight to **Contact Page**.
+   - The footer also contains a link to the **Terms and Conditions** modal which users might want to read to see the terms of use of the site. At the bottom of the modal two buttons are displayed, one to say *Close* which the user can press and the modal will close. The other button is *Contact* if the user has any queries about terms and conditions, it will take them straight to **Contact Page**.
    - Footer also contains copyright information
 
 #### General Features
   
 - The website has a responsive design based on the screen view.  
-- All pages have call-to-action buttons to give the user easy access to the next page, without the need to choose from the navigation menu.
+- All pages have call-to-action buttons to give the user easy access to the next page.
 - Favicon Icon is present for windows and apple devices to improve user experience. 
 - Loader has been added to the **base.html** template with custom colours. **jQuery** is used to initialize the loader when the document is loading, time delay function has been implemented to delay the fade of the loader by 1 second: 
   - `$(window).on('load', function() {
@@ -439,7 +438,7 @@ Based on the user stories and expectations, the following features have been imp
 
 #### Hero Image
 
-- The Scooter Circle features a hero image of the man ready to ride his scooter, who is putting on the helmet. The picture is set in an urban setting which is perfect for the target audience. The site testimony is overlayed is positioned on the left-hand side to give a better view of the hero image. 
+- The Scooter Circle features a hero image of the man ready to ride his scooter, who is putting on the helmet. The picture is set in an urban setting which is perfect for the target audience. The site testimony is positioned on the left-hand side to give a better view of the hero image. 
 
 - The testimony contains box shadows `box-shadow:  15px 5px 8px rgba(0, 0, 0, 0.8);` which makes it stand out for better visual effect. On the mobile screen view the testimony is positioned in the middle and does cover the face of the man on the scooter, however, the decision has been made not to fix it, because the testimony div contains important information about the website and why people might choose electric transportation. Also, the hero image is fixed, therefore the user will be able to see it once the user scrolls up. 
 
@@ -525,7 +524,7 @@ Based on the user stories and expectations, the following features have been imp
 - If the user is 'Admin':
   - All the reviews are displayed on their profile page 
   - The Admin user can manage their reviews as mentioned above. 
-  - The Admin user can *delete* other user reviews if found inappropriate, which is mentioned in *terms and conditions* page. 
+  - The Admin user can *delete* other user reviews if found inappropriate, which is mentioned on *terms and conditions* page. 
 
 - If the user chooses to 'Edit' their review, they will be redirected to the edit_review page.
 - If the user chooses to 'Delete' their review, a modal will appear asking them to confirm their decision. 
