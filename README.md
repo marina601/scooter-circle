@@ -448,7 +448,7 @@ I have used [Lucid Chart](https://www.lucidchart.com/) to create a database mode
 - Used carousel component from **Materialize** library to showcase the collection of products. 
 - All images are clickble based on user accsess level: 
   - For not loged in users once the image is clicked it will take them to the *login.html*
-  - For logged in users once the image is clicked it will take them directly to the *view_product*.html*, where they will be able full details of their chosen scooter, add reviews and view other user reviews. 
+  - For logged in users once the image is clicked it will take them directly to the *view_product*.html*, where they will be able to see full details of their chosen scooter, add reviews and view other user reviews. 
   - The carousel has setInterval function which moves to the next slide with time delay of 2 seconds 
     - `$('.carousel').carousel();
     setInterval(function () {
