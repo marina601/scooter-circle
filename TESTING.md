@@ -60,7 +60,7 @@
 
 - [W3C Link Checker](https://validator.w3.org/checklink)
    - All links have been checked and no errors have been detected, except on line 39 a link has returned an error. I have checked all the anchor links in the **modal** and changed them to buttons. Also, the issue was with the anchor link for the mobile navigation, I have added a `role="button"` to the anchor tag.
-    - Also once I moved the code from Google fonts to the head of the document, a new error 404 has appeared in the link checker. Removed the link and added it to CSS file.
+    - Also once I moved the code from Google fonts to the head of the document, a new error 404 has appeared in the link checker. Removed the link and added it to the CSS file.
   
 - [JSHint](https://jshint.com/)
    ### script.js 
@@ -86,15 +86,14 @@
 
 1.	As a first time user, I want to understand what this site is about.
 
-  - The site is designed with simple and easy to understand the content in mind.
+  - The site is designed with simple and easy to understant content in mind.
   - Scooter logo in the header tells the user this site is about scooters.
   - A hero image tells the user the site is about scooters. 
-  - A testimony positioned on the right-hand side explains to the user why electric scooters are 
-  environmentally friendly and a fast way to travel.
+  - A testimony positioned on the right-hand side explains to the user why electric scooters are environmentally friendly and a fast way to travel.
 
 2.	As a first time user, I want to view a collection of products available on site.
 
-  - Once the user scrolls down the page, they presented with a welcome message
+  - Once the user scrolls down the page, they are presented with a welcome message
   - Telling the user what they can do on this site: 
     - View latest scooter models
     - View user reviews 
@@ -103,7 +102,7 @@
 
 3.	As a first-time user, I want to be able to see more products and user reviews.
 
-  - The user can view th full selection of scooters by clicking on the button, at the bottom of the page 
+  - The user can view the full selection of scooters by clicking on the button, at the bottom of the page 
   *"View All Scooters"*
   - The first-time user will be redirected to the *Login* Page, where the message at the top of the page will tell them "You must be logged in to view this page". 
   - If the user does not have an account yet, they can click a button *Regester Here* at the bottom of the form and proceed to the registration page.
@@ -115,13 +114,13 @@
      - Product Image
      - Product Title
      - Link to *View Full Details* 
-  - it will lead them to full product specification and individual products reviews.
+  - it will lead them to full product specifications and individual products reviews.
 
 4.  As a first-time user, I want to view the terms and conditions of the site.
 
   - The user may click on the button in the footer "Terms and Conditions" which will open a modal with full terms and conditions of the site. 
   - The user has 2 options, either press the button to "Close", which will close the modal.
-  - Or the user may want to contact the site owners and ask more questions, the button "Contact" is presented next to "Close" button in the modal, which will redirect the user to the *Contact Page*.
+  - Or the user may want to contact the site owners and ask more questions, the button "Contact" is presented next to the "Close" button in the modal, which will redirect the user to the *Contact Page*.
 
 ##### back to [content](#table-of-content)
 
@@ -190,7 +189,7 @@
   - Feedback will be displayed:
     - "Your Review Has Been Successfully Updated"
   - The user may view an updated review on their *Profile* page.
-  - If the user presses on the **Cancel** button when updating their review, they will be redirect them back to the *Profile* page and no changes will be made to their original review.
+  - If the user presses on the **Cancel** button when updating their review, they will be redirected back to the *Profile* page and no changes will be made to their original review.
 
 3.	As a frequent user, I want to be able to delete my review. 
 
@@ -198,7 +197,7 @@
   - Once the button is pressed a modal will appear which will ask the user to confirm their selection
   - If the user presses **Yes** the review will be deleted from the database
   - The user will be informed 
-    - "You review has been Deleted"
+    - "Your review has been Deleted"
   - The deleted review will be deleted from the database and will not appear on the user profile page. 
   - If the user presses **No**, the modal will close and no changes will be made.
 
@@ -222,7 +221,7 @@
     - Name
     - Email
     - Query
-  - Once all the input fields are filled in correctly the can submit the form.
+  - Once all the input fields are filled in correctly they can submit the form.
   - If the input fields are not filled in correctly custom messages are displayed to guide the user through the process.
   - Once the form has been submitted, the alert is displayed to the user letting them know their message has been sent.
   - The automated email is sent to the user at the same time to let them know somebody will be in touch shortly.
@@ -258,7 +257,7 @@
   - For the user to register they have to provide the username
   - Also have to type their chosen password twice, once both of the password fields match, the data gets stored in the database.
   - I have used the `generate_password_hash` method from `werkzeug.security` to hash the password in the database. 
-  - The site owner who will have access to the database, will be able to see the username, however,will not be able to see the user password which is stored securely. 
+  - The site owner who will have access to the database, will be able to see the username, however, will not be able to see the user password which is stored securely. 
   - Username may access their account only when username and password match the database, upon the login attempt.
 
 3.	As a business owner, I want the client to be able to use the site easily on any device.
@@ -298,7 +297,7 @@
  - Scooter Circle has been designed with user experience in mind, providing a platform for users, not only to view the products and product reviews but also search for a specific item.
  - Search functionality implemented to enable the user to search by scooter model or brand.
  - Also Filter function is implemented to let the user filter the results with their chosen category. 
- - Only 4 filter categories are available to the user at the moment, those categories have been chosen based on the importance of their value to the product..
+ - Only 4 filter categories are available to the user at the moment, those categories have been chosen based on the importance of their value to the product.
  
 ##### back to [content](#table-of-content)
 
@@ -419,7 +418,7 @@
   - Try to press register, without filling in the form. Confirm custom message appears to inform the user what they should enter.
   - Confirm the validation fields change colour to red for invalid entry.
   ![feedback](wireframes/images/custom-feedback.png)
-  - Try to enter a username, but not the password and press register button, confirm the custom message appears to the user to enter a password and its parameters 
+  - Try to enter a username, but not the password and press the register button, confirm the custom message appears to the user to enter a password and its parameters 
   - Try to create a new account that already exists (same username), confirm that the flash message appears at the top of the page informing the user that this account already exists.
   ![same username](wireframes/images/username-in-use.png)
   - Try to create a new account with a new username but with two passwords that do not match, confirm that the flash message appears at the top of the page informing the user that the passwords entered do not match.
@@ -558,12 +557,12 @@
 
   - View for Admin user
     - Login with admin user details
-    - Product card displays 2 button at the bottom of each card to **Delete** or **Edit** product.
+    - Product card displays 2 buttons at the bottom of each card to **Delete** or **Edit** product.
     - Hover over the buttons to confirm the background colour changes as expected.
-    - Press the delete button, confirm modal appears to ask the user to confirm their desicion.
-    - The modal works exactly in the same way as delete review in the profile page.
+    - Press the delete button, confirm modal appears to ask the user to confirm their decision.
+    - The modal works exactly in the same way as the delete review button on the profile page.
     - Feedback is presented to the Admin user when the product is successfully deleted
-    - Press Edit button, confirm the link takes the user to the edit_product page and all the correct information is displayed.
+    - Press the Edit button, confirm the link takes the user to the edit_product page and all the correct information is displayed.
   
   ![admin-view](wireframes/images/products-admin-view.png)
 
@@ -601,7 +600,7 @@
   - Try to type only one character and submit the form, confirm custom feedback is given to the user, which tells the user the requirements.
   - Type some text in the form and press the Clear button, confirm the form is cleared.
   - Add a product review and press submit, confirm it redirects the user to their profile page with a flash message providing the feedback to the user.
-  - Users can see the new review which they have just added on their profile page.
+  - Users can see the new review which they have just added to their profile page.
   - Confirm the total number of reviews have been updated in the products card and database.
 
 ![add-review-mobile](wireframes/images/add-review-mobile.png) | ![add-review-tablet](wireframes/images/add-review-tablet.png)
@@ -618,7 +617,7 @@
     
     - No reviews available for this product:
       - A message displayed to the user telling them "No Reviews Added Yet!"
-      - A call to action asking the user to add their own review with an anchor link to the add review form.
+      - A call to action asking the user to add their review with an anchor link to the add review form.
       - Click on the anchor link to confirm the add review form is displayed
 
 ![no-reviews](wireframes/images/no-review.png)
@@ -659,7 +658,7 @@
 ![new-product-added](wireframes/images/product-added.png)
 
   - User reviews for new product entries are automatically set to 0.
-  - Now the Admin user is able to edit or delete this product if needed.
+  - Now the Admin user can edit or delete this product if needed.
 
 ![add-product-tablet](wireframes/images/add-product-tablet-view.png) | ![add-product-mobile](wireframes/images/add-product-mobile.png)
 
@@ -667,12 +666,12 @@
 
 ### Edit Product 
 
-- This page is only for Admin user, who is able to easily edit product using the website.
+- This page is only for Admin user, who can easily edit products using the website.
 - Login with Admin details, from the products page click the Edit button on any product card, confirm the correct information is displayed for a selected product.
 - Try to delete any input field and submit the form, the user is being redirected to the view product details page for the selected product with the original value still in place, no changes have been made in the database
 - Try to amend any value and submit the form, by pressing the Edit button, confirm the user is being redirected to the products page as expected with feedback displayed to the user.
 - All custom validations have are identical to add product page, manual validation has been performed in the same way as the add product page.
-- Hover over the 2 buttons in the end of the form, confirm the background colour changes as expected.
+- Hover over the 2 buttons at the end of the form, confirm the background colour changes as expected.
 - Cancel the button, the user is being redirected back to the products page, no changes are made in the database.
 - Repeated the following steps for tablet and mobile view. 
 

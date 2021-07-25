@@ -120,7 +120,7 @@ This app will provide a user with the possibility to view the different scooters
 ### View for a guest User:
 
 -	A user which is not logged in and/or registered will be greeted with a hero image of the electric scooters and a couple of quotes about why electrical transportation is a better way to travel. 
--	A guest user can view the recent products at the bottom of the page  in the carousel format.
+-	A guest user can view the recent products at the bottom of the page in the carousel format.
 -	A guest user will only have 3 options visible to them in terms of navigation (Home, Login, Register)
 -	A guest user, once clicked on the image of any scooter will be directed to the login page.
 -	If a guest user did not register yet, they will be able to click on the "Register" button at the bottom of the form to go to the registration page. 
@@ -132,11 +132,11 @@ This app will provide a user with the possibility to view the different scooters
 
 -	A logged-in user will benefit from the full functionality of the site. 
 -	The navigation links will contain (Home, Products, Profile, Logout)
--	Logged in users can view the full range of products available on the site
--	Logged in users can add a review once full product details are viewed, where an empty text field will be provided for them to add their review.
+-	Logged-in users can view the full range of products available on the site
+-	Logged-in users can add a review once full product details are viewed, where an empty text field will be provided for them to add their review.
 -	Logged-in users can view other users reviews for the selected product 
--	Logged in users can Edit or Delete their review 
--	Logged in users can see all the reviews which they have created on their profile page and manage them accordingly
+-	Logged-in users can Edit or Delete their review 
+-	Logged-in users can see all the reviews which they have created on their profile page and manage them accordingly
 
 ##### back to [content](#table-of-content)
 
